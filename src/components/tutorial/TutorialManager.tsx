@@ -3,6 +3,7 @@ import { TutorialSpotlight } from './TutorialSpotlight';
 import { tutorialSteps } from './tutorialSteps';
 import { HelpCircle } from 'lucide-react';
 import { VitaButton } from '../vita-ui/VitaButton';
+import logo from '../imgs/VU-logo-RGB.png';
 
 interface TutorialManagerProps {
   currentScreen: string;
@@ -26,7 +27,7 @@ export function TutorialManager({ currentScreen, enabled, onComplete }: Tutorial
   useEffect(() => {
     if (!tutorialEnabled) {
       // Delay showing button to avoid flash during screen transitions
-      const timer = setTimeout(() => setShowButton(true), 500);
+      const timer = setTimeout(() => setShowButton(false), 500);
       return () => clearTimeout(timer);
     } else {
       setShowButton(false);

@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import { VitaButton } from '../vita-ui/VitaButton';
 import { LanguageToggle } from '../LanguageToggle';
 import { GripVertical, ChevronUp, ChevronDown } from 'lucide-react';
-import { griffonAvatars } from '../griffons/GriffonAvatars';
+// import { griffonAvatars } from '../griffons/GriffonAvatars';
+import logo from '../imgs/VU-logo-RGB.png';
 
 interface MicroRIASECProps {
-  onComplete: (styles: string[]) => void;
+onComplete: (styles: string[]) => void;
   onBack: () => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
   selectedAvatar?: string;
+  onGoBack?: () => void;
+  onGoHome?: () => void;
 }
 
 interface Activity {
@@ -271,15 +274,14 @@ export function MicroRIASEC({ onComplete, onBack, currentLang, onLangChange, sel
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
-          <span className="text-vita-gold text-[1.125rem]">VITA</span>
-          <span className="text-gray-400 text-[0.875rem]">×</span>
-          <span className="text-gray-600 text-[0.875rem]">VU Amsterdam</span>
-        </div>
+          <img src={logo} alt="VU Logo" width='150' height='100'/>        </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       
       {/* Content */}
       <div className="max-w-2xl mx-auto p-6 space-y-6">
+
+
         <div>
           <h2 className="text-[1.375rem] mb-2">Organize by preference</h2>
           <p className="text-[1rem] text-gray-600">

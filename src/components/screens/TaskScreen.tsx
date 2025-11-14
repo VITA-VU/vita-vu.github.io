@@ -4,12 +4,15 @@ import { ProgressDots } from '../vita-ui/ProgressDots';
 import { LanguageToggle } from '../LanguageToggle';
 import { VitaToast, useToast } from '../vita-ui/VitaToast';
 import { HelpCircle } from 'lucide-react';
+import logo from '../imgs/VU-logo-RGB.png';
 
 interface TaskScreenProps {
-  taskVariant?: 'psychology' | 'business-analytics' | 'physics';
+taskVariant?: 'psychology' | 'business-analytics' | 'physics';
   onComplete: () => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
+  onGoBack?: () => void;
+  onGoHome?: () => void;
 }
 
 const tasks = {
@@ -97,15 +100,14 @@ export function TaskScreen({
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
-          <span className="text-vita-gold text-[1.125rem]">VITA</span>
-          <span className="text-gray-400 text-[0.875rem]">×</span>
-          <span className="text-gray-600 text-[0.875rem]">VU Amsterdam</span>
-        </div>
+          <img src={logo} alt="VU Logo" width='150' height='100'/>        </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       
       {/* Content - Desktop uses 2 column layout */}
       <div className="max-w-6xl mx-auto p-6">
+
+
         {/* Progress and Why Link */}
         <div className="flex items-center justify-between mb-6">
           <ProgressDots total={3} current={1} />

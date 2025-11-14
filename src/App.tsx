@@ -50,7 +50,7 @@ export default function App() {
     language: 'EN'
   });
   
-  const [showTutorialWelcome, setShowTutorialWelcome] = useState(true);
+  const [showTutorialWelcome, setShowTutorialWelcome] = useState(false);
   const [tutorialEnabled, setTutorialEnabled] = useState(false);
   
   const updateState = (updates: Partial<AppState>) => {
