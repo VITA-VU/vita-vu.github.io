@@ -7,12 +7,15 @@ import { Smile, Meh, Frown } from 'lucide-react';
 import logo from '../imgs/VU-logo-RGB.png';
 
 interface ResultAndNextStepProps {
+
 onSeeWeek: (programme: string) => void;
   onTryAnother: () => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
   onGoBack?: () => void;
   onGoHome?: () => void;
+  goHome?: () => void;
+  goBack?: () => void;
 }
 
 const programmeMatches = [
@@ -43,7 +46,8 @@ export function ResultAndNextStep({
   onSeeWeek,
   onTryAnother,
   currentLang,
-  onLangChange
+  onLangChange,
+  goBack, goHome
 }: ResultAndNextStepProps) {
   const [feedback, setFeedback] = useState<'clear' | 'neutral' | 'confusing' | null>(null);
   const [showFeedbackModal, setShowFeedbackModal] = useState(false);
@@ -54,7 +58,23 @@ export function ResultAndNextStep({
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
-          <img src={logo} alt="VU Logo" width='150' height='100'/>        </div>
+          <button 
+  onClick={() => goHome?.()} 
+  aria-label="Go Home"
+  className="flex items-center"
+>
+  <img  src={logo}  alt="VU Logo" width='150' height='100' />
+</button>
+
+{goBack && (
+  <button 
+    onClick={goBack} 
+    aria-label="Go Back"
+    className="ml-3 text-sm text-vita-deep-blue hover:underline"
+  >
+    ← Back
+  </button>
+)}        </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       

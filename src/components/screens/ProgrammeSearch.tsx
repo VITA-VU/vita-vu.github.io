@@ -6,11 +6,14 @@ import { Search } from 'lucide-react';
 import logo from '../imgs/VU-logo-RGB.png';
 
 interface ProgrammeSearchProps {
+
 onContinue: (programme: string) => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
   onGoBack?: () => void;
   onGoHome?: () => void;
+  goHome?: () => void;
+  goBack?: () => void;
 }
 
 const programmes = [
@@ -24,7 +27,7 @@ const programmes = [
   { id: 'biology', name: 'Biology', description: 'Life sciences and ecosystems' }
 ];
 
-export function ProgrammeSearch({ onContinue, currentLang, onLangChange }: ProgrammeSearchProps) {
+export function ProgrammeSearch({ onContinue, currentLang, onLangChange, goBack, goHome }: ProgrammeSearchProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [selected, setSelected] = useState<string | null>(null);
   
@@ -38,7 +41,23 @@ export function ProgrammeSearch({ onContinue, currentLang, onLangChange }: Progr
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
-          <img src={logo} alt="VU Logo" width='150' height='100'/>        </div>
+          <button 
+  onClick={() => goHome?.()} 
+  aria-label="Go Home"
+  className="flex items-center"
+>
+  <img  src={logo}  alt="VU Logo" width='150' height='100' />
+</button>
+
+{goBack && (
+  <button 
+    onClick={goBack} 
+    aria-label="Go Back"
+    className="ml-3 text-sm text-vita-deep-blue hover:underline"
+  >
+    ← Back
+  </button>
+)}        </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       

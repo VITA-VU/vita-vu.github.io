@@ -5,20 +5,29 @@ import { TutorialToggle } from '../tutorial/TutorialToggle';
 import logo from '../imgs/VU-logo-RGB.png';
 
 interface SplashProps {
+
 onStart: () => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
   tutorialEnabled?: boolean;
   onTutorialToggle?: () => void;
+  goHome?: () => void;
+  goBack?: () => void;
 }
 
-export function Splash({ onStart, currentLang, onLangChange, tutorialEnabled = false, onTutorialToggle }: SplashProps) {
+export function Splash({ onStart, currentLang, onLangChange, tutorialEnabled = false, onTutorialToggle, goHome }: SplashProps) {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
       <div className="flex items-center justify-between p-4">
         <div className="flex items-center gap-2">
-          <img src={logo} alt="VU Logo" width='150' height='100'/>
+          <button 
+  onClick={() => goHome?.()} 
+  aria-label="Go Home"
+  className="flex items-center"
+>
+  <img  src={logo}  alt="VU Logo" width='150' height='100' />
+</button>
         </div>
         <div className="flex items-center gap-2">
           {onTutorialToggle && (

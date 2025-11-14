@@ -5,12 +5,15 @@ import { LanguageToggle } from '../LanguageToggle';
 import logo from '../imgs/VU-logo-RGB.png';
 
 interface StylePickerProps {
+
 onComplete: (styles: string[]) => void;
   onBack: () => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
   onGoBack?: () => void;
   onGoHome?: () => void;
+  goHome?: () => void;
+  goBack?: () => void;
 }
 
 const riasecTypes = [
@@ -22,7 +25,7 @@ const riasecTypes = [
   { code: 'C', label: 'Conventional', description: 'Organizing and detail work' }
 ];
 
-export function StylePicker({ onComplete, onBack, currentLang, onLangChange }: StylePickerProps) {
+export function StylePicker({ onComplete, onBack, currentLang, onLangChange, goBack, goHome }: StylePickerProps) {
   const [selected, setSelected] = useState<string[]>([]);
   
   const toggleSelection = (code: string) => {
@@ -38,7 +41,23 @@ export function StylePicker({ onComplete, onBack, currentLang, onLangChange }: S
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
-          <img src={logo} alt="VU Logo" width='150' height='100'/>        </div>
+          <button 
+  onClick={() => goHome?.()} 
+  aria-label="Go Home"
+  className="flex items-center"
+>
+  <img  src={logo}  alt="VU Logo" width='150' height='100' />
+</button>
+
+{goBack && (
+  <button 
+    onClick={goBack} 
+    aria-label="Go Back"
+    className="ml-3 text-sm text-vita-deep-blue hover:underline"
+  >
+    ← Back
+  </button>
+)}        </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       

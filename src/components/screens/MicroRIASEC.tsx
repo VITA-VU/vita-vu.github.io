@@ -6,6 +6,7 @@ import { GripVertical, ChevronUp, ChevronDown } from 'lucide-react';
 import logo from '../imgs/VU-logo-RGB.png';
 
 interface MicroRIASECProps {
+
 onComplete: (styles: string[]) => void;
   onBack: () => void;
   currentLang: 'EN' | 'NL';
@@ -13,6 +14,8 @@ onComplete: (styles: string[]) => void;
   selectedAvatar?: string;
   onGoBack?: () => void;
   onGoHome?: () => void;
+  goHome?: () => void;
+  goBack?: () => void;
 }
 
 interface Activity {
@@ -194,7 +197,7 @@ const activitySets: Record<string, Activity[]> = {
   ],
 };
 
-export function MicroRIASEC({ onComplete, onBack, currentLang, onLangChange, selectedAvatar }: MicroRIASECProps) {
+export function MicroRIASEC({ onComplete, onBack, currentLang, onLangChange, selectedAvatar, goBack, goHome }: MicroRIASECProps) {
   // Get the avatar topic for activities
   const avatarTopic = selectedAvatar || 'default';
   const activities = activitySets[avatarTopic] || activitySets.default;
@@ -274,7 +277,23 @@ export function MicroRIASEC({ onComplete, onBack, currentLang, onLangChange, sel
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
-          <img src={logo} alt="VU Logo" width='150' height='100'/>        </div>
+          <button 
+  onClick={() => goHome?.()} 
+  aria-label="Go Home"
+  className="flex items-center"
+>
+  <img  src={logo}  alt="VU Logo" width='150' height='100' />
+</button>
+
+{goBack && (
+  <button 
+    onClick={goBack} 
+    aria-label="Go Back"
+    className="ml-3 text-sm text-vita-deep-blue hover:underline"
+  >
+    ← Back
+  </button>
+)}        </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       

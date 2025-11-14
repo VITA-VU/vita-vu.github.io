@@ -7,12 +7,15 @@ import { LanguageToggle } from '../LanguageToggle';
 import logo from '../imgs/VU-logo-RGB.png';
 
 interface BasicDetailsProps {
+
 onContinue: (data: { firstName: string; age: string; profile: string }) => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
   selectedAvatar?: string;
   onGoBack?: () => void;
   onGoHome?: () => void;
+  goHome?: () => void;
+  goBack?: () => void;
 }
 
 type ChatStep = 'greeting' | 'name' | 'age' | 'profile' | 'complete';
@@ -23,7 +26,7 @@ interface ChatMessage {
   timestamp: number;
 }
 
-export function BasicDetails({ onContinue, currentLang, onLangChange, selectedAvatar}: BasicDetailsProps) {
+export function BasicDetails({ onContinue, currentLang, onLangChange, selectedAvatar, goBack, goHome}: BasicDetailsProps) {
   const [firstName, setFirstName] = useState('');
   const [age, setAge] = useState('');
   const [profile, setProfile] = useState('');
@@ -105,7 +108,23 @@ export function BasicDetails({ onContinue, currentLang, onLangChange, selectedAv
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
-          <img src={logo} alt="VU Logo" width='150' height='100'/>        </div>
+          <button 
+  onClick={() => goHome?.()} 
+  aria-label="Go Home"
+  className="flex items-center"
+>
+  <img  src={logo}  alt="VU Logo" width='150' height='100' />
+</button>
+
+{goBack && (
+  <button 
+    onClick={goBack} 
+    aria-label="Go Back"
+    className="ml-3 text-sm text-vita-deep-blue hover:underline"
+  >
+    ← Back
+  </button>
+)}        </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       
@@ -122,10 +141,10 @@ export function BasicDetails({ onContinue, currentLang, onLangChange, selectedAv
             >
               {msg.sender === 'avatar' && (
                 <div className="flex-shrink-0 w-12 h-12 bg-vita-gold/10 rounded-full flex items-center justify-center overflow-hidden">
-                  {avatarMap[selectedAvatar || ''] ? (
-                    <img src={avatarMap[selectedAvatar || '']} alt={selectedAvatar || 'avatar'} className="w-full h-full object-cover" />
+                  {avatarMap[selectedAvatar || 'Griffon'] ? (
+                    <img src={avatarMap[selectedAvatar || 'Griffon']} alt={selectedAvatar || 'avatar'} className="w-full h-full object-cover" />
                   ) : (
-                    <span className="text-sm text-gray-600">{(selectedAvatar && selectedAvatar.charAt(0).toUpperCase()) || 'G'}</span>
+                    <span className="text-sm text-gray-600">{(selectedAvatar && selectedAvatar.charAt(0).toUpperCase())}</span>
                   )}
                 </div>
               )}
@@ -133,8 +152,10 @@ export function BasicDetails({ onContinue, currentLang, onLangChange, selectedAv
                 className={`max-w-[70%] p-4 rounded-2xl ${
                   msg.sender === 'avatar'
                     ? 'bg-gray-100 text-gray-900 rounded-tl-none'
-                    : 'bg-vita-gold text-white rounded-tr-none'
+                    : 'bg-[#D4A017]/[10] text-black rounded-tr-none'
                 }`}
+                  style={msg.sender !== 'avatar' ? { backgroundColor: 'rgba(212,160,23,1)' } : undefined}
+
               >
                 <p className="text-[1rem]">{msg.text}</p>
               </div>
@@ -148,7 +169,7 @@ export function BasicDetails({ onContinue, currentLang, onLangChange, selectedAv
                 {avatarMap[selectedAvatar || ''] ? (
                   <img src={avatarMap[selectedAvatar || '']} alt={selectedAvatar || 'avatar'} className="w-full h-full object-cover" />
                 ) : (
-                  <span className="text-sm text-gray-600">{(selectedAvatar && selectedAvatar.charAt(0).toUpperCase()) || 'G'}</span>
+                  <span className="text-sm text-gray-600">{(selectedAvatar && selectedAvatar.charAt(0).toUpperCase())}</span>
                 )}
               </div>
               <div className="bg-gray-100 p-4 rounded-2xl rounded-tl-none">

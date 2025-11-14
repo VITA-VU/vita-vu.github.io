@@ -7,12 +7,15 @@ import { HelpCircle } from 'lucide-react';
 import logo from '../imgs/VU-logo-RGB.png';
 
 interface TaskScreenProps {
+
 taskVariant?: 'psychology' | 'business-analytics' | 'physics';
   onComplete: () => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
   onGoBack?: () => void;
   onGoHome?: () => void;
+  goHome?: () => void;
+  goBack?: () => void;
 }
 
 const tasks = {
@@ -73,7 +76,8 @@ export function TaskScreen({
   taskVariant = 'psychology',
   onComplete,
   currentLang,
-  onLangChange 
+  onLangChange,
+  goBack, goHome 
 }: TaskScreenProps) {
   const [selectedOption, setSelectedOption] = useState<number | undefined>();
   const [showWhyOverlay, setShowWhyOverlay] = useState(false);
@@ -100,7 +104,23 @@ export function TaskScreen({
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
-          <img src={logo} alt="VU Logo" width='150' height='100'/>        </div>
+          <button 
+  onClick={() => goHome?.()} 
+  aria-label="Go Home"
+  className="flex items-center"
+>
+  <img  src={logo}  alt="VU Logo" width='150' height='100' />
+</button>
+
+{goBack && (
+  <button 
+    onClick={goBack} 
+    aria-label="Go Back"
+    className="ml-3 text-sm text-vita-deep-blue hover:underline"
+  >
+    ← Back
+  </button>
+)}        </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       
