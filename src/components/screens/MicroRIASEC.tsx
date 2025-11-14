@@ -201,8 +201,8 @@ export function MicroRIASEC({ onComplete, onBack, currentLang, onLangChange, sel
   // Get the avatar topic for activities
   const avatarTopic = selectedAvatar || 'default';
   const activities = activitySets[avatarTopic] || activitySets.default;
-  const avatarData = griffonAvatars.find(a => a.id === selectedAvatar);
-  const topicName = avatarData?.title.toLowerCase() || 'general interest';
+  // const avatarData = griffonAvatars.find(a => a.id === selectedAvatar);
+  // const topicName = avatarData?.title.toLowerCase() || 'general interest';
   
   const [items, setItems] = useState(activities);
   const [draggedItem, setDraggedItem] = useState<number | null>(null);
@@ -304,7 +304,7 @@ export function MicroRIASEC({ onComplete, onBack, currentLang, onLangChange, sel
         <div>
           <h2 className="text-[1.375rem] mb-2">Organize by preference</h2>
           <p className="text-[1rem] text-gray-600">
-            Drag and drop these {topicName}-related activities from most appealing (top) to least appealing (bottom).
+            Drag and drop these activities from most appealing (top) to least appealing (bottom).
           </p>
         </div>
         

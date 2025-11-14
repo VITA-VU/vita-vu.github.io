@@ -130,14 +130,14 @@ export function TaskScreen({
 
         {/* Progress and Why Link */}
         <div className="flex items-center justify-between mb-6">
-          <ProgressDots total={3} current={1} />
-          <button
+          {/* <ProgressDots total={3} current={1} /> */}
+          {/* <button
             onClick={() => setShowWhyOverlay(true)}
             className="flex items-center gap-1 text-[0.8125rem] text-vita-deep-blue hover:underline"
           >
             <HelpCircle size={14} />
             View why we ask this
-          </button>
+          </button> */}
         </div>
         
         {/* Task Card */}

@@ -26,7 +26,7 @@ export function TaskCard({
   onSelectOption,
   onNext,
   onNotSure,
-  showTimer = true
+  showTimer = false
 }: TaskCardProps) {
   return (
     <div className="bg-white border border-gray-200 rounded-lg p-4 md:p-6">
