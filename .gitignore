@@ -1,2 +1,9 @@
 # Node
 node_modules/
+
+# Python
+.venv/
+
+# Data
+ingestion_data/data/
+ingestion_data/vu_cache
