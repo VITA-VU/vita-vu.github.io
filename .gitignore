@@ -5,6 +5,7 @@ node_modules/
 .venv/
 
 # Data
-data*/
 vu_cache*/
+data_programmes_courses/
+
 
