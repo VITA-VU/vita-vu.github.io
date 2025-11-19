@@ -96,9 +96,9 @@ export function StylePicker({ onComplete, onBack, currentLang, onLangChange, goB
         </div>
         
         <div className="flex gap-3">
-          <VitaButton variant="ghost" onClick={onBack}>
+          {/* <VitaButton variant="ghost" onClick={onBack}>
             Back
-          </VitaButton>
+          </VitaButton> */}
           <VitaButton
             variant="primary"
             onClick={() => onComplete(selected)}

@@ -82,7 +82,7 @@ export default function App() {
         break;
 
       case 'programme-search':
-        updateState({ screen: 'basic-details' });
+        updateState({ screen: 'choose-path' });
         break;
 
       case 'programme-preview':
@@ -90,7 +90,7 @@ export default function App() {
         break;
 
       case 'choose-path':
-        updateState({ screen: 'basic-details' });
+        updateState({ screen: 'choose-path' });
         break;
 
       case 'micro-riasec':
@@ -99,7 +99,7 @@ export default function App() {
         break;
 
       case 'task':
-        updateState({ screen: 'programme-preview' });
+        updateState({ screen: 'choose-path' });
         break;
 
       case 'result':

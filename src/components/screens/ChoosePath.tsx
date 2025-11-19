@@ -68,8 +68,8 @@ export function ChoosePath({ onChoose, currentLang, onLangChange, goBack, goHome
             variant={selectedCard === 'personality' ? 'emphasis' : 'base'}
             onClick={() => setSelectedCard('personality')}
           >
-            <h3 className="text-[1rem] mb-3">I want tasks from a personality angle</h3>
-            <p className="text-[0.8125rem] text-gray-600 mb-4">
+            <h3 className="text-[1rem] mb-3">I want tasks tailored to me</h3>
+            <p className="text-[0.8125rem] text-gray-600">
               Get matched to tasks based on your interests and style
             </p>
             
@@ -84,7 +84,7 @@ export function ChoosePath({ onChoose, currentLang, onLangChange, goBack, goHome
                     }}
                     className="w-full"
                   >
-                    Find my RIASEC with a short test (about six items)
+                    Take a short personality quiz
                   </VitaButton>
                 </div>
                 <div data-tutorial="style-picker">
