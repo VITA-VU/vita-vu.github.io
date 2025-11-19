@@ -4,12 +4,18 @@ import { VitaCard } from '../vita-ui/VitaCard';
 import { VitaChip } from '../vita-ui/VitaChip';
 import { LanguageToggle } from '../LanguageToggle';
 import { Smile, Meh, Frown } from 'lucide-react';
+import logo from '../imgs/VU-logo-RGB.png';
 
 interface ResultAndNextStepProps {
-  onSeeWeek: (programme: string) => void;
+
+onSeeWeek: (programme: string) => void;
   onTryAnother: () => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
+  onGoBack?: () => void;
+  onGoHome?: () => void;
+  goHome?: () => void;
+  goBack?: () => void;
 }
 
 const programmeMatches = [
@@ -40,7 +46,8 @@ export function ResultAndNextStep({
   onSeeWeek,
   onTryAnother,
   currentLang,
-  onLangChange
+  onLangChange,
+  goBack, goHome
 }: ResultAndNextStepProps) {
   const [feedback, setFeedback] = useState<'clear' | 'neutral' | 'confusing' | null>(null);
   const [showFeedbackModal, setShowFeedbackModal] = useState(false);
@@ -51,15 +58,30 @@ export function ResultAndNextStep({
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
-          <span className="text-vita-gold text-[1.125rem]">VITA</span>
-          <span className="text-gray-400 text-[0.875rem]">×</span>
-          <span className="text-gray-600 text-[0.875rem]">VU Amsterdam</span>
-        </div>
+          <button 
+  onClick={() => goHome?.()} 
+  aria-label="Go Home"
+  className="flex items-center"
+>
+  <img  src={logo}  alt="VU Logo" width='150' height='100' />
+</button>
+
+{goBack && (
+  <button 
+    onClick={goBack} 
+    aria-label="Go Back"
+    className="ml-3 text-sm text-vita-deep-blue hover:underline"
+  >
+    ← Back
+  </button>
+)}        </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       
       {/* Content */}
       <div className="max-w-4xl mx-auto p-6 space-y-6">
+
+
         <div>
           <h2 className="text-[1.375rem] mb-2">Your matches</h2>
           <p className="text-[1rem] text-gray-600">

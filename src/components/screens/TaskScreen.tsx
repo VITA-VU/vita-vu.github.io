@@ -4,12 +4,18 @@ import { ProgressDots } from '../vita-ui/ProgressDots';
 import { LanguageToggle } from '../LanguageToggle';
 import { VitaToast, useToast } from '../vita-ui/VitaToast';
 import { HelpCircle } from 'lucide-react';
+import logo from '../imgs/VU-logo-RGB.png';
 
 interface TaskScreenProps {
-  taskVariant?: 'psychology' | 'business-analytics' | 'physics';
+
+taskVariant?: 'psychology' | 'business-analytics' | 'physics';
   onComplete: () => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
+  onGoBack?: () => void;
+  onGoHome?: () => void;
+  goHome?: () => void;
+  goBack?: () => void;
 }
 
 const tasks = {
@@ -70,7 +76,8 @@ export function TaskScreen({
   taskVariant = 'psychology',
   onComplete,
   currentLang,
-  onLangChange 
+  onLangChange,
+  goBack, goHome 
 }: TaskScreenProps) {
   const [selectedOption, setSelectedOption] = useState<number | undefined>();
   const [showWhyOverlay, setShowWhyOverlay] = useState(false);
@@ -97,25 +104,40 @@ export function TaskScreen({
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
-          <span className="text-vita-gold text-[1.125rem]">VITA</span>
-          <span className="text-gray-400 text-[0.875rem]">×</span>
-          <span className="text-gray-600 text-[0.875rem]">VU Amsterdam</span>
-        </div>
+          <button 
+  onClick={() => goHome?.()} 
+  aria-label="Go Home"
+  className="flex items-center"
+>
+  <img  src={logo}  alt="VU Logo" width='150' height='100' />
+</button>
+
+{goBack && (
+  <button 
+    onClick={goBack} 
+    aria-label="Go Back"
+    className="ml-3 text-sm text-vita-deep-blue hover:underline"
+  >
+    ← Back
+  </button>
+)}        </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       
       {/* Content - Desktop uses 2 column layout */}
       <div className="max-w-6xl mx-auto p-6">
+
+
         {/* Progress and Why Link */}
         <div className="flex items-center justify-between mb-6">
-          <ProgressDots total={3} current={1} />
-          <button
+          {/* <ProgressDots total={3} current={1} /> */}
+          {/* <button
             onClick={() => setShowWhyOverlay(true)}
             className="flex items-center gap-1 text-[0.8125rem] text-vita-deep-blue hover:underline"
           >
             <HelpCircle size={14} />
             View why we ask this
-          </button>
+          </button> */}
         </div>
         
         {/* Task Card */}

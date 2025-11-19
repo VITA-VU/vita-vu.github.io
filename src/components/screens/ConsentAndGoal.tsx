@@ -3,14 +3,18 @@ import { VitaButton } from '../vita-ui/VitaButton';
 import { VitaCard } from '../vita-ui/VitaCard';
 import { LanguageToggle } from '../LanguageToggle';
 import { Info } from 'lucide-react';
+import logo from '../imgs/VU-logo-RGB.png';
 
 interface ConsentAndGoalProps {
+
   onChoosePath: (path: 'explore' | 'help') => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
+  goHome?: () => void;
+  goBack?: () => void;
 }
 
-export function ConsentAndGoal({ onChoosePath, currentLang, onLangChange }: ConsentAndGoalProps) {
+export function ConsentAndGoal({ onChoosePath, currentLang, onLangChange, goHome }: ConsentAndGoalProps) {
   const [agreed, setAgreed] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
   
@@ -19,9 +23,13 @@ export function ConsentAndGoal({ onChoosePath, currentLang, onLangChange }: Cons
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
-          <span className="text-vita-gold text-[1.125rem]">VITA</span>
-          <span className="text-gray-400 text-[0.875rem]">×</span>
-          <span className="text-gray-600 text-[0.875rem]">VU Amsterdam</span>
+          <button 
+  onClick={() => goHome?.()} 
+  aria-label="Go Home"
+  className="flex items-center"
+>
+  <img  src={logo}  alt="VU Logo" width='150' height='100' />
+</button>
         </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>

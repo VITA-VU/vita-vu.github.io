@@ -2,14 +2,20 @@ import React, { useState } from 'react';
 import { VitaButton } from '../vita-ui/VitaButton';
 import { VitaCard } from '../vita-ui/VitaCard';
 import { LanguageToggle } from '../LanguageToggle';
+import logo from '../imgs/VU-logo-RGB.png';
 
 interface ChoosePathProps {
-  onChoose: (choice: 'random' | 'riasec' | 'pick-style') => void;
+
+onChoose: (choice: 'random' | 'riasec' | 'pick-style') => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
+  onGoBack?: () => void;
+  onGoHome?: () => void;
+  goHome?: () => void;
+  goBack?: () => void;
 }
 
-export function ChoosePath({ onChoose, currentLang, onLangChange }: ChoosePathProps) {
+export function ChoosePath({ onChoose, currentLang, onLangChange, goBack, goHome }: ChoosePathProps) {
   const [selectedCard, setSelectedCard] = useState<'random' | 'personality' | null>(null);
   
   return (
@@ -17,15 +23,30 @@ export function ChoosePath({ onChoose, currentLang, onLangChange }: ChoosePathPr
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
-          <span className="text-vita-gold text-[1.125rem]">VITA</span>
-          <span className="text-gray-400 text-[0.875rem]">×</span>
-          <span className="text-gray-600 text-[0.875rem]">VU Amsterdam</span>
-        </div>
+          <button 
+  onClick={() => goHome?.()} 
+  aria-label="Go Home"
+  className="flex items-center"
+>
+  <img  src={logo}  alt="VU Logo" width='150' height='100' />
+</button>
+
+{goBack && (
+  <button 
+    onClick={goBack} 
+    aria-label="Go Back"
+    className="ml-3 text-sm text-vita-deep-blue hover:underline"
+  >
+    ← Back
+  </button>
+)}        </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       
       {/* Content */}
       <div className="max-w-2xl mx-auto p-6 space-y-6">
+
+
         <h2 className="text-[1.375rem]">Help me choose</h2>
         
         <div className="space-y-4">
@@ -47,8 +68,8 @@ export function ChoosePath({ onChoose, currentLang, onLangChange }: ChoosePathPr
             variant={selectedCard === 'personality' ? 'emphasis' : 'base'}
             onClick={() => setSelectedCard('personality')}
           >
-            <h3 className="text-[1rem] mb-3">I want tasks from a personality angle</h3>
-            <p className="text-[0.8125rem] text-gray-600 mb-4">
+            <h3 className="text-[1rem] mb-3">I want tasks tailored to me</h3>
+            <p className="text-[0.8125rem] text-gray-600">
               Get matched to tasks based on your interests and style
             </p>
             
@@ -63,7 +84,7 @@ export function ChoosePath({ onChoose, currentLang, onLangChange }: ChoosePathPr
                     }}
                     className="w-full"
                   >
-                    Find my RIASEC with a short test (about six items)
+                    Take a short personality quiz
                   </VitaButton>
                 </div>
                 <div data-tutorial="style-picker">

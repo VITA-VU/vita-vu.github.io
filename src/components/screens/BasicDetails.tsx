@@ -1,15 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { VitaButton } from '../vita-ui/VitaButton';
 import { VitaInput } from '../vita-ui/VitaInput';
 import { VitaSelect } from '../vita-ui/VitaSelect';
 import { LanguageToggle } from '../LanguageToggle';
-import { griffonAvatars } from '../griffons/GriffonAvatars';
+// import { griffonAvatars } from '../griffons/GriffonAvatars';
+import logo from '../imgs/VU-logo-RGB.png';
 
 interface BasicDetailsProps {
-  onContinue: (data: { firstName: string; age: string; profile: string }) => void;
+
+onContinue: (data: { firstName: string; age: string; profile: string }) => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
   selectedAvatar?: string;
+  onGoBack?: () => void;
+  onGoHome?: () => void;
+  goHome?: () => void;
+  goBack?: () => void;
 }
 
 type ChatStep = 'greeting' | 'name' | 'age' | 'profile' | 'complete';
@@ -20,7 +26,7 @@ interface ChatMessage {
   timestamp: number;
 }
 
-export function BasicDetails({ onContinue, currentLang, onLangChange, selectedAvatar }: BasicDetailsProps) {
+export function BasicDetails({ onContinue, currentLang, onLangChange, selectedAvatar, goBack, goHome}: BasicDetailsProps) {
   const [firstName, setFirstName] = useState('');
   const [age, setAge] = useState('');
   const [profile, setProfile] = useState('');
@@ -30,19 +36,24 @@ export function BasicDetails({ onContinue, currentLang, onLangChange, selectedAv
   
   const profileOptions = [
     { value: '', label: 'Select your profile' },
-    { value: 'science', label: 'Science & Mathematics (NT)' },
-    { value: 'health', label: 'Health & Life Sciences (NG)' },
+    { value: 'science', label: 'Nature & Technical (NT)' },
+    { value: 'health', label: 'Nature & Health (NG)' },
     { value: 'culture', label: 'Culture & Society (CM)' },
     { value: 'economics', label: 'Economics & Society (EM)' },
-    { value: 'other', label: 'Other' }
+    { value: 'combination', label: 'Combination profile' },
+    { value: 'other', label: 'Other' },
+    { value: 'not_applicable', label: 'Not applicable' }
   ];
 
-  // Find the selected avatar
-  const avatar = selectedAvatar 
-    ? griffonAvatars.find(a => a.id === selectedAvatar)
-    : griffonAvatars[0];
-
-  const AvatarComponent = avatar?.component || griffonAvatars[0].component;
+  // map avatar id -> src by importing all images in the avatar folder
+  const avatarMap = useMemo(() => {
+    const imgs = import.meta.glob('../imgs/avatar_griffon/*.{png,jpg,svg}', { eager: true }) as Record<string, any>;
+    return Object.entries(imgs).reduce<Record<string, string>>((acc, [path, mod]) => {
+      const id = path.split('/').pop()?.replace(/\.[^/.]+$/, '') || path;
+      acc[id] = mod.default || mod;
+      return acc;
+    }, {});
+  }, []);
 
   // Add avatar message with typing animation
   const addAvatarMessage = (text: string, delay: number = 1000) => {
@@ -60,7 +71,7 @@ export function BasicDetails({ onContinue, currentLang, onLangChange, selectedAv
 
   // Initial greeting
   useEffect(() => {
-    addAvatarMessage(`Hi there! I'm your ${avatar?.title || 'griffon'} guide. Let me help you get started with a few quick questions.`, 500);
+    addAvatarMessage(`Hi there! I'm your Griffon guide. Let me help you get started with a few quick questions.`, 500);
     setTimeout(() => {
       setChatStep('name');
       addAvatarMessage("First up, what's your first name?", 2000);
@@ -97,10 +108,23 @@ export function BasicDetails({ onContinue, currentLang, onLangChange, selectedAv
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
-          <span className="text-vita-gold text-[1.125rem]">VITA</span>
-          <span className="text-gray-400 text-[0.875rem]">×</span>
-          <span className="text-gray-600 text-[0.875rem]">VU Amsterdam</span>
-        </div>
+          <button 
+  onClick={() => goHome?.()} 
+  aria-label="Go Home"
+  className="flex items-center"
+>
+  <img  src={logo}  alt="VU Logo" width='150' height='100' />
+</button>
+
+{goBack && (
+  <button 
+    onClick={goBack} 
+    aria-label="Go Back"
+    className="ml-3 text-sm text-vita-deep-blue hover:underline"
+  >
+    ← Back
+  </button>
+)}        </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       
@@ -116,18 +140,22 @@ export function BasicDetails({ onContinue, currentLang, onLangChange, selectedAv
               }`}
             >
               {msg.sender === 'avatar' && (
-                <div className="flex-shrink-0 w-12 h-12 bg-vita-gold/10 rounded-full flex items-center justify-center">
-                  <div className="scale-50">
-                    <AvatarComponent />
-                  </div>
+                <div className="flex-shrink-0 w-12 h-12 bg-vita-gold/10 rounded-full flex items-center justify-center overflow-hidden">
+                  {avatarMap[selectedAvatar || 'Griffon'] ? (
+                    <img src={avatarMap[selectedAvatar || 'Griffon']} alt={selectedAvatar || 'avatar'} className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="text-sm text-gray-600">{(selectedAvatar && selectedAvatar.charAt(0).toUpperCase())}</span>
+                  )}
                 </div>
               )}
               <div
                 className={`max-w-[70%] p-4 rounded-2xl ${
                   msg.sender === 'avatar'
                     ? 'bg-gray-100 text-gray-900 rounded-tl-none'
-                    : 'bg-vita-gold text-white rounded-tr-none'
+                    : 'bg-[#D4A017]/[10] text-black rounded-tr-none'
                 }`}
+                  style={msg.sender !== 'avatar' ? { backgroundColor: 'rgba(212,160,23,1)' } : undefined}
+
               >
                 <p className="text-[1rem]">{msg.text}</p>
               </div>
@@ -137,10 +165,12 @@ export function BasicDetails({ onContinue, currentLang, onLangChange, selectedAv
           {/* Typing indicator */}
           {isTyping && (
             <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-12 h-12 bg-vita-gold/10 rounded-full flex items-center justify-center">
-                <div className="scale-50">
-                  <AvatarComponent />
-                </div>
+              <div className="flex-shrink-0 w-12 h-12 bg-vita-gold/10 rounded-full flex items-center justify-center overflow-hidden">
+                {avatarMap[selectedAvatar || ''] ? (
+                  <img src={avatarMap[selectedAvatar || '']} alt={selectedAvatar || 'avatar'} className="w-full h-full object-cover" />
+                ) : (
+                  <span className="text-sm text-gray-600">{(selectedAvatar && selectedAvatar.charAt(0).toUpperCase())}</span>
+                )}
               </div>
               <div className="bg-gray-100 p-4 rounded-2xl rounded-tl-none">
                 <div className="flex gap-1">

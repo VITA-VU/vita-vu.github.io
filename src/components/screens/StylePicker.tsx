@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 import { VitaButton } from '../vita-ui/VitaButton';
 import { VitaChip } from '../vita-ui/VitaChip';
 import { LanguageToggle } from '../LanguageToggle';
+import logo from '../imgs/VU-logo-RGB.png';
 
 interface StylePickerProps {
-  onComplete: (styles: string[]) => void;
+
+onComplete: (styles: string[]) => void;
   onBack: () => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
+  onGoBack?: () => void;
+  onGoHome?: () => void;
+  goHome?: () => void;
+  goBack?: () => void;
 }
 
 const riasecTypes = [
@@ -19,7 +25,7 @@ const riasecTypes = [
   { code: 'C', label: 'Conventional', description: 'Organizing and detail work' }
 ];
 
-export function StylePicker({ onComplete, onBack, currentLang, onLangChange }: StylePickerProps) {
+export function StylePicker({ onComplete, onBack, currentLang, onLangChange, goBack, goHome }: StylePickerProps) {
   const [selected, setSelected] = useState<string[]>([]);
   
   const toggleSelection = (code: string) => {
@@ -35,15 +41,30 @@ export function StylePicker({ onComplete, onBack, currentLang, onLangChange }: S
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
-          <span className="text-vita-gold text-[1.125rem]">VITA</span>
-          <span className="text-gray-400 text-[0.875rem]">×</span>
-          <span className="text-gray-600 text-[0.875rem]">VU Amsterdam</span>
-        </div>
+          <button 
+  onClick={() => goHome?.()} 
+  aria-label="Go Home"
+  className="flex items-center"
+>
+  <img  src={logo}  alt="VU Logo" width='150' height='100' />
+</button>
+
+{goBack && (
+  <button 
+    onClick={goBack} 
+    aria-label="Go Back"
+    className="ml-3 text-sm text-vita-deep-blue hover:underline"
+  >
+    ← Back
+  </button>
+)}        </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       
       {/* Content */}
       <div className="max-w-2xl mx-auto p-6 space-y-6">
+
+
         <div>
           <h2 className="text-[1.375rem] mb-2">Pick your style</h2>
           <p className="text-[1rem] text-gray-600">
@@ -75,9 +96,9 @@ export function StylePicker({ onComplete, onBack, currentLang, onLangChange }: S
         </div>
         
         <div className="flex gap-3">
-          <VitaButton variant="ghost" onClick={onBack}>
+          {/* <VitaButton variant="ghost" onClick={onBack}>
             Back
-          </VitaButton>
+          </VitaButton> */}
           <VitaButton
             variant="primary"
             onClick={() => onComplete(selected)}

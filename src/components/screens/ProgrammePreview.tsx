@@ -3,13 +3,19 @@ import { VitaButton } from '../vita-ui/VitaButton';
 import { VitaChip } from '../vita-ui/VitaChip';
 import { MediaStrip } from '../vita-ui/MediaStrip';
 import { LanguageToggle } from '../LanguageToggle';
+import logo from '../imgs/VU-logo-RGB.png';
 
 interface ProgrammePreviewProps {
-  programme: string;
+
+programme: string;
   onTryTask: () => void;
   onSeeAnother: () => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
+  onGoBack?: () => void;
+  onGoHome?: () => void;
+  goHome?: () => void;
+  goBack?: () => void;
 }
 
 export function ProgrammePreview({ 
@@ -17,7 +23,8 @@ export function ProgrammePreview({
   onTryTask, 
   onSeeAnother,
   currentLang,
-  onLangChange 
+  onLangChange,
+  goBack, goHome
 }: ProgrammePreviewProps) {
   const [activeTab, setActiveTab] = useState<'day' | 'week' | 'period'>('day');
   
@@ -44,15 +51,30 @@ export function ProgrammePreview({
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
-          <span className="text-vita-gold text-[1.125rem]">VITA</span>
-          <span className="text-gray-400 text-[0.875rem]">×</span>
-          <span className="text-gray-600 text-[0.875rem]">VU Amsterdam</span>
-        </div>
+          <button 
+  onClick={() => goHome?.()} 
+  aria-label="Go Home"
+  className="flex items-center"
+>
+  <img  src={logo}  alt="VU Logo" width='150' height='100' />
+</button>
+
+{goBack && (
+  <button 
+    onClick={goBack} 
+    aria-label="Go Back"
+    className="ml-3 text-sm text-vita-deep-blue hover:underline"
+  >
+    ← Back
+  </button>
+)}        </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       
       {/* Content - Desktop uses 3 column layout */}
       <div className="max-w-6xl mx-auto p-6 space-y-6">
+
+
         {/* Tabs */}
         <div className="flex gap-2 border-b border-gray-200">
           {(['day', 'week', 'period'] as const).map((tab) => (

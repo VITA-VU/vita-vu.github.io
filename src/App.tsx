@@ -49,57 +49,96 @@ export default function App() {
     screen: 'splash',
     language: 'EN'
   });
-  
-  const [showTutorialWelcome, setShowTutorialWelcome] = useState(true);
+
+  const [showTutorialWelcome, setShowTutorialWelcome] = useState(false);
   const [tutorialEnabled, setTutorialEnabled] = useState(false);
-  
+
   const updateState = (updates: Partial<AppState>) => {
     setState(prev => ({ ...prev, ...updates }));
   };
-  
+
   const handleLanguageChange = (language: 'EN' | 'NL') => {
     updateState({ language });
   };
-  
-  // Navigation handlers
-  const handleSplashStart = () => {
-    updateState({ screen: 'consent' });
+
+  //
+  // ─── GLOBAL NAVIGATION ───────────────────────────────────────────────────────────
+  //
+
+  // ⭐ Home button always goes back to splash
+  const goHome = () => {
+    updateState({ screen: 'splash' });
   };
-  
+
+  // ⭐ Back button logic based on active screen
+  const goBack = () => {
+    switch (state.screen) {
+      case 'avatar':
+        updateState({ screen: 'consent' });
+        break;
+
+      case 'basic-details':
+        updateState({ screen: 'avatar' });
+        break;
+
+      case 'programme-search':
+        updateState({ screen: 'choose-path' });
+        break;
+
+      case 'programme-preview':
+        updateState({ screen: 'programme-search' });
+        break;
+
+      case 'choose-path':
+        updateState({ screen: 'choose-path' });
+        break;
+
+      case 'micro-riasec':
+      case 'style-picker':
+        updateState({ screen: 'choose-path' });
+        break;
+
+      case 'task':
+        updateState({ screen: 'choose-path' });
+        break;
+
+      case 'result':
+        updateState({ screen: 'task' });
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  //
+  // ─── EXISTING HANDLERS (UNCHANGED) ──────────────────────────────────────────────
+  //
+
+  const handleSplashStart = () => updateState({ screen: 'consent' });
+
   const handleConsentPath = (path: 'explore' | 'help') => {
-    updateState({ 
-      userPath: path,
-      screen: 'avatar'
-    });
+    updateState({ userPath: path, screen: 'avatar' });
   };
-  
+
   const handleAvatarContinue = (data: { avatar?: string; pronouns?: string }) => {
-    updateState({
-      userData: { ...state.userData, ...data },
-      screen: 'basic-details'
-    });
+    updateState({ userData: { ...state.userData, ...data }, screen: 'basic-details' });
   };
-  
-  const handleAvatarSkip = () => {
-    updateState({ screen: 'basic-details' });
-  };
-  
+
+  const handleAvatarSkip = () => updateState({ screen: 'basic-details' });
+
   const handleBasicDetailsContinue = (data: { firstName: string; age: string; profile: string }) => {
     updateState({
       userData: { ...state.userData, ...data },
       screen: state.userPath === 'explore' ? 'programme-search' : 'choose-path'
     });
   };
-  
+
   const handleProgrammeSelect = (programme: string) => {
-    updateState({
-      selectedProgramme: programme,
-      screen: 'programme-preview'
-    });
+    updateState({ selectedProgramme: programme, screen: 'programme-preview' });
   };
-  
+
   const handleProgrammeTryTask = () => {
-    // Map programme to task variant
     const taskMap: Record<string, TaskVariant> = {
       'psychology': 'psychology',
       'business-analytics': 'business-analytics',
@@ -111,227 +150,188 @@ export default function App() {
       screen: 'task'
     });
   };
-  
-  const handleProgrammeSeeAnother = () => {
-    updateState({ screen: 'programme-search' });
-  };
-  
+
+  const handleProgrammeSeeAnother = () => updateState({ screen: 'programme-search' });
+
   const handleChoosePath = (choice: 'random' | 'riasec' | 'pick-style') => {
     if (choice === 'random') {
       const variants: TaskVariant[] = ['psychology', 'business-analytics', 'physics'];
       const randomVariant = variants[Math.floor(Math.random() * variants.length)];
-      updateState({
-        taskVariant: randomVariant,
-        screen: 'task'
-      });
+      updateState({ taskVariant: randomVariant, screen: 'task' });
     } else if (choice === 'riasec') {
       updateState({ screen: 'micro-riasec' });
-    } else if (choice === 'pick-style') {
+    } else {
       updateState({ screen: 'style-picker' });
     }
   };
-  
+
   const handleRIASECComplete = (styles: string[]) => {
-    // Map RIASEC to task
-    const taskMap: Record<string, TaskVariant> = {
-      'I': 'physics',
-      'R': 'physics',
-      'A': 'psychology',
-      'S': 'psychology',
-      'E': 'business-analytics',
-      'C': 'business-analytics'
+    const map: Record<string, TaskVariant> = {
+      I: 'physics',
+      R: 'physics',
+      A: 'psychology',
+      S: 'psychology',
+      E: 'business-analytics',
+      C: 'business-analytics'
     };
-    
-    const taskVariant = taskMap[styles[0]] || 'psychology';
-    
+
     updateState({
       riasecStyles: styles,
-      taskVariant,
+      taskVariant: map[styles[0]] || 'psychology',
       screen: 'task'
     });
   };
-  
+
   const handleStylePickerComplete = (styles: string[]) => {
-    const taskMap: Record<string, TaskVariant> = {
-      'I': 'physics',
-      'R': 'physics',
-      'A': 'psychology',
-      'S': 'psychology',
-      'E': 'business-analytics',
-      'C': 'business-analytics'
+    const map: Record<string, TaskVariant> = {
+      I: 'physics',
+      R: 'physics',
+      A: 'psychology',
+      S: 'psychology',
+      E: 'business-analytics',
+      C: 'business-analytics'
     };
-    
-    const taskVariant = taskMap[styles[0]] || 'psychology';
-    
+
     updateState({
       riasecStyles: styles,
-      taskVariant,
+      taskVariant: map[styles[0]] || 'psychology',
       screen: 'task'
     });
   };
-  
-  const handleTaskComplete = () => {
-    updateState({ screen: 'result' });
-  };
-  
+
+  const handleTaskComplete = () => updateState({ screen: 'result' });
+
   const handleResultSeeWeek = (programme: string) => {
-    updateState({
-      selectedProgramme: programme,
-      screen: 'programme-preview'
-    });
+    updateState({ selectedProgramme: programme, screen: 'programme-preview' });
   };
-  
+
   const handleResultTryAnother = () => {
     const variants: TaskVariant[] = ['psychology', 'business-analytics', 'physics'];
-    const currentIndex = variants.indexOf(state.taskVariant || 'psychology');
-    const nextIndex = (currentIndex + 1) % variants.length;
-    
-    updateState({
-      taskVariant: variants[nextIndex],
-      screen: 'task'
-    });
+    const i = variants.indexOf(state.taskVariant || 'psychology');
+    updateState({ taskVariant: variants[(i + 1) % variants.length], screen: 'task' });
   };
-  
-  const handleBack = () => {
-    if (state.screen === 'micro-riasec' || state.screen === 'style-picker') {
-      updateState({ screen: 'choose-path' });
-    }
-  };
-  
-  // Render current screen
+
+  //
+  // ─── RENDER SCREEN WITH PASSED NAV PROPS ─────────────────────────────────────────
+  //
+
   const renderScreen = () => {
+    const sharedNav = { goHome, goBack, currentLang: state.language, onLangChange: handleLanguageChange };
+
     switch (state.screen) {
       case 'splash':
         return (
           <Splash
             onStart={handleSplashStart}
-            currentLang={state.language}
-            onLangChange={handleLanguageChange}
+            {...sharedNav}
             tutorialEnabled={tutorialEnabled}
             onTutorialToggle={() => setTutorialEnabled(!tutorialEnabled)}
           />
         );
-      
+
       case 'consent':
         return (
           <ConsentAndGoal
             onChoosePath={handleConsentPath}
-            currentLang={state.language}
-            onLangChange={handleLanguageChange}
+            {...sharedNav}
           />
         );
-      
+
       case 'avatar':
         return (
           <AvatarPick
             onContinue={handleAvatarContinue}
             onSkip={handleAvatarSkip}
-            currentLang={state.language}
-            onLangChange={handleLanguageChange}
+            {...sharedNav}
+            selectedAvatar={state.userData?.avatar}
           />
         );
-      
+
       case 'basic-details':
         return (
           <BasicDetails
             onContinue={handleBasicDetailsContinue}
-            currentLang={state.language}
-            onLangChange={handleLanguageChange}
+            {...sharedNav}
             selectedAvatar={state.userData?.avatar}
           />
         );
-      
+
       case 'programme-search':
         return (
           <ProgrammeSearch
             onContinue={handleProgrammeSelect}
-            currentLang={state.language}
-            onLangChange={handleLanguageChange}
+            {...sharedNav}
           />
         );
-      
+
       case 'programme-preview':
         return (
           <ProgrammePreview
             programme={state.selectedProgramme || 'psychology'}
             onTryTask={handleProgrammeTryTask}
             onSeeAnother={handleProgrammeSeeAnother}
-            currentLang={state.language}
-            onLangChange={handleLanguageChange}
+            {...sharedNav}
           />
         );
-      
+
       case 'choose-path':
         return (
           <ChoosePath
             onChoose={handleChoosePath}
-            currentLang={state.language}
-            onLangChange={handleLanguageChange}
+            {...sharedNav}
           />
         );
-      
+
       case 'micro-riasec':
         return (
           <MicroRIASEC
             onComplete={handleRIASECComplete}
-            onBack={handleBack}
-            currentLang={state.language}
-            onLangChange={handleLanguageChange}
+            {...sharedNav}
             selectedAvatar={state.userData?.avatar}
           />
         );
-      
+
       case 'style-picker':
         return (
           <StylePicker
             onComplete={handleStylePickerComplete}
-            onBack={handleBack}
-            currentLang={state.language}
-            onLangChange={handleLanguageChange}
+            {...sharedNav}
           />
         );
-      
+
       case 'task':
         return (
           <TaskScreen
             taskVariant={state.taskVariant || 'psychology'}
             onComplete={handleTaskComplete}
-            currentLang={state.language}
-            onLangChange={handleLanguageChange}
+            {...sharedNav}
           />
         );
-      
+
       case 'result':
         return (
           <ResultAndNextStep
             onSeeWeek={handleResultSeeWeek}
             onTryAnother={handleResultTryAnother}
-            currentLang={state.language}
-            onLangChange={handleLanguageChange}
+            {...sharedNav}
           />
         );
-      
+
       default:
         return <div>Screen not found</div>;
     }
   };
-  
+
   return (
     <div className="min-h-screen bg-white">
       {renderScreen()}
-      
+
       <TutorialWelcome
         show={showTutorialWelcome}
-        onStart={() => {
-          setShowTutorialWelcome(false);
-          setTutorialEnabled(true);
-        }}
-        onSkip={() => {
-          setShowTutorialWelcome(false);
-          setTutorialEnabled(false);
-        }}
+        onStart={() => { setShowTutorialWelcome(false); setTutorialEnabled(true); }}
+        onSkip={() => { setShowTutorialWelcome(false); setTutorialEnabled(false); }}
       />
-      
+
       <TutorialManager
         currentScreen={state.screen}
         enabled={tutorialEnabled}

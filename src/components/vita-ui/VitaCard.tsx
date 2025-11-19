@@ -21,13 +21,15 @@ export function VitaCard({
 }: VitaCardProps) {
   const variantStyles = {
     base: "bg-white border border-gray-200",
-    emphasis: "bg-white border-2 border-vita-gold shadow-sm"
+    emphasis: "bg-vita-gold border-2 border-vita-gold shadow-sm"
   };
   
   return (
     <div 
       className={`rounded-lg p-4 ${variantStyles[variant]} ${onClick ? 'cursor-pointer hover:shadow-md transition-shadow' : ''} ${className}`}
       onClick={onClick}
+      style={variant === 'emphasis' ? { borderColor: 'rgba(212,160,23,1)' } : undefined}
+
     >
       {withHeader && header && (
         <div className="mb-3 pb-3 border-b border-gray-100">

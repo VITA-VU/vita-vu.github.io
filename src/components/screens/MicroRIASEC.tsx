@@ -2,14 +2,20 @@ import React, { useState } from 'react';
 import { VitaButton } from '../vita-ui/VitaButton';
 import { LanguageToggle } from '../LanguageToggle';
 import { GripVertical, ChevronUp, ChevronDown } from 'lucide-react';
-import { griffonAvatars } from '../griffons/GriffonAvatars';
+// import { griffonAvatars } from '../griffons/GriffonAvatars';
+import logo from '../imgs/VU-logo-RGB.png';
 
 interface MicroRIASECProps {
-  onComplete: (styles: string[]) => void;
+
+onComplete: (styles: string[]) => void;
   onBack: () => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
   selectedAvatar?: string;
+  onGoBack?: () => void;
+  onGoHome?: () => void;
+  goHome?: () => void;
+  goBack?: () => void;
 }
 
 interface Activity {
@@ -191,12 +197,12 @@ const activitySets: Record<string, Activity[]> = {
   ],
 };
 
-export function MicroRIASEC({ onComplete, onBack, currentLang, onLangChange, selectedAvatar }: MicroRIASECProps) {
+export function MicroRIASEC({ onComplete, onBack, currentLang, onLangChange, selectedAvatar, goBack, goHome }: MicroRIASECProps) {
   // Get the avatar topic for activities
   const avatarTopic = selectedAvatar || 'default';
   const activities = activitySets[avatarTopic] || activitySets.default;
-  const avatarData = griffonAvatars.find(a => a.id === selectedAvatar);
-  const topicName = avatarData?.title.toLowerCase() || 'general interest';
+  // const avatarData = griffonAvatars.find(a => a.id === selectedAvatar);
+  // const topicName = avatarData?.title.toLowerCase() || 'general interest';
   
   const [items, setItems] = useState(activities);
   const [draggedItem, setDraggedItem] = useState<number | null>(null);
@@ -271,19 +277,34 @@ export function MicroRIASEC({ onComplete, onBack, currentLang, onLangChange, sel
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
-          <span className="text-vita-gold text-[1.125rem]">VITA</span>
-          <span className="text-gray-400 text-[0.875rem]">×</span>
-          <span className="text-gray-600 text-[0.875rem]">VU Amsterdam</span>
-        </div>
+          <button 
+  onClick={() => goHome?.()} 
+  aria-label="Go Home"
+  className="flex items-center"
+>
+  <img  src={logo}  alt="VU Logo" width='150' height='100' />
+</button>
+
+{goBack && (
+  <button 
+    onClick={goBack} 
+    aria-label="Go Back"
+    className="ml-3 text-sm text-vita-deep-blue hover:underline"
+  >
+    ← Back
+  </button>
+)}        </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       
       {/* Content */}
       <div className="max-w-2xl mx-auto p-6 space-y-6">
+
+
         <div>
           <h2 className="text-[1.375rem] mb-2">Organize by preference</h2>
           <p className="text-[1rem] text-gray-600">
-            Drag and drop these {topicName}-related activities from most appealing (top) to least appealing (bottom).
+            Drag and drop these activities from most appealing (top) to least appealing (bottom).
           </p>
         </div>
         

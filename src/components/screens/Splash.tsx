@@ -2,24 +2,32 @@ import React from 'react';
 import { VitaButton } from '../vita-ui/VitaButton';
 import { LanguageToggle } from '../LanguageToggle';
 import { TutorialToggle } from '../tutorial/TutorialToggle';
+import logo from '../imgs/VU-logo-RGB.png';
 
 interface SplashProps {
-  onStart: () => void;
+
+onStart: () => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
   tutorialEnabled?: boolean;
   onTutorialToggle?: () => void;
+  goHome?: () => void;
+  goBack?: () => void;
 }
 
-export function Splash({ onStart, currentLang, onLangChange, tutorialEnabled = false, onTutorialToggle }: SplashProps) {
+export function Splash({ onStart, currentLang, onLangChange, tutorialEnabled = false, onTutorialToggle, goHome }: SplashProps) {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}
       <div className="flex items-center justify-between p-4">
         <div className="flex items-center gap-2">
-          <span className="text-vita-gold text-[1.375rem]">VITA</span>
-          <span className="text-gray-400">×</span>
-          <span className="text-gray-600 text-[0.875rem]">VU Amsterdam</span>
+          <button 
+  onClick={() => goHome?.()} 
+  aria-label="Go Home"
+  className="flex items-center"
+>
+  <img  src={logo}  alt="VU Logo" width='150' height='100' />
+</button>
         </div>
         <div className="flex items-center gap-2">
           {onTutorialToggle && (
@@ -34,6 +42,7 @@ export function Splash({ onStart, currentLang, onLangChange, tutorialEnabled = f
       {/* Content */}
       <div className="flex-1 flex flex-col items-center justify-center px-6 pb-20">
         <div className="max-w-md w-full text-center space-y-6">
+
           <h1 className="text-[2rem] md:text-[2.5rem]">
             Find your fit, the fun way
           </h1>
