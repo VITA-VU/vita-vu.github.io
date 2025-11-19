@@ -116,15 +116,7 @@ export function BasicDetails({ onContinue, currentLang, onLangChange, selectedAv
   <img  src={logo}  alt="VU Logo" width='150' height='100' />
 </button>
 
-{goBack && (
-  <button 
-    onClick={goBack} 
-    aria-label="Go Back"
-    className="ml-3 text-sm text-vita-deep-blue hover:underline"
-  >
-    ← Back
-  </button>
-)}        </div>
+       </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       
