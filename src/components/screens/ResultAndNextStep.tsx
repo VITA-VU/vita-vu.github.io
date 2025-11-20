@@ -66,15 +66,7 @@ export function ResultAndNextStep({
   <img  src={logo}  alt="VU Logo" width='150' height='100' />
 </button>
 
-{goBack && (
-  <button 
-    onClick={goBack} 
-    aria-label="Go Back"
-    className="ml-3 text-sm text-vita-deep-blue hover:underline"
-  >
-    ← Back
-  </button>
-)}        </div>
+       </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       
@@ -125,18 +117,11 @@ export function ResultAndNextStep({
                 
                 <div className="pt-3 space-y-2">
                   <VitaButton
-                    variant="primary"
-                    onClick={() => onSeeWeek(match.examples[0].toLowerCase())}
-                    className="w-full"
-                  >
-                    See a week in this programme
-                  </VitaButton>
-                  <VitaButton
                     variant="ghost"
                     onClick={onTryAnother}
                     className="w-full"
                   >
-                    Try one more task in a neighbour area
+                    Try another task
                   </VitaButton>
                 </div>
               </div>
@@ -146,7 +131,7 @@ export function ResultAndNextStep({
         
         {/* Reflection Question */}
         <div className="bg-gray-50 rounded-lg p-6 space-y-4">
-          <p className="text-[1rem]">How did that feel?</p>
+          <p className="text-[1rem]">How do you feel about these recommendations?</p>
           <div className="flex gap-3 justify-center">
             <button
               onClick={() => setFeedback('clear')}

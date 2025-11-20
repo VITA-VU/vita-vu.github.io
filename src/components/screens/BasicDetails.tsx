@@ -40,7 +40,6 @@ export function BasicDetails({ onContinue, currentLang, onLangChange, selectedAv
     { value: 'health', label: 'Nature & Health (NG)' },
     { value: 'culture', label: 'Culture & Society (CM)' },
     { value: 'economics', label: 'Economics & Society (EM)' },
-    { value: 'combination', label: 'Combination profile' },
     { value: 'other', label: 'Other' },
     { value: 'not_applicable', label: 'Not applicable' }
   ];
@@ -116,15 +115,7 @@ export function BasicDetails({ onContinue, currentLang, onLangChange, selectedAv
   <img  src={logo}  alt="VU Logo" width='150' height='100' />
 </button>
 
-{goBack && (
-  <button 
-    onClick={goBack} 
-    aria-label="Go Back"
-    className="ml-3 text-sm text-vita-deep-blue hover:underline"
-  >
-    ← Back
-  </button>
-)}        </div>
+       </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       

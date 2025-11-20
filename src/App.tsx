@@ -1,330 +1,346 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import { Splash } from './components/screens/Splash';
 import { ConsentAndGoal } from './components/screens/ConsentAndGoal';
 import { AvatarPick } from './components/screens/AvatarPick';
+import { AvatarAndDetails } from './components/screens/AvatarDetails';
 import { BasicDetails } from './components/screens/BasicDetails';
 import { ProgrammeSearch } from './components/screens/ProgrammeSearch';
 import { ProgrammePreview } from './components/screens/ProgrammePreview';
-import { ChoosePath } from './components/screens/ChoosePath';
+//import { ChoosePath } from './components/screens/ChoosePath';
 import { MicroRIASEC } from './components/screens/MicroRIASEC';
 import { StylePicker } from './components/screens/StylePicker';
 import { TaskScreen } from './components/screens/TaskScreen';
 import { ResultAndNextStep } from './components/screens/ResultAndNextStep';
+import { TaskIntro } from './components/screens/TaskIntro';
 import { TutorialManager } from './components/tutorial/TutorialManager';
 import { TutorialWelcome } from './components/tutorial/TutorialWelcome';
+import { TaskFeedback } from './components/vita-ui/TaskFeedback';
 
-type Screen = 
-  | 'splash'
-  | 'consent'
-  | 'avatar'
-  | 'basic-details'
-  | 'programme-search'
-  | 'programme-preview'
-  | 'choose-path'
-  | 'micro-riasec'
-  | 'style-picker'
-  | 'task'
-  | 'result';
+// Global state context (or use localStorage/Redux)
+import { createContext, useState, ReactNode } from 'react';
 
-type TaskVariant = 'psychology' | 'business-analytics' | 'physics';
-
-interface AppState {
-  screen: Screen;
-  language: 'EN' | 'NL';
-  userPath?: 'explore' | 'help';
-  userData?: {
-    avatar?: string;
-    pronouns?: string;
-    firstName?: string;
-    age?: string;
-    profile?: string;
-  };
-  selectedProgramme?: string;
-  riasecStyles?: string[];
-  taskVariant?: TaskVariant;
+interface UserData {
+  avatar?: string;
+  pronouns?: string;
+  firstName?: string;
+  age?: string;
+  profile?: string;
 }
 
-export default function App() {
-  const [state, setState] = useState<AppState>({
-    screen: 'splash',
-    language: 'EN'
-  });
+interface AppContextType {
+  userData: UserData;
+  setUserData: (data: UserData) => void;
+  selectedProgramme?: string;
+  setSelectedProgramme: (prog: string) => void;
+  userPath?: 'explore' | 'help';
+  setUserPath: (path: 'explore' | 'help') => void;
+  riasecStyles?: string[];
+  setRIASECStyles: (styles: string[]) => void;
+  taskVariant?: string;
+  setTaskVariant: (variant: string) => void;
+}
 
-  const [showTutorialWelcome, setShowTutorialWelcome] = useState(false);
-  const [tutorialEnabled, setTutorialEnabled] = useState(false);
+export const AppContext = createContext<AppContextType | undefined>(undefined);
 
-  const updateState = (updates: Partial<AppState>) => {
-    setState(prev => ({ ...prev, ...updates }));
-  };
-
-  const handleLanguageChange = (language: 'EN' | 'NL') => {
-    updateState({ language });
-  };
-
-  //
-  // ─── GLOBAL NAVIGATION ───────────────────────────────────────────────────────────
-  //
-
-  // ⭐ Home button always goes back to splash
-  const goHome = () => {
-    updateState({ screen: 'splash' });
-  };
-
-  // ⭐ Back button logic based on active screen
-  const goBack = () => {
-    switch (state.screen) {
-      case 'avatar':
-        updateState({ screen: 'consent' });
-        break;
-
-      case 'basic-details':
-        updateState({ screen: 'avatar' });
-        break;
-
-      case 'programme-search':
-        updateState({ screen: 'choose-path' });
-        break;
-
-      case 'programme-preview':
-        updateState({ screen: 'programme-search' });
-        break;
-
-      case 'choose-path':
-        updateState({ screen: 'choose-path' });
-        break;
-
-      case 'micro-riasec':
-      case 'style-picker':
-        updateState({ screen: 'choose-path' });
-        break;
-
-      case 'task':
-        updateState({ screen: 'choose-path' });
-        break;
-
-      case 'result':
-        updateState({ screen: 'task' });
-        break;
-
-      default:
-        break;
-    }
-  };
-
-  //
-  // ─── EXISTING HANDLERS (UNCHANGED) ──────────────────────────────────────────────
-  //
-
-  const handleSplashStart = () => updateState({ screen: 'consent' });
-
-  const handleConsentPath = (path: 'explore' | 'help') => {
-    updateState({ userPath: path, screen: 'avatar' });
-  };
-
-  const handleAvatarContinue = (data: { avatar?: string; pronouns?: string }) => {
-    updateState({ userData: { ...state.userData, ...data }, screen: 'basic-details' });
-  };
-
-  const handleAvatarSkip = () => updateState({ screen: 'basic-details' });
-
-  const handleBasicDetailsContinue = (data: { firstName: string; age: string; profile: string }) => {
-    updateState({
-      userData: { ...state.userData, ...data },
-      screen: state.userPath === 'explore' ? 'programme-search' : 'choose-path'
-    });
-  };
-
-  const handleProgrammeSelect = (programme: string) => {
-    updateState({ selectedProgramme: programme, screen: 'programme-preview' });
-  };
-
-  const handleProgrammeTryTask = () => {
-    const taskMap: Record<string, TaskVariant> = {
-      'psychology': 'psychology',
-      'business-analytics': 'business-analytics',
-      'physics': 'physics'
-    };
-    
-    updateState({
-      taskVariant: taskMap[state.selectedProgramme || 'psychology'] || 'psychology',
-      screen: 'task'
-    });
-  };
-
-  const handleProgrammeSeeAnother = () => updateState({ screen: 'programme-search' });
-
-  const handleChoosePath = (choice: 'random' | 'riasec' | 'pick-style') => {
-    if (choice === 'random') {
-      const variants: TaskVariant[] = ['psychology', 'business-analytics', 'physics'];
-      const randomVariant = variants[Math.floor(Math.random() * variants.length)];
-      updateState({ taskVariant: randomVariant, screen: 'task' });
-    } else if (choice === 'riasec') {
-      updateState({ screen: 'micro-riasec' });
-    } else {
-      updateState({ screen: 'style-picker' });
-    }
-  };
-
-  const handleRIASECComplete = (styles: string[]) => {
-    const map: Record<string, TaskVariant> = {
-      I: 'physics',
-      R: 'physics',
-      A: 'psychology',
-      S: 'psychology',
-      E: 'business-analytics',
-      C: 'business-analytics'
-    };
-
-    updateState({
-      riasecStyles: styles,
-      taskVariant: map[styles[0]] || 'psychology',
-      screen: 'task'
-    });
-  };
-
-  const handleStylePickerComplete = (styles: string[]) => {
-    const map: Record<string, TaskVariant> = {
-      I: 'physics',
-      R: 'physics',
-      A: 'psychology',
-      S: 'psychology',
-      E: 'business-analytics',
-      C: 'business-analytics'
-    };
-
-    updateState({
-      riasecStyles: styles,
-      taskVariant: map[styles[0]] || 'psychology',
-      screen: 'task'
-    });
-  };
-
-  const handleTaskComplete = () => updateState({ screen: 'result' });
-
-  const handleResultSeeWeek = (programme: string) => {
-    updateState({ selectedProgramme: programme, screen: 'programme-preview' });
-  };
-
-  const handleResultTryAnother = () => {
-    const variants: TaskVariant[] = ['psychology', 'business-analytics', 'physics'];
-    const i = variants.indexOf(state.taskVariant || 'psychology');
-    updateState({ taskVariant: variants[(i + 1) % variants.length], screen: 'task' });
-  };
-
-  //
-  // ─── RENDER SCREEN WITH PASSED NAV PROPS ─────────────────────────────────────────
-  //
-
-  const renderScreen = () => {
-    const sharedNav = { goHome, goBack, currentLang: state.language, onLangChange: handleLanguageChange };
-
-    switch (state.screen) {
-      case 'splash':
-        return (
-          <Splash
-            onStart={handleSplashStart}
-            {...sharedNav}
-            tutorialEnabled={tutorialEnabled}
-            onTutorialToggle={() => setTutorialEnabled(!tutorialEnabled)}
-          />
-        );
-
-      case 'consent':
-        return (
-          <ConsentAndGoal
-            onChoosePath={handleConsentPath}
-            {...sharedNav}
-          />
-        );
-
-      case 'avatar':
-        return (
-          <AvatarPick
-            onContinue={handleAvatarContinue}
-            onSkip={handleAvatarSkip}
-            {...sharedNav}
-            selectedAvatar={state.userData?.avatar}
-          />
-        );
-
-      case 'basic-details':
-        return (
-          <BasicDetails
-            onContinue={handleBasicDetailsContinue}
-            {...sharedNav}
-            selectedAvatar={state.userData?.avatar}
-          />
-        );
-
-      case 'programme-search':
-        return (
-          <ProgrammeSearch
-            onContinue={handleProgrammeSelect}
-            {...sharedNav}
-          />
-        );
-
-      case 'programme-preview':
-        return (
-          <ProgrammePreview
-            programme={state.selectedProgramme || 'psychology'}
-            onTryTask={handleProgrammeTryTask}
-            onSeeAnother={handleProgrammeSeeAnother}
-            {...sharedNav}
-          />
-        );
-
-      case 'choose-path':
-        return (
-          <ChoosePath
-            onChoose={handleChoosePath}
-            {...sharedNav}
-          />
-        );
-
-      case 'micro-riasec':
-        return (
-          <MicroRIASEC
-            onComplete={handleRIASECComplete}
-            {...sharedNav}
-            selectedAvatar={state.userData?.avatar}
-          />
-        );
-
-      case 'style-picker':
-        return (
-          <StylePicker
-            onComplete={handleStylePickerComplete}
-            {...sharedNav}
-          />
-        );
-
-      case 'task':
-        return (
-          <TaskScreen
-            taskVariant={state.taskVariant || 'psychology'}
-            onComplete={handleTaskComplete}
-            {...sharedNav}
-          />
-        );
-
-      case 'result':
-        return (
-          <ResultAndNextStep
-            onSeeWeek={handleResultSeeWeek}
-            onTryAnother={handleResultTryAnother}
-            {...sharedNav}
-          />
-        );
-
-      default:
-        return <div>Screen not found</div>;
-    }
-  };
+// Provider wrapper
+export function AppProvider({ children }: { children: ReactNode }) {
+  const [userData, setUserData] = useState<UserData>({});
+  const [selectedProgramme, setSelectedProgramme] = useState<string>();
+  const [userPath, setUserPath] = useState<'explore' | 'help'>();
+  const [riasecStyles, setRIASECStyles] = useState<string[]>();
+  const [taskVariant, setTaskVariant] = useState<string>();
 
   return (
-    <div className="min-h-screen bg-white">
-      {renderScreen()}
+    <AppContext.Provider value={{
+      userData, setUserData,
+      selectedProgramme, setSelectedProgramme,
+      userPath, setUserPath,
+      riasecStyles, setRIASECStyles,
+      taskVariant, setTaskVariant
+    }}>
+      {children}
+    </AppContext.Provider>
+  );
+}
+
+// Helper hook to use context
+export function useAppContext() {
+  const ctx = React.useContext(AppContext);
+  if (!ctx) throw new Error('useAppContext must be used inside AppProvider');
+  return ctx;
+}
+
+// Helper components that wrap each route and use hooks inside
+function SplashRoute() {
+  const navigate = useNavigate();
+  const ctx = useAppContext();
+  return (
+    <Splash
+      onStart={() => navigate('/consent')}
+      tutorialEnabled={false}
+      onTutorialToggle={() => {}}
+      goHome={() => navigate('/')}
+      goBack={() => navigate(-1)}
+      currentLang="EN"
+      onLangChange={() => {}}
+    />
+  );
+}
+
+function ConsentRoute() {
+  const navigate = useNavigate();
+  const ctx = useAppContext();
+  return (
+    <ConsentAndGoal
+      onStart={() => navigate('/avatardetails')}
+      goHome={() => navigate('/')}
+      currentLang="EN"
+      onLangChange={() => {}}
+    />
+  );
+}
+
+function AvatarRoute() {
+  const navigate = useNavigate();
+  const ctx = useAppContext();
+  return (
+    <AvatarPick
+      onContinue={(data) => {
+        ctx.setUserData({ ...ctx.userData, ...data });
+        navigate('/basic-details');
+      }}
+      onSkip={() => navigate('/basic-details')}
+      goHome={() => navigate('/')}
+      goBack={() => navigate(-1)}
+      currentLang="EN"
+      onLangChange={() => {}}
+    />
+  );
+}
+
+function AvatarDetailsRoute() {
+  const navigate = useNavigate();
+  const ctx = useAppContext();
+  return (
+    <AvatarAndDetails
+      onContinue={(data) => {
+        ctx.setUserData({ ...ctx.userData, ...data });
+        // navigate based on whether user already has a program in mind
+        if (data.hasProgramInMind === 'yes') {
+          navigate('/programme-search');
+        } else {
+          navigate('/micro-riasec');
+        }
+      }}
+      onSkip={() => navigate('/Task-intro')}
+      goHome={() => navigate('/')}
+      goBack={() => navigate(-1)}
+      currentLang="EN"
+      onLangChange={() => {}}
+      //selectedAvatar={ctx.userData?.avatar}
+    />
+  );
+}
+
+function BasicDetailsRoute() {
+  const navigate = useNavigate();
+  const ctx = useAppContext();
+  return (
+    <BasicDetails
+      onContinue={(data) => {
+        ctx.setUserData({ ...ctx.userData, ...data });
+        navigate('/programme-search');
+      }}
+      goHome={() => navigate('/')}
+      goBack={() => navigate(-1)}
+      currentLang="EN"
+      onLangChange={() => {}}
+      selectedAvatar={ctx.userData?.avatar}
+    />
+  );
+}
+
+function ProgrammeSearchRoute() {
+  const navigate = useNavigate();
+  const ctx = useAppContext();
+  return (
+    <ProgrammeSearch
+      onContinue={(prog) => {
+        ctx.setSelectedProgramme(prog);
+        navigate('/task-intro');
+      }}
+      goHome={() => navigate('/')}
+      goBack={() => navigate(-1)}
+      currentLang="EN"
+      onLangChange={() => {}}
+    />
+  );
+}
+
+function TaskIntroRoute() {
+  const navigate = useNavigate();
+  const ctx = useAppContext();
+  return (
+    <TaskIntro
+      selectedProgram={ctx.selectedProgramme || ''}
+      onContinue={() => {
+        const prog = ctx.selectedProgramme || 'psychology';
+        const taskMap: Record<string, string> = {
+          'psychology': 'psychology',
+          'business-analytics': 'business-analytics',
+          'physics': 'physics'
+        };
+        ctx.setTaskVariant(taskMap[prog] || 'psychology');
+        navigate('/task');
+      }}
+      goHome={() => navigate('/')}
+      goBack={() => navigate(-1)}
+      currentLang="EN"
+      onLangChange={() => {}}
+    />
+  );
+}
+
+function TaskRoute() {
+  const navigate = useNavigate();
+  const ctx = useAppContext();
+  return (
+    <TaskScreen
+      taskVariant={ctx.taskVariant || 'psychology'}
+      onComplete={() => navigate('/task-feedback')}
+      goHome={() => navigate('/')}
+      goBack={() => navigate(-1)}
+      currentLang="EN"
+      onLangChange={() => {}}
+    />
+  );
+}
+
+function TaskFeedbackRoute() {
+  const navigate = useNavigate();
+  const ctx = useAppContext();
+  return (
+    <TaskFeedback
+      onContinue={(feedback) => {
+        navigate('/task');
+      }}
+      goHome={() => navigate('/')}
+      goBack={() => navigate(-1)}
+      currentLang="EN"
+      onLangChange={() => {}}
+    />
+  );
+}
+
+function MicroRIASECRoute() {
+  const navigate = useNavigate();
+  const ctx = useAppContext();
+  return (
+    <MicroRIASEC
+      onComplete={(styles) => {
+        const map: Record<string, string> = {
+          I: 'physics', R: 'physics', A: 'psychology',
+          S: 'psychology', E: 'business-analytics', C: 'business-analytics'
+        };
+        ctx.setRIASECStyles(styles);
+        ctx.setTaskVariant(map[styles[0]] || 'psychology');
+        navigate('/task-intro');
+      }}
+      goHome={() => navigate('/')}
+      goBack={() => navigate(-1)}
+      currentLang="EN"
+      onLangChange={() => {}}
+      selectedAvatar={ctx.userData?.avatar}
+    />
+  );
+}
+
+function StylePickerRoute() {
+  const navigate = useNavigate();
+  const ctx = useAppContext();
+  return (
+    <StylePicker
+      onComplete={(styles) => {
+        const map: Record<string, string> = {
+          I: 'physics', R: 'physics', A: 'psychology',
+          S: 'psychology', E: 'business-analytics', C: 'business-analytics'
+        };
+        ctx.setRIASECStyles(styles);
+        ctx.setTaskVariant(map[styles[0]] || 'psychology');
+        navigate('/task');
+      }}
+      goHome={() => navigate('/')}
+      goBack={() => navigate(-1)}
+      currentLang="EN"
+      onLangChange={() => {}}
+    />
+  );
+}
+
+function ResultRoute() {
+  const navigate = useNavigate();
+  const ctx = useAppContext();
+  return (
+    <ResultAndNextStep
+      onSeeWeek={(prog) => {
+        ctx.setSelectedProgramme(prog);
+        navigate('/programme-preview');
+      }}
+      onTryAnother={() => {
+        const variants = ['psychology', 'business-analytics', 'physics'];
+        const current = ctx.taskVariant || 'psychology';
+        const i = variants.indexOf(current);
+        ctx.setTaskVariant(variants[(i + 1) % variants.length]);
+        navigate('/task');
+      }}
+      goHome={() => navigate('/')}
+      goBack={() => navigate(-1)}
+      currentLang="EN"
+      onLangChange={() => {}}
+    />
+  );
+}
+
+function ProgrammePreviewRoute() {
+  const navigate = useNavigate();
+  const ctx = useAppContext();
+  return (
+    <ProgrammePreview
+      programme={ctx.selectedProgramme || ''}
+      onTryTask={() => navigate('/task')}
+      onSeeAnother={() => navigate('/programme-search')}
+      goHome={() => navigate('/')}
+      goBack={() => navigate(-1)}
+      currentLang="EN"
+      onLangChange={() => {}}
+    />
+  );
+}
+
+// Main App component with routing
+function AppRoutes() {
+  const [showTutorialWelcome, setShowTutorialWelcome] = React.useState(false);
+  const [tutorialEnabled, setTutorialEnabled] = React.useState(false);
+
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<SplashRoute />} />
+        <Route path="/consent" element={<ConsentRoute />} />
+        <Route path="/avatar" element={<AvatarRoute />} />
+        <Route path="/avatardetails" element={<AvatarDetailsRoute />} />
+        <Route path="/basic-details" element={<BasicDetailsRoute />} />
+        <Route path="/programme-search" element={<ProgrammeSearchRoute />} />
+        <Route path="/task-intro" element={<TaskIntroRoute />} />
+        <Route path="/task" element={<TaskRoute />} />
+        {/* <Route path="/choose-path" element={<ChoosePathRoute />} /> */}
+        <Route path="/micro-riasec" element={<MicroRIASECRoute />} />
+        <Route path="/style-picker" element={<StylePickerRoute />} />
+        <Route path="/result" element={<ResultRoute />} />
+        <Route path="/programme-preview" element={<ProgrammePreviewRoute />} />
+        <Route path="/task-feedback" element={<TaskFeedbackRoute />} />
+      </Routes>
 
       <TutorialWelcome
         show={showTutorialWelcome}
@@ -333,10 +349,20 @@ export default function App() {
       />
 
       <TutorialManager
-        currentScreen={state.screen}
+        currentScreen={window.location.pathname}
         enabled={tutorialEnabled}
         onComplete={() => setTutorialEnabled(false)}
       />
-    </div>
+    </>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppProvider>
+        <AppRoutes />
+      </AppProvider>
+    </BrowserRouter>
   );
 }
