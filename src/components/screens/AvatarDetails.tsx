@@ -91,7 +91,7 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
   // Initialize chat
   useEffect(() => {
     if (step === 'chat' && messages.length === 0) {
-      addAvatarMessage(`Hello! I'm your griffon guide. What's your name?`, 500);
+      addAvatarMessage(`Hello! I'm your Griffon guide. What's your name?`, 500);
     }
   }, [step]);
 
@@ -201,6 +201,8 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
                     src={avatar.src} 
                     alt={avatar.title} 
                     className="w-[100px] h-[100px] object-cover rounded-sm"
+                    width="500px"
+                    height="500px"
                   />
                 </button>
               ))}
@@ -234,23 +236,43 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
                   className={`flex items-start gap-3 ${msg.sender === 'user' ? 'flex-row-reverse' : ''}`}
                 >
                   {msg.sender === 'avatar' && (
-                    <div className="flex-shrink-0 w-10 h-10 bg-vita-gold/10 rounded-full flex items-center justify-center overflow-hidden">
+                    <div className="flex-shrink-0 bg-vita-gold/10 rounded-full flex items-center justify-center overflow-hidden">
                       {avatarMap[selectedAvatar || ''] ? (
-                        <img src={avatarMap[selectedAvatar || '']} alt="avatar" className="w-full h-full object-cover" />
+                        <img src={avatarMap[selectedAvatar || '']} 
+                          alt="avatar" 
+                          className="object-cover"                    
+                          width="100px"
+                          height="100px"/>
                       ) : (
                         <span className="text-xs text-gray-600">{(selectedAvatar && selectedAvatar.charAt(0).toUpperCase()) || 'G'}</span>
                       )}
                     </div>
                   )}
-                  <div
-                    className={`max-w-[70%] p-3 rounded-lg text-sm ${
-                      msg.sender === 'avatar'
-                        ? 'bg-gray-200 text-gray-900'
-                        : 'bg-vita-gold text-white'
-                    }`}
-                    style={msg.sender !== 'avatar' ? { backgroundColor: 'rgba(212,160,23,1)' } : undefined}
-                  >
-                    <p>{msg.text}</p>
+                  <div className={`max-w-[70%] ${msg.sender === 'avatar' ? 'relative' : ''}`}>
+                    <div
+                      className={`p-3 rounded-lg text-sm ${
+                        msg.sender === 'avatar'
+                          ? 'bg-gray-200 text-gray-900'
+                          : 'bg-vita-gold text-white rounded-lg'
+                      }`}
+                      style={msg.sender !== 'avatar' ? { backgroundColor: 'rgba(212,160,23,1)' } : undefined}
+                    >
+                      <p>{msg.text}</p>
+                    </div>
+                    {msg.sender === 'avatar' && (
+                      <div
+                        style={{
+                          position: 'absolute',
+                          left: -6,
+                          top: 12,
+                          width: 12,
+                          height: 12,
+                          background: '#E5E7EB',
+                          borderRadius: '0 8px 0 0',
+                          transform: 'rotate(45deg)',
+                        }}
+                      />
+                    )}
                   </div>
                 </div>
               ))}
@@ -258,9 +280,13 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
               {/* Typing Indicator */}
               {isTyping && (
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-10 h-10 bg-vita-gold/10 rounded-full flex items-center justify-center">
+                  <div className="flex-shrink-0 bg-vita-gold/10 rounded-full flex items-center justify-center">
                     {avatarMap[selectedAvatar || ''] ? (
-                      <img src={avatarMap[selectedAvatar || '']} alt="avatar" className="w-full h-full object-cover" />
+                      <img src={avatarMap[selectedAvatar || '']} 
+                          alt="avatar" 
+                          className="object-cover" 
+                          width="100px"
+                          height="100px" />
                     ) : (
                       <span className="text-xs text-gray-600">G</span>
                     )}
