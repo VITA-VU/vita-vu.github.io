@@ -26,7 +26,7 @@ interface Activity {
 
 // Activity sets for different avatar topics
 const activitySets: Record<string, Activity[]> = {
-  painting: [
+  "Griffon painting": [
     { id: 1, text: 'Creating abstract art and expressing emotions through colors', riasec: 'A' },
     { id: 2, text: 'Teaching painting workshops to children and adults', riasec: 'S' },
     { id: 3, text: 'Analyzing paint chemistry and developing new pigments', riasec: 'I' },
@@ -34,7 +34,7 @@ const activitySets: Record<string, Activity[]> = {
     { id: 5, text: 'Restoring old paintings with precision and care', riasec: 'R' },
     { id: 6, text: 'Organizing art collections and cataloging artwork', riasec: 'C' },
   ],
-  music: [
+  "Griffon piano": [
     { id: 1, text: 'Composing original music and experimenting with sounds', riasec: 'A' },
     { id: 2, text: 'Teaching music lessons and mentoring young musicians', riasec: 'S' },
     { id: 3, text: 'Studying acoustics and sound wave patterns', riasec: 'I' },
@@ -42,7 +42,7 @@ const activitySets: Record<string, Activity[]> = {
     { id: 5, text: 'Building and repairing musical instruments', riasec: 'R' },
     { id: 6, text: 'Cataloging music archives and maintaining sheet music', riasec: 'C' },
   ],
-  coding: [
+  "Griffon pc": [
     { id: 1, text: 'Designing creative user interfaces and experiences', riasec: 'A' },
     { id: 2, text: 'Mentoring junior developers and code reviewing', riasec: 'S' },
     { id: 3, text: 'Researching algorithms and solving complex problems', riasec: 'I' },
@@ -50,7 +50,7 @@ const activitySets: Record<string, Activity[]> = {
     { id: 5, text: 'Building hardware prototypes and IoT devices', riasec: 'R' },
     { id: 6, text: 'Managing databases and organizing code documentation', riasec: 'C' },
   ],
-  cooking: [
+  "Griffon Cooking": [
     { id: 1, text: 'Creating innovative recipes and plating presentations', riasec: 'A' },
     { id: 2, text: 'Teaching cooking classes and sharing culinary skills', riasec: 'S' },
     { id: 3, text: 'Studying food science and molecular gastronomy', riasec: 'I' },
@@ -58,7 +58,7 @@ const activitySets: Record<string, Activity[]> = {
     { id: 5, text: 'Operating kitchen equipment and food preparation', riasec: 'R' },
     { id: 6, text: 'Planning menus and managing inventory systems', riasec: 'C' },
   ],
-  reading: [
+  "Griffon reading": [
     { id: 1, text: 'Writing creative stories and literary criticism', riasec: 'A' },
     { id: 2, text: 'Running book clubs and facilitating discussions', riasec: 'S' },
     { id: 3, text: 'Analyzing literary themes and historical contexts', riasec: 'I' },
@@ -66,7 +66,7 @@ const activitySets: Record<string, Activity[]> = {
     { id: 5, text: 'Bookbinding and physical book restoration', riasec: 'R' },
     { id: 6, text: 'Organizing libraries and cataloging collections', riasec: 'C' },
   ],
-  football: [
+  "Griffon soccer": [
     { id: 1, text: 'Choreographing creative plays and strategies', riasec: 'A' },
     { id: 2, text: 'Coaching youth teams and mentoring players', riasec: 'S' },
     { id: 3, text: 'Analyzing game statistics and player performance', riasec: 'I' },
@@ -74,7 +74,7 @@ const activitySets: Record<string, Activity[]> = {
     { id: 5, text: 'Training physical fitness and maintaining equipment', riasec: 'R' },
     { id: 6, text: 'Organizing tournaments and managing schedules', riasec: 'C' },
   ],
-  tennis: [
+  "Griffon tennis": [
     { id: 1, text: 'Developing unique playing styles and techniques', riasec: 'A' },
     { id: 2, text: 'Coaching students and helping them improve', riasec: 'S' },
     { id: 3, text: 'Studying biomechanics and performance science', riasec: 'I' },
@@ -82,7 +82,7 @@ const activitySets: Record<string, Activity[]> = {
     { id: 5, text: 'Maintaining courts and restringing rackets', riasec: 'R' },
     { id: 6, text: 'Managing player rankings and tournament schedules', riasec: 'C' },
   ],
-  sewing: [
+  "Griffon sewing": [
     { id: 1, text: 'Designing original fashion and creating patterns', riasec: 'A' },
     { id: 2, text: 'Teaching sewing workshops and sharing techniques', riasec: 'S' },
     { id: 3, text: 'Researching textile science and fabric properties', riasec: 'I' },
@@ -90,7 +90,7 @@ const activitySets: Record<string, Activity[]> = {
     { id: 5, text: 'Operating industrial sewing machines and equipment', riasec: 'R' },
     { id: 6, text: 'Organizing inventory and managing pattern libraries', riasec: 'C' },
   ],
-  photography: [
+  "Griffon photo": [
     { id: 1, text: 'Creating artistic compositions and experimental shots', riasec: 'A' },
     { id: 2, text: 'Teaching photography classes and guiding others', riasec: 'S' },
     { id: 3, text: 'Understanding optics and camera technology', riasec: 'I' },
@@ -98,31 +98,7 @@ const activitySets: Record<string, Activity[]> = {
     { id: 5, text: 'Building camera equipment and darkroom setups', riasec: 'R' },
     { id: 6, text: 'Cataloging photo archives and organizing shoots', riasec: 'C' },
   ],
-  hiking: [
-    { id: 1, text: 'Discovering unique trails and photographing nature', riasec: 'A' },
-    { id: 2, text: 'Leading group hikes and teaching outdoor safety', riasec: 'S' },
-    { id: 3, text: 'Studying ecology and environmental conservation', riasec: 'I' },
-    { id: 4, text: 'Starting an outdoor adventure tourism company', riasec: 'E' },
-    { id: 5, text: 'Building trails and maintaining outdoor equipment', riasec: 'R' },
-    { id: 6, text: 'Planning routes and managing expedition logistics', riasec: 'C' },
-  ],
-  robotics: [
-    { id: 1, text: 'Designing creative robot behaviors and interactions', riasec: 'A' },
-    { id: 2, text: 'Mentoring robotics teams and teaching programming', riasec: 'S' },
-    { id: 3, text: 'Researching AI and machine learning algorithms', riasec: 'I' },
-    { id: 4, text: 'Leading robotics startups and product development', riasec: 'E' },
-    { id: 5, text: 'Building and assembling robot prototypes', riasec: 'R' },
-    { id: 6, text: 'Managing robot testing schedules and documentation', riasec: 'C' },
-  ],
-  debate: [
-    { id: 1, text: 'Crafting persuasive rhetorical arguments', riasec: 'A' },
-    { id: 2, text: 'Coaching debate teams and mentoring speakers', riasec: 'S' },
-    { id: 3, text: 'Researching complex topics and analyzing evidence', riasec: 'I' },
-    { id: 4, text: 'Leading political campaigns and advocacy groups', riasec: 'E' },
-    { id: 5, text: 'Setting up debate venues and audio equipment', riasec: 'R' },
-    { id: 6, text: 'Organizing debate tournaments and judging criteria', riasec: 'C' },
-  ],
-  chess: [
+  "Griffon chess": [
     { id: 1, text: 'Developing creative opening strategies and gambits', riasec: 'A' },
     { id: 2, text: 'Teaching chess to beginners and hosting clubs', riasec: 'S' },
     { id: 3, text: 'Analyzing game theory and calculating variations', riasec: 'I' },
@@ -130,61 +106,13 @@ const activitySets: Record<string, Activity[]> = {
     { id: 5, text: 'Crafting chess sets and board designs', riasec: 'R' },
     { id: 6, text: 'Managing player ratings and tournament records', riasec: 'C' },
   ],
-  'lab-science': [
-    { id: 1, text: 'Designing innovative experiments and visualizations', riasec: 'A' },
-    { id: 2, text: 'Teaching lab techniques and supervising students', riasec: 'S' },
-    { id: 3, text: 'Conducting research and analyzing data', riasec: 'I' },
-    { id: 4, text: 'Leading research teams and securing funding', riasec: 'E' },
-    { id: 5, text: 'Operating lab equipment and maintaining instruments', riasec: 'R' },
-    { id: 6, text: 'Managing lab inventory and safety protocols', riasec: 'C' },
-  ],
-  theatre: [
-    { id: 1, text: 'Performing creative interpretations and improvising', riasec: 'A' },
-    { id: 2, text: 'Directing community theater and teaching drama', riasec: 'S' },
-    { id: 3, text: 'Analyzing scripts and studying dramatic theory', riasec: 'I' },
-    { id: 4, text: 'Producing shows and managing theater companies', riasec: 'E' },
-    { id: 5, text: 'Building sets and operating stage equipment', riasec: 'R' },
-    { id: 6, text: 'Scheduling rehearsals and managing production logistics', riasec: 'C' },
-  ],
-  architecture: [
-    { id: 1, text: 'Designing innovative buildings and creative spaces', riasec: 'A' },
-    { id: 2, text: 'Collaborating with communities on public projects', riasec: 'S' },
-    { id: 3, text: 'Analyzing structural engineering and materials science', riasec: 'I' },
-    { id: 4, text: 'Managing architecture firms and client relations', riasec: 'E' },
-    { id: 5, text: 'Building scale models and construction prototypes', riasec: 'R' },
-    { id: 6, text: 'Organizing blueprints and project documentation', riasec: 'C' },
-  ],
-  ecology: [
+  "Griffon plants": [
     { id: 1, text: 'Creating nature photography and environmental art', riasec: 'A' },
     { id: 2, text: 'Leading conservation efforts and community education', riasec: 'S' },
     { id: 3, text: 'Researching ecosystems and studying wildlife', riasec: 'I' },
     { id: 4, text: 'Managing environmental NGOs and policy advocacy', riasec: 'E' },
     { id: 5, text: 'Conducting field work and habitat restoration', riasec: 'R' },
     { id: 6, text: 'Maintaining species databases and research records', riasec: 'C' },
-  ],
-  entrepreneurship: [
-    { id: 1, text: 'Brainstorming innovative business ideas and branding', riasec: 'A' },
-    { id: 2, text: 'Building teams and mentoring employees', riasec: 'S' },
-    { id: 3, text: 'Analyzing market trends and consumer behavior', riasec: 'I' },
-    { id: 4, text: 'Leading startups and pitching to investors', riasec: 'E' },
-    { id: 5, text: 'Developing product prototypes and MVPs', riasec: 'R' },
-    { id: 6, text: 'Managing finances and organizing business operations', riasec: 'C' },
-  ],
-  volunteering: [
-    { id: 1, text: 'Creating awareness campaigns and creative outreach', riasec: 'A' },
-    { id: 2, text: 'Helping communities and supporting vulnerable people', riasec: 'S' },
-    { id: 3, text: 'Researching social issues and effective interventions', riasec: 'I' },
-    { id: 4, text: 'Leading nonprofit organizations and fundraising', riasec: 'E' },
-    { id: 5, text: 'Building homes and hands-on community projects', riasec: 'R' },
-    { id: 6, text: 'Coordinating volunteer schedules and managing programs', riasec: 'C' },
-  ],
-  languages: [
-    { id: 1, text: 'Translating poetry and creative literary works', riasec: 'A' },
-    { id: 2, text: 'Teaching languages and facilitating cultural exchange', riasec: 'S' },
-    { id: 3, text: 'Studying linguistics and language acquisition theory', riasec: 'I' },
-    { id: 4, text: 'Managing translation agencies and international business', riasec: 'E' },
-    { id: 5, text: 'Interpreting in real-time settings and conferences', riasec: 'R' },
-    { id: 6, text: 'Organizing language databases and grammar resources', riasec: 'C' },
   ],
   // Default set for other avatars
   default: [
@@ -200,6 +128,7 @@ const activitySets: Record<string, Activity[]> = {
 export function MicroRIASEC({ onComplete, onBack, currentLang, onLangChange, selectedAvatar, goBack, goHome }: MicroRIASECProps) {
   // Get the avatar topic for activities
   const avatarTopic = selectedAvatar || 'default';
+  console.log("Selected avatar topic:", avatarTopic);
   const activities = activitySets[avatarTopic] || activitySets.default;
   // const avatarData = griffonAvatars.find(a => a.id === selectedAvatar);
   // const topicName = avatarData?.title.toLowerCase() || 'general interest';
