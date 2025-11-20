@@ -77,14 +77,13 @@ export function ResultAndNextStep({
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
           <button 
-  onClick={() => goHome?.()} 
-  aria-label="Go Home"
-  className="flex items-center"
->
-  <img  src={logo}  alt="VU Logo" width='150' height='100' />
-</button>
-
-       </div>
+            onClick={() => { goHome?.(); if (typeof window !== 'undefined') { window.location.hash = '#/splash'; } }} 
+            aria-label="Go home"
+            className="flex items-center"
+          >
+            <img src={logo} alt="VU Logo" width="150" height="100" className="cursor-pointer" />
+          </button>
+        </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       

@@ -4,10 +4,9 @@ import { LanguageToggle } from '../LanguageToggle';
 import logo from '../imgs/VU-logo-RGB.png';
 
 interface TaskFeedbackProps {
-  onContinue: (feedback: { enjoyment: string; preference: string }) => void;
+  onContinue: (stop: boolean) => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
-  goBack?: () => void;
   goHome?: () => void;
   selectedAvatar?: string;
 }
@@ -28,21 +27,29 @@ const avatarMap: Record<string, string> = (() => {
   }
 })();
 
-export function TaskFeedback({ onContinue, currentLang, onLangChange, goBack, goHomem, selectedAvatar }: TaskFeedbackProps) {
+export function TaskFeedback({ onContinue, currentLang, onLangChange, goHome, selectedAvatar }: TaskFeedbackProps) {
   const [step, setStep] = useState<FeedbackStep>('enjoyment');
   const [enjoyment, setEnjoyment] = useState<string>('');
   const [preference, setPreference] = useState<string>('');
   const avatarTopic = selectedAvatar || 'Griffon';
+  const [stop, setStop] = useState<boolean>(false);
 
   const handleEnjoymentSelect = (value: string) => {
     setEnjoyment(value);
-    setStep('preference');
+    localStorage.setItem('taskEnjoyment', value);
+    // TO DO: check update : if ready for stopping point, go to finish line
+    if (stop===true){
+      onContinue(true);
+    }
+    else {
+      setStep('preference');
+    }
   };
 
   const handlePreferenceSelect = (value: string) => {
     setPreference(value);
-    // Submit feedback and continue
-    onContinue({ enjoyment, preference: value });
+    localStorage.setItem('taskPreference', value);
+    onContinue(false);
   };
 
   return (

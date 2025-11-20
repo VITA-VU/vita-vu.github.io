@@ -18,6 +18,12 @@ taskVariant?: 'psychology' | 'business-analytics' | 'physics';
   goBack?: () => void;
 }
 
+//TO DO: set start time when task begins
+localStorage.setItem('learnOpened', "false");
+const start = new Date().getTime();
+
+//TO DO: save answer type to local storage
+
 const tasks = {
   psychology: {
     stimulusTitle: 'Memory and Notifications',
@@ -84,19 +90,18 @@ export function TaskScreen({
   const { toast, showToast, hideToast } = useToast();
   
   const task = tasks[taskVariant];
+  localStorage.setItem('currentTask', taskVariant);
   
   const handleNext = () => {
-    showToast('Answer recorded');
-    setTimeout(() => {
-      onComplete();
-    }, 1000);
+    localStorage.setItem('taskAnswered', 'true');
+    localStorage.setItem('taskTime', (String(new Date().getTime() - start)));
+    onComplete();
   };
   
   const handleNotSure = () => {
-    showToast('Skipped');
-    setTimeout(() => {
-      onComplete();
-    }, 1000);
+    localStorage.setItem('taskAnswered', 'false');
+    localStorage.setItem('taskTime', (String(new Date().getTime() - start)));
+    onComplete();
   };
   
   return (

@@ -195,7 +195,6 @@ function TaskIntroRoute() {
         navigate('/task');
       }}
       goHome={() => navigate('/')}
-      goBack={() => navigate(-1)}
       currentLang="EN"
       onLangChange={() => {}}
     />
@@ -210,7 +209,6 @@ function TaskRoute() {
       taskVariant={ctx.taskVariant || 'psychology'}
       onComplete={() => navigate('/task-feedback')}
       goHome={() => navigate('/')}
-      goBack={() => navigate(-1)}
       currentLang="EN"
       onLangChange={() => {}}
     />
@@ -222,11 +220,13 @@ function TaskFeedbackRoute() {
   const ctx = useAppContext();
   return (
     <TaskFeedback
-      onContinue={(feedback) => {
+      onContinue={(stop) => {
+        if (stop) {
+          navigate('/result');
+        } else
         navigate('/task');
       }}
       goHome={() => navigate('/')}
-      goBack={() => navigate(-1)}
       currentLang="EN"
       onLangChange={() => {}}
       selectedAvatar={ctx.userData?.avatar}

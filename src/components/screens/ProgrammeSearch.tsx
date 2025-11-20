@@ -31,6 +31,11 @@ export function ProgrammeSearch({ onContinue, currentLang, onLangChange, goBack,
   const [searchTerm, setSearchTerm] = useState('');
   const [selected, setSelected] = useState<string | null>(null);
   const avatarTopic = selectedAvatar || 'Griffon';
+
+  function setSelectedProgramme(programmeId: string) {
+    setSelected(programmeId);
+    localStorage.setItem('selectedProgramme', programmeId);
+  }
   
   // map avatar id -> src (used to show selected avatar speaking)
   const avatarMap = useMemo(() => {
@@ -122,7 +127,7 @@ export function ProgrammeSearch({ onContinue, currentLang, onLangChange, goBack,
             <VitaCard
               key={programme.id}
               variant={selected === programme.id ? 'emphasis' : 'base'}
-              onClick={() => setSelected(programme.id)}
+              onClick={() => setSelectedProgramme(programme.id)}
             >
               <h3 className="text-[1rem] mb-1">{programme.name}</h3>
               <p className="text-[0.8125rem] text-gray-600">{programme.description}</p>

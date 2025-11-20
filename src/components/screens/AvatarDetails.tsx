@@ -38,6 +38,10 @@ const programmeOptions = [
   { value: 'Other', label: 'Other' },
 ];
 
+// function initializeProfile(){
+//   localStorage.setItem('studentProfile', {});
+// }
+
 export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange, goBack, goHome }: AvatarAndDetailsProps) {
   const [step, setStep] = useState<Step>('avatar');
   const [selectedAvatar, setSelectedAvatar] = useState<string | undefined>();
@@ -47,8 +51,8 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
   const [profile, setProfile] = useState('');
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [isTyping, setIsTyping] = useState(false);
-  const [chatStep, setChatStep] = useState<ChatStep>('greeting');
   const [programme, setProgramme] = useState('');
+  const [chatStep, setChatStep] = useState<ChatStep>('greeting');
   const [showPronounsDropdown, setShowPronounsDropdown] = useState(false);
   const [showProgrammeDropdown, setShowProgrammeDropdown] = useState(false);
   const [hasProgramInMind, setHasProgramInMind] = useState<'yes' | 'no' | ''>('');
@@ -101,6 +105,7 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
       alert('Please select an avatar');
       return;
     }
+    localStorage.setItem('avatar', selectedAvatar);
     setStep('chat');
   };
 
@@ -112,6 +117,7 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
 
     if (chatStep === 'greeting') {
       setFirstName(text);
+      localStorage.setItem('firstName', text);
       addAvatarMessage(`Nice to meet you, ${text}! What pronouns do you use?`, 400);
       setChatStep('pronouns');
     } else if (chatStep === 'pronouns') {
@@ -121,6 +127,7 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
       }, 500);
     } else if (chatStep === 'age') {
       setAge(text);
+      localStorage.setItem('age', text);
       addAvatarMessage('Cool! What profile did you complete in high school?', 800);
       setChatStep('profile');
     }
@@ -130,6 +137,7 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
   const handlePronounsSelect = (selectedValue: string) => {
     const selectedLabel = pronounOptions.find(opt => opt.value === selectedValue)?.label || selectedValue;
     setPronouns(selectedValue);
+    localStorage.setItem('pronouns', selectedValue);
     //addUserMessage(selectedLabel);
     setShowPronounsDropdown(false);
     handleUserResponse(selectedValue);
@@ -140,6 +148,7 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
     const selectedLabel = programmeOptions.find(opt => opt.value === selectedValue)?.label || selectedValue;
     addUserMessage(selectedLabel);
     setProfile(selectedLabel);
+    localStorage.setItem('profile', selectedLabel);
     // ask follow-up question instead of finishing immediately
     addAvatarMessage('Quick question: do you already have a programme in mind?', 800);
     setChatStep('programInMind');
@@ -151,6 +160,7 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
   // Handle program-in-mind selection (yes/no)
   const handleProgramInMindSelect = (val: 'yes' | 'no') => {
     setHasProgramInMind(val);
+    localStorage.setItem('hasProgramInMind', val  === 'yes' ? 'Yes' : 'No');
     addUserMessage(val === 'yes' ? 'Yes' : 'No');
     addAvatarMessage(`Thanks — that's all I need. Let's get started!`, 800);
   };

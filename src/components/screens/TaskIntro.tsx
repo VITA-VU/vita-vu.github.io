@@ -9,8 +9,7 @@ interface TaskIntroProps {
   onContinue: () => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
-  onGoBack?: () => void;
-  onGoHome?: () => void;
+  goHome?: () => void;
   selectedAvatar?: string;
 }
 
@@ -28,7 +27,7 @@ const avatarMap: Record<string, string> = (() => {
   }
 })();
 
-export function TaskIntro({ selectedProgram, onContinue, currentLang, onLangChange, onGoBack, onGoHome, selectedAvatar }: TaskIntroProps) {
+export function TaskIntro({ selectedProgram, onContinue, currentLang, onLangChange, goHome, selectedAvatar }: TaskIntroProps) {
   const avatarTopic = selectedAvatar || 'Griffon';
   return (
     <div className="min-h-screen bg-white">
@@ -36,7 +35,7 @@ export function TaskIntro({ selectedProgram, onContinue, currentLang, onLangChan
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
           <button 
-            onClick={() => { onGoHome?.(); if (typeof window !== 'undefined') { window.location.hash = '#/splash'; } }} 
+            onClick={() => goHome?.()} 
             aria-label="Go home" 
             className="flex items-center"
           >
@@ -48,11 +47,6 @@ export function TaskIntro({ selectedProgram, onContinue, currentLang, onLangChan
       
       {/* Content */}
       <div className="max-w-2xl mx-auto p-6 space-y-6">
-        {onGoBack && (
-          <button onClick={onGoBack} className="text-sm text-vita-deep-blue hover:underline mb-2 flex items-center gap-2">
-            ← Back
-          </button>
-        )}
 
         {/* Avatar speaking bubble */}
         <div className="flex items-start gap-4">
