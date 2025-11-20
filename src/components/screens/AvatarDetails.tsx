@@ -5,7 +5,7 @@ import { LanguageToggle } from '../LanguageToggle';
 import logo from '../imgs/VU-logo-RGB.png';
 
 interface AvatarAndDetailsProps {
-  onContinue: (data: { avatar?: string; pronouns?: string; firstName?: string; age?: string; profile?: string }) => void;
+  onContinue: (data: { avatar?: string; pronouns?: string; firstName?: string; age?: string; profile?: string; hasProgramInMind?: 'yes' | 'no' }) => void;
   onSkip?: () => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
@@ -14,7 +14,7 @@ interface AvatarAndDetailsProps {
 }
 
 type Step = 'avatar' | 'pronouns' | 'chat';
-type ChatStep = 'greeting' | 'name' | 'pronouns' | 'age' | 'profile';
+type ChatStep = 'greeting' | 'name' | 'pronouns' | 'age' | 'profile' | 'programInMind';
 
 interface ChatMessage {
   sender: 'user' | 'avatar';
@@ -51,6 +51,8 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
   const [programme, setProgramme] = useState('');
   const [showPronounsDropdown, setShowPronounsDropdown] = useState(false);
   const [showProgrammeDropdown, setShowProgrammeDropdown] = useState(false);
+  const [hasProgramInMind, setHasProgramInMind] = useState<'yes' | 'no' | ''>('');
+  const [showProgramInMindDropdown, setShowProgramInMindDropdown] = useState(false);
 
   // Dynamically import all images from avatar_griffon folder
   const avatarImages = useMemo(() => {
@@ -137,15 +139,22 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
   const handleProgrammeSelect = (selectedValue: string) => {
     const selectedLabel = programmeOptions.find(opt => opt.value === selectedValue)?.label || selectedValue;
     addUserMessage(selectedLabel);
-    setProfile(selectedValue);
-    addAvatarMessage('Great! That\'s all I need for now. Let\'s get started!', 800);
+    setProfile(selectedLabel);
+    // ask follow-up question instead of finishing immediately
+    addAvatarMessage('Quick question: do you already have a programme in mind?', 800);
+    setChatStep('programInMind');
     setTimeout(() => {
-        setShowProgrammeDropdown(false);
-        onContinue({ avatar: selectedAvatar, pronouns, firstName, age, profile: selectedLabel });
-    }, 1000);
-    //handleUserResponse(selectedValue);
+      setShowProgrammeDropdown(false);
+    }, 500);
   };
 
+  // Handle program-in-mind selection (yes/no)
+  const handleProgramInMindSelect = (val: 'yes' | 'no') => {
+    setHasProgramInMind(val);
+    addUserMessage(val === 'yes' ? 'Yes' : 'No');
+    addAvatarMessage(`Thanks — that's all I need. Let's get started!`, 800);
+  };
+  
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -299,7 +308,7 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
                       onClick={() => setShowProgrammeDropdown(!showProgrammeDropdown)}
                       className="w-full border rounded px-3 py-2 text-sm text-left bg-white hover:bg-gray-50"
                     >
-                      {programme || 'Select a programme...'}
+                      {programme || 'Select a profiles...'}
                       <span className="float-right">▼</span>
                     </button>
                     {showProgrammeDropdown && (
@@ -316,7 +325,73 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
                       </div>
                     )}
                   </div>
-                ) : (
+                ) : chatStep === 'programInMind' ? (
+                <div className="flex-1 relative">
+                  {!hasProgramInMind && (
+                    <>
+                      <label className="block text-sm text-gray-700 mb-1">
+                        Do you already have a programme in mind?
+                      </label>
+
+                      <button
+                        onClick={() => setShowProgramInMindDropdown(!showProgramInMindDropdown)}
+                        className="w-full border rounded px-3 py-2 text-sm text-left bg-white hover:bg-gray-50"
+                      >
+                        {hasProgramInMind ? (hasProgramInMind === 'yes' ? 'Yes' : 'No') : 'Select...'}
+                        <span className="float-right">▼</span>
+                      </button>
+
+                      {showProgramInMindDropdown && (
+                        <div className="absolute top-full left-0 right-0 border rounded mt-1 bg-white shadow-lg z-10">
+                          <button
+                            className="w-full text-left px-3 py-2 hover:bg-vita-gold/10 text-sm"
+                            onClick={() => {
+                              setShowProgramInMindDropdown(false);
+                              handleProgramInMindSelect('yes');
+                            }}
+                          >
+                            Yes
+                          </button>
+
+                          <button
+                            className="w-full text-left px-3 py-2 hover:bg-vita-gold/10 text-sm"
+                            onClick={() => {
+                              setShowProgramInMindDropdown(false);
+                              handleProgramInMindSelect('no');
+                            }}
+                          >
+                            No
+                          </button>
+                        </div>
+                      )}
+                    </>
+                  )}
+
+                  {/* CTA shown AFTER user selects Yes/No */}
+                  {hasProgramInMind && (
+                    <div className="mt-4">
+                      <VitaButton
+                        variant="primary"
+                        onClick={() =>
+                          onContinue({
+                            avatar: selectedAvatar,
+                            pronouns,
+                            firstName,
+                            age,
+                            profile,
+                            hasProgramInMind: hasProgramInMind as 'yes' | 'no',
+                          })
+                        }
+                        className="w-full"
+                      >
+                        {hasProgramInMind === 'yes'
+                          ? "Let's go look at some programs!"
+                          : "Let's go learn some more about you!"}
+                      </VitaButton>
+                    </div>
+                  )}
+                </div>
+              ): (
                   <>
                     <input
                       type="text"

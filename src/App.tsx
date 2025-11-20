@@ -93,13 +93,8 @@ function ConsentRoute() {
   const ctx = useAppContext();
   return (
     <ConsentAndGoal
-      onChoosePath={(path) => {
-        ctx.setUserPath(path);
-        //navigate('/avatar');
-        navigate('/avatardetails');
-      }}
+      onStart={() => navigate('/avatardetails')}
       goHome={() => navigate('/')}
-      goBack={() => navigate(-1)}
       currentLang="EN"
       onLangChange={() => {}}
     />
@@ -131,7 +126,12 @@ function AvatarDetailsRoute() {
     <AvatarAndDetails
       onContinue={(data) => {
         ctx.setUserData({ ...ctx.userData, ...data });
-        navigate('/Task-intro');
+        // navigate based on whether user already has a program in mind
+        if (data.hasProgramInMind === 'yes') {
+          navigate('/programme-search');
+        } else {
+          navigate('/micro-riasec');
+        }
       }}
       onSkip={() => navigate('/Task-intro')}
       goHome={() => navigate('/')}
@@ -245,7 +245,7 @@ function MicroRIASECRoute() {
         };
         ctx.setRIASECStyles(styles);
         ctx.setTaskVariant(map[styles[0]] || 'psychology');
-        navigate('/task');
+        navigate('/task-intro');
       }}
       goHome={() => navigate('/')}
       goBack={() => navigate(-1)}

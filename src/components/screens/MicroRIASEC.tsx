@@ -294,9 +294,9 @@ export function MicroRIASEC({ onComplete, onBack, currentLang, onLangChange, sel
 
 
         <div>
-          <h2 className="text-[1.375rem] mb-2">Organize by preference</h2>
+          <h2 className="text-[1.375rem] mb-2">What do you like to do?</h2>
           <p className="text-[1rem] text-gray-600">
-            Drag and drop these activities from most appealing (top) to least appealing (bottom).
+            Drag and drop these activities from most appealing (top) to least appealing (bottom). This will help us understand your interests better.
           </p>
         </div>
         
@@ -362,12 +362,6 @@ export function MicroRIASEC({ onComplete, onBack, currentLang, onLangChange, sel
         
         {/* Actions */}
         <div className="flex gap-3 pt-4">
-          <VitaButton
-            variant="ghost"
-            onClick={onBack}
-          >
-            Back
-          </VitaButton>
           <VitaButton
             variant="primary"
             onClick={handleComplete}

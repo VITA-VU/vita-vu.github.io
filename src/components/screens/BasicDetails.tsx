@@ -40,7 +40,6 @@ export function BasicDetails({ onContinue, currentLang, onLangChange, selectedAv
     { value: 'health', label: 'Nature & Health (NG)' },
     { value: 'culture', label: 'Culture & Society (CM)' },
     { value: 'economics', label: 'Economics & Society (EM)' },
-    { value: 'combination', label: 'Combination profile' },
     { value: 'other', label: 'Other' },
     { value: 'not_applicable', label: 'Not applicable' }
   ];
