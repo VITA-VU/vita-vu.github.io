@@ -4,8 +4,9 @@ node_modules/
 # Python
 .venv/
 
-# Data
-vu_cache*/
-data_programmes_courses/
+# CSV and JSN files in data directory
+src/*/data/*.csv
+src/*/data/*.json
+
 
 
