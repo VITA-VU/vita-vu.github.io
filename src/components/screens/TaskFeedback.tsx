@@ -32,6 +32,7 @@ export function TaskFeedback({ onContinue, currentLang, onLangChange, goHome, se
   const [enjoyment, setEnjoyment] = useState<string>('');
   const [preference, setPreference] = useState<string>('');
   const avatarTopic = selectedAvatar || 'Griffon';
+  console.log(avatarTopic)
   const [stop, setStop] = useState<boolean>(false);
 
   const handleEnjoymentSelect = (value: string) => {

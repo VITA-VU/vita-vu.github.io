@@ -27,7 +27,7 @@ const avatarMap: Record<string, string> = (() => {
   }
 })();
 
-export function TaskIntro({ selectedProgram, onContinue, currentLang, onLangChange, goHome, selectedAvatar }: TaskIntroProps) {
+export function TaskIntro({selectedProgram, onContinue, currentLang, onLangChange, goHome, selectedAvatar }: TaskIntroProps) {
   const avatarTopic = selectedAvatar || 'Griffon';
   return (
     <div className="min-h-screen bg-white">

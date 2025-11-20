@@ -174,6 +174,7 @@ function ProgrammeSearchRoute() {
       goBack={() => navigate(-1)}
       currentLang="EN"
       onLangChange={() => {}}
+      selectedAvatar={ctx.userData?.avatar}
     />
   );
 }
@@ -197,6 +198,7 @@ function TaskIntroRoute() {
       goHome={() => navigate('/')}
       currentLang="EN"
       onLangChange={() => {}}
+      selectedAvatar={ctx.userData?.avatar}
     />
   );
 }
