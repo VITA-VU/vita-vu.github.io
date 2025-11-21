@@ -41,7 +41,7 @@ export function useToast() {
   };
   
   const hideToast = () => {
-    setToast({ show: false, message: '' });
+    setToast({ show: false, message: 'ok' });
   };
   
   return { toast, showToast, hideToast };

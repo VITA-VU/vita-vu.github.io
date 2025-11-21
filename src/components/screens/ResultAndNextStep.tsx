@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { VitaButton } from '../vita-ui/VitaButton';
 import { VitaCard } from '../vita-ui/VitaCard';
 import { VitaChip } from '../vita-ui/VitaChip';
@@ -7,8 +7,7 @@ import { Smile, Meh, Frown } from 'lucide-react';
 import logo from '../imgs/VU-logo-RGB.png';
 
 interface ResultAndNextStepProps {
-
-onSeeWeek: (programme: string) => void;
+  onSeeWeek: (programme: string) => void;
   onTryAnother: () => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
@@ -16,7 +15,24 @@ onSeeWeek: (programme: string) => void;
   onGoHome?: () => void;
   goHome?: () => void;
   goBack?: () => void;
+  selectedAvatar?: string;
 }
+
+
+
+// map avatar id -> src (used to show selected avatar speaking)
+const avatarMap: Record<string, string> = (() => {
+  try {
+    const imgs = import.meta.glob('../imgs/avatar_griffon/*.{png,jpg,svg}', { eager: true }) as Record<string, any>;
+    return Object.entries(imgs).reduce<Record<string, string>>((acc, [path, mod]) => {
+      const id = path.split('/').pop()?.replace(/\.[^/.]+$/, '') || path;
+      acc[id] = mod.default || mod;
+      return acc;
+    }, {});
+  } catch {
+    return {};
+  }
+})();
 
 const programmeMatches = [
   {
@@ -48,10 +64,12 @@ export function ResultAndNextStep({
   currentLang,
   onLangChange,
   goBack, goHome
+  , selectedAvatar
 }: ResultAndNextStepProps) {
   const [feedback, setFeedback] = useState<'clear' | 'neutral' | 'confusing' | null>(null);
   const [showFeedbackModal, setShowFeedbackModal] = useState(false);
   const [helpfulPart, setHelpfulPart] = useState<string>('');
+  const avatarTopic = selectedAvatar || 'Griffon';
   
   return (
     <div className="min-h-screen bg-white pb-20">
@@ -59,14 +77,13 @@ export function ResultAndNextStep({
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
           <button 
-  onClick={() => goHome?.()} 
-  aria-label="Go Home"
-  className="flex items-center"
->
-  <img  src={logo}  alt="VU Logo" width='150' height='100' />
-</button>
-
-       </div>
+            onClick={() => { goHome?.(); if (typeof window !== 'undefined') { window.location.hash = '#/splash'; } }} 
+            aria-label="Go home"
+            className="flex items-center"
+          >
+            <img src={logo} alt="VU Logo" width="150" height="100" className="cursor-pointer" />
+          </button>
+        </div>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       
@@ -74,11 +91,39 @@ export function ResultAndNextStep({
       <div className="max-w-4xl mx-auto p-6 space-y-6">
 
 
-        <div>
-          <h2 className="text-[1.375rem] mb-2">Your matches</h2>
-          <p className="text-[1rem] text-gray-600">
-            Based on your responses, these programmes might be a good fit
-          </p>
+        {/* Avatar speaking bubble (title + intro) */}
+        <div className="flex items-start gap-4">
+          <div className="flex-shrink-0 w-20">
+            <img
+              src={avatarMap[avatarTopic]}
+              alt="selected avatar"
+              className="object-cover rounded-full shadow"
+              width="200px"
+              height="100px"
+            />
+          </div>
+
+          <div className="relative max-w-prose flex-1">
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
+              <h2 className="text-[1.375rem] mb-2">Your matches</h2>
+              <p className="text-[1rem] text-gray-600">
+                Based on your responses, these programmes might be a good fit
+              </p>
+              <div
+                style={{
+                  position: 'absolute',
+                  left: -8,
+                  top: 24,
+                  width: 16,
+                  height: 16,
+                  background: '#F8FAFC',
+                  borderTop: '1px solid #E5E7EB',
+                  borderLeft: '1px solid #E5E7EB',
+                  transform: 'rotate(45deg)',
+                }}
+              />
+            </div>
+          </div>
         </div>
         
         {/* Programme Cards */}
@@ -115,13 +160,13 @@ export function ResultAndNextStep({
                   </p>
                 </div>
                 
-                <div className="pt-3 space-y-2">
+                <div className="pt-3 space-y-2 mt-auto">
                   <VitaButton
                     variant="ghost"
                     onClick={onTryAnother}
                     className="w-full"
                   >
-                    Try another task
+                    Try a task for this programme
                   </VitaButton>
                 </div>
               </div>
@@ -129,39 +174,43 @@ export function ResultAndNextStep({
           ))}
         </div>
         
-        {/* Reflection Question */}
-        <div className="bg-gray-50 rounded-lg p-6 space-y-4">
-          <p className="text-[1rem]">How do you feel about these recommendations?</p>
-          <div className="flex gap-3 justify-center">
-            <button
-              onClick={() => setFeedback('clear')}
-              className={`flex flex-col items-center gap-2 p-4 rounded-lg min-w-[80px] min-h-[80px] transition-all ${
-                feedback === 'clear' ? 'bg-green-100 border-2 border-green-500' : 'bg-white border border-gray-200'
-              }`}
-            >
-              <Smile size={32} className={feedback === 'clear' ? 'text-green-600' : 'text-gray-400'} />
-              <span className="text-[0.8125rem]">Clear</span>
-            </button>
-            <button
-              onClick={() => setFeedback('neutral')}
-              className={`flex flex-col items-center gap-2 p-4 rounded-lg min-w-[80px] min-h-[80px] transition-all ${
-                feedback === 'neutral' ? 'bg-gray-200 border-2 border-gray-500' : 'bg-white border border-gray-200'
-              }`}
-            >
-              <Meh size={32} className={feedback === 'neutral' ? 'text-gray-600' : 'text-gray-400'} />
-              <span className="text-[0.8125rem]">Neutral</span>
-            </button>
-            <button
-              onClick={() => setFeedback('confusing')}
-              className={`flex flex-col items-center gap-2 p-4 rounded-lg min-w-[80px] min-h-[80px] transition-all ${
-                feedback === 'confusing' ? 'bg-red-100 border-2 border-red-500' : 'bg-white border border-gray-200'
-              }`}
-            >
-              <Frown size={32} className={feedback === 'confusing' ? 'text-red-600' : 'text-gray-400'} />
-              <span className="text-[0.8125rem]">Confusing</span>
-            </button>
-          </div>
-        </div>
+{/* Reflection Question */}
+<div className="bg-gray-50 rounded-lg p-6 space-y-4">
+  <p className="text-[1rem]">How do you feel about these recommendations?</p>
+
+    <div className="flex gap-3 justify-center">
+      {/* Happy Button */}
+      <button
+        onClick={() => setFeedback('clear')}
+        className={`flex flex-col items-center gap-2 p-4 rounded-lg min-h-[100px] transition-all flex-1 ${
+          feedback === 'clear'
+            ? 'bg-green-100 border-2 border-green-500'
+            : 'bg-white border border-gray-200'
+        }`}
+      >
+        <span className="text-4xl">😊</span>
+        <span className="text-[0.8125rem] text-center">
+          I'm happy with my recommendations!
+        </span>
+      </button>
+
+      {/* Confusing Button */}
+      <button
+        onClick={() => setFeedback('confusing')}
+        className={`flex flex-col items-center gap-2 p-4 rounded-lg min-h-[100px] transition-all flex-1 ${
+          feedback === 'confusing'
+            ? 'bg-red-100 border-2 border-red-500'
+            : 'bg-white border border-gray-200'
+        }`}
+      >
+        <span className="text-4xl">😕</span>
+        <span className="text-[0.8125rem] text-center">
+          I want to keep looking
+        </span>
+      </button>
+    </div>
+  </div>
+
         
         {/* Share Feedback Link */}
         <div className="text-center pt-4">

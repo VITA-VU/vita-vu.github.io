@@ -30,6 +30,11 @@ export function TaskCard({
   showTimer = false
 }: TaskCardProps) {
   const [learnOpen, setLearnOpen] = useState(false);
+  
+  function setOpened(boolean: boolean) {
+    setLearnOpen(boolean);
+    localStorage.setItem('learnOpened', "true");
+  }
 
   return (
     <div className="bg-white border border-gray-200 rounded-lg p-4 md:p-6">
@@ -52,7 +57,7 @@ export function TaskCard({
       <div className="bg-amber-50 border border-amber-200 rounded-lg mb-6">
         <button
           type="button"
-          onClick={() => setLearnOpen(!learnOpen)}
+          onClick={() => setOpened(!learnOpen)}
           aria-expanded={learnOpen}
           className="w-full flex items-center justify-between gap-2 p-4 hover:bg-amber-100 transition-colors focus:outline-none focus:ring-2 focus:ring-amber-400"
         >

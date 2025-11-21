@@ -5,6 +5,20 @@ import { GripVertical, ChevronUp, ChevronDown } from 'lucide-react';
 // import { griffonAvatars } from '../griffons/GriffonAvatars';
 import logo from '../imgs/VU-logo-RGB.png';
 
+// map avatar id -> src (used to show selected avatar speaking)
+const avatarMap: Record<string, string> = (() => {
+  try {
+    const imgs = import.meta.glob('../imgs/avatar_griffon/*.{png,jpg,svg}', { eager: true }) as Record<string, any>;
+    return Object.entries(imgs).reduce<Record<string, string>>((acc, [path, mod]) => {
+      const id = path.split('/').pop()?.replace(/\.[^/.]+$/, '') || path;
+      acc[id] = mod.default || mod;
+      return acc;
+    }, {});
+  } catch {
+    return {};
+  }
+})();
+
 interface MicroRIASECProps {
 
 onComplete: (styles: string[]) => void;
@@ -115,7 +129,7 @@ const activitySets: Record<string, Activity[]> = {
     { id: 6, text: 'Maintaining species databases and research records', riasec: 'C' },
   ],
   // Default set for other avatars
-  default: [
+  Griffon: [
     { id: 1, text: 'Creating innovative designs and artistic projects', riasec: 'A' },
     { id: 2, text: 'Helping and teaching others in your field', riasec: 'S' },
     { id: 3, text: 'Researching and analyzing complex information', riasec: 'I' },
@@ -127,8 +141,7 @@ const activitySets: Record<string, Activity[]> = {
 
 export function MicroRIASEC({ onComplete, onBack, currentLang, onLangChange, selectedAvatar, goBack, goHome }: MicroRIASECProps) {
   // Get the avatar topic for activities
-  const avatarTopic = selectedAvatar || 'default';
-  console.log("Selected avatar topic:", avatarTopic);
+  const avatarTopic = selectedAvatar || 'Griffon';
   const activities = activitySets[avatarTopic] || activitySets.default;
   // const avatarData = griffonAvatars.find(a => a.id === selectedAvatar);
   // const topicName = avatarData?.title.toLowerCase() || 'general interest';
@@ -196,8 +209,8 @@ export function MicroRIASEC({ onComplete, onBack, currentLang, onLangChange, sel
     const sorted = Object.entries(scores)
       .sort(([, a], [, b]) => b - a)
       .map(([letter]) => letter)
-      .slice(0, 2);
-    
+      //.slice(0, 2);
+    localStorage.setItem('microRIASEC', JSON.stringify(sorted));
     onComplete(sorted);
   };
   
@@ -222,11 +235,39 @@ export function MicroRIASEC({ onComplete, onBack, currentLang, onLangChange, sel
       <div className="max-w-2xl mx-auto p-6 space-y-6">
 
 
-        <div>
-          <h2 className="text-[1.375rem] mb-2">What do you like to do?</h2>
-          <p className="text-[1rem] text-gray-600">
-            Drag and drop these activities from most appealing (top) to least appealing (bottom). This will help us understand your interests better.
-          </p>
+        {/* Avatar speaking bubble */}
+        <div className="flex items-start gap-4">
+          <div className="flex-shrink-0 w-20">
+              <img
+                src={avatarMap[avatarTopic || '']}
+                alt="selected avatar"
+                className=" object-cover rounded-full shadow"
+                width="200px"
+                height="100px"
+              />
+          </div>
+          <div className="relative max-w-prose flex-1">
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
+              <h2 className="text-[1.375rem] mb-2">What do you like to do?</h2>
+              <p className="text-[1rem] text-gray-600">
+                Drag and drop these activities from most appealing (top) to least appealing (bottom). This will help us understand your interests better.
+              </p>
+              {/* speech-tail: small rotated square positioned to point at avatar */}
+              <div
+                style={{
+                  position: 'absolute',
+                  left: -8,
+                  top: 24,
+                  width: 16,
+                  height: 16,
+                  background: '#F8FAFC',
+                  borderTop: '1px solid #E5E7EB',
+                  borderLeft: '1px solid #E5E7EB',
+                  transform: 'rotate(45deg)',
+                }}
+              />
+            </div>
+          </div>
         </div>
         
         {/* Ordering List */}

@@ -4,29 +4,53 @@ import { LanguageToggle } from '../LanguageToggle';
 import logo from '../imgs/VU-logo-RGB.png';
 
 interface TaskFeedbackProps {
-  onContinue: (feedback: { enjoyment: string; preference: string }) => void;
+  onContinue: (stop: boolean) => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
-  goBack?: () => void;
   goHome?: () => void;
+  selectedAvatar?: string;
 }
 
 type FeedbackStep = 'enjoyment' | 'preference';
 
-export function TaskFeedback({ onContinue, currentLang, onLangChange, goBack, goHome }: TaskFeedbackProps) {
+// map avatar id -> src (used to show selected avatar speaking)
+const avatarMap: Record<string, string> = (() => {
+  try {
+    const imgs = import.meta.glob('../imgs/avatar_griffon/*.{png,jpg,svg}', { eager: true }) as Record<string, any>;
+    return Object.entries(imgs).reduce<Record<string, string>>((acc, [path, mod]) => {
+      const id = path.split('/').pop()?.replace(/\.[^/.]+$/, '') || path;
+      acc[id] = mod.default || mod;
+      return acc;
+    }, {});
+  } catch {
+    return {};
+  }
+})();
+
+export function TaskFeedback({ onContinue, currentLang, onLangChange, goHome, selectedAvatar }: TaskFeedbackProps) {
   const [step, setStep] = useState<FeedbackStep>('enjoyment');
   const [enjoyment, setEnjoyment] = useState<string>('');
   const [preference, setPreference] = useState<string>('');
+  const avatarTopic = selectedAvatar || 'Griffon';
+  console.log(avatarTopic)
+  const [stop, setStop] = useState<boolean>(false);
 
   const handleEnjoymentSelect = (value: string) => {
     setEnjoyment(value);
-    setStep('preference');
+    localStorage.setItem('taskEnjoyment', value);
+    // TO DO: check update : if ready for stopping point, go to finish line
+    if (stop===true){
+      onContinue(true);
+    }
+    else {
+      setStep('preference');
+    }
   };
 
   const handlePreferenceSelect = (value: string) => {
     setPreference(value);
-    // Submit feedback and continue
-    onContinue({ enjoyment, preference: value });
+    localStorage.setItem('taskPreference', value);
+    onContinue(false);
   };
 
   return (
@@ -51,11 +75,38 @@ export function TaskFeedback({ onContinue, currentLang, onLangChange, goBack, go
         {/* Step 1: Enjoyment */}
         {step === 'enjoyment' && (
           <div className="space-y-6">
-            <div>
-              <h2 className="text-[1.375rem] mb-4">How did you feel about that question?</h2>
-              <p className="text-[1rem] text-gray-600 mb-6">
-                Your feedback helps us improve your learning experience.
-              </p>
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-20">
+                  <img
+                    src={avatarMap[avatarTopic || '']}
+                    alt="selected avatar"
+                    className="object-cover rounded-full shadow"
+                    width="200px"
+                    height="100px"
+                  />
+              </div>
+
+              <div className="relative max-w-prose flex-1">
+                <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
+                  <h2 className="text-[1.375rem] mb-4">How did you feel about that question?</h2>
+                  <p className="text-[1rem] text-gray-600 mb-6">
+                    Your feedback helps us improve your learning experience.
+                  </p>
+                  <div
+                    style={{
+                      position: 'absolute',
+                      left: -8,
+                      top: 24,
+                      width: 16,
+                      height: 16,
+                      background: '#F8FAFC',
+                      borderTop: '1px solid #E5E7EB',
+                      borderLeft: '1px solid #E5E7EB',
+                      transform: 'rotate(45deg)',
+                    }}
+                  />
+                </div>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -92,11 +143,38 @@ export function TaskFeedback({ onContinue, currentLang, onLangChange, goBack, go
         {/* Step 2: Preference */}
         {step === 'preference' && (
           <div className="space-y-6">
-            <div>
-              <h2 className="text-[1.375rem] mb-4">What would you prefer next?</h2>
-              <p className="text-[1rem] text-gray-600 mb-6">
-                Would you like a similar type of question or something completely different?
-              </p>
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-20">
+                  <img
+                    src={avatarMap[avatarTopic || '']}
+                    alt="selected avatar"
+                    className="w-20 h-20 object-cover rounded-full shadow"
+                    width="200px"
+                    height="100px"
+                  />
+              </div>
+
+              <div className="relative max-w-prose flex-1">
+                <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
+                  <h2 className="text-[1.375rem] mb-4">What would you prefer next?</h2>
+                  <p className="text-[1rem] text-gray-600 mb-6">
+                    Would you like a similar type of question or something completely different?
+                  </p>
+                  <div
+                    style={{
+                      position: 'absolute',
+                      left: -8,
+                      top: 24,
+                      width: 16,
+                      height: 16,
+                      background: '#F8FAFC',
+                      borderTop: '1px solid #E5E7EB',
+                      borderLeft: '1px solid #E5E7EB',
+                      transform: 'rotate(45deg)',
+                    }}
+                  />
+                </div>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

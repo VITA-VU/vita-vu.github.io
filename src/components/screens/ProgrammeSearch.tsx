@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { VitaButton } from '../vita-ui/VitaButton';
 import { VitaCard } from '../vita-ui/VitaCard';
 import { LanguageToggle } from '../LanguageToggle';
@@ -6,14 +6,14 @@ import { Search } from 'lucide-react';
 import logo from '../imgs/VU-logo-RGB.png';
 
 interface ProgrammeSearchProps {
-
-onContinue: (programme: string) => void;
+  onContinue: (programme: string) => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
   onGoBack?: () => void;
   onGoHome?: () => void;
   goHome?: () => void;
   goBack?: () => void;
+  selectedAvatar?: string;
 }
 
 const programmes = [
@@ -27,10 +27,30 @@ const programmes = [
   { id: 'biology', name: 'Biology', description: 'Life sciences and ecosystems' }
 ];
 
-export function ProgrammeSearch({ onContinue, currentLang, onLangChange, goBack, goHome }: ProgrammeSearchProps) {
+export function ProgrammeSearch({ onContinue, currentLang, onLangChange, goBack, goHome, selectedAvatar }: ProgrammeSearchProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [selected, setSelected] = useState<string | null>(null);
+  const avatarTopic = selectedAvatar || 'Griffon';
+
+  function setSelectedProgramme(programmeId: string) {
+    setSelected(programmeId);
+    localStorage.setItem('selectedProgramme', programmeId);
+  }
   
+  // map avatar id -> src (used to show selected avatar speaking)
+  const avatarMap = useMemo(() => {
+    try {
+      const imgs = import.meta.glob('../imgs/avatar_griffon/*.{png,jpg,svg}', { eager: true }) as Record<string, any>;
+      return Object.entries(imgs).reduce<Record<string, string>>((acc, [path, mod]) => {
+        const id = path.split('/').pop()?.replace(/\.[^/.]+$/, '') || path;
+        acc[id] = mod.default || mod;
+        return acc;
+      }, {});
+    } catch {
+      return {};
+    }
+  }, []);
+
   const filteredProgrammes = programmes.filter(p =>
     p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     p.description.toLowerCase().includes(searchTerm.toLowerCase())
@@ -56,8 +76,38 @@ export function ProgrammeSearch({ onContinue, currentLang, onLangChange, goBack,
       {/* Content */}
       <div className="max-w-2xl mx-auto p-6 space-y-6">
 
+        {/* Avatar speaking bubble (title + intro) */}
+        <div className="flex items-start gap-4">
+          <div className="flex-shrink-0 w-20">
+              <img
+                src={avatarMap[avatarTopic || '']}
+                alt="selected avatar"
+                className=" object-cover rounded-full shadow"
+                width="200px"
+                height="100px"
+              />
+          </div>
 
-        <h2 className="text-[1.375rem]">Which programme do you want to explore?</h2>
+          <div className="relative max-w-prose flex-1">
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
+              <h2 className="text-[1.375rem]">Which programme do you want to explore?</h2>
+              <p className="text-[1rem] text-gray-600">Search or pick a programme below to explore options that match your interests.</p>
+              <div
+                style={{
+                  position: 'absolute',
+                  left: -8,
+                  top: 24,
+                  width: 16,
+                  height: 16,
+                  background: '#F8FAFC',
+                  borderTop: '1px solid #E5E7EB',
+                  borderLeft: '1px solid #E5E7EB',
+                  transform: 'rotate(45deg)',
+                }}
+              />
+            </div>
+          </div>
+        </div>
         
         {/* Search */}
         <div className="relative">
@@ -77,7 +127,7 @@ export function ProgrammeSearch({ onContinue, currentLang, onLangChange, goBack,
             <VitaCard
               key={programme.id}
               variant={selected === programme.id ? 'emphasis' : 'base'}
-              onClick={() => setSelected(programme.id)}
+              onClick={() => setSelectedProgramme(programme.id)}
             >
               <h3 className="text-[1rem] mb-1">{programme.name}</h3>
               <p className="text-[0.8125rem] text-gray-600">{programme.description}</p>

@@ -15,7 +15,7 @@ import { ResultAndNextStep } from './components/screens/ResultAndNextStep';
 import { TaskIntro } from './components/screens/TaskIntro';
 import { TutorialManager } from './components/tutorial/TutorialManager';
 import { TutorialWelcome } from './components/tutorial/TutorialWelcome';
-import { TaskFeedback } from './components/vita-ui/TaskFeedback';
+import { TaskFeedback } from './components/screens/TaskFeedback';
 
 // Global state context (or use localStorage/Redux)
 import { createContext, useState, ReactNode } from 'react';
@@ -174,6 +174,7 @@ function ProgrammeSearchRoute() {
       goBack={() => navigate(-1)}
       currentLang="EN"
       onLangChange={() => {}}
+      selectedAvatar={ctx.userData?.avatar}
     />
   );
 }
@@ -195,9 +196,9 @@ function TaskIntroRoute() {
         navigate('/task');
       }}
       goHome={() => navigate('/')}
-      goBack={() => navigate(-1)}
       currentLang="EN"
       onLangChange={() => {}}
+      selectedAvatar={ctx.userData?.avatar}
     />
   );
 }
@@ -210,7 +211,6 @@ function TaskRoute() {
       taskVariant={ctx.taskVariant || 'psychology'}
       onComplete={() => navigate('/task-feedback')}
       goHome={() => navigate('/')}
-      goBack={() => navigate(-1)}
       currentLang="EN"
       onLangChange={() => {}}
     />
@@ -222,13 +222,16 @@ function TaskFeedbackRoute() {
   const ctx = useAppContext();
   return (
     <TaskFeedback
-      onContinue={(feedback) => {
+      onContinue={(stop) => {
+        if (stop) {
+          navigate('/result');
+        } else
         navigate('/task');
       }}
       goHome={() => navigate('/')}
-      goBack={() => navigate(-1)}
       currentLang="EN"
       onLangChange={() => {}}
+      selectedAvatar={ctx.userData?.avatar}
     />
   );
 }
@@ -283,21 +286,13 @@ function ResultRoute() {
   const ctx = useAppContext();
   return (
     <ResultAndNextStep
-      onSeeWeek={(prog) => {
-        ctx.setSelectedProgramme(prog);
-        navigate('/programme-preview');
-      }}
-      onTryAnother={() => {
-        const variants = ['psychology', 'business-analytics', 'physics'];
-        const current = ctx.taskVariant || 'psychology';
-        const i = variants.indexOf(current);
-        ctx.setTaskVariant(variants[(i + 1) % variants.length]);
-        navigate('/task');
-      }}
+      onSeeWeek={(p) => navigate(`/programme/${p}`)}
+      onTryAnother={() => navigate('/task')}
       goHome={() => navigate('/')}
       goBack={() => navigate(-1)}
       currentLang="EN"
       onLangChange={() => {}}
+      selectedAvatar={ctx.userData?.avatar}
     />
   );
 }
@@ -328,17 +323,17 @@ function AppRoutes() {
       <Routes>
         <Route path="/" element={<SplashRoute />} />
         <Route path="/consent" element={<ConsentRoute />} />
-        <Route path="/avatar" element={<AvatarRoute />} />
+        {/* <Route path="/avatar" element={<AvatarRoute />} /> */}
         <Route path="/avatardetails" element={<AvatarDetailsRoute />} />
-        <Route path="/basic-details" element={<BasicDetailsRoute />} />
+        {/* <Route path="/basic-details" element={<BasicDetailsRoute />} /> */}
         <Route path="/programme-search" element={<ProgrammeSearchRoute />} />
         <Route path="/task-intro" element={<TaskIntroRoute />} />
         <Route path="/task" element={<TaskRoute />} />
         {/* <Route path="/choose-path" element={<ChoosePathRoute />} /> */}
         <Route path="/micro-riasec" element={<MicroRIASECRoute />} />
-        <Route path="/style-picker" element={<StylePickerRoute />} />
+        {/* <Route path="/style-picker" element={<StylePickerRoute />} /> */}
         <Route path="/result" element={<ResultRoute />} />
-        <Route path="/programme-preview" element={<ProgrammePreviewRoute />} />
+        {/* <Route path="/programme-preview" element={<ProgrammePreviewRoute />} /> */}
         <Route path="/task-feedback" element={<TaskFeedbackRoute />} />
       </Routes>
 
