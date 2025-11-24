@@ -1,0 +1,76 @@
+{
+  "programme_title": "Ancient Studies",
+  "course_code": "L_AABAOHW115",
+  "course_name": "Objects in Context. An Interdisciplinary Perspective on the Ancient World",
+  "tasks": [
+    {
+      "task_type": "first_step_approach",
+      "stimulus": "You have just accessed the archaeological collection to study an ancient statue that caught your interest. You want to start your research effectively. What do you do first?",
+      "tiny_learn": [
+        "Material culture includes objects made or used by people in the past to tell us about history.",
+        "Begin by identifying and describing the object's features and context in detail.",
+        "Don't jump straight to conclusions without examining the object's context and provenance."
+      ],
+      "options": [
+        {
+          "label": "A",
+          "text": "Examine the statue physically to note its materials, craftsmanship, and any damage.",
+          "riasec_code": "R"
+        },
+        {
+          "label": "B",
+          "text": "Research what scholarly articles and previous studies say about statues from this period.",
+          "riasec_code": "I"
+        },
+        {
+          "label": "C",
+          "text": "Make a sketch or artistic representation of the statue to explore its visual features creatively.",
+          "riasec_code": "A"
+        },
+        {
+          "label": "D",
+          "text": "Discuss with classmates or experts to get different interpretations of the statue’s meaning.",
+          "riasec_code": "S"
+        },
+        {
+          "label": "E",
+          "text": "Plan a presentation pitch on why this statue matters for understanding ancient culture.",
+          "riasec_code": "E"
+        },
+        {
+          "label": "F",
+          "text": "Organize your notes and create a structured outline of what information you need to collect.",
+          "riasec_code": "C"
+        }
+      ]
+    },
+    {
+      "task_type": "challenge",
+      "stimulus": "You need to write an academic text about a funerary urn from the ancient world. How should you start your research process?",
+      "tiny_learn": [
+        "Evaluating objects as historical sources means checking their origin, use, and context.",
+        "Begin by gathering background literature and comparing the object with written records.",
+        "Avoid ignoring differences between material evidence and literary sources without investigation."
+      ],
+      "options": [
+        {
+          "label": "A",
+          "text": "Search the library for academic publications that discuss funerary urns and their cultural context."
+        },
+        {
+          "label": "B",
+          "text": "Describe the urn’s appearance and make assumptions about its symbolism based on intuition."
+        },
+        {
+          "label": "C",
+          "text": "Write an introduction first, then look for sources to fill in the details later."
+        },
+        {
+          "label": "D",
+          "text": "Start organizing your bibliography before fully understanding the urn’s historical background."
+        }
+      ],
+      "correct_option": "A"
+    }
+  ]
+}
