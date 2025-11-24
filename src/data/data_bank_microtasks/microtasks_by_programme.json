@@ -3,699 +3,410 @@
     "programme_title": "Ancient Studies",
     "courses": [
       {
-        "course_code": "L_AABAOHW115",
-        "course_name": "Objects in Context. An Interdisciplinary Perspective on the Ancient World",
-        "tasks": [
-          {
-            "task_type": "first_step_approach",
-            "stimulus": "You have just started your first assignment analyzing an ancient statue from the Allard Pierson collection. To understand its historical significance, what do you do first?",
-            "tiny_learn": [
-              "Material culture refers to objects made or used by people in the past.",
-              "Contextual analysis looks at where, when, and why an object was created and used.",
-              "Ignoring the object's historical context can lead to wrong conclusions."
-            ],
-            "options": [
-              {
-                "label": "A",
-                "text": "Examine the statue closely to observe details like style, material, and signs of wear.",
-                "riasec_code": "R"
-              },
-              {
-                "label": "B",
-                "text": "Research scholarly articles about similar statues to discover patterns or interpretations.",
-                "riasec_code": "I"
-              },
-              {
-                "label": "C",
-                "text": "Sketch or photograph the statue to create your own artistic interpretation.",
-                "riasec_code": "A"
-              },
-              {
-                "label": "D",
-                "text": "Discuss with classmates or the tutor to share initial observations and seek feedback.",
-                "riasec_code": "S"
-              },
-              {
-                "label": "E",
-                "text": "Plan how to present your findings by outlining key arguments and evidence to convince readers.",
-                "riasec_code": "E"
-              },
-              {
-                "label": "F",
-                "text": "Start organizing your notes and references in a clear system for your final writing assignment.",
-                "riasec_code": "C"
-              }
-            ]
-          },
-          {
-            "task_type": "challenge",
-            "stimulus": "You need to evaluate a coin from an ancient city to understand its historical context and value as a source. What should you do first?",
-            "tiny_learn": [
-              "Evaluating objects as historical sources requires knowing their origin and use.",
-              "Combining material and written sources improves understanding of the past.",
-              "Assuming an object’s meaning without context often leads to mistakes."
-            ],
-            "options": [
-              {
-                "label": "A",
-                "text": "Check the archaeological record and find contemporary texts mentioning coins from that city."
-              },
-              {
-                "label": "B",
-                "text": "Describe the coin’s physical features without looking for related historical texts."
-              },
-              {
-                "label": "C",
-                "text": "Write your interpretation immediately based on the coin’s imagery alone."
-              },
-              {
-                "label": "D",
-                "text": "Compare the coin to modern coins to guess how it was used."
-              }
-            ],
-            "correct_option": "A"
-          }
-        ]
-      },
-      {
         "course_code": "L_AABAOHW101",
         "course_name": "The Classical Canon I: The Heritage of Antiquity",
-        "tasks": [
-          {
-            "task_type": "first_step_approach",
-            "stimulus": "You have to start a group project about a classical canonical item not previously discussed in class. What do you do first to begin your research and presentation preparation?",
+        "broad_task": {
+          "task_type": "first_step_approach",
+          "stimulus": "You need to prepare your first group presentation on a classical canonical item not yet discussed in class. What do you do first to start the project?",
+          "tiny_learn": [
+            "A canonical item is a recognized text, place, or artifact of lasting importance from ancient times.",
+            "Begin by gathering primary sources and archaeological evidence about the item.",
+            "Avoid focusing only on modern interpretations without understanding the original context."
+          ],
+          "options": [
+            {
+              "label": "A",
+              "text": "Visit a museum or site to see the physical remains or artifacts related to your canonical item.",
+              "riasec_code": "R"
+            },
+            {
+              "label": "B",
+              "text": "Study original texts and scholarly articles to analyze meanings and contexts of the item.",
+              "riasec_code": "I"
+            },
+            {
+              "label": "C",
+              "text": "Create a visual storyboard or mind map capturing how the item appears and changes over time.",
+              "riasec_code": "A"
+            },
+            {
+              "label": "D",
+              "text": "Organize a group discussion to share ideas and assign research roles.",
+              "riasec_code": "S"
+            },
+            {
+              "label": "E",
+              "text": "Plan a timeline and strategy to persuade peers of your item's importance in later cultural contexts.",
+              "riasec_code": "E"
+            },
+            {
+              "label": "F",
+              "text": "Collect and arrange notes and references systematically for easy access during the project.",
+              "riasec_code": "C"
+            }
+          ]
+        },
+        "disambiguation_tasks": {
+          "RIA": {
+            "triple_code": "RIA",
+            "stimulus": "Your group must explore a canonical text's historical role and modern reception. What first step fits your approach?",
             "tiny_learn": [
-              "A canonical item is a significant text, place, or event valued across time.",
-              "Begin by gathering broad historical and cultural background information.",
-              "Avoid assuming modern perspectives fully explain ancient significance."
+              "Understanding the source text helps trace its original meaning and usage.",
+              "Analyzing different interpretations reveals layers of cultural reception.",
+              "Creative representation helps visualize connections across time."
             ],
             "options": [
               {
                 "label": "A",
-                "text": "Visit a museum or archaeological site to examine the item directly and take notes.",
+                "text": "Examine the physical manuscript or artifact if available to understand its origin.",
                 "riasec_code": "R"
               },
               {
                 "label": "B",
-                "text": "Look for academic articles and primary sources analyzing the item's historical context.",
+                "text": "Research academic analyses that explore the text's different meanings over time.",
                 "riasec_code": "I"
               },
               {
                 "label": "C",
-                "text": "Brainstorm creative ways to present the item visually or through storytelling.",
+                "text": "Design a creative timeline or drawing showing the text's influence through the centuries.",
                 "riasec_code": "A"
-              },
-              {
-                "label": "D",
-                "text": "Meet with your group to discuss initial ideas and share personal knowledge about the item.",
-                "riasec_code": "S"
-              },
-              {
-                "label": "E",
-                "text": "Draft an outline to plan how to organize the research and assign roles in the group.",
-                "riasec_code": "E"
-              },
-              {
-                "label": "F",
-                "text": "Collect and organize all existing lecture notes and seminar materials about related canonical items.",
-                "riasec_code": "C"
               }
             ]
           },
-          {
-            "task_type": "challenge",
-            "stimulus": "You must start your oral presentation on the changing reception of a classical text through history. What should you do first to prepare a solid presentation?",
+          "RIS": {
+            "triple_code": "RIS",
+            "stimulus": "You need to prepare a presentation about an ancient monument. What do you do first?",
             "tiny_learn": [
-              "Reception studies track how historical meanings of canonical items evolve over time.",
-              "Begin with identifying key historical periods and shifts in interpretation.",
-              "Don't start by describing the text's plot without linking to its historical impact."
+              "Field observations provide practical insights into the monument’s features.",
+              "Historical research clarifies the monument's original context and purpose.",
+              "Discussing with peers helps gather diverse perspectives."
             ],
             "options": [
               {
                 "label": "A",
-                "text": "Research which eras reinterpreted the text and why, focusing on changes through time."
-              },
-              {
-                "label": "B",
-                "text": "Summarize the content and story of the text in detail before discussing its impact."
-              },
-              {
-                "label": "C",
-                "text": "List famous authors and artworks inspired by the text without analyzing how they differ."
-              },
-              {
-                "label": "D",
-                "text": "Prepare a creative retelling of the text's plot to engage your audience."
-              }
-            ],
-            "correct_option": "A"
-          }
-        ]
-      }
-    ]
-  },
-  "Archaeology": {
-    "programme_title": "Archaeology",
-    "courses": [
-      {
-        "course_code": "L_AABAARC111",
-        "course_name": "Archaeological Sources",
-        "tasks": [
-          {
-            "task_type": "first_step_approach",
-            "stimulus": "You have just received a box of various archaeological artefacts from a recent excavation. Your task is to start understanding what kinds of materials are present and how these objects were made and used. What do you do first to start your analysis?",
-            "tiny_learn": [
-              "Materiality studies interactions between humans and physical materials over time.",
-              "Start with classification and typology to organize artefacts by material and form.",
-              "Avoid mixing up raw materials with worked objects or early assumptions of use."
-            ],
-            "options": [
-              {
-                "label": "A",
-                "text": "Begin by physically handling and sorting artefacts to note material types and surface features.",
+                "text": "Visit the monument or explore detailed photographs to note architectural details.",
                 "riasec_code": "R"
               },
               {
                 "label": "B",
-                "text": "Review academic literature to understand classification methods and material significance.",
+                "text": "Read scholarly texts and excavation reports to understand its history.",
                 "riasec_code": "I"
               },
               {
                 "label": "C",
-                "text": "Sketch and visually document artefacts creatively to explore shape and design variations.",
-                "riasec_code": "A"
-              },
-              {
-                "label": "D",
-                "text": "Discuss with peers or tutors to clarify concepts around artefact categories and materiality.",
+                "text": "Host a seminar discussion to share and challenge your ideas with classmates.",
                 "riasec_code": "S"
-              },
-              {
-                "label": "E",
-                "text": "Plan how to present your initial findings and interpretations to a study group or online forum.",
-                "riasec_code": "E"
-              },
-              {
-                "label": "F",
-                "text": "Organize the artefacts on a spreadsheet with details on material, condition, and provenance.",
-                "riasec_code": "C"
               }
             ]
           },
-          {
-            "task_type": "challenge",
-            "stimulus": "You need to write a lab report on an archaeological assemblage and want to start with the best approach to analyze the materials scientifically. What is the best first step?",
+          "REC": {
+            "triple_code": "REC",
+            "stimulus": "To introduce a lesser-known classical event, which first step helps you start preparing?",
             "tiny_learn": [
-              "Classification and typology help organize artefacts by their material and form.",
-              "Using established methods ensures valid and comparable results.",
-              "Jumping to interpretation without organizing data can lead to incorrect conclusions."
+              "Hands-on data or tool use can clarify concrete facts.",
+              "Making plans structures your research and presentation.",
+              "Keeping organized notes prevents losing important details."
             ],
             "options": [
               {
                 "label": "A",
-                "text": "Start by carefully sorting the assemblage into raw materials and worked objects using classification criteria."
+                "text": "Use archaeological databases or digital maps to gather concrete data on the event site.",
+                "riasec_code": "R"
               },
               {
                 "label": "B",
-                "text": "Write a broad summary of all artefacts’ presumed functions based on visual inspection."
+                "text": "Draft an outline and schedule to organize research tasks and deadlines.",
+                "riasec_code": "E"
               },
               {
                 "label": "C",
-                "text": "Immediately create a narrative about what the assemblage tells about past human behaviour."
+                "text": "Compile references and materials systematically to keep track of sources.",
+                "riasec_code": "C"
+              }
+            ]
+          },
+          "IEC": {
+            "triple_code": "IEC",
+            "stimulus": "You will research a canonical poem’s significance. How do you start?",
+            "tiny_learn": [
+              "Analyzing text details uncovers deeper meanings.",
+              "Initiating a presentation plan guides your research focus.",
+              "Keeping data organized supports efficient work."
+            ],
+            "options": [
+              {
+                "label": "A",
+                "text": "Closely analyze the poem’s language and themes.",
+                "riasec_code": "I"
               },
               {
-                "label": "D",
-                "text": "Collect photographs of each artefact and group them by size and color without classification."
+                "label": "B",
+                "text": "Outline your oral presentation structure and key points.",
+                "riasec_code": "E"
+              },
+              {
+                "label": "C",
+                "text": "Organize your notes and citations into labeled folders.",
+                "riasec_code": "C"
               }
+            ]
+          },
+          "ASE": {
+            "triple_code": "ASE",
+            "stimulus": "Facing a group project on the cultural impact of a canonical artifact, what first step do you choose?",
+            "tiny_learn": [
+              "Creative work helps express complex cultural ideas.",
+              "Exchange with others improves understanding and clarity.",
+              "Taking initiative shapes project direction and goals."
             ],
-            "correct_option": "A"
+            "options": [
+              {
+                "label": "A",
+                "text": "Create a visual or multimedia draft to express the artifact’s cultural meaning.",
+                "riasec_code": "A"
+              },
+              {
+                "label": "B",
+                "text": "Meet your group early to discuss ideas and responsibilities.",
+                "riasec_code": "S"
+              },
+              {
+                "label": "C",
+                "text": "Take the lead by proposing a clear plan and deadlines.",
+                "riasec_code": "E"
+              }
+            ]
+          },
+          "ASC": {
+            "triple_code": "ASC",
+            "stimulus": "You are writing notes on ancient cities’ role in later history. What is your first step?",
+            "tiny_learn": [
+              "Artistic approaches organize and express ideas visually.",
+              "Social interaction supports feedback and new insights.",
+              "Careful document arrangement prevents confusion."
+            ],
+            "options": [
+              {
+                "label": "A",
+                "text": "Draw concept maps or diagrams linking ancient cities to modern culture.",
+                "riasec_code": "A"
+              },
+              {
+                "label": "B",
+                "text": "Discuss preliminary ideas with classmates or tutors for feedback.",
+                "riasec_code": "S"
+              },
+              {
+                "label": "C",
+                "text": "Sort your notes into clear categories and date them properly.",
+                "riasec_code": "C"
+              }
+            ]
           }
-        ]
+        }
       },
       {
-        "course_code": "L_AABAARC101",
-        "course_name": "What is Archaeology?",
-        "tasks": [
-          {
-            "task_type": "first_step_approach",
-            "stimulus": "As a first-year archaeology student, you need to start preparing for an assignment where you study an archaeological site through its material remains. What do you do first to begin understanding the site's past?",
+        "course_code": "L_AABAOHW115",
+        "course_name": "Objects in Context. An Interdisciplinary Perspective on the Ancient World",
+        "broad_task": {
+          "task_type": "first_step_approach",
+          "stimulus": "You have just selected an ancient artifact from the university’s archaeological collection for your research paper. Before diving into writing, what is the first step you take to start your study?",
+          "tiny_learn": [
+            "Material culture means objects made and used by people in the past.",
+            "Combining written and material sources provides a fuller historical picture.",
+            "Relying only on one type of source can give an incomplete view."
+          ],
+          "options": [
+            {
+              "label": "A",
+              "text": "Measure and examine the physical details of the artifact to record its condition and features.",
+              "riasec_code": "R"
+            },
+            {
+              "label": "B",
+              "text": "Research academic articles to explore theories about similar objects and their uses.",
+              "riasec_code": "I"
+            },
+            {
+              "label": "C",
+              "text": "Sketch the artifact to capture its artistic details and possible symbolic meanings.",
+              "riasec_code": "A"
+            },
+            {
+              "label": "D",
+              "text": "Discuss with classmates and the lecturer to get different perspectives on the object's context.",
+              "riasec_code": "S"
+            },
+            {
+              "label": "E",
+              "text": "Develop a plan to argue why this artifact is important for understanding the ancient world.",
+              "riasec_code": "E"
+            },
+            {
+              "label": "F",
+              "text": "Create a structured outline noting sources to consult and how to reference them accurately.",
+              "riasec_code": "C"
+            }
+          ]
+        },
+        "disambiguation_tasks": {
+          "RIA": {
+            "triple_code": "RIA",
+            "stimulus": "You must write a short paper on a funerary object found in an ancient tomb. What is your first action?",
             "tiny_learn": [
-              "Material culture includes objects people made and used in the past.",
-              "Identifying patterns in artifacts helps reconstruct human behavior.",
-              "Assuming objects mean the same across all cultures is a common mistake."
+              "Funerary objects reveal practices and beliefs about death in the past.",
+              "Starting with the object's physical traits can guide your interpretation.",
+              "Ignoring historical context risks misunderstanding an object's function."
             ],
             "options": [
               {
                 "label": "A",
-                "text": "Visit the site and collect samples or artifacts yourself to get hands-on experience.",
+                "text": "Examine and document the object's material and craftsmanship details.",
                 "riasec_code": "R"
               },
               {
                 "label": "B",
-                "text": "Review academic articles about similar archaeological sites to analyze methods and findings.",
+                "text": "Locate and read scholarly studies that analyze similar funerary objects.",
                 "riasec_code": "I"
               },
               {
                 "label": "C",
-                "text": "Create a visual timeline or artistic map representing how the site may have evolved over time.",
+                "text": "Draw or map the object to explore its design and symbolic features.",
                 "riasec_code": "A"
-              },
-              {
-                "label": "D",
-                "text": "Arrange a study group to discuss the site's historical context with classmates.",
-                "riasec_code": "S"
-              },
-              {
-                "label": "E",
-                "text": "Plan a presentation to persuade your peers or lecturers why this site is important to study.",
-                "riasec_code": "E"
-              },
-              {
-                "label": "F",
-                "text": "Organize and document all previous excavation reports and artifact catalogs carefully before starting your analysis.",
-                "riasec_code": "C"
               }
             ]
           },
-          {
-            "task_type": "challenge",
-            "stimulus": "You are given a box of artifacts from an excavation. To link these objects to past human behavior accurately, what is the best first step?",
+          "RIS": {
+            "triple_code": "RIS",
+            "stimulus": "You want to compare an ancient coin to written records from the same period. What do you do first?",
             "tiny_learn": [
-              "Artifacts reflect the behaviors and cultures of past societies.",
-              "Using multiple methods helps create a better reconstruction of the past.",
-              "Jumping to conclusions without context can lead to wrong interpretations."
+              "Coins can provide economic and political information about the past.",
+              "Analyzing written records can reveal contemporary views about the coin.",
+              "Collaborating with peers can improve understanding and interpretation."
             ],
             "options": [
               {
                 "label": "A",
-                "text": "Classify the artifacts by type and material to identify patterns in usage and origin."
-              },
-              {
-                "label": "B",
-                "text": "Write a story imagining how ancient people might have used the artifacts based only on their appearance."
-              },
-              {
-                "label": "C",
-                "text": "Start comparing the artifacts to modern objects without checking their archaeological context."
-              },
-              {
-                "label": "D",
-                "text": "Immediately plan a museum exhibit featuring the artifacts to showcase your findings."
-              }
-            ],
-            "correct_option": "A"
-          }
-        ]
-      }
-    ]
-  },
-  "Communication and Information Studies": {
-    "programme_title": "Communication and Information Studies",
-    "courses": [
-      {
-        "course_code": "L_AABACIW102",
-        "course_name": "Introduction to Communication Studies",
-        "tasks": [
-          {
-            "task_type": "first_step_approach",
-            "stimulus": "You have just started the Introduction to Communication Studies course. You need to prepare for the first seminar where you will discuss a theory about how communication shapes society. What do you do first to get ready?",
-            "tiny_learn": [
-              "A communication theory explains how messages, minds, or society interact.",
-              "Reading key theory summaries helps grasp main ideas before deeper study.",
-              "Jumping straight to examples can confuse the basic theory understanding."
-            ],
-            "options": [
-              {
-                "label": "A",
-                "text": "Look for practical examples or case studies that show the theory in action.",
+                "text": "Inspect the coin’s symbols and inscriptions closely to note key details.",
                 "riasec_code": "R"
               },
               {
                 "label": "B",
-                "text": "Carefully read the original text where the theory was first introduced.",
+                "text": "Search for and review historical texts discussing the coin or its era.",
                 "riasec_code": "I"
               },
               {
                 "label": "C",
-                "text": "Create a mind map or visual sketch that represents the theory’s key ideas.",
-                "riasec_code": "A"
-              },
-              {
-                "label": "D",
-                "text": "Form a study group to talk about the theory and share different perspectives.",
+                "text": "Organize a study group to debate possible meanings and contexts together.",
                 "riasec_code": "S"
-              },
-              {
-                "label": "E",
-                "text": "Plan a presentation outline to explain the theory’s benefits and drawbacks.",
-                "riasec_code": "E"
-              },
-              {
-                "label": "F",
-                "text": "Organize your notes and lecture slides to find summaries of the theory.",
-                "riasec_code": "C"
               }
             ]
           },
-          {
-            "task_type": "challenge",
-            "stimulus": "You are reading about two different communication theories in preparation for a seminar discussion. One focuses on individual psychological motives, the other on societal media effects. What should you do first to understand these theories properly?",
+          "REC": {
+            "triple_code": "REC",
+            "stimulus": "Preparing a seminar presentation on domestic objects from antiquity, what do you do first to get ready?",
             "tiny_learn": [
-              "Communication theories differ in their focus: mind, message, or society.",
-              "Comparing each theory’s main goal helps clarify their differences.",
-              "Mixing up the theory’s focus and its real-world consequences is common."
+              "Domestic objects show everyday life and social habits of past people.",
+              "Planning allows you to structure your findings clearly for an audience.",
+              "Failing to reference sources properly reduces credibility."
             ],
             "options": [
               {
                 "label": "A",
-                "text": "Identify the main focus and assumptions of each theory before comparing them."
-              },
-              {
-                "label": "B",
-                "text": "Look up real-world examples first, without clarifying theory differences yet."
-              },
-              {
-                "label": "C",
-                "text": "Learn both theories’ historical origins before understanding their ideas."
-              },
-              {
-                "label": "D",
-                "text": "Formulate your opinion on which theory is better before studying their details."
-              }
-            ],
-            "correct_option": "A"
-          }
-        ]
-      },
-      {
-        "course_code": "L_AABACIW103",
-        "course_name": "Introduction to Linguistics",
-        "tasks": [
-          {
-            "task_type": "first_step_approach",
-            "stimulus": "You have just started the Introduction to Linguistics course and need to analyze a simple dataset of phonetic transcriptions from a language you don't speak. What do you do first?",
-            "tiny_learn": [
-              "Phonetics studies how speech sounds are made and heard.",
-              "Start by identifying and categorizing the sounds using phonetic symbols.",
-              "Confusing phonetics (sounds) with phonology (sound patterns) is common at first."
-            ],
-            "options": [
-              {
-                "label": "A",
-                "text": "Use audio tools to listen carefully and produce the sounds yourself.",
+                "text": "Handle and test the objects to understand their practical use.",
                 "riasec_code": "R"
               },
               {
                 "label": "B",
-                "text": "Look for patterns and recurring sound units in the dataset analytically.",
-                "riasec_code": "I"
-              },
-              {
-                "label": "C",
-                "text": "Draw a creative chart or diagram to represent how sounds are grouped.",
-                "riasec_code": "A"
-              },
-              {
-                "label": "D",
-                "text": "Discuss your initial impressions of the sounds with classmates and get feedback.",
-                "riasec_code": "S"
-              },
-              {
-                "label": "E",
-                "text": "Plan how to present your findings persuasively in class discussions later.",
+                "text": "Develop a convincing argument that highlights the objects’ cultural significance.",
                 "riasec_code": "E"
               },
               {
-                "label": "F",
-                "text": "Organize the data in tables and document each sound carefully with notes.",
+                "label": "C",
+                "text": "Create a detailed bibliography and notes with correct academic formatting.",
                 "riasec_code": "C"
               }
             ]
           },
-          {
-            "task_type": "challenge",
-            "stimulus": "You are given a small set of sentences from an unfamiliar language. Your goal is to analyze their sentence structure (syntax). What first step should you take?",
+          "IEC": {
+            "triple_code": "IEC",
+            "stimulus": "Starting work on understanding the historical context of sacred objects, what's your initial step?",
             "tiny_learn": [
-              "Syntax studies how words combine into sentences according to rules.",
-              "Start by identifying the function of each word (subject, verb, object) in the sentences.",
-              "Assuming word order is universal without checking can lead to errors."
+              "Context helps explain why objects were made and valued in the past.",
+              "Building a research plan ensures thorough examination and use of sources.",
+              "Skipping context can lead to misinterpreting an object's role."
             ],
             "options": [
               {
                 "label": "A",
-                "text": "Label each word with its possible role in the sentence structure, like subject or verb."
-              },
-              {
-                "label": "B",
-                "text": "Compare the sentences to English word order and assume they are the same."
-              },
-              {
-                "label": "C",
-                "text": "Focus on memorizing the vocabulary meanings before looking at structure."
-              },
-              {
-                "label": "D",
-                "text": "Record yourself speaking the sentences aloud to notice intonation patterns."
-              }
-            ],
-            "correct_option": "A"
-          }
-        ]
-      }
-    ]
-  },
-  "Econometrics and Operations Research": {
-    "programme_title": "Econometrics and Operations Research",
-    "courses": [
-      {
-        "course_code": "XB_0160",
-        "course_name": "Calculus and Analysis I",
-        "tasks": [
-          {
-            "task_type": "first_step_approach",
-            "stimulus": "You need to solve a problem involving finding the local maximum of a function with two variables given certain constraints. What do you do first?",
-            "tiny_learn": [
-              "The Lagrange multiplier method helps find extrema of functions with constraints.",
-              "Start by setting up the Lagrangian combining the function and constraints.",
-              "Don't confuse solving the unconstrained problem with the constrained one."
-            ],
-            "options": [
-              {
-                "label": "A",
-                "text": "Start by sketching the graph to get a visual understanding of the function's behavior.",
-                "riasec_code": "R"
-              },
-              {
-                "label": "B",
-                "text": "Write down the system of equations derived from partial derivatives and constraints to analyze analytically.",
+                "text": "Analyze prior research to identify patterns in how sacred objects were used.",
                 "riasec_code": "I"
               },
               {
-                "label": "C",
-                "text": "Create a colorful diagram or illustration showing how the function and constraints interact.",
-                "riasec_code": "A"
-              },
-              {
-                "label": "D",
-                "text": "Discuss the problem with classmates to share approaches and clarify constraints.",
-                "riasec_code": "S"
-              },
-              {
-                "label": "E",
-                "text": "Make a plan to explain your solution method to a tutor or in a presentation.",
+                "label": "B",
+                "text": "Outline your research approach including which sources and methods you will use.",
                 "riasec_code": "E"
               },
               {
-                "label": "F",
-                "text": "Organize the given data and constraints neatly in a document before starting calculations.",
+                "label": "C",
+                "text": "Organize notes and citations carefully for easy reference during writing.",
                 "riasec_code": "C"
               }
             ]
           },
-          {
-            "task_type": "challenge",
-            "stimulus": "You are asked to prove that a certain function is continuous on a closed interval. What is the best first step?",
+          "ASE": {
+            "triple_code": "ASE",
+            "stimulus": "You need to explain the meaning of a relief sculpture to your seminar group. What’s your first step?",
             "tiny_learn": [
-              "Continuity means the function's limit equals its value at every point in the interval.",
-              "Using the definition of continuity precisely helps verify this rigorously.",
-              "Assuming continuity without proof or skipping endpoint checks is a common mistake."
+              "Reliefs combine art and history to tell stories from the past.",
+              "Talking through ideas helps refine your interpretation and arguments.",
+              "Assuming one meaning without evidence can weaken your explanation."
             ],
             "options": [
               {
                 "label": "A",
-                "text": "Use the definition of continuity at every point to check the limits match the function values."
-              },
-              {
-                "label": "B",
-                "text": "Sketch the function and visually confirm it has no breaks or jumps in the interval."
-              },
-              {
-                "label": "C",
-                "text": "Assume the function is continuous because it is differentiable inside the interval."
-              },
-              {
-                "label": "D",
-                "text": "Check only the interior points and ignore the endpoints of the interval."
-              }
-            ],
-            "correct_option": "A"
-          }
-        ]
-      },
-      {
-        "course_code": "XB_0099",
-        "course_name": "Introduction to Programming",
-        "tasks": [
-          {
-            "task_type": "first_step_approach",
-            "stimulus": "You have to start your first programming assignment where you need to write a Python program that solves a simple problem described in natural language. What do you do first?",
-            "tiny_learn": [
-              "An algorithm is a step-by-step plan to solve a problem.",
-              "Breaking the problem into smaller parts helps to write clear code.",
-              "Starting to code without a clear plan often leads to errors."
-            ],
-            "options": [
-              {
-                "label": "A",
-                "text": "Start writing code directly in Python to see if it works.",
-                "riasec_code": "R"
-              },
-              {
-                "label": "B",
-                "text": "Analyze the problem carefully and outline an algorithm before coding.",
-                "riasec_code": "I"
-              },
-              {
-                "label": "C",
-                "text": "Draw a creative flowchart or diagram to visualize the program steps.",
+                "text": "Create a creative sketch or visual reinterpretation focusing on the relief’s style.",
                 "riasec_code": "A"
               },
               {
-                "label": "D",
-                "text": "Discuss the problem with classmates to get different perspectives.",
+                "label": "B",
+                "text": "Ask classmates for their interpretations to get multiple viewpoints.",
                 "riasec_code": "S"
               },
               {
-                "label": "E",
-                "text": "Plan how to explain the program and its usefulness to the teacher.",
+                "label": "C",
+                "text": "Draft a clear plan on how to present your interpretation convincingly.",
                 "riasec_code": "E"
-              },
-              {
-                "label": "F",
-                "text": "List the variables and data types needed and organize them neatly before coding.",
-                "riasec_code": "C"
               }
             ]
           },
-          {
-            "task_type": "challenge",
-            "stimulus": "You are about to write your first function in Python that calculates the average of a list of numbers. Which first step makes the most sense?",
+          "ASC": {
+            "triple_code": "ASC",
+            "stimulus": "You’re assembling research notes on ancient utensils and their historical significance. What do you start with?",
             "tiny_learn": [
-              "A function is a reusable block of code that performs a specific task.",
-              "Start by defining the function name and its input parameters clearly.",
-              "Skipping parameter definitions can cause the function to fail."
+              "Careful documentation preserves research quality and supports academic work.",
+              "Engaging with others can provide new insights and clarifications.",
+              "Skipping proper note organization can cause confusion later."
             ],
             "options": [
               {
                 "label": "A",
-                "text": "Write the function header with the correct input parameter and then the body."
-              },
-              {
-                "label": "B",
-                "text": "Directly write the calculation inside the function body without defining parameters."
-              },
-              {
-                "label": "C",
-                "text": "Test the program first with some data and add the function later."
-              },
-              {
-                "label": "D",
-                "text": "Explain to a classmate what the function should do before coding."
-              }
-            ],
-            "correct_option": "A"
-          }
-        ]
-      }
-    ]
-  },
-  "History": {
-    "programme_title": "History",
-    "courses": [
-      {
-        "course_code": "L_AABAGESACV",
-        "course_name": "Academic Skills for Historians",
-        "tasks": [
-          {
-            "task_type": "first_step_approach",
-            "stimulus": "You have just received your historiographical theme for the status quaestionis assignment. You need to start gathering relevant scientific publications for your topic. What do you do first?",
-            "tiny_learn": [
-              "Identifying relevant literature means finding publications directly related to your theme.",
-              "A systematic search in the university library catalog helps locate scientific sources.",
-              "Avoid choosing sources based only on titles without checking their content and relevance."
-            ],
-            "options": [
-              {
-                "label": "A",
-                "text": "Go to the university library and physically browse books and journals on your historiographical theme.",
-                "riasec_code": "R"
-              },
-              {
-                "label": "B",
-                "text": "Use the online catalog with specific keywords and filters to find relevant scientific publications.",
-                "riasec_code": "I"
-              },
-              {
-                "label": "C",
-                "text": "Create a mind map or visual design that shows different possible research questions from your theme.",
+                "text": "Sketch some utensils focusing on design details to better understand their use.",
                 "riasec_code": "A"
               },
               {
-                "label": "D",
-                "text": "Discuss your topic with fellow students to get recommendations on useful sources and perspectives.",
+                "label": "B",
+                "text": "Meet with a study partner to discuss your findings and refine ideas.",
                 "riasec_code": "S"
               },
               {
-                "label": "E",
-                "text": "Make a plan to present your findings and persuade others why your theme is important.",
-                "riasec_code": "E"
-              },
-              {
-                "label": "F",
-                "text": "Organize previous notes and bibliographic details you have on the theme to keep track of your sources.",
+                "label": "C",
+                "text": "Organize your notes and references into a clear, consistent system.",
                 "riasec_code": "C"
               }
             ]
-          },
-          {
-            "task_type": "challenge",
-            "stimulus": "You need to evaluate the reliability of a publication you found about your historiographical theme. Which first step makes the most sense?",
-            "tiny_learn": [
-              "Reliability means checking the trustworthiness and authority of the publication.",
-              "Look at the author's credentials and the publication's peer review to assess quality.",
-              "Don't rely solely on how interesting or recent the publication looks."
-            ],
-            "options": [
-              {
-                "label": "A",
-                "text": "Check who the author is, their institutional affiliation, and if the publication went through peer review."
-              },
-              {
-                "label": "B",
-                "text": "Read the conclusion first to see if it matches your personal opinion about the topic."
-              },
-              {
-                "label": "C",
-                "text": "Focus mainly on how new or recently published the source is, assuming newer is always better."
-              },
-              {
-                "label": "D",
-                "text": "Decide based on how many pages the publication has, thinking longer means more reliable."
-              }
-            ],
-            "correct_option": "A"
           }
-        ]
+        }
       }
     ]
   }
