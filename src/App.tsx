@@ -16,6 +16,7 @@ import { TaskIntro } from './components/screens/TaskIntro';
 import { TutorialManager } from './components/tutorial/TutorialManager';
 import { TutorialWelcome } from './components/tutorial/TutorialWelcome';
 import { TaskFeedback } from './components/screens/TaskFeedback';
+import { initializeStudent, updateStudentRIASEC } from './components/api/requests';
 
 // Global state context (or use localStorage/Redux)
 import { createContext, useState, ReactNode } from 'react';
@@ -126,6 +127,7 @@ function AvatarDetailsRoute() {
     <AvatarAndDetails
       onContinue={(data) => {
         ctx.setUserData({ ...ctx.userData, ...data });
+        initializeStudent();
         // navigate based on whether user already has a program in mind
         if (data.hasProgramInMind === 'yes') {
           navigate('/programme-search');
@@ -242,12 +244,7 @@ function MicroRIASECRoute() {
   return (
     <MicroRIASEC
       onComplete={(styles) => {
-        const map: Record<string, string> = {
-          I: 'physics', R: 'physics', A: 'psychology',
-          S: 'psychology', E: 'business-analytics', C: 'business-analytics'
-        };
-        ctx.setRIASECStyles(styles);
-        ctx.setTaskVariant(map[styles[0]] || 'psychology');
+        updateStudentRIASEC();
         navigate('/task-intro');
       }}
       goHome={() => navigate('/')}

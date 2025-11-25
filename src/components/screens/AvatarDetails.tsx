@@ -3,6 +3,7 @@ import { VitaButton } from '../vita-ui/VitaButton';
 import { VitaInput } from '../vita-ui/VitaInput';
 import { LanguageToggle } from '../LanguageToggle';
 import logo from '../imgs/VU-logo-RGB.png';
+import { initializeStudent } from '../api/requests';
 
 interface AvatarAndDetailsProps {
   onContinue: (data: { avatar?: string; pronouns?: string; firstName?: string; age?: string; profile?: string; hasProgramInMind?: 'yes' | 'no' }) => void;
@@ -38,9 +39,9 @@ const programmeOptions = [
   { value: 'Other', label: 'Other' },
 ];
 
-// function initializeProfile(){
-//   localStorage.setItem('studentProfile', {});
-// }
+async function initializeProfile(selectedAvatar: string) {
+  initializeStudent();
+}
 
 export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange, goBack, goHome }: AvatarAndDetailsProps) {
   const [step, setStep] = useState<Step>('avatar');

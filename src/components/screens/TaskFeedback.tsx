@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { VitaButton } from '../vita-ui/VitaButton';
 import { LanguageToggle } from '../LanguageToggle';
 import logo from '../imgs/VU-logo-RGB.png';
+import { updateStudent } from '../api/requests';
 
 interface TaskFeedbackProps {
   onContinue: (stop: boolean) => void;
@@ -32,14 +33,12 @@ export function TaskFeedback({ onContinue, currentLang, onLangChange, goHome, se
   const [enjoyment, setEnjoyment] = useState<string>('');
   const [preference, setPreference] = useState<string>('');
   const avatarTopic = selectedAvatar || 'Griffon';
-  console.log(avatarTopic)
-  const [stop, setStop] = useState<boolean>(false);
 
   const handleEnjoymentSelect = (value: string) => {
     setEnjoyment(value);
     localStorage.setItem('taskEnjoyment', value);
-    // TO DO: check update : if ready for stopping point, go to finish line
-    if (stop===true){
+    updateStudent()
+    if (localStorage.getItem('stop')==='true'){
       onContinue(true);
     }
     else {

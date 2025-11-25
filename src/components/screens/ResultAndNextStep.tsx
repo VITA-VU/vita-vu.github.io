@@ -1,10 +1,11 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { VitaButton } from '../vita-ui/VitaButton';
 import { VitaCard } from '../vita-ui/VitaCard';
 import { VitaChip } from '../vita-ui/VitaChip';
 import { LanguageToggle } from '../LanguageToggle';
 import { Smile, Meh, Frown } from 'lucide-react';
 import logo from '../imgs/VU-logo-RGB.png';
+import { returnRecommendations } from '../api/requests';
 
 interface ResultAndNextStepProps {
   onSeeWeek: (programme: string) => void;
@@ -17,8 +18,6 @@ interface ResultAndNextStepProps {
   goBack?: () => void;
   selectedAvatar?: string;
 }
-
-
 
 // map avatar id -> src (used to show selected avatar speaking)
 const avatarMap: Record<string, string> = (() => {
@@ -70,6 +69,36 @@ export function ResultAndNextStep({
   const [showFeedbackModal, setShowFeedbackModal] = useState(false);
   const [helpfulPart, setHelpfulPart] = useState<string>('');
   const avatarTopic = selectedAvatar || 'Griffon';
+  const [programs, setPrograms] = useState<any>(null);
+
+const loadedRef = React.useRef(false);
+
+useEffect(() => {
+  if (loadedRef.current) return;  // ← prevents duplicate calls
+  loadedRef.current = true;
+
+  async function load() {
+    const t = await returnRecommendations();
+
+    const result = t.reduce((acc, item) => {
+      acc[item.program] = {
+        least_distance: item.least_distance,
+        highest_profile: item.highest_profile,
+      };
+      return acc;
+    }, {});
+
+    setPrograms(result);
+  }
+
+  load();
+}, []);
+
+
+
+if (!programs) {
+  return <div className="p-6">Loading…</div>;
+}
   
   return (
     <div className="min-h-screen bg-white pb-20">
@@ -127,21 +156,21 @@ export function ResultAndNextStep({
         </div>
         
         {/* Programme Cards */}
-        <div className="grid md:grid-cols-2 gap-4">
-          {programmeMatches.map((match) => (
-            <VitaCard key={match.id} variant="emphasis">
+        <div className="grid md:grid-cols-3 gap-4">
+          {Object.entries(programs).map(([program, idx]) => (
+            <VitaCard key={program} variant="emphasis">
               <div className="space-y-4">
                 <div className="flex items-start justify-between">
-                  <h3 className="text-[1rem]">{match.title}</h3>
-                  <VitaChip 
+                  <h3 className="text-[1rem]">{program}</h3>
+                  {/* <VitaChip 
                     variant={match.confidence === 'High' ? 'success' : 'info'} 
                     size="small"
                   >
                     {match.confidence}
-                  </VitaChip>
+                  </VitaChip> */}
                 </div>
                 
-                <div>
+{/*                 <div>
                   <p className="text-[0.875rem] mb-2">Why this fits:</p>
                   <ul className="space-y-1.5">
                     {match.whyFits.map((reason, idx) => (
@@ -158,7 +187,7 @@ export function ResultAndNextStep({
                   <p className="text-[0.8125rem] text-gray-700">
                     Watch out: {match.watchOut}
                   </p>
-                </div>
+                </div> */}
                 
                 <div className="pt-3 space-y-2 mt-auto">
                   <VitaButton
@@ -196,6 +225,7 @@ export function ResultAndNextStep({
 
       {/* Confusing Button */}
       <button
+        //TODO: call reset, go back to a different page?
         onClick={() => setFeedback('confusing')}
         className={`flex flex-col items-center gap-2 p-4 rounded-lg min-h-[100px] transition-all flex-1 ${
           feedback === 'confusing'

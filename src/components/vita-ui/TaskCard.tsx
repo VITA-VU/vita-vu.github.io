@@ -5,22 +5,25 @@ import { ChevronDown, Lightbulb } from 'lucide-react';
 import { AnimatePresence, motion } from "framer-motion";
 
 interface TaskCardProps {
-  stimulusTitle: string;
-  stimulusBody: string | React.ReactNode;
-  learnBullets: string[];
+  //stimulusTitle: string;
+  //stimulusBody: string | React.ReactNode;
+  //learnBullets: string[];
   question: string;
-  options: string[];
+  options: {
+    text: string;
+    riasec: string;
+  }[];
   selectedOption?: number;
-  onSelectOption: (index: number) => void;
+  onSelectOption: (index: number, riasec: string) => void;
   onNext: () => void;
   onNotSure: () => void;
   showTimer?: boolean;
 }
 
 export function TaskCard({
-  stimulusTitle,
-  stimulusBody,
-  learnBullets,
+  //stimulusTitle,
+  //stimulusBody,
+  //learnBullets,
   question,
   options,
   selectedOption,
@@ -46,15 +49,15 @@ export function TaskCard({
       )}
       
       {/* Stimulus */}
-      <div className="mb-6">
+{/*       <div className="mb-6">
         <h3 className="text-[1.375rem] mb-3">{stimulusTitle}</h3>
         <div className="text-[1rem] text-gray-700 leading-relaxed">
           {stimulusBody}
         </div>
-      </div>
+      </div> */}
       
-            {/* Quick Lesson */}
-      <div className="bg-amber-50 border border-amber-200 rounded-lg mb-6">
+           {/* Quick Lesson */}
+      {/*  <div className="bg-amber-50 border border-amber-200 rounded-lg mb-6">
         <button
           type="button"
           onClick={() => setOpened(!learnOpen)}
@@ -82,9 +85,10 @@ export function TaskCard({
             />
           </span>
         </button>
+              */}
 
         {/* TRUE Collapse */}
-        <AnimatePresence initial={false}>
+{/*         <AnimatePresence initial={false}>
           {learnOpen && (
             <motion.div
               key="content"
@@ -107,7 +111,7 @@ export function TaskCard({
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
+      </div>  */}
 
       
       {/* Question */}
@@ -115,8 +119,7 @@ export function TaskCard({
         <p className="text-[1rem] mb-3">{question}</p>
         <div className="space-y-2">
           {options.map((option, index) => (
-            <label
-              key={index}
+            <label key={option.key} 
               className={`flex items-start gap-3 p-3 border-2 rounded-lg cursor-pointer transition-all min-h-[44px] ${
                 selectedOption === index
                   ? 'border-vita-gold bg-amber-50'
@@ -127,12 +130,12 @@ export function TaskCard({
                 type="radio"
                 name="task-option"
                 checked={selectedOption === index}
-                onChange={() => onSelectOption(index)}
+                onChange={() => onSelectOption(index, option.riasec)}
                 className="mt-0.5 accent-vita-gold"
               />
               <span className="text-[1rem] flex-1">
                 <span className="mr-2">{String.fromCharCode(65 + index)}.</span>
-                {option}
+                {option.text}
               </span>
             </label>
           ))}
