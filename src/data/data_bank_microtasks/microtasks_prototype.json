@@ -1,0 +1,2295 @@
+{
+  "Ancient Studies": {
+    "broad": [
+      {
+        "question_code": "L_AABAOHW115_1",
+        "question": "You have been assigned to examine a Roman coin from the Allard Pierson collection as your first research object. What is your initial step to begin understanding its historical context?",
+        "tiny_learn": [
+          "Material culture refers to physical objects used by past societies that provide information about their history.",
+          "Start by identifying the object's characteristics and consulting primary and secondary sources related to it.",
+          "Avoid assuming the object's use or meaning without cross-referencing historical context and scholarly research."
+        ],
+        "options": {
+          "A": {
+            "text": "Visit the museum to closely observe the coin's features and take detailed notes.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Search the university library catalog for academic articles about Roman coins.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Sketch your interpretation of the coin’s imagery to explore its symbolic meaning.",
+            "riasec": "A"
+          },
+          "D": {
+            "text": "Discuss with fellow students how this coin might reflect everyday life in ancient Rome.",
+            "riasec": "S"
+          },
+          "E": {
+            "text": "Contact a lecturer to suggest creating a public presentation about your findings.",
+            "riasec": "E"
+          },
+          "F": {
+            "text": "Compile a preliminary bibliography of books and articles on Roman numismatics.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_1",
+        "question": "You are assigned to research a canonical item not yet discussed in class for your group presentation. What is your first step?",
+        "tiny_learn": [
+          "A canonical item is a text, object, or place widely recognized as central to cultural heritage.",
+          "Begin by gathering reliable sources and historical context before narrowing your focus.",
+          "Avoid using only one type of source or relying on outdated information early on."
+        ],
+        "options": {
+          "A": {
+            "text": "Visit a museum or historical site to experience the canonical item firsthand.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Conduct a literature review to collect scholarly articles and previous studies on the item.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Sketch or create an artistic impression inspired by the canonical item to explore its features.",
+            "riasec": "A"
+          },
+          "D": {
+            "text": "Discuss with classmates to share initial thoughts and build a collaborative understanding.",
+            "riasec": "S"
+          },
+          "E": {
+            "text": "Plan and organize the timeline and key themes relevant to the item’s history for the presentation.",
+            "riasec": "E"
+          },
+          "F": {
+            "text": "Make a detailed outline of the research questions and how you will analyze the data collected.",
+            "riasec": "C"
+          }
+        }
+      }
+    ],
+    "R": [
+      {
+        "question_code": "L_AABAOHW115_2",
+        "question": "You are starting your research on a selected ancient object from the archaeological collection. What is the first step you should take to evaluate this object properly?",
+        "tiny_learn": [
+          "Material culture includes physical objects created and used by people in the past for various purposes.",
+          "Begin by identifying the object type and gathering relevant academic sources related to it.",
+          "Avoid assuming an object's purpose without checking historical context or scholarly interpretations."
+        ],
+        "options": {
+          "A": {
+            "text": "Review academic articles and books to understand the object's historical context before examining it closely.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Inspect the object's physical characteristics thoroughly to note details before researching secondary sources.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Start by hypothesizing the object's function based on your initial impressions and personal experience.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW115_3",
+        "question": "You are starting your research on an ancient coin from the Allard Pierson collection. What should be your first step?",
+        "tiny_learn": [
+          "Material culture refers to physical objects created and used by people in the past to understand historical contexts.",
+          "Begin research by consulting both the archaeological database and relevant academic literature for comprehensive information.",
+          "A common mistake is to analyze objects without considering their historical and cultural context, leading to incomplete interpretations."
+        ],
+        "options": {
+          "A": {
+            "text": "Visit the museum database to catalog details of the coin and note its characteristics.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Start reading academic articles about ancient coins to understand their historical significance.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Discuss with peers to brainstorm possible meanings of the coin and its use in the ancient society.",
+            "riasec": "S"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW115_4",
+        "question": "You have just been assigned to research an ancient statue for your first paper. What should be your initial step?",
+        "tiny_learn": [
+          "Material culture includes objects made or used by people in the past to learn about history.",
+          "Start by examining both the physical characteristics of objects and related academic sources.",
+          "Avoid focusing only on one type of evidence without considering wider historical context."
+        ],
+        "options": {
+          "A": {
+            "text": "Visit the archaeological collection to closely observe the statue's details and condition.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Search academic databases for scholarly articles discussing similar statues.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Sketch the statue and list all obvious features before researching further.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_2",
+        "question": "You are tasked with choosing a canonical item for your group's research project. What should you do first?",
+        "tiny_learn": [
+          "A canonical item is a recognized classic text, monument, or event with lasting cultural significance.",
+          "Start by researching background information from lectures and readings to understand the item's context.",
+          "Avoid selecting items already extensively covered in class to provide fresh insights."
+        ],
+        "options": {
+          "A": {
+            "text": "Review the lecture notes and course readings to identify less-studied canonical items.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Brainstorm creative ways to present well-known canonical items to make your project stand out.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Ask your instructor for a list of canonical items that align with historical importance and relevance.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_3",
+        "question": "You are starting your group research project on an ancient canonical item not covered in class. What should you do first to ensure a successful project?",
+        "tiny_learn": [
+          "A canonical item is a work or monument widely recognized as culturally or historically significant.",
+          "Begin by gathering primary and secondary sources to deepen your understanding of the item.",
+          "Avoid relying solely on modern interpretations without considering original historical contexts."
+        ],
+        "options": {
+          "A": {
+            "text": "Plan a detailed research outline identifying specific aspects of the item to investigate and assign roles to group members.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Start by collecting and reading original ancient texts or artifacts related to the item to gather firsthand information.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Organize a creative brainstorming session to generate different interpretations and presentations styles to engage your audience.",
+            "riasec": "S"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_4",
+        "question": "You are starting your group project on a lesser-known classical monument. What is your first step to ensure a strong foundation for your research?",
+        "tiny_learn": [
+          "The research process involves collecting, evaluating, and interpreting relevant information about your topic.",
+          "Start by identifying reliable academic sources and historical databases related to your chosen monument.",
+          "Avoid relying solely on internet summaries or popular articles without verifying their academic credibility."
+        ],
+        "options": {
+          "A": {
+            "text": "Contact your lecturer to clarify the research expectations and available resources.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Begin collecting academic articles and archaeological reports about your chosen monument.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Organize a meeting with your group to assign roles and plan a research timeline.",
+            "riasec": "C"
+          }
+        }
+      }
+    ],
+    "I": [
+      {
+        "question_code": "L_AABAOHW115_2",
+        "question": "You are starting your research on a selected ancient object from the archaeological collection. What is the first step you should take to evaluate this object properly?",
+        "tiny_learn": [
+          "Material culture includes physical objects created and used by people in the past for various purposes.",
+          "Begin by identifying the object type and gathering relevant academic sources related to it.",
+          "Avoid assuming an object's purpose without checking historical context or scholarly interpretations."
+        ],
+        "options": {
+          "A": {
+            "text": "Review academic articles and books to understand the object's historical context before examining it closely.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Inspect the object's physical characteristics thoroughly to note details before researching secondary sources.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Start by hypothesizing the object's function based on your initial impressions and personal experience.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW115_3",
+        "question": "You are starting your research on an ancient coin from the Allard Pierson collection. What should be your first step?",
+        "tiny_learn": [
+          "Material culture refers to physical objects created and used by people in the past to understand historical contexts.",
+          "Begin research by consulting both the archaeological database and relevant academic literature for comprehensive information.",
+          "A common mistake is to analyze objects without considering their historical and cultural context, leading to incomplete interpretations."
+        ],
+        "options": {
+          "A": {
+            "text": "Visit the museum database to catalog details of the coin and note its characteristics.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Start reading academic articles about ancient coins to understand their historical significance.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Discuss with peers to brainstorm possible meanings of the coin and its use in the ancient society.",
+            "riasec": "S"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW115_5",
+        "question": "You found an ancient coin from the archaeological collection that interests you. What is your first step in using this object as a source?",
+        "tiny_learn": [
+          "Material culture refers to physical objects made or used by people in the past that help us understand history.",
+          "Start research by identifying and describing the object, then locate relevant academic sources for background information.",
+          "A common mistake is assuming an object's meaning without considering its historical context or consulting scholarly research."
+        ],
+        "options": {
+          "A": {
+            "text": "Investigate the coin's physical features and inscriptions to classify it within its historical context.",
+            "riasec": "I"
+          },
+          "B": {
+            "text": "Collect similar objects and test their durability to see how they were practically used in daily life.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Compile a bibliography of academic articles and primary sources to support your analysis of the coin.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_2",
+        "question": "You are tasked with choosing a canonical item for your group's research project. What should you do first?",
+        "tiny_learn": [
+          "A canonical item is a recognized classic text, monument, or event with lasting cultural significance.",
+          "Start by researching background information from lectures and readings to understand the item's context.",
+          "Avoid selecting items already extensively covered in class to provide fresh insights."
+        ],
+        "options": {
+          "A": {
+            "text": "Review the lecture notes and course readings to identify less-studied canonical items.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Brainstorm creative ways to present well-known canonical items to make your project stand out.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Ask your instructor for a list of canonical items that align with historical importance and relevance.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_3",
+        "question": "You are starting your group research project on an ancient canonical item not covered in class. What should you do first to ensure a successful project?",
+        "tiny_learn": [
+          "A canonical item is a work or monument widely recognized as culturally or historically significant.",
+          "Begin by gathering primary and secondary sources to deepen your understanding of the item.",
+          "Avoid relying solely on modern interpretations without considering original historical contexts."
+        ],
+        "options": {
+          "A": {
+            "text": "Plan a detailed research outline identifying specific aspects of the item to investigate and assign roles to group members.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Start by collecting and reading original ancient texts or artifacts related to the item to gather firsthand information.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Organize a creative brainstorming session to generate different interpretations and presentations styles to engage your audience.",
+            "riasec": "S"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_5",
+        "question": "You have been assigned to a group project researching a lesser-known canonical item from antiquity. What is your first step to contribute effectively?",
+        "tiny_learn": [
+          "Canonical items are culturally significant objects or texts recognized over time.",
+          "Effective research begins with gathering reliable primary and secondary sources.",
+          "Jumping to conclusions without background research can weaken your analysis."
+        ],
+        "options": {
+          "A": {
+            "text": "Identify and gather key texts and archaeological reports related to the item.",
+            "riasec": "I"
+          },
+          "B": {
+            "text": "Start creating a detailed visual presentation plan highlighting the item's artistic features.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Organize a group meeting to discuss who will present which part of the project first.",
+            "riasec": "C"
+          }
+        }
+      }
+    ],
+    "A": [
+      {
+        "question_code": "L_AABAOHW115_2",
+        "question": "You are starting your research on a selected ancient object from the archaeological collection. What is the first step you should take to evaluate this object properly?",
+        "tiny_learn": [
+          "Material culture includes physical objects created and used by people in the past for various purposes.",
+          "Begin by identifying the object type and gathering relevant academic sources related to it.",
+          "Avoid assuming an object's purpose without checking historical context or scholarly interpretations."
+        ],
+        "options": {
+          "A": {
+            "text": "Review academic articles and books to understand the object's historical context before examining it closely.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Inspect the object's physical characteristics thoroughly to note details before researching secondary sources.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Start by hypothesizing the object's function based on your initial impressions and personal experience.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW115_6",
+        "question": "You have selected an ancient statue for your research project. What should be your first step in analyzing this object as a source of historical information?",
+        "tiny_learn": [
+          "Material culture includes objects made and used by people in the past that can provide historical information.",
+          "Start analysis by contextualizing the object: consider its origin, use, and historical setting before interpreting it.",
+          "Avoid assuming the object's meaning without examining its historical context and related sources."
+        ],
+        "options": {
+          "A": {
+            "text": "Visit the museum and observe the statue carefully to note physical details and any inscriptions.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Read academic articles about statues from the same period to understand common uses and meanings.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Check archaeological records to determine where and when the statue was discovered to place it in context.",
+            "riasec": "E"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW115_7",
+        "question": "You have been assigned to research a statue from the ancient collection for your first writing assignment. What should you do first?",
+        "tiny_learn": [
+          "Material culture refers to physical objects from the past that help us understand history.",
+          "Start by locating and describing the object clearly, then find relevant scholarly sources about it.",
+          "A common mistake is to focus only on the object's appearance without considering its historical context."
+        ],
+        "options": {
+          "A": {
+            "text": "Visit the museum to observe the statue closely and take detailed notes on its features.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Search academic databases and library catalogs for articles and books about similar statues.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Begin drafting your assignment by writing a creative story imagining the statue's history.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_2",
+        "question": "You are tasked with choosing a canonical item for your group's research project. What should you do first?",
+        "tiny_learn": [
+          "A canonical item is a recognized classic text, monument, or event with lasting cultural significance.",
+          "Start by researching background information from lectures and readings to understand the item's context.",
+          "Avoid selecting items already extensively covered in class to provide fresh insights."
+        ],
+        "options": {
+          "A": {
+            "text": "Review the lecture notes and course readings to identify less-studied canonical items.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Brainstorm creative ways to present well-known canonical items to make your project stand out.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Ask your instructor for a list of canonical items that align with historical importance and relevance.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_6",
+        "question": "You have just started preparing your group project on a canonical item not discussed in class. What is your first step?",
+        "tiny_learn": [
+          "A canonical item is a work or artifact widely recognized as historically or culturally significant.",
+          "Start by gathering primary and secondary sources to understand the item's context and significance.",
+          "A common mistake is to rely solely on surface-level summaries without exploring deeper interpretations."
+        ],
+        "options": {
+          "A": {
+            "text": "Organize a team meeting to assign research tasks and set deadlines for your presentation.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Visit a museum or archive to examine the canonical item or related artifacts firsthand.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Begin reading scholarly articles and original texts that discuss the meaning and history of the item.",
+            "riasec": "E"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_7",
+        "question": "You have to start preparing your group presentation on a canonical item for the seminar. What would be your first step?",
+        "tiny_learn": [
+          "A canonical item is a text, object, or place recognized as significant within the classical heritage.",
+          "Begin by selecting a topic not covered in class to ensure originality and relevance.",
+          "Avoid choosing overly broad topics that are difficult to cover in a short presentation."
+        ],
+        "options": {
+          "A": {
+            "text": "Research the historical and cultural background of a specific canonical item you find interesting.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Create a detailed outline immediately without first understanding the significance of your topic.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Discuss with your group members to divide tasks and plan your oral presentation approach.",
+            "riasec": "C"
+          }
+        }
+      }
+    ],
+    "S": [
+      {
+        "question_code": "L_AABAOHW115_3",
+        "question": "You are starting your research on an ancient coin from the Allard Pierson collection. What should be your first step?",
+        "tiny_learn": [
+          "Material culture refers to physical objects created and used by people in the past to understand historical contexts.",
+          "Begin research by consulting both the archaeological database and relevant academic literature for comprehensive information.",
+          "A common mistake is to analyze objects without considering their historical and cultural context, leading to incomplete interpretations."
+        ],
+        "options": {
+          "A": {
+            "text": "Visit the museum database to catalog details of the coin and note its characteristics.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Start reading academic articles about ancient coins to understand their historical significance.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Discuss with peers to brainstorm possible meanings of the coin and its use in the ancient society.",
+            "riasec": "S"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW115_6",
+        "question": "You have selected an ancient statue for your research project. What should be your first step in analyzing this object as a source of historical information?",
+        "tiny_learn": [
+          "Material culture includes objects made and used by people in the past that can provide historical information.",
+          "Start analysis by contextualizing the object: consider its origin, use, and historical setting before interpreting it.",
+          "Avoid assuming the object's meaning without examining its historical context and related sources."
+        ],
+        "options": {
+          "A": {
+            "text": "Visit the museum and observe the statue carefully to note physical details and any inscriptions.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Read academic articles about statues from the same period to understand common uses and meanings.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Check archaeological records to determine where and when the statue was discovered to place it in context.",
+            "riasec": "E"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW115_7",
+        "question": "You have been assigned to research a statue from the ancient collection for your first writing assignment. What should you do first?",
+        "tiny_learn": [
+          "Material culture refers to physical objects from the past that help us understand history.",
+          "Start by locating and describing the object clearly, then find relevant scholarly sources about it.",
+          "A common mistake is to focus only on the object's appearance without considering its historical context."
+        ],
+        "options": {
+          "A": {
+            "text": "Visit the museum to observe the statue closely and take detailed notes on its features.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Search academic databases and library catalogs for articles and books about similar statues.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Begin drafting your assignment by writing a creative story imagining the statue's history.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_3",
+        "question": "You are starting your group research project on an ancient canonical item not covered in class. What should you do first to ensure a successful project?",
+        "tiny_learn": [
+          "A canonical item is a work or monument widely recognized as culturally or historically significant.",
+          "Begin by gathering primary and secondary sources to deepen your understanding of the item.",
+          "Avoid relying solely on modern interpretations without considering original historical contexts."
+        ],
+        "options": {
+          "A": {
+            "text": "Plan a detailed research outline identifying specific aspects of the item to investigate and assign roles to group members.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Start by collecting and reading original ancient texts or artifacts related to the item to gather firsthand information.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Organize a creative brainstorming session to generate different interpretations and presentations styles to engage your audience.",
+            "riasec": "S"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_6",
+        "question": "You have just started preparing your group project on a canonical item not discussed in class. What is your first step?",
+        "tiny_learn": [
+          "A canonical item is a work or artifact widely recognized as historically or culturally significant.",
+          "Start by gathering primary and secondary sources to understand the item's context and significance.",
+          "A common mistake is to rely solely on surface-level summaries without exploring deeper interpretations."
+        ],
+        "options": {
+          "A": {
+            "text": "Organize a team meeting to assign research tasks and set deadlines for your presentation.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Visit a museum or archive to examine the canonical item or related artifacts firsthand.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Begin reading scholarly articles and original texts that discuss the meaning and history of the item.",
+            "riasec": "E"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_7",
+        "question": "You have to start preparing your group presentation on a canonical item for the seminar. What would be your first step?",
+        "tiny_learn": [
+          "A canonical item is a text, object, or place recognized as significant within the classical heritage.",
+          "Begin by selecting a topic not covered in class to ensure originality and relevance.",
+          "Avoid choosing overly broad topics that are difficult to cover in a short presentation."
+        ],
+        "options": {
+          "A": {
+            "text": "Research the historical and cultural background of a specific canonical item you find interesting.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Create a detailed outline immediately without first understanding the significance of your topic.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Discuss with your group members to divide tasks and plan your oral presentation approach.",
+            "riasec": "C"
+          }
+        }
+      }
+    ],
+    "E": [
+      {
+        "question_code": "L_AABAOHW115_4",
+        "question": "You have just been assigned to research an ancient statue for your first paper. What should be your initial step?",
+        "tiny_learn": [
+          "Material culture includes objects made or used by people in the past to learn about history.",
+          "Start by examining both the physical characteristics of objects and related academic sources.",
+          "Avoid focusing only on one type of evidence without considering wider historical context."
+        ],
+        "options": {
+          "A": {
+            "text": "Visit the archaeological collection to closely observe the statue's details and condition.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Search academic databases for scholarly articles discussing similar statues.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Sketch the statue and list all obvious features before researching further.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW115_5",
+        "question": "You found an ancient coin from the archaeological collection that interests you. What is your first step in using this object as a source?",
+        "tiny_learn": [
+          "Material culture refers to physical objects made or used by people in the past that help us understand history.",
+          "Start research by identifying and describing the object, then locate relevant academic sources for background information.",
+          "A common mistake is assuming an object's meaning without considering its historical context or consulting scholarly research."
+        ],
+        "options": {
+          "A": {
+            "text": "Investigate the coin's physical features and inscriptions to classify it within its historical context.",
+            "riasec": "I"
+          },
+          "B": {
+            "text": "Collect similar objects and test their durability to see how they were practically used in daily life.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Compile a bibliography of academic articles and primary sources to support your analysis of the coin.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW115_6",
+        "question": "You have selected an ancient statue for your research project. What should be your first step in analyzing this object as a source of historical information?",
+        "tiny_learn": [
+          "Material culture includes objects made and used by people in the past that can provide historical information.",
+          "Start analysis by contextualizing the object: consider its origin, use, and historical setting before interpreting it.",
+          "Avoid assuming the object's meaning without examining its historical context and related sources."
+        ],
+        "options": {
+          "A": {
+            "text": "Visit the museum and observe the statue carefully to note physical details and any inscriptions.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Read academic articles about statues from the same period to understand common uses and meanings.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Check archaeological records to determine where and when the statue was discovered to place it in context.",
+            "riasec": "E"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_4",
+        "question": "You are starting your group project on a lesser-known classical monument. What is your first step to ensure a strong foundation for your research?",
+        "tiny_learn": [
+          "The research process involves collecting, evaluating, and interpreting relevant information about your topic.",
+          "Start by identifying reliable academic sources and historical databases related to your chosen monument.",
+          "Avoid relying solely on internet summaries or popular articles without verifying their academic credibility."
+        ],
+        "options": {
+          "A": {
+            "text": "Contact your lecturer to clarify the research expectations and available resources.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Begin collecting academic articles and archaeological reports about your chosen monument.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Organize a meeting with your group to assign roles and plan a research timeline.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_5",
+        "question": "You have been assigned to a group project researching a lesser-known canonical item from antiquity. What is your first step to contribute effectively?",
+        "tiny_learn": [
+          "Canonical items are culturally significant objects or texts recognized over time.",
+          "Effective research begins with gathering reliable primary and secondary sources.",
+          "Jumping to conclusions without background research can weaken your analysis."
+        ],
+        "options": {
+          "A": {
+            "text": "Identify and gather key texts and archaeological reports related to the item.",
+            "riasec": "I"
+          },
+          "B": {
+            "text": "Start creating a detailed visual presentation plan highlighting the item's artistic features.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Organize a group meeting to discuss who will present which part of the project first.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_6",
+        "question": "You have just started preparing your group project on a canonical item not discussed in class. What is your first step?",
+        "tiny_learn": [
+          "A canonical item is a work or artifact widely recognized as historically or culturally significant.",
+          "Start by gathering primary and secondary sources to understand the item's context and significance.",
+          "A common mistake is to rely solely on surface-level summaries without exploring deeper interpretations."
+        ],
+        "options": {
+          "A": {
+            "text": "Organize a team meeting to assign research tasks and set deadlines for your presentation.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Visit a museum or archive to examine the canonical item or related artifacts firsthand.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Begin reading scholarly articles and original texts that discuss the meaning and history of the item.",
+            "riasec": "E"
+          }
+        }
+      }
+    ],
+    "C": [
+      {
+        "question_code": "L_AABAOHW115_4",
+        "question": "You have just been assigned to research an ancient statue for your first paper. What should be your initial step?",
+        "tiny_learn": [
+          "Material culture includes objects made or used by people in the past to learn about history.",
+          "Start by examining both the physical characteristics of objects and related academic sources.",
+          "Avoid focusing only on one type of evidence without considering wider historical context."
+        ],
+        "options": {
+          "A": {
+            "text": "Visit the archaeological collection to closely observe the statue's details and condition.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Search academic databases for scholarly articles discussing similar statues.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Sketch the statue and list all obvious features before researching further.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW115_5",
+        "question": "You found an ancient coin from the archaeological collection that interests you. What is your first step in using this object as a source?",
+        "tiny_learn": [
+          "Material culture refers to physical objects made or used by people in the past that help us understand history.",
+          "Start research by identifying and describing the object, then locate relevant academic sources for background information.",
+          "A common mistake is assuming an object's meaning without considering its historical context or consulting scholarly research."
+        ],
+        "options": {
+          "A": {
+            "text": "Investigate the coin's physical features and inscriptions to classify it within its historical context.",
+            "riasec": "I"
+          },
+          "B": {
+            "text": "Collect similar objects and test their durability to see how they were practically used in daily life.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Compile a bibliography of academic articles and primary sources to support your analysis of the coin.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW115_7",
+        "question": "You have been assigned to research a statue from the ancient collection for your first writing assignment. What should you do first?",
+        "tiny_learn": [
+          "Material culture refers to physical objects from the past that help us understand history.",
+          "Start by locating and describing the object clearly, then find relevant scholarly sources about it.",
+          "A common mistake is to focus only on the object's appearance without considering its historical context."
+        ],
+        "options": {
+          "A": {
+            "text": "Visit the museum to observe the statue closely and take detailed notes on its features.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Search academic databases and library catalogs for articles and books about similar statues.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Begin drafting your assignment by writing a creative story imagining the statue's history.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_4",
+        "question": "You are starting your group project on a lesser-known classical monument. What is your first step to ensure a strong foundation for your research?",
+        "tiny_learn": [
+          "The research process involves collecting, evaluating, and interpreting relevant information about your topic.",
+          "Start by identifying reliable academic sources and historical databases related to your chosen monument.",
+          "Avoid relying solely on internet summaries or popular articles without verifying their academic credibility."
+        ],
+        "options": {
+          "A": {
+            "text": "Contact your lecturer to clarify the research expectations and available resources.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Begin collecting academic articles and archaeological reports about your chosen monument.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Organize a meeting with your group to assign roles and plan a research timeline.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_5",
+        "question": "You have been assigned to a group project researching a lesser-known canonical item from antiquity. What is your first step to contribute effectively?",
+        "tiny_learn": [
+          "Canonical items are culturally significant objects or texts recognized over time.",
+          "Effective research begins with gathering reliable primary and secondary sources.",
+          "Jumping to conclusions without background research can weaken your analysis."
+        ],
+        "options": {
+          "A": {
+            "text": "Identify and gather key texts and archaeological reports related to the item.",
+            "riasec": "I"
+          },
+          "B": {
+            "text": "Start creating a detailed visual presentation plan highlighting the item's artistic features.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Organize a group meeting to discuss who will present which part of the project first.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABAOHW101_7",
+        "question": "You have to start preparing your group presentation on a canonical item for the seminar. What would be your first step?",
+        "tiny_learn": [
+          "A canonical item is a text, object, or place recognized as significant within the classical heritage.",
+          "Begin by selecting a topic not covered in class to ensure originality and relevance.",
+          "Avoid choosing overly broad topics that are difficult to cover in a short presentation."
+        ],
+        "options": {
+          "A": {
+            "text": "Research the historical and cultural background of a specific canonical item you find interesting.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Create a detailed outline immediately without first understanding the significance of your topic.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Discuss with your group members to divide tasks and plan your oral presentation approach.",
+            "riasec": "C"
+          }
+        }
+      }
+    ]
+  },
+  "Communication and Information Studies": {
+    "broad": [
+      {
+        "question_code": "L_AABACIW102_1",
+        "question": "You have just attended your first lecture on communication theories that integrate psychological, sociological, and language perspectives. What is your first step in preparing for the upcoming seminar discussion?",
+        "tiny_learn": [
+          "Communication theories explain how humans use language and behavior to convey messages and influence others.",
+          "Review your lecture notes and read the assigned literature carefully to understand different theoretical approaches.",
+          "Avoid focusing only on one theory; consider how multiple perspectives might interact or conflict."
+        ],
+        "options": {
+          "A": {
+            "text": "Summarize the main points from the lecture into your own words to clarify your understanding.",
+            "riasec": "I"
+          },
+          "B": {
+            "text": "Schedule a group meeting to brainstorm ideas and prepare discussion questions for the seminar.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Begin sketching creative diagrams linking different communication theories for visual study aids.",
+            "riasec": "A"
+          },
+          "D": {
+            "text": "Find examples from your own life where communication theories apply to real conversations or media.",
+            "riasec": "S"
+          },
+          "E": {
+            "text": "Create a detailed checklist to ensure you cover all lecture topics and literature before the seminar.",
+            "riasec": "C"
+          },
+          "F": {
+            "text": "Reflect quietly on your personal communication style and attitudes related to the discussed theories.",
+            "riasec": "R"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_1",
+        "question": "You have just received a set of beginner exercises on phonetics and language acquisition. What is your first step to start understanding the basics before attempting the exercises?",
+        "tiny_learn": [
+          "Linguistics is the scientific study of language structure and use.",
+          "Begin by reviewing definitions and key concepts before analyzing examples.",
+          "Jumping into exercises without grasping core terminology is a common pitfall."
+        ],
+        "options": {
+          "A": {
+            "text": "Design a simple experiment to record and analyze children’s speech samples personally.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Carefully read introductory lecture notes and definitions on phonetics and acquisition.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Draw diagrams showing sound production mechanisms to visualize phonetic concepts.",
+            "riasec": "A"
+          },
+          "D": {
+            "text": "Discuss the main concepts with classmates to clarify your understanding jointly.",
+            "riasec": "S"
+          },
+          "E": {
+            "text": "Join a student organization that hosts talks on language learning and disorders.",
+            "riasec": "E"
+          },
+          "F": {
+            "text": "Create a detailed outline of the lecture content to structure your study sessions.",
+            "riasec": "C"
+          }
+        }
+      }
+    ],
+    "R": [
+      {
+        "question_code": "L_AABACIW102_2",
+        "question": "You have just started the course and need to prepare for the first seminar by understanding key communication theories. What is the best first step to get ready?",
+        "tiny_learn": [
+          "A communication theory explains how messages are sent and received between people or groups.",
+          "Review your lecture notes and assigned readings before the seminar to understand the theories.",
+          "Avoid memorizing theories without trying to see how they apply to real communication situations."
+        ],
+        "options": {
+          "A": {
+            "text": "Focus on memorizing the definitions of all communication theories introduced so far.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Reflect on how the theories relate to your own communication experiences and try to interpret their meaning.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Discuss with your seminar group how specific theories can explain a recent news article you all read.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW102_3",
+        "question": "You have just been assigned your first seminar reading on psychological and sociological communication theories. Which approach will help you understand the material best?",
+        "tiny_learn": [
+          "Interdisciplinary study integrates multiple academic perspectives to enrich understanding.",
+          "Review the assigned readings carefully and take notes connecting different theories.",
+          "Avoid focusing only on one theory; compare and contrast for deeper insight."
+        ],
+        "options": {
+          "A": {
+            "text": "Consult the research literature to analyze the theories critically.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Identify key concepts and reflect on how they relate to human behavior.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Discuss with classmates how different societal effects might influence communication.",
+            "riasec": "S"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW102_4",
+        "question": "You have just started the Introduction to Communication Studies course and need to prepare for the first seminar. How do you begin your preparation?",
+        "tiny_learn": [
+          "Communication theories explain how messages are created and understood between people or groups.",
+          "To prepare, read assigned literature carefully and note key points relevant to weekly seminar questions.",
+          "A common mistake is skimming texts without reflecting on how theories apply to real communication situations."
+        ],
+        "options": {
+          "A": {
+            "text": "Review the key communication theories explained in the lecture and note their main points for discussion.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Collect examples from media that illustrate different communication processes to bring to the seminar.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Outline a plan for how you will work with your seminar group to analyze the weekly reading together.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_2",
+        "question": "You are given a dataset of recorded speech sounds and asked to start analyzing its linguistic features. What is your first step?",
+        "tiny_learn": [
+          "Phonetics studies the physical sounds of speech and how they are produced and perceived.",
+          "Begin by carefully listening to the sounds and noting their distinct characteristics before labeling them.",
+          "A common mistake is to jump into interpretation without first conducting detailed phonetic observation."
+        ],
+        "options": {
+          "A": {
+            "text": "Listen carefully to the recorded sounds and try to identify the basic units of speech like vowels and consonants.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Look for patterns in the word formation and sentence structure found in the transcripts.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Think about how these language sounds could be used to communicate different meanings in context.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_3",
+        "question": "You have just received a short recording of a child speaking as part of your first assignment. Which approach would you take first to analyze this data?",
+        "tiny_learn": [
+          "Phonetics studies the physical sounds of speech and how they are produced and perceived.",
+          "Begin by carefully listening to the recording and transcribing the sounds before analyzing patterns.",
+          "A common mistake is to jump to conclusions about meanings without fully understanding the sounds."
+        ],
+        "options": {
+          "A": {
+            "text": "Focus on identifying and categorizing the speech sounds you hear using phonetic transcription.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Interpret the possible meanings of the child's utterances based on context clues in the recording.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Observe the child's behavior during the recording to understand social aspects of their language use.",
+            "riasec": "S"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_4",
+        "question": "You are tasked with analyzing a short transcript of child speech to identify patterns in sound acquisition. What is your first step to approach this task?",
+        "tiny_learn": [
+          "Phonetics studies the physical sounds of speech and how they are produced and perceived.",
+          "Begin by carefully listening to the recording and noting any unfamiliar or distinctive sounds.",
+          "Don't assume you understand a sound just by reading the transcript; always verify with the audio."
+        ],
+        "options": {
+          "A": {
+            "text": "Review the theoretical framework on phonetics and phonology to understand sound categories.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Listen to the audio recording several times to identify specific sound patterns accurately.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Start by coding the transcript data using a template for morphological analysis.",
+            "riasec": "C"
+          }
+        }
+      }
+    ],
+    "I": [
+      {
+        "question_code": "L_AABACIW102_2",
+        "question": "You have just started the course and need to prepare for the first seminar by understanding key communication theories. What is the best first step to get ready?",
+        "tiny_learn": [
+          "A communication theory explains how messages are sent and received between people or groups.",
+          "Review your lecture notes and assigned readings before the seminar to understand the theories.",
+          "Avoid memorizing theories without trying to see how they apply to real communication situations."
+        ],
+        "options": {
+          "A": {
+            "text": "Focus on memorizing the definitions of all communication theories introduced so far.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Reflect on how the theories relate to your own communication experiences and try to interpret their meaning.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Discuss with your seminar group how specific theories can explain a recent news article you all read.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW102_3",
+        "question": "You have just been assigned your first seminar reading on psychological and sociological communication theories. Which approach will help you understand the material best?",
+        "tiny_learn": [
+          "Interdisciplinary study integrates multiple academic perspectives to enrich understanding.",
+          "Review the assigned readings carefully and take notes connecting different theories.",
+          "Avoid focusing only on one theory; compare and contrast for deeper insight."
+        ],
+        "options": {
+          "A": {
+            "text": "Consult the research literature to analyze the theories critically.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Identify key concepts and reflect on how they relate to human behavior.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Discuss with classmates how different societal effects might influence communication.",
+            "riasec": "S"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW102_5",
+        "question": "You have just received the first reading assignment about key communication theories. What is your best first step to start engaging with the material?",
+        "tiny_learn": [
+          "Interpreting communication theories involves understanding their basic assumptions and concepts.",
+          "Begin by identifying key ideas in the reading before trying to connect them to broader communication contexts.",
+          "Avoid trying to memorize details without grasping the overall theoretical perspective first."
+        ],
+        "options": {
+          "A": {
+            "text": "Skim the text to find and highlight important concepts and terms related to communication theories.",
+            "riasec": "I"
+          },
+          "B": {
+            "text": "Organize a discussion group to talk about how communication affects real-life social interactions.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Create a chart categorizing theories by their focus on individual, societal, or language approaches.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_2",
+        "question": "You are given a dataset of recorded speech sounds and asked to start analyzing its linguistic features. What is your first step?",
+        "tiny_learn": [
+          "Phonetics studies the physical sounds of speech and how they are produced and perceived.",
+          "Begin by carefully listening to the sounds and noting their distinct characteristics before labeling them.",
+          "A common mistake is to jump into interpretation without first conducting detailed phonetic observation."
+        ],
+        "options": {
+          "A": {
+            "text": "Listen carefully to the recorded sounds and try to identify the basic units of speech like vowels and consonants.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Look for patterns in the word formation and sentence structure found in the transcripts.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Think about how these language sounds could be used to communicate different meanings in context.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_3",
+        "question": "You have just received a short recording of a child speaking as part of your first assignment. Which approach would you take first to analyze this data?",
+        "tiny_learn": [
+          "Phonetics studies the physical sounds of speech and how they are produced and perceived.",
+          "Begin by carefully listening to the recording and transcribing the sounds before analyzing patterns.",
+          "A common mistake is to jump to conclusions about meanings without fully understanding the sounds."
+        ],
+        "options": {
+          "A": {
+            "text": "Focus on identifying and categorizing the speech sounds you hear using phonetic transcription.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Interpret the possible meanings of the child's utterances based on context clues in the recording.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Observe the child's behavior during the recording to understand social aspects of their language use.",
+            "riasec": "S"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_5",
+        "question": "You have been given a dataset of sentences in an unfamiliar language as part of your linguistics seminar. What would be your first step to analyze the dataset correctly?",
+        "tiny_learn": [
+          "Linguistic analysis involves breaking down language data into components like sounds, words, and sentence structures.",
+          "Start by identifying patterns in the data and applying formal linguistic terminology to describe these patterns.",
+          "A common mistake is jumping to conclusions based on assumptions without thorough observation of the data."
+        ],
+        "options": {
+          "A": {
+            "text": "Identify common sound patterns and phonetic features in the dataset to understand pronunciation aspects.",
+            "riasec": "I"
+          },
+          "B": {
+            "text": "Classify the data by organizing the words and sentences into logical categories to see how they fit together.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Create a set of rules for how words might be combined by hypothesizing sentence structure based on the examples.",
+            "riasec": "C"
+          }
+        }
+      }
+    ],
+    "A": [
+      {
+        "question_code": "L_AABACIW102_2",
+        "question": "You have just started the course and need to prepare for the first seminar by understanding key communication theories. What is the best first step to get ready?",
+        "tiny_learn": [
+          "A communication theory explains how messages are sent and received between people or groups.",
+          "Review your lecture notes and assigned readings before the seminar to understand the theories.",
+          "Avoid memorizing theories without trying to see how they apply to real communication situations."
+        ],
+        "options": {
+          "A": {
+            "text": "Focus on memorizing the definitions of all communication theories introduced so far.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Reflect on how the theories relate to your own communication experiences and try to interpret their meaning.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Discuss with your seminar group how specific theories can explain a recent news article you all read.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW102_6",
+        "question": "You have just attended the first lecture on communication theories. How should you begin preparing for the upcoming seminar discussion?",
+        "tiny_learn": [
+          "A theory is a system of ideas that explains a phenomenon.",
+          "Review the lecture notes and the assigned reading before the seminar.",
+          "Avoid relying only on summaries without engaging with the full texts."
+        ],
+        "options": {
+          "A": {
+            "text": "Start by summarizing the key concepts from the lecture notes to understand the theories.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Talk with classmates to share ideas and get different perspectives on the theories discussed.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Research additional examples of communication in real media to see theories applied practically.",
+            "riasec": "E"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW102_7",
+        "question": "You have just attended your first seminar on communication theories. To prepare effectively for the next group discussion, what should you do first?",
+        "tiny_learn": [
+          "Communication theories explain how people exchange messages using language, psychology, or social factors.",
+          "Review the assigned literature and try to identify key points and arguments to contribute to the seminar.",
+          "Avoid waiting until the last minute to read the materials, as this limits meaningful participation."
+        ],
+        "options": {
+          "A": {
+            "text": "Analyze the societal impact of communication theories using social research articles before the seminar.",
+            "riasec": "S"
+          },
+          "B": {
+            "text": "Summarize the key concepts from the assigned readings to clarify your understanding and prepare questions.",
+            "riasec": "C"
+          },
+          "C": {
+            "text": "Create a visual chart linking the psychological theories of communication to human behavior examples.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_2",
+        "question": "You are given a dataset of recorded speech sounds and asked to start analyzing its linguistic features. What is your first step?",
+        "tiny_learn": [
+          "Phonetics studies the physical sounds of speech and how they are produced and perceived.",
+          "Begin by carefully listening to the sounds and noting their distinct characteristics before labeling them.",
+          "A common mistake is to jump into interpretation without first conducting detailed phonetic observation."
+        ],
+        "options": {
+          "A": {
+            "text": "Listen carefully to the recorded sounds and try to identify the basic units of speech like vowels and consonants.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Look for patterns in the word formation and sentence structure found in the transcripts.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Think about how these language sounds could be used to communicate different meanings in context.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_6",
+        "question": "You have just started the Introduction to Linguistics course and received a dataset of child language samples. What is your first step to analyze the data?",
+        "tiny_learn": [
+          "Linguistic analysis involves examining language data to identify patterns in sounds, words, and sentence structures.",
+          "Start by defining key terminology and concepts relevant to the data before attempting analysis.",
+          "A common mistake is jumping into data analysis without clarifying linguistic terms or context."
+        ],
+        "options": {
+          "A": {
+            "text": "Begin by reviewing definitions of basic linguistic terms to understand the dataset properly.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Try to detect sound patterns in the samples focusing on phonetics and phonology.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Explore how word meanings relate to context before analyzing sentence structures.",
+            "riasec": "E"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_7",
+        "question": "You have just received a dataset containing recorded child speech samples to analyze their language development. What should you do first to start your analysis?",
+        "tiny_learn": [
+          "Analysis means breaking down language data to understand its structure and meaning.",
+          "Begin by identifying key features of the data based on what you learned about phonetics, morphology, and syntax.",
+          "A common mistake is to jump into conclusions without carefully examining the basic language units."
+        ],
+        "options": {
+          "A": {
+            "text": "Start by listening carefully to the sounds and noting how they are pronounced in the recordings.",
+            "riasec": "S"
+          },
+          "B": {
+            "text": "Categorize words and sentence structures you recognize to find recurring patterns in the data.",
+            "riasec": "C"
+          },
+          "C": {
+            "text": "Apply theoretical concepts about child language acquisition from lectures to guide your focus in analysis.",
+            "riasec": "A"
+          }
+        }
+      }
+    ],
+    "S": [
+      {
+        "question_code": "L_AABACIW102_3",
+        "question": "You have just been assigned your first seminar reading on psychological and sociological communication theories. Which approach will help you understand the material best?",
+        "tiny_learn": [
+          "Interdisciplinary study integrates multiple academic perspectives to enrich understanding.",
+          "Review the assigned readings carefully and take notes connecting different theories.",
+          "Avoid focusing only on one theory; compare and contrast for deeper insight."
+        ],
+        "options": {
+          "A": {
+            "text": "Consult the research literature to analyze the theories critically.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Identify key concepts and reflect on how they relate to human behavior.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Discuss with classmates how different societal effects might influence communication.",
+            "riasec": "S"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW102_6",
+        "question": "You have just attended the first lecture on communication theories. How should you begin preparing for the upcoming seminar discussion?",
+        "tiny_learn": [
+          "A theory is a system of ideas that explains a phenomenon.",
+          "Review the lecture notes and the assigned reading before the seminar.",
+          "Avoid relying only on summaries without engaging with the full texts."
+        ],
+        "options": {
+          "A": {
+            "text": "Start by summarizing the key concepts from the lecture notes to understand the theories.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Talk with classmates to share ideas and get different perspectives on the theories discussed.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Research additional examples of communication in real media to see theories applied practically.",
+            "riasec": "E"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW102_7",
+        "question": "You have just attended your first seminar on communication theories. To prepare effectively for the next group discussion, what should you do first?",
+        "tiny_learn": [
+          "Communication theories explain how people exchange messages using language, psychology, or social factors.",
+          "Review the assigned literature and try to identify key points and arguments to contribute to the seminar.",
+          "Avoid waiting until the last minute to read the materials, as this limits meaningful participation."
+        ],
+        "options": {
+          "A": {
+            "text": "Analyze the societal impact of communication theories using social research articles before the seminar.",
+            "riasec": "S"
+          },
+          "B": {
+            "text": "Summarize the key concepts from the assigned readings to clarify your understanding and prepare questions.",
+            "riasec": "C"
+          },
+          "C": {
+            "text": "Create a visual chart linking the psychological theories of communication to human behavior examples.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_3",
+        "question": "You have just received a short recording of a child speaking as part of your first assignment. Which approach would you take first to analyze this data?",
+        "tiny_learn": [
+          "Phonetics studies the physical sounds of speech and how they are produced and perceived.",
+          "Begin by carefully listening to the recording and transcribing the sounds before analyzing patterns.",
+          "A common mistake is to jump to conclusions about meanings without fully understanding the sounds."
+        ],
+        "options": {
+          "A": {
+            "text": "Focus on identifying and categorizing the speech sounds you hear using phonetic transcription.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Interpret the possible meanings of the child's utterances based on context clues in the recording.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Observe the child's behavior during the recording to understand social aspects of their language use.",
+            "riasec": "S"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_6",
+        "question": "You have just started the Introduction to Linguistics course and received a dataset of child language samples. What is your first step to analyze the data?",
+        "tiny_learn": [
+          "Linguistic analysis involves examining language data to identify patterns in sounds, words, and sentence structures.",
+          "Start by defining key terminology and concepts relevant to the data before attempting analysis.",
+          "A common mistake is jumping into data analysis without clarifying linguistic terms or context."
+        ],
+        "options": {
+          "A": {
+            "text": "Begin by reviewing definitions of basic linguistic terms to understand the dataset properly.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Try to detect sound patterns in the samples focusing on phonetics and phonology.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Explore how word meanings relate to context before analyzing sentence structures.",
+            "riasec": "E"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_7",
+        "question": "You have just received a dataset containing recorded child speech samples to analyze their language development. What should you do first to start your analysis?",
+        "tiny_learn": [
+          "Analysis means breaking down language data to understand its structure and meaning.",
+          "Begin by identifying key features of the data based on what you learned about phonetics, morphology, and syntax.",
+          "A common mistake is to jump into conclusions without carefully examining the basic language units."
+        ],
+        "options": {
+          "A": {
+            "text": "Start by listening carefully to the sounds and noting how they are pronounced in the recordings.",
+            "riasec": "S"
+          },
+          "B": {
+            "text": "Categorize words and sentence structures you recognize to find recurring patterns in the data.",
+            "riasec": "C"
+          },
+          "C": {
+            "text": "Apply theoretical concepts about child language acquisition from lectures to guide your focus in analysis.",
+            "riasec": "A"
+          }
+        }
+      }
+    ],
+    "E": [
+      {
+        "question_code": "L_AABACIW102_4",
+        "question": "You have just started the Introduction to Communication Studies course and need to prepare for the first seminar. How do you begin your preparation?",
+        "tiny_learn": [
+          "Communication theories explain how messages are created and understood between people or groups.",
+          "To prepare, read assigned literature carefully and note key points relevant to weekly seminar questions.",
+          "A common mistake is skimming texts without reflecting on how theories apply to real communication situations."
+        ],
+        "options": {
+          "A": {
+            "text": "Review the key communication theories explained in the lecture and note their main points for discussion.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Collect examples from media that illustrate different communication processes to bring to the seminar.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Outline a plan for how you will work with your seminar group to analyze the weekly reading together.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW102_5",
+        "question": "You have just received the first reading assignment about key communication theories. What is your best first step to start engaging with the material?",
+        "tiny_learn": [
+          "Interpreting communication theories involves understanding their basic assumptions and concepts.",
+          "Begin by identifying key ideas in the reading before trying to connect them to broader communication contexts.",
+          "Avoid trying to memorize details without grasping the overall theoretical perspective first."
+        ],
+        "options": {
+          "A": {
+            "text": "Skim the text to find and highlight important concepts and terms related to communication theories.",
+            "riasec": "I"
+          },
+          "B": {
+            "text": "Organize a discussion group to talk about how communication affects real-life social interactions.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Create a chart categorizing theories by their focus on individual, societal, or language approaches.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW102_6",
+        "question": "You have just attended the first lecture on communication theories. How should you begin preparing for the upcoming seminar discussion?",
+        "tiny_learn": [
+          "A theory is a system of ideas that explains a phenomenon.",
+          "Review the lecture notes and the assigned reading before the seminar.",
+          "Avoid relying only on summaries without engaging with the full texts."
+        ],
+        "options": {
+          "A": {
+            "text": "Start by summarizing the key concepts from the lecture notes to understand the theories.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Talk with classmates to share ideas and get different perspectives on the theories discussed.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Research additional examples of communication in real media to see theories applied practically.",
+            "riasec": "E"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_4",
+        "question": "You are tasked with analyzing a short transcript of child speech to identify patterns in sound acquisition. What is your first step to approach this task?",
+        "tiny_learn": [
+          "Phonetics studies the physical sounds of speech and how they are produced and perceived.",
+          "Begin by carefully listening to the recording and noting any unfamiliar or distinctive sounds.",
+          "Don't assume you understand a sound just by reading the transcript; always verify with the audio."
+        ],
+        "options": {
+          "A": {
+            "text": "Review the theoretical framework on phonetics and phonology to understand sound categories.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Listen to the audio recording several times to identify specific sound patterns accurately.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Start by coding the transcript data using a template for morphological analysis.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_5",
+        "question": "You have been given a dataset of sentences in an unfamiliar language as part of your linguistics seminar. What would be your first step to analyze the dataset correctly?",
+        "tiny_learn": [
+          "Linguistic analysis involves breaking down language data into components like sounds, words, and sentence structures.",
+          "Start by identifying patterns in the data and applying formal linguistic terminology to describe these patterns.",
+          "A common mistake is jumping to conclusions based on assumptions without thorough observation of the data."
+        ],
+        "options": {
+          "A": {
+            "text": "Identify common sound patterns and phonetic features in the dataset to understand pronunciation aspects.",
+            "riasec": "I"
+          },
+          "B": {
+            "text": "Classify the data by organizing the words and sentences into logical categories to see how they fit together.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Create a set of rules for how words might be combined by hypothesizing sentence structure based on the examples.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_6",
+        "question": "You have just started the Introduction to Linguistics course and received a dataset of child language samples. What is your first step to analyze the data?",
+        "tiny_learn": [
+          "Linguistic analysis involves examining language data to identify patterns in sounds, words, and sentence structures.",
+          "Start by defining key terminology and concepts relevant to the data before attempting analysis.",
+          "A common mistake is jumping into data analysis without clarifying linguistic terms or context."
+        ],
+        "options": {
+          "A": {
+            "text": "Begin by reviewing definitions of basic linguistic terms to understand the dataset properly.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Try to detect sound patterns in the samples focusing on phonetics and phonology.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Explore how word meanings relate to context before analyzing sentence structures.",
+            "riasec": "E"
+          }
+        }
+      }
+    ],
+    "C": [
+      {
+        "question_code": "L_AABACIW102_4",
+        "question": "You have just started the Introduction to Communication Studies course and need to prepare for the first seminar. How do you begin your preparation?",
+        "tiny_learn": [
+          "Communication theories explain how messages are created and understood between people or groups.",
+          "To prepare, read assigned literature carefully and note key points relevant to weekly seminar questions.",
+          "A common mistake is skimming texts without reflecting on how theories apply to real communication situations."
+        ],
+        "options": {
+          "A": {
+            "text": "Review the key communication theories explained in the lecture and note their main points for discussion.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Collect examples from media that illustrate different communication processes to bring to the seminar.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Outline a plan for how you will work with your seminar group to analyze the weekly reading together.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW102_5",
+        "question": "You have just received the first reading assignment about key communication theories. What is your best first step to start engaging with the material?",
+        "tiny_learn": [
+          "Interpreting communication theories involves understanding their basic assumptions and concepts.",
+          "Begin by identifying key ideas in the reading before trying to connect them to broader communication contexts.",
+          "Avoid trying to memorize details without grasping the overall theoretical perspective first."
+        ],
+        "options": {
+          "A": {
+            "text": "Skim the text to find and highlight important concepts and terms related to communication theories.",
+            "riasec": "I"
+          },
+          "B": {
+            "text": "Organize a discussion group to talk about how communication affects real-life social interactions.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Create a chart categorizing theories by their focus on individual, societal, or language approaches.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW102_7",
+        "question": "You have just attended your first seminar on communication theories. To prepare effectively for the next group discussion, what should you do first?",
+        "tiny_learn": [
+          "Communication theories explain how people exchange messages using language, psychology, or social factors.",
+          "Review the assigned literature and try to identify key points and arguments to contribute to the seminar.",
+          "Avoid waiting until the last minute to read the materials, as this limits meaningful participation."
+        ],
+        "options": {
+          "A": {
+            "text": "Analyze the societal impact of communication theories using social research articles before the seminar.",
+            "riasec": "S"
+          },
+          "B": {
+            "text": "Summarize the key concepts from the assigned readings to clarify your understanding and prepare questions.",
+            "riasec": "C"
+          },
+          "C": {
+            "text": "Create a visual chart linking the psychological theories of communication to human behavior examples.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_4",
+        "question": "You are tasked with analyzing a short transcript of child speech to identify patterns in sound acquisition. What is your first step to approach this task?",
+        "tiny_learn": [
+          "Phonetics studies the physical sounds of speech and how they are produced and perceived.",
+          "Begin by carefully listening to the recording and noting any unfamiliar or distinctive sounds.",
+          "Don't assume you understand a sound just by reading the transcript; always verify with the audio."
+        ],
+        "options": {
+          "A": {
+            "text": "Review the theoretical framework on phonetics and phonology to understand sound categories.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Listen to the audio recording several times to identify specific sound patterns accurately.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Start by coding the transcript data using a template for morphological analysis.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_5",
+        "question": "You have been given a dataset of sentences in an unfamiliar language as part of your linguistics seminar. What would be your first step to analyze the dataset correctly?",
+        "tiny_learn": [
+          "Linguistic analysis involves breaking down language data into components like sounds, words, and sentence structures.",
+          "Start by identifying patterns in the data and applying formal linguistic terminology to describe these patterns.",
+          "A common mistake is jumping to conclusions based on assumptions without thorough observation of the data."
+        ],
+        "options": {
+          "A": {
+            "text": "Identify common sound patterns and phonetic features in the dataset to understand pronunciation aspects.",
+            "riasec": "I"
+          },
+          "B": {
+            "text": "Classify the data by organizing the words and sentences into logical categories to see how they fit together.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Create a set of rules for how words might be combined by hypothesizing sentence structure based on the examples.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "L_AABACIW103_7",
+        "question": "You have just received a dataset containing recorded child speech samples to analyze their language development. What should you do first to start your analysis?",
+        "tiny_learn": [
+          "Analysis means breaking down language data to understand its structure and meaning.",
+          "Begin by identifying key features of the data based on what you learned about phonetics, morphology, and syntax.",
+          "A common mistake is to jump into conclusions without carefully examining the basic language units."
+        ],
+        "options": {
+          "A": {
+            "text": "Start by listening carefully to the sounds and noting how they are pronounced in the recordings.",
+            "riasec": "S"
+          },
+          "B": {
+            "text": "Categorize words and sentence structures you recognize to find recurring patterns in the data.",
+            "riasec": "C"
+          },
+          "C": {
+            "text": "Apply theoretical concepts about child language acquisition from lectures to guide your focus in analysis.",
+            "riasec": "A"
+          }
+        }
+      }
+    ]
+  },
+  "Econometrics and Operations Research": {
+    "broad": [
+      {
+        "question_code": "XB_0160_1",
+        "question": "You encounter a challenging problem requiring you to prove the existence and uniqueness of solutions to an equation involving real functions. What is your first step?",
+        "tiny_learn": [
+          "Existence and uniqueness theorems guarantee that a solution to an equation exists and is one-of-a-kind under certain conditions.",
+          "Start by clearly defining the problem and stating relevant assumptions and definitions before attempting a proof.",
+          "A common mistake is skipping steps or failing to verify the necessary conditions of the theorem."
+        ],
+        "options": {
+          "A": {
+            "text": "Sketch a graph of the function to visually inspect where solutions might lie.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Review related theorems and logical implications that establish conditions for uniqueness.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Brainstorm creative examples or counterexamples to test your hypotheses about solution behavior.",
+            "riasec": "A"
+          },
+          "D": {
+            "text": "Discuss the problem with classmates to understand different viewpoints and confirm understanding.",
+            "riasec": "S"
+          },
+          "E": {
+            "text": "Outline a step-by-step plan for the proof, including induction or contradiction if applicable.",
+            "riasec": "E"
+          },
+          "F": {
+            "text": "Systematically write down all assumptions, definitions, and quantifiers relevant to the equation.",
+            "riasec": "C"
+          }
+        }
+      }
+    ],
+    "R": [
+      {
+        "question_code": "XB_0160_2",
+        "question": "You are starting to study the concept of limits in calculus. Which approach should you take first to best understand this topic?",
+        "tiny_learn": [
+          "A limit describes the value a function approaches as the input approaches a certain point.",
+          "Begin by reviewing the formal definition and simple examples of limits.",
+          "Avoid jumping straight to complicated problems without understanding the limit definition."
+        ],
+        "options": {
+          "A": {
+            "text": "Read the formal definition and try calculating limits of simple functions like polynomials.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Search online videos that visually explain limits and their behavior graphically.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Discuss with classmates how we can apply limits to solve real-world optimization problems.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "XB_0160_3",
+        "question": "You need to solve a problem involving the calculation of derivatives and then present your reasoning clearly. What is your first step?",
+        "tiny_learn": [
+          "A derivative measures how a function changes as its input changes.",
+          "Start by identifying the function and apply the chain rule if needed.",
+          "Avoid skipping steps in your reasoning, as this can cause errors in proofs."
+        ],
+        "options": {
+          "A": {
+            "text": "Begin by writing down the problem and organizing logical steps to prove your solution.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Calculate the derivatives involved using known differentiation rules and formulas.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Discuss your approach with classmates to explore different problem-solving strategies.",
+            "riasec": "S"
+          }
+        }
+      },
+      {
+        "question_code": "XB_0160_4",
+        "question": "You are starting the course and encounter a challenging problem involving limits and proofs. What should you do first?",
+        "tiny_learn": [
+          "Limits describe the value a function approaches as the input approaches a point.",
+          "Start by reviewing relevant theorems and definitions before attempting the proof.",
+          "Jumping into calculations without understanding the theorem often leads to mistakes."
+        ],
+        "options": {
+          "A": {
+            "text": "Carefully read the course notes on logical reasoning and try to understand the theorem behind the problem.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Attempt to calculate the limit directly using algebraic manipulation and examples.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Discuss the problem with classmates to explore different ways to approach it practically.",
+            "riasec": "C"
+          }
+        }
+      }
+    ],
+    "I": [
+      {
+        "question_code": "XB_0160_2",
+        "question": "You are starting to study the concept of limits in calculus. Which approach should you take first to best understand this topic?",
+        "tiny_learn": [
+          "A limit describes the value a function approaches as the input approaches a certain point.",
+          "Begin by reviewing the formal definition and simple examples of limits.",
+          "Avoid jumping straight to complicated problems without understanding the limit definition."
+        ],
+        "options": {
+          "A": {
+            "text": "Read the formal definition and try calculating limits of simple functions like polynomials.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Search online videos that visually explain limits and their behavior graphically.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Discuss with classmates how we can apply limits to solve real-world optimization problems.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "XB_0160_3",
+        "question": "You need to solve a problem involving the calculation of derivatives and then present your reasoning clearly. What is your first step?",
+        "tiny_learn": [
+          "A derivative measures how a function changes as its input changes.",
+          "Start by identifying the function and apply the chain rule if needed.",
+          "Avoid skipping steps in your reasoning, as this can cause errors in proofs."
+        ],
+        "options": {
+          "A": {
+            "text": "Begin by writing down the problem and organizing logical steps to prove your solution.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Calculate the derivatives involved using known differentiation rules and formulas.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Discuss your approach with classmates to explore different problem-solving strategies.",
+            "riasec": "S"
+          }
+        }
+      },
+      {
+        "question_code": "XB_0160_5",
+        "question": "You are starting the course Calculus and Analysis I and need to decide how to begin studying the material. What is your first step?",
+        "tiny_learn": [
+          "Concepts build on each other, so mastering definitions like limits and derivatives is crucial.",
+          "Review lecture notes and textbooks carefully to understand fundamental theorems and formulas.",
+          "Avoid jumping to problem solving before grasping the underlying theory and notation."
+        ],
+        "options": {
+          "A": {
+            "text": "Begin by exploring examples of calculus problems to see how solutions are constructed.",
+            "riasec": "I"
+          },
+          "B": {
+            "text": "Start by reviewing the formal definitions and logical structure behind limits and continuity.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Focus on practicing calculations and applying rules to solve integrals and derivatives.",
+            "riasec": "C"
+          }
+        }
+      }
+    ],
+    "A": [
+      {
+        "question_code": "XB_0160_2",
+        "question": "You are starting to study the concept of limits in calculus. Which approach should you take first to best understand this topic?",
+        "tiny_learn": [
+          "A limit describes the value a function approaches as the input approaches a certain point.",
+          "Begin by reviewing the formal definition and simple examples of limits.",
+          "Avoid jumping straight to complicated problems without understanding the limit definition."
+        ],
+        "options": {
+          "A": {
+            "text": "Read the formal definition and try calculating limits of simple functions like polynomials.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Search online videos that visually explain limits and their behavior graphically.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Discuss with classmates how we can apply limits to solve real-world optimization problems.",
+            "riasec": "A"
+          }
+        }
+      },
+      {
+        "question_code": "XB_0160_6",
+        "question": "You are given a set of exercises involving limits, derivatives, and Taylor polynomials. What is your first step when approaching these problems?",
+        "tiny_learn": [
+          "Limits help describe the behavior of functions near specific points.",
+          "Start by carefully identifying what the problem asks to determine the right calculus method.",
+          "A common mistake is skipping the precise definition of the limit or derivative when solving."
+        ],
+        "options": {
+          "A": {
+            "text": "Formulate clear logical steps to prove the existence of the limit before calculation.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Begin by calculating derivatives directly to find rates of change.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Explore examples of Taylor polynomials to approximate functions practically.",
+            "riasec": "E"
+          }
+        }
+      },
+      {
+        "question_code": "XB_0160_7",
+        "question": "You encounter a problem about finding extreme values of a function with constraints. What is your first step?",
+        "tiny_learn": [
+          "Extreme values are the highest or lowest points of a function in a given domain.",
+          "Using the Lagrange multiplier method helps find extrema with constraints by introducing auxiliary variables.",
+          "A common mistake is ignoring the constraints and only looking for critical points of the unconstrained function."
+        ],
+        "options": {
+          "A": {
+            "text": "Start by setting up the Lagrange multiplier equations to incorporate the constraints.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Graph the function and constraints to visually identify possible extreme points.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Calculate critical points by finding where partial derivatives of the unconstrained function are zero.",
+            "riasec": "C"
+          }
+        }
+      }
+    ],
+    "S": [
+      {
+        "question_code": "XB_0160_3",
+        "question": "You need to solve a problem involving the calculation of derivatives and then present your reasoning clearly. What is your first step?",
+        "tiny_learn": [
+          "A derivative measures how a function changes as its input changes.",
+          "Start by identifying the function and apply the chain rule if needed.",
+          "Avoid skipping steps in your reasoning, as this can cause errors in proofs."
+        ],
+        "options": {
+          "A": {
+            "text": "Begin by writing down the problem and organizing logical steps to prove your solution.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Calculate the derivatives involved using known differentiation rules and formulas.",
+            "riasec": "I"
+          },
+          "C": {
+            "text": "Discuss your approach with classmates to explore different problem-solving strategies.",
+            "riasec": "S"
+          }
+        }
+      },
+      {
+        "question_code": "XB_0160_6",
+        "question": "You are given a set of exercises involving limits, derivatives, and Taylor polynomials. What is your first step when approaching these problems?",
+        "tiny_learn": [
+          "Limits help describe the behavior of functions near specific points.",
+          "Start by carefully identifying what the problem asks to determine the right calculus method.",
+          "A common mistake is skipping the precise definition of the limit or derivative when solving."
+        ],
+        "options": {
+          "A": {
+            "text": "Formulate clear logical steps to prove the existence of the limit before calculation.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Begin by calculating derivatives directly to find rates of change.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Explore examples of Taylor polynomials to approximate functions practically.",
+            "riasec": "E"
+          }
+        }
+      },
+      {
+        "question_code": "XB_0160_7",
+        "question": "You encounter a problem about finding extreme values of a function with constraints. What is your first step?",
+        "tiny_learn": [
+          "Extreme values are the highest or lowest points of a function in a given domain.",
+          "Using the Lagrange multiplier method helps find extrema with constraints by introducing auxiliary variables.",
+          "A common mistake is ignoring the constraints and only looking for critical points of the unconstrained function."
+        ],
+        "options": {
+          "A": {
+            "text": "Start by setting up the Lagrange multiplier equations to incorporate the constraints.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Graph the function and constraints to visually identify possible extreme points.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Calculate critical points by finding where partial derivatives of the unconstrained function are zero.",
+            "riasec": "C"
+          }
+        }
+      }
+    ],
+    "E": [
+      {
+        "question_code": "XB_0160_4",
+        "question": "You are starting the course and encounter a challenging problem involving limits and proofs. What should you do first?",
+        "tiny_learn": [
+          "Limits describe the value a function approaches as the input approaches a point.",
+          "Start by reviewing relevant theorems and definitions before attempting the proof.",
+          "Jumping into calculations without understanding the theorem often leads to mistakes."
+        ],
+        "options": {
+          "A": {
+            "text": "Carefully read the course notes on logical reasoning and try to understand the theorem behind the problem.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Attempt to calculate the limit directly using algebraic manipulation and examples.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Discuss the problem with classmates to explore different ways to approach it practically.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "XB_0160_5",
+        "question": "You are starting the course Calculus and Analysis I and need to decide how to begin studying the material. What is your first step?",
+        "tiny_learn": [
+          "Concepts build on each other, so mastering definitions like limits and derivatives is crucial.",
+          "Review lecture notes and textbooks carefully to understand fundamental theorems and formulas.",
+          "Avoid jumping to problem solving before grasping the underlying theory and notation."
+        ],
+        "options": {
+          "A": {
+            "text": "Begin by exploring examples of calculus problems to see how solutions are constructed.",
+            "riasec": "I"
+          },
+          "B": {
+            "text": "Start by reviewing the formal definitions and logical structure behind limits and continuity.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Focus on practicing calculations and applying rules to solve integrals and derivatives.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "XB_0160_6",
+        "question": "You are given a set of exercises involving limits, derivatives, and Taylor polynomials. What is your first step when approaching these problems?",
+        "tiny_learn": [
+          "Limits help describe the behavior of functions near specific points.",
+          "Start by carefully identifying what the problem asks to determine the right calculus method.",
+          "A common mistake is skipping the precise definition of the limit or derivative when solving."
+        ],
+        "options": {
+          "A": {
+            "text": "Formulate clear logical steps to prove the existence of the limit before calculation.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Begin by calculating derivatives directly to find rates of change.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Explore examples of Taylor polynomials to approximate functions practically.",
+            "riasec": "E"
+          }
+        }
+      }
+    ],
+    "C": [
+      {
+        "question_code": "XB_0160_4",
+        "question": "You are starting the course and encounter a challenging problem involving limits and proofs. What should you do first?",
+        "tiny_learn": [
+          "Limits describe the value a function approaches as the input approaches a point.",
+          "Start by reviewing relevant theorems and definitions before attempting the proof.",
+          "Jumping into calculations without understanding the theorem often leads to mistakes."
+        ],
+        "options": {
+          "A": {
+            "text": "Carefully read the course notes on logical reasoning and try to understand the theorem behind the problem.",
+            "riasec": "R"
+          },
+          "B": {
+            "text": "Attempt to calculate the limit directly using algebraic manipulation and examples.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Discuss the problem with classmates to explore different ways to approach it practically.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "XB_0160_5",
+        "question": "You are starting the course Calculus and Analysis I and need to decide how to begin studying the material. What is your first step?",
+        "tiny_learn": [
+          "Concepts build on each other, so mastering definitions like limits and derivatives is crucial.",
+          "Review lecture notes and textbooks carefully to understand fundamental theorems and formulas.",
+          "Avoid jumping to problem solving before grasping the underlying theory and notation."
+        ],
+        "options": {
+          "A": {
+            "text": "Begin by exploring examples of calculus problems to see how solutions are constructed.",
+            "riasec": "I"
+          },
+          "B": {
+            "text": "Start by reviewing the formal definitions and logical structure behind limits and continuity.",
+            "riasec": "E"
+          },
+          "C": {
+            "text": "Focus on practicing calculations and applying rules to solve integrals and derivatives.",
+            "riasec": "C"
+          }
+        }
+      },
+      {
+        "question_code": "XB_0160_7",
+        "question": "You encounter a problem about finding extreme values of a function with constraints. What is your first step?",
+        "tiny_learn": [
+          "Extreme values are the highest or lowest points of a function in a given domain.",
+          "Using the Lagrange multiplier method helps find extrema with constraints by introducing auxiliary variables.",
+          "A common mistake is ignoring the constraints and only looking for critical points of the unconstrained function."
+        ],
+        "options": {
+          "A": {
+            "text": "Start by setting up the Lagrange multiplier equations to incorporate the constraints.",
+            "riasec": "A"
+          },
+          "B": {
+            "text": "Graph the function and constraints to visually identify possible extreme points.",
+            "riasec": "S"
+          },
+          "C": {
+            "text": "Calculate critical points by finding where partial derivatives of the unconstrained function are zero.",
+            "riasec": "C"
+          }
+        }
+      }
+    ]
+  }
+}
