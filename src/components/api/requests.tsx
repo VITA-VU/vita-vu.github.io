@@ -31,9 +31,9 @@ export function initializeStudent() {
   };
   return fetch('https://' + hostname + '/student/init/', requestOptions)
     .then(response => response.json())
-    .then(parsedValue => {
-      localStorage.setItem('studentVector', JSON.stringify(parsedValue.student_vector));
-    });
+    .then(parsedValue =>{localStorage.setItem('studentVector', JSON.stringify(parsedValue.student_vector))
+      return parsedValue; })
+    .then(parsedValue => {localStorage.setItem('eligiblePrograms', JSON.stringify(parsedValue.eligible_programs))})
 }
 
 export async function updateStudent() 
@@ -47,7 +47,7 @@ export async function updateStudent()
         student_vector: (student_vector).split(',').map(Number),
         //TODO: different accepted values
         //program: localStorage.getItem('selectedProgramme') || '',
-        program: 'Economics',
+        program: 'Mathematics',
         task_answer: localStorage.getItem('answer') || '',
         task_preference: parseInt(localStorage.getItem('taskEnjoyment') || '0'),
         avatar_chosen: localStorage.getItem('avatar') || '',

@@ -16,6 +16,7 @@ interface ProgrammeSearchProps {
   selectedAvatar?: string;
 }
 
+//TODO: use programmes returned by init
 const programmes = [
   { id: 'psychology', name: 'Psychology', description: 'Study human behavior and mental processes' },
   { id: 'business-analytics', name: 'Business Analytics', description: 'Data-driven business decision making' },

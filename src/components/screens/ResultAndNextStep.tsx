@@ -74,25 +74,33 @@ export function ResultAndNextStep({
 const loadedRef = React.useRef(false);
 
 useEffect(() => {
-  if (loadedRef.current) return;  // ← prevents duplicate calls
+  if (loadedRef.current) return;
   loadedRef.current = true;
 
   async function load() {
-    const t = await returnRecommendations();
+    try {
+      const t = await returnRecommendations();
+      if (!Array.isArray(t)) {
+        console.error("returnRecommendations did not return an array:", t);
+        return;
+      }
+      const result = t.reduce((acc, item) => {
+        acc[item.program] = {
+          least_distance: item.least_distance,
+          highest_profile: item.highest_profile,
+        };
+        return acc;
+      }, {});
 
-    const result = t.reduce((acc, item) => {
-      acc[item.program] = {
-        least_distance: item.least_distance,
-        highest_profile: item.highest_profile,
-      };
-      return acc;
-    }, {});
-
-    setPrograms(result);
+      setPrograms(result);
+    } catch (err) {
+      console.error("Failed to load recommendations", err);
+    }
   }
 
   load();
 }, []);
+
 
 
 
