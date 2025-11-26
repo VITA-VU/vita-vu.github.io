@@ -6,6 +6,7 @@ import { VitaToast, useToast } from '../vita-ui/VitaToast';
 import { HelpCircle } from 'lucide-react';
 import logo from '../imgs/VU-logo-RGB.png';
 import { fetchMicrotask, returnFetchMicrotask } from '../api/requests';
+import { useAppContext } from '../../App'; 
 
 interface TaskScreenProps {
 
@@ -85,7 +86,7 @@ export function TaskScreen({
 }: TaskScreenProps) {
   const [selectedOption, setSelectedOption] = useState<number | undefined>();
   const [selectedRiasec, setSelectedRiasec] = useState<string | null>(null);
-  const [task, setTask] = useState<any>(null);
+  const { task } = useAppContext();
 
   function handleSelectOption(index: number, riasec: string) {
     setSelectedOption(index);
@@ -93,29 +94,6 @@ export function TaskScreen({
   }  
   const [showWhyOverlay, setShowWhyOverlay] = useState(false);
   const { toast, showToast, hideToast } = useToast();
-
-    //TODO: remove this, why is it needed
-    localStorage.setItem('currentTask', 'Mathematics');
-  
-useEffect(() => {
-  async function load() {
-    const t = await returnFetchMicrotask();
-    // Convert the options object into an array
-    const optionArray = Object.entries(t.options).map(([key, value]) => ({
-      key,           // original option key, e.g., "A"
-      text: value.text,
-      riasec: value.riasec
-    }));
-
-    setTask({
-      ...t,
-      options: optionArray
-    });
-  }
-
-  load();
-}, []);
-
 
   if (!task) {
   return <div className="p-6">Loading…</div>;

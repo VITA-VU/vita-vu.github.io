@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { TaskCard } from '../vita-ui/TaskCard';
+import { TaskCard, TaskCardProps } from '../vita-ui/TaskCard';
 import { parse } from 'path';
+import { useAppContext } from '../../App';
 
 //NOTE: had to shut off CORS in browser to make this work
 
@@ -15,8 +16,6 @@ export function resetStudent() {
       localStorage.setItem('studentVector', JSON.stringify(parsedValue.student_vector));
     });
   }
-
-
 
 export function initializeStudent() {
   const requestOptions = {
@@ -33,15 +32,11 @@ export function initializeStudent() {
   return fetch('https://' + hostname + '/student/init/', requestOptions)
     .then(response => response.json())
     .then(parsedValue => {
-      // return {
-      //   studentVector: parsedValue.student_vector,
-      //   programs: parsedValue.eligible_programs
-      // };
       localStorage.setItem('studentVector', JSON.stringify(parsedValue.student_vector));
     });
 }
 
-export function updateStudent() 
+export async function updateStudent() 
   {
   var student_vector = localStorage.getItem('studentVector') || '[0,0,0,0,0,0]';
   student_vector = student_vector.replace(/[\[\]\s]/g, ''); //remove brackets and spaces
@@ -50,25 +45,27 @@ export function updateStudent()
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify({ 
         student_vector: (student_vector).split(',').map(Number),
-        program: localStorage.getItem('currentTask') || '',
+        //TODO: different accepted values
+        //program: localStorage.getItem('selectedProgramme') || '',
+        program: 'Economics',
         task_answer: localStorage.getItem('answer') || '',
-        //TODO: update preferences
-        task_preference: 1,
-        //task_preference: localStorage.getItem('taskEnjoyment') || '',
+        task_preference: parseInt(localStorage.getItem('taskEnjoyment') || '0'),
         avatar_chosen: localStorage.getItem('avatar') || '',
         demo: {name: localStorage.getItem('firstName') || '',
         age: localStorage.getItem('age') || '',
         hs_profile: localStorage.getItem('profile') || '' }
        })
   };
-   fetch('https://' + hostname + '/student/update/', requestOptions)
+   return fetch('https://' + hostname + '/student/update/', requestOptions)
       .then(response => response.json())
       .then(parsedValue => {localStorage.setItem('studentVector', JSON.stringify(parsedValue.student_vector))
       return parsedValue; })
       .then(parsedValue => {
         localStorage.setItem("stop", JSON.stringify(parsedValue.should_stop))
       return parsedValue; })
-      .then(parsedValue =>localStorage.setItem("next", JSON.stringify(parsedValue.next_action)));
+            .then(parsedValue =>{localStorage.setItem("next", JSON.stringify(parsedValue.next_action))
+      return parsedValue; })
+      .then(parsedValue => {return parsedValue.next_task; });
 }
 
 export async function updateStudentRIASEC() 
@@ -102,10 +99,33 @@ export async function updateStudentRIASEC()
       .then(parsedValue => {return parsedValue.next_task; });
 }
 
-export const returnTask = async() => {
-  //TODO: add check for with/without riasec then return task and handle
-    return await updateStudentRIASEC();
-} 
+export async function returnTask(type: string, setTask: (t: TaskCardProps) => void) {
+  let t;
+
+  if (type === 'RIASEC') {
+    t = await updateStudentRIASEC();
+  } else if (type === "programme") {
+    t = await fetchMicrotask()
+  }
+    else {
+    t = await updateStudent();
+  }
+
+  if (t !==null) {
+
+  const optionArray = Object.entries(t.options).map(([key, value]) => ({
+    key,
+    text: value.text,
+    riasec: value.riasec,
+  }));
+
+  setTask({
+    ...t,
+    options: optionArray,
+  });
+}
+}
+
 
 export async function fetchMicrotask() {
   var student_vector = localStorage.getItem('studentVector') || '[0,0,0,0,0,0]';
@@ -115,7 +135,7 @@ export async function fetchMicrotask() {
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify({ 
         student_vector: (student_vector).split(',').map(Number),
-        program: localStorage.getItem('currentTask') || '',
+        program: localStorage.getItem('selectedProgramme') || '',
         avatar_chosen: localStorage.getItem('avatar') || '',
         demo: {name: localStorage.getItem('firstName') || '',
         age: localStorage.getItem('age') || '',
@@ -126,10 +146,6 @@ export async function fetchMicrotask() {
     .then(response => response.json())
     .then(parsedValue => {return parsedValue.task; });    
   }
-
-export const returnFetchMicrotask = async() => {
-    return await fetchMicrotask();
-} 
 
 export async function getRecommendations() {
   var student_vector = localStorage.getItem('studentVector') || '[0,0,0,0,0,0]';

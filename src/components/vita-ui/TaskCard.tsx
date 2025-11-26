@@ -4,7 +4,7 @@ import { VitaButton } from './VitaButton';
 import { ChevronDown, Lightbulb } from 'lucide-react';
 import { AnimatePresence, motion } from "framer-motion";
 
-interface TaskCardProps {
+export interface TaskCardProps {
   //stimulusTitle: string;
   //stimulusBody: string | React.ReactNode;
   //learnBullets: string[];
