@@ -3,6 +3,7 @@ import { VitaButton } from '../vita-ui/VitaButton';
 import { VitaInput } from '../vita-ui/VitaInput';
 import { LanguageToggle } from '../LanguageToggle';
 import logo from '../imgs/VU-logo-RGB.png';
+import { initializeStudent } from '../api/requests';
 
 interface AvatarAndDetailsProps {
   onContinue: (data: { avatar?: string; pronouns?: string; firstName?: string; age?: string; profile?: string; hasProgramInMind?: 'yes' | 'no' }) => void;
@@ -30,17 +31,17 @@ const pronounOptions = [
 ];
 
 const programmeOptions = [
-  { value: 'Nature & Technical (NT)', label: 'Nature & Technical (NT)' },
-  { value: 'Nature & Health (NG)', label: 'Nature & Health (NG)' },
-  { value: 'Culture & Society (CM)', label: 'Culture & Society (CM)' },
-  { value: 'Economics & Society (EM)', label: 'Economics & Society (EM)' },
+  { value: 'N&T', label: 'Nature & Technical (NT)' },
+  { value: 'N&H', label: 'Nature & Health (NG)' },
+  { value: 'C&M', label: 'Culture & Society (CM)' },
+  { value: 'E&S', label: 'Economics & Society (EM)' },
   { value: 'Combination', label: 'Combination' },
   { value: 'Other', label: 'Other' },
 ];
 
-// function initializeProfile(){
-//   localStorage.setItem('studentProfile', {});
-// }
+async function initializeProfile(selectedAvatar: string) {
+  initializeStudent();
+}
 
 export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange, goBack, goHome }: AvatarAndDetailsProps) {
   const [step, setStep] = useState<Step>('avatar');
@@ -148,7 +149,7 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
     const selectedLabel = programmeOptions.find(opt => opt.value === selectedValue)?.label || selectedValue;
     addUserMessage(selectedLabel);
     setProfile(selectedLabel);
-    localStorage.setItem('profile', selectedLabel);
+    localStorage.setItem('profile', selectedValue);
     // ask follow-up question instead of finishing immediately
     addAvatarMessage('Quick question: do you already have a programme in mind?', 800);
     setChatStep('programInMind');

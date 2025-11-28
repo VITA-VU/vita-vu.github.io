@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import { Splash } from './components/screens/Splash';
 import { ConsentAndGoal } from './components/screens/ConsentAndGoal';
@@ -16,6 +16,9 @@ import { TaskIntro } from './components/screens/TaskIntro';
 import { TutorialManager } from './components/tutorial/TutorialManager';
 import { TutorialWelcome } from './components/tutorial/TutorialWelcome';
 import { TaskFeedback } from './components/screens/TaskFeedback';
+import { initializeStudent, resetStudent } from './components/api/requests';
+import { TaskCardProps } from './components/vita-ui/TaskCard';
+import { returnTask } from './components/api/requests';
 
 // Global state context (or use localStorage/Redux)
 import { createContext, useState, ReactNode } from 'react';
@@ -39,6 +42,8 @@ interface AppContextType {
   setRIASECStyles: (styles: string[]) => void;
   taskVariant?: string;
   setTaskVariant: (variant: string) => void;
+  task?: TaskCardProps | null;
+  setTask: (task: TaskCardProps | null) => void;
 }
 
 export const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -50,6 +55,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [userPath, setUserPath] = useState<'explore' | 'help'>();
   const [riasecStyles, setRIASECStyles] = useState<string[]>();
   const [taskVariant, setTaskVariant] = useState<string>();
+  const [task, setTask] = useState<TaskCardProps | null>(null);
 
   return (
     <AppContext.Provider value={{
@@ -57,7 +63,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
       selectedProgramme, setSelectedProgramme,
       userPath, setUserPath,
       riasecStyles, setRIASECStyles,
-      taskVariant, setTaskVariant
+      taskVariant, setTaskVariant,
+      task, setTask 
     }}>
       {children}
     </AppContext.Provider>
@@ -126,6 +133,7 @@ function AvatarDetailsRoute() {
     <AvatarAndDetails
       onContinue={(data) => {
         ctx.setUserData({ ...ctx.userData, ...data });
+        initializeStudent();
         // navigate based on whether user already has a program in mind
         if (data.hasProgramInMind === 'yes') {
           navigate('/programme-search');
@@ -164,10 +172,12 @@ function BasicDetailsRoute() {
 function ProgrammeSearchRoute() {
   const navigate = useNavigate();
   const ctx = useAppContext();
+  const { setTask } = useAppContext(); 
+
   return (
     <ProgrammeSearch
-      onContinue={(prog) => {
-        ctx.setSelectedProgramme(prog);
+      onContinue={async (prog) => {
+        await returnTask('programme', setTask); 
         navigate('/task-intro');
       }}
       goHome={() => navigate('/')}
@@ -238,26 +248,23 @@ function TaskFeedbackRoute() {
 
 function MicroRIASECRoute() {
   const navigate = useNavigate();
-  const ctx = useAppContext();
+  const { setTask } = useAppContext(); 
+
   return (
     <MicroRIASEC
-      onComplete={(styles) => {
-        const map: Record<string, string> = {
-          I: 'physics', R: 'physics', A: 'psychology',
-          S: 'psychology', E: 'business-analytics', C: 'business-analytics'
-        };
-        ctx.setRIASECStyles(styles);
-        ctx.setTaskVariant(map[styles[0]] || 'psychology');
+      onComplete={async (styles) => {
+        await returnTask('RIASEC', setTask);
         navigate('/task-intro');
       }}
       goHome={() => navigate('/')}
       goBack={() => navigate(-1)}
       currentLang="EN"
       onLangChange={() => {}}
-      selectedAvatar={ctx.userData?.avatar}
+      selectedAvatar={useAppContext().userData?.avatar}
     />
   );
 }
+
 
 function StylePickerRoute() {
   const navigate = useNavigate();
@@ -284,10 +291,20 @@ function StylePickerRoute() {
 function ResultRoute() {
   const navigate = useNavigate();
   const ctx = useAppContext();
+  const { setTask } = useAppContext(); 
+
   return (
     <ResultAndNextStep
-      onSeeWeek={(p) => navigate(`/programme/${p}`)}
-      onTryAnother={() => navigate('/task')}
+      //onSeeWeek={(p) => navigate(`/programme/${p}`)}
+      onRedo={async () => {
+        resetStudent()
+        await returnTask('programme', setTask); 
+        navigate('/task');
+      }}
+      onTryAnother={async () => {
+        await returnTask('programme', setTask); 
+        navigate('/task');
+      }}
       goHome={() => navigate('/')}
       goBack={() => navigate(-1)}
       currentLang="EN"

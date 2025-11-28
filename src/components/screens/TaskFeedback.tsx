@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { VitaButton } from '../vita-ui/VitaButton';
 import { LanguageToggle } from '../LanguageToggle';
 import logo from '../imgs/VU-logo-RGB.png';
+import { returnTask } from '../api/requests';
+import { useAppContext } from '../../App';
 
 interface TaskFeedbackProps {
   onContinue: (stop: boolean) => void;
@@ -32,14 +34,13 @@ export function TaskFeedback({ onContinue, currentLang, onLangChange, goHome, se
   const [enjoyment, setEnjoyment] = useState<string>('');
   const [preference, setPreference] = useState<string>('');
   const avatarTopic = selectedAvatar || 'Griffon';
-  console.log(avatarTopic)
-  const [stop, setStop] = useState<boolean>(false);
+  const { setTask } = useAppContext(); 
 
-  const handleEnjoymentSelect = (value: string) => {
+  const handleEnjoymentSelect = async (value: string) => {
     setEnjoyment(value);
     localStorage.setItem('taskEnjoyment', value);
-    // TO DO: check update : if ready for stopping point, go to finish line
-    if (stop===true){
+    await returnTask('default', setTask);
+    if (localStorage.getItem('stop')==='true'){
       onContinue(true);
     }
     else {
@@ -111,8 +112,8 @@ export function TaskFeedback({ onContinue, currentLang, onLangChange, goHome, se
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <VitaButton
-                variant={enjoyment === 'loved' ? 'primary' : 'ghost'}
-                onClick={() => handleEnjoymentSelect('loved')}
+                variant={enjoyment === '1' ? 'primary' : 'ghost'}
+                onClick={() => handleEnjoymentSelect('1')}
                 className="h-20 text-center flex flex-col items-center justify-center"
               >
                 <span className="text-2xl mb-1">😍</span>
@@ -120,8 +121,8 @@ export function TaskFeedback({ onContinue, currentLang, onLangChange, goHome, se
               </VitaButton>
 
               <VitaButton
-                variant={enjoyment === 'neutral' ? 'primary' : 'ghost'}
-                onClick={() => handleEnjoymentSelect('neutral')}
+                variant={enjoyment === '0' ? 'primary' : 'ghost'}
+                onClick={() => handleEnjoymentSelect('0')}
                 className="h-20 text-center flex flex-col items-center justify-center"
               >
                 <span className="text-2xl mb-1">😐</span>
@@ -129,8 +130,8 @@ export function TaskFeedback({ onContinue, currentLang, onLangChange, goHome, se
               </VitaButton>
 
               <VitaButton
-                variant={enjoyment === 'disliked' ? 'primary' : 'ghost'}
-                onClick={() => handleEnjoymentSelect('disliked')}
+                variant={enjoyment === '0' ? 'primary' : 'ghost'}
+                onClick={() => handleEnjoymentSelect('0')}
                 className="h-20 text-center flex flex-col items-center justify-center"
               >
                 <span className="text-2xl mb-1">😕</span>

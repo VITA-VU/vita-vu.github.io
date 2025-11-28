@@ -3,6 +3,7 @@ import { VitaButton } from '../vita-ui/VitaButton';
 import { LanguageToggle } from '../LanguageToggle';
 import { TutorialToggle } from '../tutorial/TutorialToggle';
 import logo from '../imgs/VU-logo-RGB.png';
+import { resetStudent } from '../api/requests';
 
 interface SplashProps {
 
@@ -16,6 +17,8 @@ onStart: () => void;
 }
 
 export function Splash({ onStart, currentLang, onLangChange, tutorialEnabled = false, onTutorialToggle, goHome }: SplashProps) {
+  localStorage.clear()
+  resetStudent()
   return (
     <div className="min-h-screen bg-white flex flex-col">
       {/* Header */}

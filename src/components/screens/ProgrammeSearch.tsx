@@ -17,24 +17,31 @@ interface ProgrammeSearchProps {
 }
 
 const programmes = [
-  { id: 'psychology', name: 'Psychology', description: 'Study human behavior and mental processes' },
-  { id: 'business-analytics', name: 'Business Analytics', description: 'Data-driven business decision making' },
-  { id: 'physics', name: 'Physics', description: 'Explore the fundamental laws of nature' },
-  { id: 'computer-science', name: 'Computer Science', description: 'Software development and computational thinking' },
-  { id: 'economics', name: 'Economics', description: 'Markets, policy, and global trade' },
-  { id: 'law', name: 'Law', description: 'Legal systems and justice' },
-  { id: 'medicine', name: 'Medicine', description: 'Healthcare and medical science' },
-  { id: 'biology', name: 'Biology', description: 'Life sciences and ecosystems' }
+  { id: 'ancienct_studies', name: 'Ancient Studies', description: 'Explore ancient civilizations, languages, cultures, and their historical impact.' },
+  { id: 'biomedical_science', name: 'Biomedical Sciences', description: 'Study the biological and medical foundations of human health and disease.' },
+  { id: 'business_analytics', name: 'Business Analytics', description: 'Use data, statistics, and technology to solve business problems and guide decisions.' },
+  { id: 'computer-science', name: 'Computer Science', description: 'Learn algorithms, software development, and the principles of computing systems.' },
+  { id: 'communication', name: 'Communication and Information Sciences', description: 'Examine how people create, share, and interpret information across media and technology.' },
+  { id: 'economics', name: 'Economics and Business Economics', description: 'Study how markets work, how people make economic decisions, and how economies function.' },
+  { id: 'econometrics', name: 'Econometrics and Operations Research', description: 'Apply mathematics, statistics, and modeling to analyze data and optimize complex systems.' },
+  { id: 'history', name: 'History', description: 'Investigate past events, cultures, and societies to understand how they shape the present.' },
+  { id: 'iba', name: 'International Business Administration', description: 'Learn how global companies operate, focusing on strategy, management, and cross-cultural business.' },
+  { id: 'literature', name: 'Literature and Society', description: 'Study literature as a cultural force and explore how stories shape societies and identities.' },
+  { id: 'mathematics', name: 'Mathematics', description: 'Develop strong analytical and problem-solving skills through the study of pure and applied mathematics.' },
+  { id: 'media', name: 'Media, Art, Design and Architecture', description: 'Explore creative industries, visual culture, design principles, and the built environment.' },
+  { id: 'philosophy', name: 'Philosophy', description: 'Examine fundamental questions about knowledge, ethics, reality, and human reasoning.' },
+  { id: 'ppe', name: 'Philosophy, Politics and Economics', description: 'Combine analytical tools from philosophy, political science, and economics to understand societal issues.' }
 ];
+
 
 export function ProgrammeSearch({ onContinue, currentLang, onLangChange, goBack, goHome, selectedAvatar }: ProgrammeSearchProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [selected, setSelected] = useState<string | null>(null);
   const avatarTopic = selectedAvatar || 'Griffon';
 
-  function setSelectedProgramme(programmeId: string) {
+  function setSelectedProgramme(programmeId: string, programmeName: string) {
     setSelected(programmeId);
-    localStorage.setItem('selectedProgramme', programmeId);
+    localStorage.setItem('currentProgram', programmeName);
   }
   
   // map avatar id -> src (used to show selected avatar speaking)
@@ -127,7 +134,7 @@ export function ProgrammeSearch({ onContinue, currentLang, onLangChange, goBack,
             <VitaCard
               key={programme.id}
               variant={selected === programme.id ? 'emphasis' : 'base'}
-              onClick={() => setSelectedProgramme(programme.id)}
+              onClick={() => setSelectedProgramme(programme.id, programme.name)}
             >
               <h3 className="text-[1rem] mb-1">{programme.name}</h3>
               <p className="text-[0.8125rem] text-gray-600">{programme.description}</p>

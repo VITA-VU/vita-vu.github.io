@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TaskCard } from '../vita-ui/TaskCard';
 import { ProgressDots } from '../vita-ui/ProgressDots';
 import { LanguageToggle } from '../LanguageToggle';
 import { VitaToast, useToast } from '../vita-ui/VitaToast';
 import { HelpCircle } from 'lucide-react';
 import logo from '../imgs/VU-logo-RGB.png';
+import { fetchMicrotask, returnFetchMicrotask } from '../api/requests';
+import { useAppContext } from '../../App'; 
 
 interface TaskScreenProps {
 
-taskVariant?: 'psychology' | 'business-analytics' | 'physics';
+//taskVariant?: 'psychology' | 'business-analytics' | 'physics';
   onComplete: () => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
@@ -18,11 +20,8 @@ taskVariant?: 'psychology' | 'business-analytics' | 'physics';
   goBack?: () => void;
 }
 
-//TO DO: set start time when task begins
 localStorage.setItem('learnOpened', "false");
 const start = new Date().getTime();
-
-//TO DO: save answer type to local storage
 
 const tasks = {
   psychology: {
@@ -79,27 +78,37 @@ const tasks = {
 };
 
 export function TaskScreen({ 
-  taskVariant = 'psychology',
+  //taskVariant = 'psychology',
   onComplete,
   currentLang,
   onLangChange,
   goBack, goHome 
 }: TaskScreenProps) {
   const [selectedOption, setSelectedOption] = useState<number | undefined>();
+  const [selectedRiasec, setSelectedRiasec] = useState<string | null>(null);
+  const { task } = useAppContext();
+
+  function handleSelectOption(index: number, riasec: string) {
+    setSelectedOption(index);
+    setSelectedRiasec(riasec);
+  }  
   const [showWhyOverlay, setShowWhyOverlay] = useState(false);
   const { toast, showToast, hideToast } = useToast();
-  
-  const task = tasks[taskVariant];
-  localStorage.setItem('currentTask', taskVariant);
+
+  if (!task) {
+  return <div className="p-6">Loading…</div>;
+}
   
   const handleNext = () => {
     localStorage.setItem('taskAnswered', 'true');
+    localStorage.setItem('answer', selectedRiasec || '');
     localStorage.setItem('taskTime', (String(new Date().getTime() - start)));
     onComplete();
   };
   
   const handleNotSure = () => {
     localStorage.setItem('taskAnswered', 'false');
+    localStorage.setItem('answer', '');
     localStorage.setItem('taskTime', (String(new Date().getTime() - start)));
     onComplete();
   };
@@ -139,13 +148,13 @@ export function TaskScreen({
         
         {/* Task Card */}
         <TaskCard
-          stimulusTitle={task.stimulusTitle}
-          stimulusBody={task.stimulusBody}
+          //stimulusTitle={task.stimulusTitle}
+         //stimulusBody={task.stimulusBody}
           learnBullets={task.learnBullets}
           question={task.question}
           options={task.options}
           selectedOption={selectedOption}
-          onSelectOption={setSelectedOption}
+          onSelectOption={handleSelectOption}
           onNext={handleNext}
           onNotSure={handleNotSure}
         />
