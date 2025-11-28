@@ -150,7 +150,7 @@ export function TaskScreen({
         <TaskCard
           //stimulusTitle={task.stimulusTitle}
          //stimulusBody={task.stimulusBody}
-          //learnBullets={task.learnBullets}
+          learnBullets={task.learnBullets}
           question={task.question}
           options={task.options}
           selectedOption={selectedOption}

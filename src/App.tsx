@@ -16,8 +16,8 @@ import { TaskIntro } from './components/screens/TaskIntro';
 import { TutorialManager } from './components/tutorial/TutorialManager';
 import { TutorialWelcome } from './components/tutorial/TutorialWelcome';
 import { TaskFeedback } from './components/screens/TaskFeedback';
-import { initializeStudent, updateStudentRIASEC } from './components/api/requests';
-import { TaskCard, TaskCardProps } from './components/vita-ui/TaskCard';
+import { initializeStudent, resetStudent } from './components/api/requests';
+import { TaskCardProps } from './components/vita-ui/TaskCard';
 import { returnTask } from './components/api/requests';
 
 // Global state context (or use localStorage/Redux)
@@ -291,10 +291,20 @@ function StylePickerRoute() {
 function ResultRoute() {
   const navigate = useNavigate();
   const ctx = useAppContext();
+  const { setTask } = useAppContext(); 
+
   return (
     <ResultAndNextStep
-      onSeeWeek={(p) => navigate(`/programme/${p}`)}
-      onTryAnother={() => navigate('/task')}
+      //onSeeWeek={(p) => navigate(`/programme/${p}`)}
+      onRedo={async () => {
+        resetStudent()
+        await returnTask('programme', setTask); 
+        navigate('/task');
+      }}
+      onTryAnother={async () => {
+        await returnTask('programme', setTask); 
+        navigate('/task');
+      }}
       goHome={() => navigate('/')}
       goBack={() => navigate(-1)}
       currentLang="EN"

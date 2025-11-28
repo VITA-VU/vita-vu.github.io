@@ -8,8 +8,9 @@ import logo from '../imgs/VU-logo-RGB.png';
 import { returnRecommendations } from '../api/requests';
 
 interface ResultAndNextStepProps {
-  onSeeWeek: (programme: string) => void;
+  //onSeeWeek: (programme: string) => void;
   onTryAnother: () => void;
+  onRedo: () => void;
   currentLang: 'EN' | 'NL';
   onLangChange: (lang: 'EN' | 'NL') => void;
   onGoBack?: () => void;
@@ -58,8 +59,9 @@ const programmeMatches = [
 ];
 
 export function ResultAndNextStep({
-  onSeeWeek,
+  //onSeeWeek,
   onTryAnother,
+  onRedo,
   currentLang,
   onLangChange,
   goBack, goHome
@@ -78,12 +80,8 @@ useEffect(() => {
   loadedRef.current = true;
 
   async function load() {
-    try {
-      const t = await returnRecommendations();
-      if (!Array.isArray(t)) {
-        console.error("returnRecommendations did not return an array:", t);
-        return;
-      }
+      try {
+        const t = await returnRecommendations();
       const result = t.reduce((acc, item) => {
         acc[item.program] = {
           least_distance: item.least_distance,
@@ -101,8 +99,10 @@ useEffect(() => {
   load();
 }, []);
 
-
-
+  const handleTryAnother = (program: string) => {
+    localStorage.setItem('currentProgram', program)
+    onTryAnother()
+  };
 
 if (!programs) {
   return <div className="p-6">Loading…</div>;
@@ -200,7 +200,7 @@ if (!programs) {
                 <div className="pt-3 space-y-2 mt-auto">
                   <VitaButton
                     variant="ghost"
-                    onClick={onTryAnother}
+                    onClick={() => handleTryAnother(program)}
                     className="w-full"
                   >
                     Try a task for this programme
@@ -234,7 +234,7 @@ if (!programs) {
       {/* Confusing Button */}
       <button
         //TODO: call reset, go back to a different page?
-        onClick={() => setFeedback('confusing')}
+        onClick={onRedo}
         className={`flex flex-col items-center gap-2 p-4 rounded-lg min-h-[100px] transition-all flex-1 ${
           feedback === 'confusing'
             ? 'bg-red-100 border-2 border-red-500'

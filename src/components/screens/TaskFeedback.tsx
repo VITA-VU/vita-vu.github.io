@@ -39,7 +39,7 @@ export function TaskFeedback({ onContinue, currentLang, onLangChange, goHome, se
   const handleEnjoymentSelect = async (value: string) => {
     setEnjoyment(value);
     localStorage.setItem('taskEnjoyment', value);
-    await returnTask('RIASEC', setTask);
+    await returnTask('default', setTask);
     if (localStorage.getItem('stop')==='true'){
       onContinue(true);
     }
