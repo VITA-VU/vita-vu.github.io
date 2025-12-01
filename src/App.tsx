@@ -19,6 +19,9 @@ import { TaskFeedback } from './components/screens/TaskFeedback';
 import { initializeStudent, resetStudent } from './components/api/requests';
 import { TaskCardProps } from './components/vita-ui/TaskCard';
 import { returnTask } from './components/api/requests';
+// import { MicrotaskDemo } from './components/microtasks/MicrotaskDemo';
+// import { MicrotaskDemoAptitude } from './components/microtasks/MicrotaskDemoAptitude';
+import { MicrotaskDemoAPI } from './components/microtasks/MicrotaskDemoAPI';
 
 // Global state context (or use localStorage/Redux)
 import { createContext, useState, ReactNode } from 'react';
@@ -352,6 +355,9 @@ function AppRoutes() {
         <Route path="/result" element={<ResultRoute />} />
         {/* <Route path="/programme-preview" element={<ProgrammePreviewRoute />} /> */}
         <Route path="/task-feedback" element={<TaskFeedbackRoute />} />
+        {/* <Route path="/demo" element={<MicrotaskDemo />} /> */}
+        {/* <Route path="/demo-aptitude" element={<MicrotaskDemoAptitude />} /> */}
+        <Route path="/demo-api" element={<MicrotaskDemoAPI />} />
       </Routes>
 
       <TutorialWelcome

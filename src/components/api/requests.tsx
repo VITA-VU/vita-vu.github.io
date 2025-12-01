@@ -5,10 +5,10 @@ import { useAppContext } from '../../App';
 
 //NOTE: had to shut off CORS in browser to make this work
 
-const hostname = 'unrazored-jacqueline-cleanlier.ngrok-free.dev';
+const hostname = 'localhost:8000'; // 'unrazored-jacqueline-cleanlier.ngrok-free.dev';
 
 export function resetStudent() {
-  return fetch('https://' + hostname + '/student/reset/', {
+  return fetch('http://' + hostname + '/student/reset/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json'}})
     .then(response => response.json())
@@ -29,7 +29,7 @@ export function initializeStudent() {
         hs_profile: localStorage.getItem('profile') || '' }
        })
   };
-  return fetch('https://' + hostname + '/student/init/', requestOptions)
+  return fetch('http://' + hostname + '/student/init/', requestOptions)
     .then(response => response.json())
     .then(parsedValue =>{localStorage.setItem('studentVector', JSON.stringify(parsedValue.student_vector))
       return parsedValue; })
@@ -45,16 +45,18 @@ export async function updateStudent()
   var parsedVectors = JSON.parse(localStorage.getItem('programVectors') || '')
   const programVectors = Array.isArray(parsedVectors) ? parsedVectors[0] : parsedVectors;
 
+  const usedTaskIds = JSON.parse(localStorage.getItem('usedTaskIds') || '[]');
   const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify({ 
         student_vector: (student_vector).split(',').map(Number),
-        //TODO: different accepted values
         program: localStorage.getItem('currentProgram') || '',
-        //program: 'Mathematics',        
         task_answer: localStorage.getItem('answer') || '',
-        task_preference: parseInt(localStorage.getItem('taskEnjoyment') || '0'),
+        task_preference: localStorage.getItem('taskEnjoyment') === '1' ? 'positive' : 'negative',
+        is_correct: localStorage.getItem('isCorrect') === 'true' ? true : localStorage.getItem('isCorrect') === 'false' ? false : null,
+        signal_type: localStorage.getItem('signalType') || 'personality',
+        used_task_ids: usedTaskIds,
         avatar_chosen: localStorage.getItem('avatar') || '',
         program_vectors: cleanProgramVectors(),
         demo: {name: localStorage.getItem('firstName') || '',
@@ -62,7 +64,7 @@ export async function updateStudent()
         hs_profile: localStorage.getItem('profile') || '' }
        })
   };
-   return fetch('https://' + hostname + '/student/update/', requestOptions)
+   return fetch('http://' + hostname + '/student/update/', requestOptions)
       .then(response => response.json())
       .then(parsedValue => {localStorage.setItem('studentVector', JSON.stringify(parsedValue.student_vector))
       return parsedValue; })
@@ -73,6 +75,19 @@ export async function updateStudent()
       return parsedValue; })
       .then(parsedValue =>{localStorage.setItem("programVectors", JSON.stringify(parsedValue.program_vectors))
       return parsedValue; })
+      .then(parsedValue => {
+        // Store meta info for debug panel
+        if (parsedValue.next_task?.meta) {
+          localStorage.setItem('entropy', String(parsedValue.next_task.meta.entropy ?? ''));
+          localStorage.setItem('aptProb', String(parsedValue.next_task.meta.apt_prob ?? ''));
+          localStorage.setItem('policy', parsedValue.next_task.meta.policy ?? '');
+        }
+        if (parsedValue.next_task) {
+          localStorage.setItem('signalType', parsedValue.next_task.signalType ?? 'personality');
+          localStorage.setItem('taskType', parsedValue.next_task.type ?? 'mcq');
+        }
+        return parsedValue;
+      })
       .then(parsedValue => {return parsedValue.next_task; });
 }
 
@@ -97,7 +112,7 @@ export async function updateStudentRIASEC()
         micro_riasec: riasec_vector.split(',').map(String),
        })
   };
-   return fetch('https://' + hostname + '/student/update/', requestOptions)
+   return fetch('http://' + hostname + '/student/update/', requestOptions)
       .then(response => response.json())
       .then(parsedValue => {localStorage.setItem('studentVector', JSON.stringify(parsedValue.student_vector))
       return parsedValue; })
@@ -126,7 +141,7 @@ export async function returnTask(type: string, setTask: (t: TaskCardProps) => vo
     t = await updateStudent();
 
   }
-  if (t !==null) {
+  if (t !== null && t !== undefined && t.options) {
 
   const optionArray = Object.entries(t.options).map(([key, value]) => ({
     key,
@@ -160,7 +175,7 @@ export async function fetchMicrotask() {
         hs_profile: localStorage.getItem('profile') || '' }
        })
   };
-  return fetch('https://' + hostname + '/student/fetch-task/', requestOptions)
+  return fetch('http://' + hostname + '/student/fetch-task/', requestOptions)
     .then(response => response.json())
     .then(parsedValue => {return parsedValue.task; });    
   }
@@ -179,7 +194,7 @@ export async function getRecommendations() {
         hs_profile: localStorage.getItem('profile') || '' }
        })
   };
-  return fetch('https://' + hostname + '/student/recommend/', requestOptions)
+  return fetch('http://' + hostname + '/student/recommend/', requestOptions)
     .then(response => response.json())
     .then(parsedValue => {return parsedValue.recommendations; });    
   }

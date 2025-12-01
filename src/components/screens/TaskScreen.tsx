@@ -146,6 +146,47 @@ export function TaskScreen({
           </button> */}
         </div>
         
+        {/* DEBUG PANEL - comment out when not needed */}
+        {(() => {
+          const AXES = ['R', 'I', 'A', 'S', 'E', 'C'];
+          const studentVectorRaw = localStorage.getItem('studentVector') || '[0.167,0.167,0.167,0.167,0.167,0.167]';
+          const studentVector = JSON.parse(studentVectorRaw);
+          const topIdx = studentVector.indexOf(Math.max(...studentVector));
+          const topAxis = AXES[topIdx];
+          const entropy = parseFloat(localStorage.getItem('entropy') || '1.79');
+          const aptProb = parseFloat(localStorage.getItem('aptProb') || '0');
+          const program = localStorage.getItem('currentProgram') || '-';
+          const policy = localStorage.getItem('policy') || '-';
+          const shouldStop = localStorage.getItem('stop');
+          const signalType = localStorage.getItem('signalType') || 'personality';
+          
+          return (
+            <div className="mb-6 p-4 bg-white rounded-xl shadow-sm border-2 border-green-400">
+              <div className="text-green-600 font-bold mb-2">🔍 DEBUG INFO</div>
+              <div className="flex flex-wrap gap-4 justify-between items-center text-sm">
+                <div><span className="text-slate-500">Top:</span> <span className="font-bold text-blue-600">{topAxis}</span></div>
+                <div><span className="text-slate-500">Program:</span> <span className="font-medium text-green-700">{program}</span></div>
+                <div><span className="text-slate-500">Entropy:</span> <span className="font-mono">{entropy.toFixed(3)}</span></div>
+                <div><span className="text-slate-500">Apt%:</span> <span className="font-mono">{(aptProb * 100).toFixed(0)}%</span></div>
+                <div><span className="text-slate-500">Policy:</span> <span className="font-mono text-xs">{policy}</span></div>
+                <div><span className="text-slate-500">Stop:</span> <span className={`font-mono ${shouldStop === 'true' ? 'text-red-600' : 'text-green-600'}`}>{shouldStop}</span></div>
+                <div><span className="text-slate-500">Signal:</span> <span className={`font-mono ${signalType === 'aptitude' ? 'text-purple-600' : 'text-blue-600'}`}>{signalType}</span></div>
+              </div>
+              <div className="flex gap-1 mt-3">
+                {AXES.map((axis, idx) => (
+                  <div key={axis} className="flex-1 text-center">
+                    <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+                      <div className={`h-full ${axis === topAxis ? 'bg-blue-600' : 'bg-blue-300'}`} style={{ width: `${studentVector[idx] * 100}%` }} />
+                    </div>
+                    <div className={`text-xs mt-1 ${axis === topAxis ? 'font-bold text-blue-600' : 'text-slate-500'}`}>{axis}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })()}
+        {/* END DEBUG PANEL */}
+
         {/* Task Card */}
         <TaskCard
           //stimulusTitle={task.stimulusTitle}
