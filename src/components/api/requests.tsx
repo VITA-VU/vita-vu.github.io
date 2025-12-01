@@ -126,7 +126,7 @@ export async function updateStudentRIASEC()
       .then(parsedValue => {return parsedValue.next_task; });
 }
 
-export async function returnTask(type: string, setTask: (t: TaskCardProps) => void) {
+export async function returnTask(type: string, setTask: (t: any) => void) {
   let t;
 
   if (type === 'RIASEC') {
@@ -139,26 +139,30 @@ export async function returnTask(type: string, setTask: (t: TaskCardProps) => vo
   else {
     console.log('update')
     t = await updateStudent();
-
   }
-  if (t !== null && t !== undefined && t.options) {
 
-  const optionArray = Object.entries(t.options).map(([key, value]) => ({
-    key,
-    text: value.text,
-    riasec: value.riasec,
-  }));
-
-  setTask({
-    ...t,
-    learnBullets: t.tiny_learn,
-    options: optionArray,
-  });
-
-  localStorage.setItem('currentProgram', t.program)
+  if (t !== null && t !== undefined) {
+    // Store raw task for reference
+    localStorage.setItem('currentTask', JSON.stringify(t));
+    
+    // Only transform options if it's an MCQ with object-style options
+    if (t.options && typeof t.options === 'object' && !Array.isArray(t.options)) {
+      const optionArray = Object.entries(t.options).map(([key, value]: [string, any]) => ({
+        key,
+        text: value.text,
+        riasec: value.riasec,
+      }));
+      t = {
+        ...t,
+        learnBullets: t.tiny_learn,
+        options: optionArray,
+      };
+    }
+    
+    localStorage.setItem('currentProgram', t.program || '');
+    setTask(t);
+  }
 }
-}
-
 
 export async function fetchMicrotask() {
   var student_vector = localStorage.getItem('studentVector') || '[0,0,0,0,0,0]';
@@ -183,21 +187,35 @@ export async function fetchMicrotask() {
 export async function getRecommendations() {
   var student_vector = localStorage.getItem('studentVector') || '[0,0,0,0,0,0]';
   student_vector = student_vector.replace(/[\[\]\s]/g, ''); //remove brackets and spaces
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json'},
-      body: JSON.stringify({ 
-        student_vector: (student_vector).split(',').map(Number),
-        avatar_chosen: localStorage.getItem('avatar') || '',
-        demo: {name: localStorage.getItem('firstName') || '',
-        age: localStorage.getItem('age') || '',
-        hs_profile: localStorage.getItem('profile') || '' }
-       })
+  
+  // Get program_vectors from localStorage (stored by update calls)
+  const programVectorsRaw = localStorage.getItem('programVectors');
+  let program_vectors = {};
+  if (programVectorsRaw) {
+    try {
+      const parsed = JSON.parse(programVectorsRaw);
+      program_vectors = Array.isArray(parsed) ? parsed[0] : parsed;
+    } catch (e) {
+      console.error('Failed to parse programVectors:', e);
+    }
+  }
+  
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json'},
+    body: JSON.stringify({ 
+      student_vector: (student_vector).split(',').map(Number),
+      program_vectors: program_vectors,
+      avatar_chosen: localStorage.getItem('avatar') || '',
+      demo: {name: localStorage.getItem('firstName') || '',
+      age: localStorage.getItem('age') || '',
+      hs_profile: localStorage.getItem('profile') || '' }
+     })
   };
   return fetch('http://' + hostname + '/student/recommend/', requestOptions)
     .then(response => response.json())
     .then(parsedValue => {return parsedValue.recommendations; });    
-  }
+}
 
   export const returnRecommendations = async() => {
     return await getRecommendations();

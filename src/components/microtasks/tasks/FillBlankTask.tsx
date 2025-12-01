@@ -98,7 +98,7 @@ export function FillBlankTask({ task, onComplete, onSkip }: TaskComponentProps<F
 
         return (
           <motion.button
-            key={blank.id}
+            key={`blank-${blankIndex}-${index}`}
             type="button"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -128,7 +128,7 @@ export function FillBlankTask({ task, onComplete, onSkip }: TaskComponentProps<F
           </motion.button>
         );
       }
-      return <span key={index}>{part}</span>;
+      return <span key={`text-${index}`}>{part}</span>;
     });
   };
 

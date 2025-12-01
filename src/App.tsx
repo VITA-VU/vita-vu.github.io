@@ -45,8 +45,8 @@ interface AppContextType {
   setRIASECStyles: (styles: string[]) => void;
   taskVariant?: string;
   setTaskVariant: (variant: string) => void;
-  task?: TaskCardProps | null;
-  setTask: (task: TaskCardProps | null) => void;
+  task?: any;
+  setTask: (task: any) => void;
 }
 
 export const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -58,7 +58,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [userPath, setUserPath] = useState<'explore' | 'help'>();
   const [riasecStyles, setRIASECStyles] = useState<string[]>();
   const [taskVariant, setTaskVariant] = useState<string>();
-  const [task, setTask] = useState<TaskCardProps | null>(null);
+  const [task, setTask] = useState<any>(null);
 
   return (
     <AppContext.Provider value={{

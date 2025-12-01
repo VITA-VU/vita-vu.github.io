@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { TaskCard } from '../vita-ui/TaskCard';
+import { MicrotaskRenderer } from '../microtasks/MicrotaskRenderer';
 import { ProgressDots } from '../vita-ui/ProgressDots';
 import { LanguageToggle } from '../LanguageToggle';
 import { VitaToast, useToast } from '../vita-ui/VitaToast';
 import { HelpCircle } from 'lucide-react';
-import logo from '../imgs/VU-logo-RGB.png';
-import { fetchMicrotask, returnFetchMicrotask } from '../api/requests';
+// import logo from '../imgs/VU-logo-RGB.png';
+import { fetchMicrotask } from '../api/requests';
 import { useAppContext } from '../../App'; 
 
 interface TaskScreenProps {
@@ -123,7 +124,7 @@ export function TaskScreen({
   aria-label="Go Home"
   className="flex items-center"
 >
-  <img  src={logo}  alt="VU Logo" width='150' height='100' />
+  <span className="text-xl font-bold text-blue-900">VU</span>
 </button>
 
        </div>
@@ -187,19 +188,36 @@ export function TaskScreen({
         })()}
         {/* END DEBUG PANEL */}
 
-        {/* Task Card */}
-        <TaskCard
-          question_code={task.question_code || 'unknown'}
-          //stimulusTitle={task.stimulusTitle}
-         //stimulusBody={task.stimulusBody}
-          learnBullets={task.learnBullets}
-          question={task.question}
-          options={task.options}
-          selectedOption={selectedOption}
-          onSelectOption={handleSelectOption}
-          onNext={handleNext}
-          onNotSure={handleNotSure}
-        />
+        {/* Task Renderer - handles all task types */}
+        {task.type && task.type !== 'mcq' ? (
+          <MicrotaskRenderer 
+            task={task} 
+            onComplete={(result: any) => {
+              // Store the answer - for personality tasks it's selectedRiasec, for aptitude it varies
+              const answer = result.selectedRiasec ?? result.taskId ?? '';
+              localStorage.setItem('answer', String(answer));
+              localStorage.setItem('isCorrect', String(result.isCorrect ?? ''));
+              localStorage.setItem('signalType', task.signalType ?? 'personality');
+              onComplete();
+            }} 
+            onSkip={() => {
+              localStorage.setItem('taskAnswered', 'false');
+              localStorage.setItem('answer', '');
+              onComplete();
+            }}
+          />
+        ) : (
+          <TaskCard
+            question_code={task.question_code || 'unknown'}
+            learnBullets={task.learnBullets}
+            question={task.question}
+            options={task.options}
+            selectedOption={selectedOption}
+            onSelectOption={handleSelectOption}
+            onNext={handleNext}
+            onNotSure={handleNotSure}
+          />
+        )}
       </div>
       
       {/* Why Overlay */}
@@ -224,13 +242,12 @@ export function TaskScreen({
                 <span className="text-[1rem]">There are no wrong answers, just different approaches</span>
               </li>
             </ul>
-            <VitaButton 
-              variant="primary" 
+            <button 
               onClick={() => setShowWhyOverlay(false)} 
-              className="w-full"
+              className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 transition-colors"
             >
               Got it
-            </VitaButton>
+            </button>
           </div>
         </div>
       )}
