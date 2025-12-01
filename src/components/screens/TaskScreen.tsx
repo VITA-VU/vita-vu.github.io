@@ -189,6 +189,7 @@ export function TaskScreen({
 
         {/* Task Card */}
         <TaskCard
+          question_code={task.question_code || 'unknown'}
           //stimulusTitle={task.stimulusTitle}
          //stimulusBody={task.stimulusBody}
           learnBullets={task.learnBullets}
