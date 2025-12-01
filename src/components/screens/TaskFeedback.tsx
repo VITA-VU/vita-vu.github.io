@@ -44,7 +44,8 @@ export function TaskFeedback({ onContinue, currentLang, onLangChange, goHome, se
       onContinue(true);
     }
     else {
-      setStep('preference');
+      //setStep('preference');
+      onContinue(false);
     }
   };
 
