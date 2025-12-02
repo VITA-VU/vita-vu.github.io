@@ -1,0 +1,3117 @@
+{
+  "Ancient Studies": {
+    "aptitude": [
+      {
+        "question_code": "ancient-classify-001",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these ancient items as either material culture or literary source",
+        "tiny_learn": [
+          "Material culture includes physical objects like statues, coins, and utensils.",
+          "Literary sources are written texts like epic poems, historical records, or inscriptions.",
+          "Comparing both types helps us understand historical contexts and their reliability."
+        ],
+        "categories": [
+          "Material Culture",
+          "Literary Source"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "A bronze statue from the Roman period",
+            "correctCategory": "Material Culture"
+          },
+          {
+            "id": "b",
+            "text": "The text of the Gilgamesh epic",
+            "correctCategory": "Literary Source"
+          },
+          {
+            "id": "c",
+            "text": "An inscribed marble relief depicting a historical event",
+            "correctCategory": "Material Culture"
+          },
+          {
+            "id": "d",
+            "text": "A manuscript copy of Homer’s Iliad",
+            "correctCategory": "Literary Source"
+          },
+          {
+            "id": "e",
+            "text": "A collection of ancient coins from a funerary context",
+            "correctCategory": "Material Culture"
+          },
+          {
+            "id": "f",
+            "text": "A historical chronicle describing the Battle of Thermopylai",
+            "correctCategory": "Literary Source"
+          }
+        ],
+        "hint": "Think about whether the item is a physical object or a written text."
+      },
+      {
+        "question_code": "ancient-fillblank-001",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text by filling in the blanks with the correct words.",
+        "tiny_learn": [
+          "Material objects like statues and coins help us learn about ancient people and their culture.",
+          "Comparing written and material sources can reveal different perspectives on the same historical event.",
+          "Knowing the historical context of an object helps us understand why it was made and what it meant."
+        ],
+        "textWithBlanks": "In Ancient Studies, {{0}} sources such as statues, coins, and utensils are combined with {{1}} sources like texts to give a fuller picture of the past. Objects are studied within their {{2}} to understand their original purpose and significance.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "material"
+          },
+          {
+            "id": 1,
+            "correctWordId": "written"
+          },
+          {
+            "id": 2,
+            "correctWordId": "historicalContext"
+          }
+        ],
+        "words": [
+          {
+            "id": "material",
+            "text": "material"
+          },
+          {
+            "id": "written",
+            "text": "written"
+          },
+          {
+            "id": "historicalContext",
+            "text": "historical context"
+          },
+          {
+            "id": "literary",
+            "text": "literary"
+          },
+          {
+            "id": "modern",
+            "text": "modern"
+          }
+        ],
+        "hint": "Think about the two main types of sources used to study the ancient world."
+      },
+      {
+        "question_code": "ancient-puzzle-001",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Sort these ancient objects by the type of historical information they most likely provide.",
+        "tiny_learn": [
+          "Objects like coins often tell us about rulers and economy.",
+          "Statues and reliefs can reveal religious or political messages.",
+          "Utensils and domestic items help us understand daily life."
+        ],
+        "puzzle": {
+          "variant": "logic",
+          "stem": "Arrange the following objects from the ancient world according to whether they primarily inform us about politics, religion, or daily life."
+        },
+        "options": [
+          {
+            "id": "A",
+            "value": "Coin depicting an emperor"
+          },
+          {
+            "id": "B",
+            "value": "Funerary urn with inscriptions"
+          },
+          {
+            "id": "C",
+            "value": "Clay cooking pot"
+          },
+          {
+            "id": "D",
+            "value": "Relief showing a religious ceremony"
+          }
+        ],
+        "correctAnswer": "A, D, B, C",
+        "hint": "Think about what each object was used for and what questions historians might ask about it."
+      },
+      {
+        "question_code": "ancientstudies-codeorder-001",
+        "type": "codeorder",
+        "signalType": "aptitude",
+        "question": "Arrange the code lines to print the chronological order of classical works based on their approximate date of origin.",
+        "tiny_learn": [
+          "Classical works can be ordered chronologically to understand their historical context.",
+          "Dates help place literary and material culture in a timeline for better comparison.",
+          "Sorting items by date reveals connections and influences across periods."
+        ],
+        "language": "python",
+        "description": "This code sorts a list of classical works by their estimated date of origin to help understand the development of the classical canon.",
+        "lines": [
+          {
+            "id": "1",
+            "code": "works = [('Gilgamesh', -2100), ('Homer', -750), ('Bible', -600), ('Virgil', -20), ('Ara Pacis', -13)]",
+            "correctPosition": 1
+          },
+          {
+            "id": "2",
+            "code": "works_sorted = sorted(works, key=lambda x: x[1])",
+            "correctPosition": 2
+          },
+          {
+            "id": "3",
+            "code": "for work, date in works_sorted:",
+            "correctPosition": 3
+          },
+          {
+            "id": "4",
+            "code": "    print(f'{work}: {date} BCE')",
+            "correctPosition": 4
+          }
+        ],
+        "expectedOutput": "Prints the names of classical works in order from oldest to newest with their dates.",
+        "hint": "First define the list, then sort it, and finally print the sorted results."
+      },
+      {
+        "question_code": "ancientstudies-graph-001",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Which type of ancient object was found most frequently in the domestic archaeological assemblage?",
+        "tiny_learn": [
+          "Material culture includes objects like statues, coins, and utensils.",
+          "Different domains like sacred, domestic, and funerary have distinct object types.",
+          "Counting objects helps us understand how people lived and what was important to them."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Number of Objects Found by Type in Domestic Context",
+          "labels": [
+            "Statues",
+            "Reliefs",
+            "Coins",
+            "Utensils"
+          ],
+          "values": [
+            25,
+            10,
+            15,
+            40
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "r1",
+            "label": "Statues"
+          },
+          {
+            "id": "r2",
+            "label": "Reliefs"
+          },
+          {
+            "id": "r3",
+            "label": "Coins"
+          },
+          {
+            "id": "r4",
+            "label": "Utensils"
+          }
+        ],
+        "correctRegion": "r4",
+        "hint": "Look for the highest bar representing the largest count."
+      }
+    ]
+  },
+  "Biomedical Sciences": {
+    "aptitude": [
+      {
+        "question_code": "biomed-genetics-classify-001",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these genetic features as belonging to either prokaryotic or eukaryotic genomes.",
+        "tiny_learn": [
+          "Prokaryotic genomes are usually circular and lack a nucleus.",
+          "Eukaryotic genomes are linear, organized into chromosomes inside a nucleus.",
+          "Gene expression processes differ between prokaryotes and eukaryotes, affecting regulation."
+        ],
+        "categories": [
+          "Prokaryotic Genome",
+          "Eukaryotic Genome"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Contains DNA organized into multiple linear chromosomes",
+            "correctCategory": "Eukaryotic Genome"
+          },
+          {
+            "id": "b",
+            "text": "Has a single circular DNA molecule",
+            "correctCategory": "Prokaryotic Genome"
+          },
+          {
+            "id": "c",
+            "text": "DNA replication occurs in the cytoplasm",
+            "correctCategory": "Prokaryotic Genome"
+          },
+          {
+            "id": "d",
+            "text": "Genes contain introns that need to be spliced out during RNA processing",
+            "correctCategory": "Eukaryotic Genome"
+          },
+          {
+            "id": "e",
+            "text": "Lacks histone proteins for DNA packaging",
+            "correctCategory": "Prokaryotic Genome"
+          },
+          {
+            "id": "f",
+            "text": "DNA is wrapped around histone proteins forming chromatin",
+            "correctCategory": "Eukaryotic Genome"
+          }
+        ],
+        "hint": "Think about the presence of a nucleus and chromosome structure."
+      },
+      {
+        "question_code": "biomed-fillblank-001",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text by filling in the blanks with the correct words.",
+        "tiny_learn": [
+          "Prokaryotic genomes are usually circular, while eukaryotic genomes are linear and organized into chromosomes.",
+          "Gene expression involves transcription of DNA into RNA, followed by translation into proteins.",
+          "Genetic mutations can affect gene function and may lead to genetic diseases."
+        ],
+        "textWithBlanks": "The human genome is made up of {{0}} chromosomes organized into a linear structure. During gene expression, DNA is first transcribed into {{1}}, which is then translated into proteins. Mutations in genes can lead to {{2}} that affect health.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "linear"
+          },
+          {
+            "id": 1,
+            "correctWordId": "rna"
+          },
+          {
+            "id": 2,
+            "correctWordId": "diseases"
+          }
+        ],
+        "words": [
+          {
+            "id": "linear",
+            "text": "linear"
+          },
+          {
+            "id": "rna",
+            "text": "RNA"
+          },
+          {
+            "id": "diseases",
+            "text": "diseases"
+          },
+          {
+            "id": "circular",
+            "text": "circular"
+          },
+          {
+            "id": "proteins",
+            "text": "proteins"
+          }
+        ],
+        "hint": "Think about how human chromosomes are structured and the role of RNA in gene expression."
+      },
+      {
+        "question_code": "biomed-genetics-puzzle-001",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Sort these steps in the correct order to explain how genetic information is expressed in a human cell.",
+        "tiny_learn": [
+          "Genes in DNA are first transcribed into RNA.",
+          "RNA is processed before it leaves the nucleus.",
+          "Processed RNA is translated to produce proteins."
+        ],
+        "puzzle": {
+          "variant": "logic",
+          "stem": "Arrange the following processes from first to last as they occur in gene expression:\n1. Translation\n2. Transcription\n3. RNA processing"
+        },
+        "options": [
+          {
+            "id": "A",
+            "value": "2, 3, 1"
+          },
+          {
+            "id": "B",
+            "value": "1, 2, 3"
+          },
+          {
+            "id": "C",
+            "value": "3, 2, 1"
+          },
+          {
+            "id": "D",
+            "value": "2, 1, 3"
+          }
+        ],
+        "correctAnswer": "A",
+        "hint": "Think about how DNA information is first copied, then modified, then used to make proteins."
+      },
+      {
+        "question_code": "biomed-genetics-codeorder-001",
+        "type": "codeorder",
+        "signalType": "aptitude",
+        "question": "Arrange the code lines to correctly simulate the process of transcription from DNA to RNA.",
+        "tiny_learn": [
+          "Transcription copies a DNA sequence into an RNA sequence.",
+          "RNA uses uracil (U) instead of thymine (T) found in DNA.",
+          "The RNA sequence is complementary to the DNA template strand."
+        ],
+        "language": "python",
+        "description": "This code simulates the transcription of a DNA sequence into its corresponding RNA sequence, illustrating a key step in gene expression.",
+        "lines": [
+          {
+            "id": "1",
+            "code": "rna = dna.replace('T', 'U')",
+            "correctPosition": 3
+          },
+          {
+            "id": "2",
+            "code": "dna = 'ATGCGTACGTTAGC'",
+            "correctPosition": 1
+          },
+          {
+            "id": "3",
+            "code": "print('RNA sequence:', rna)",
+            "correctPosition": 4
+          },
+          {
+            "id": "4",
+            "code": "dna = dna.replace('A', 't').replace('T', 'a').replace('C', 'g').replace('G', 'c').upper()",
+            "correctPosition": 2
+          }
+        ],
+        "expectedOutput": "RNA sequence: UACGCAUGCAAUCG",
+        "hint": "Remember that transcription creates an RNA strand complementary to the DNA template, then replaces T with U."
+      },
+      {
+        "question_code": "biomed-genetics-graph-001",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Which stage of the cell cycle shows the highest genetic variation?",
+        "tiny_learn": [
+          "Genetic variation mainly arises during meiosis, not mitosis.",
+          "The cell cycle includes stages like Interphase, Mitosis, and Meiosis.",
+          "Genetic variation is important for inheritance and evolution."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Genetic Variation Across Cell Cycle Stages",
+          "labels": [
+            "Interphase",
+            "Mitosis",
+            "Meiosis"
+          ],
+          "values": [
+            5,
+            10,
+            40
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "r1",
+            "label": "Interphase"
+          },
+          {
+            "id": "r2",
+            "label": "Mitosis"
+          },
+          {
+            "id": "r3",
+            "label": "Meiosis"
+          }
+        ],
+        "correctRegion": "r3",
+        "hint": "Look for the stage where genetic recombination and chromosome reduction occur."
+      }
+    ]
+  },
+  "Business Analytics": {
+    "aptitude": [
+      {
+        "question_code": "business-analytics-classify-001",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these mathematical methods as used mainly for differentiation, integration, or limits.",
+        "tiny_learn": [
+          "Differentiation finds rates of change and slopes of curves.",
+          "Integration calculates areas under curves and accumulations.",
+          "Limits help understand behavior of functions near points."
+        ],
+        "categories": [
+          "Differentiation",
+          "Integration",
+          "Limits"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "l'Hôpital's Rule",
+            "correctCategory": "Limits"
+          },
+          {
+            "id": "b",
+            "text": "Chain Rule",
+            "correctCategory": "Differentiation"
+          },
+          {
+            "id": "c",
+            "text": "Integration by parts",
+            "correctCategory": "Integration"
+          },
+          {
+            "id": "d",
+            "text": "Squeeze Theorem",
+            "correctCategory": "Limits"
+          },
+          {
+            "id": "e",
+            "text": "Partial fraction expansion",
+            "correctCategory": "Integration"
+          },
+          {
+            "id": "f",
+            "text": "Finding local extreme values",
+            "correctCategory": "Differentiation"
+          }
+        ],
+        "hint": "Think about whether the method helps find rates of change, areas, or behavior near points."
+      },
+      {
+        "question_code": "businessanalytics-fillblank-001",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text by filling the blanks with the correct mathematical terms used in Business Analytics.",
+        "tiny_learn": [
+          "Limits help understand how a function behaves near a specific point.",
+          "Derivatives show how a function changes and help find extreme values.",
+          "The Fundamental Theorem of Calculus links differentiation and integration."
+        ],
+        "textWithBlanks": "In Business Analytics, when analyzing data trends, we often calculate the {{0}} of a function to understand its behavior near a point. To find where a function reaches its highest or lowest values, we use the {{1}}. Finally, the {{2}} connects the process of finding the derivative of a function with calculating the area under its curve.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "limit"
+          },
+          {
+            "id": 1,
+            "correctWordId": "derivative"
+          },
+          {
+            "id": 2,
+            "correctWordId": "fundamentalTheorem"
+          }
+        ],
+        "words": [
+          {
+            "id": "limit",
+            "text": "limit"
+          },
+          {
+            "id": "derivative",
+            "text": "derivative"
+          },
+          {
+            "id": "fundamentalTheorem",
+            "text": "Fundamental Theorem of Calculus"
+          },
+          {
+            "id": "integration",
+            "text": "integration"
+          },
+          {
+            "id": "continuity",
+            "text": "continuity"
+          }
+        ],
+        "hint": "Think about the key calculus concepts used to analyze functions and their rates of change."
+      },
+      {
+        "question_code": "business-analytics-puzzle-001",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Arrange these steps in the correct order to find the local extreme value of a function using calculus.",
+        "tiny_learn": [
+          "First, calculate the derivative of the function.",
+          "Second, find where the derivative equals zero to identify critical points.",
+          "Third, use the second derivative test to determine if these points are maxima or minima."
+        ],
+        "puzzle": {
+          "variant": "logic",
+          "stem": "Given a function f(x), which sequence of steps correctly finds its local extreme values?"
+        },
+        "options": [
+          {
+            "id": "A",
+            "value": "1. Find where the derivative is zero. 2. Calculate the derivative. 3. Use the second derivative test."
+          },
+          {
+            "id": "B",
+            "value": "1. Calculate the derivative. 2. Use the second derivative test. 3. Find where the derivative is zero."
+          },
+          {
+            "id": "C",
+            "value": "1. Calculate the derivative. 2. Find where the derivative is zero. 3. Use the second derivative test."
+          },
+          {
+            "id": "D",
+            "value": "1. Use the second derivative test. 2. Calculate the derivative. 3. Find where the derivative is zero."
+          }
+        ],
+        "correctAnswer": "C",
+        "hint": "Start by finding the derivative before analyzing its zeros and concavity."
+      },
+      {
+        "question_code": "businessanalytics-codeorder-001",
+        "type": "codeorder",
+        "signalType": "aptitude",
+        "question": "Arrange the code lines to calculate the derivative of f(x) = x^3 + 2x using the power rule.",
+        "tiny_learn": [
+          "The power rule says the derivative of x^n is n*x^(n-1).",
+          "Add derivatives of each term to get the total derivative.",
+          "Calculating derivatives helps find rates of change in business models."
+        ],
+        "language": "python",
+        "description": "This code calculates the derivative of a polynomial function, a key skill in analyzing trends and changes in business analytics.",
+        "lines": [
+          {
+            "id": "1",
+            "code": "def derivative(x):",
+            "correctPosition": 1
+          },
+          {
+            "id": "2",
+            "code": "    return 3 * x**2 + 2",
+            "correctPosition": 3
+          },
+          {
+            "id": "3",
+            "code": "    # derivative of x^3 is 3x^2, derivative of 2x is 2",
+            "correctPosition": 2
+          }
+        ],
+        "expectedOutput": "Returns the derivative 3x^2 + 2 for input x",
+        "hint": "Start by defining the function, then explain the derivative steps, finally return the result."
+      },
+      {
+        "question_code": "business-graph-001",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Which topic had the highest average exam score in the Calculus 1 course?",
+        "tiny_learn": [
+          "Graphs help compare quantities visually to find the highest or lowest values quickly.",
+          "Exam scores reflect how well students understood different topics.",
+          "Identifying the highest score helps focus on the strongest areas of learning."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Average Exam Scores by Topic in Calculus 1",
+          "labels": [
+            "Limits & Continuity",
+            "Differentiation",
+            "Integration"
+          ],
+          "values": [
+            78,
+            85,
+            74
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "r1",
+            "label": "Limits & Continuity"
+          },
+          {
+            "id": "r2",
+            "label": "Differentiation"
+          },
+          {
+            "id": "r3",
+            "label": "Integration"
+          }
+        ],
+        "correctRegion": "r2",
+        "hint": "Look for the tallest bar representing the highest score."
+      }
+    ]
+  },
+  "Communication and Information Studies": {
+    "aptitude": [
+      {
+        "question_code": "comm-ling-classify-001",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these descriptions as related to Communication Studies or Linguistics.",
+        "tiny_learn": [
+          "Communication Studies focuses on how people send and receive messages using different theories.",
+          "Linguistics studies the structure and use of language, including sounds, words, and sentences.",
+          "Both fields use scientific methods but focus on different aspects of human communication."
+        ],
+        "categories": [
+          "Communication Studies",
+          "Linguistics"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Examining how psychological factors affect how people communicate.",
+            "correctCategory": "Communication Studies"
+          },
+          {
+            "id": "b",
+            "text": "Studying how children learn to produce sounds and words.",
+            "correctCategory": "Linguistics"
+          },
+          {
+            "id": "c",
+            "text": "Analyzing the social context in which communication takes place.",
+            "correctCategory": "Communication Studies"
+          },
+          {
+            "id": "d",
+            "text": "Describing how sentence structure changes in different languages.",
+            "correctCategory": "Linguistics"
+          },
+          {
+            "id": "e",
+            "text": "Using theories from sociology to understand communication patterns.",
+            "correctCategory": "Communication Studies"
+          },
+          {
+            "id": "f",
+            "text": "Investigating language disorders like aphasia and their effects on speech.",
+            "correctCategory": "Linguistics"
+          }
+        ],
+        "hint": "Think about whether the description focuses on language structure or communication processes."
+      },
+      {
+        "question_code": "comm-info-fillblank-001",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Communication studies combine ideas from psychology, sociology, and language.",
+          "Linguistics studies how sounds, words, and sentences are formed and understood.",
+          "Language acquisition is the process by which children learn to speak and understand language."
+        ],
+        "textWithBlanks": "Communication studies is an {{0}} field that uses different scientific approaches. It includes theories about the language used, the communicator's {{1}}, and social influences. Linguistics helps us understand language by studying areas like phonetics, {{2}}, morphology, and syntax.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "interdisciplinary"
+          },
+          {
+            "id": 1,
+            "correctWordId": "psychological"
+          },
+          {
+            "id": 2,
+            "correctWordId": "phonology"
+          }
+        ],
+        "words": [
+          {
+            "id": "interdisciplinary",
+            "text": "interdisciplinary"
+          },
+          {
+            "id": "psychological",
+            "text": "psychological"
+          },
+          {
+            "id": "phonology",
+            "text": "phonology"
+          },
+          {
+            "id": "sociological",
+            "text": "sociological"
+          },
+          {
+            "id": "syntax",
+            "text": "syntax"
+          }
+        ],
+        "hint": "Think about how communication studies involve multiple sciences and key language parts."
+      },
+      {
+        "question_code": "comminfo-puzzle-001",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Arrange these communication theories from focus on language to focus on psychology to focus on sociology.",
+        "tiny_learn": [
+          "Communication studies combine theories from language, psychology, and sociology.",
+          "Some theories focus mostly on the words and messages used in communication.",
+          "Other theories focus on the feelings and social roles of the people communicating."
+        ],
+        "puzzle": {
+          "variant": "logic",
+          "stem": "Sort these communication theories by their primary focus area, starting with language, then psychological, and finally sociological:"
+        },
+        "options": [
+          {
+            "id": "A",
+            "value": "Speech Act Theory, Social Penetration Theory, Symbolic Interactionism"
+          },
+          {
+            "id": "B",
+            "value": "Social Penetration Theory, Speech Act Theory, Symbolic Interactionism"
+          },
+          {
+            "id": "C",
+            "value": "Symbolic Interactionism, Speech Act Theory, Social Penetration Theory"
+          },
+          {
+            "id": "D",
+            "value": "Speech Act Theory, Symbolic Interactionism, Social Penetration Theory"
+          }
+        ],
+        "correctAnswer": "A",
+        "hint": "Think about which theories analyze the words themselves, which look at individual minds, and which focus on social groups."
+      },
+      {
+        "question_code": "comminfo-codeorder-001",
+        "type": "codeorder",
+        "signalType": "aptitude",
+        "question": "Arrange the code lines to correctly analyze a simple sentence structure using basic linguistic concepts.",
+        "tiny_learn": [
+          "Syntax studies how words combine into sentences.",
+          "Morphology looks at how words are formed from smaller units.",
+          "Parsing a sentence means breaking it down into its parts for analysis."
+        ],
+        "language": "python",
+        "description": "This code demonstrates a basic syntactic parsing of a sentence by labeling parts of speech and combining them into a phrase structure, linking to linguistics studies.",
+        "lines": [
+          {
+            "id": "1",
+            "code": "sentence = \"The cat sleeps\"",
+            "correctPosition": 1
+          },
+          {
+            "id": "2",
+            "code": "words = sentence.split()",
+            "correctPosition": 2
+          },
+          {
+            "id": "3",
+            "code": "pos_tags = [\"Det\", \"Noun\", \"Verb\"]",
+            "correctPosition": 3
+          },
+          {
+            "id": "4",
+            "code": "syntax_tree = list(zip(words, pos_tags))",
+            "correctPosition": 4
+          },
+          {
+            "id": "5",
+            "code": "print(syntax_tree)",
+            "correctPosition": 5
+          }
+        ],
+        "expectedOutput": "[('The', 'Det'), ('cat', 'Noun'), ('sleeps', 'Verb')]",
+        "hint": "Start by defining the sentence, then break it into words, label them, and finally pair each word with its label."
+      },
+      {
+        "question_code": "comm-ling-graph-001",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Which linguistic domain shows the highest number of research articles published last year?",
+        "tiny_learn": [
+          "Linguistic domains include phonetics, syntax, semantics, and pragmatics.",
+          "Research in communication studies often uses data from different linguistic domains.",
+          "Comparing article counts helps identify which areas are currently most studied."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Number of Research Articles Published by Linguistic Domain in 2023",
+          "labels": [
+            "Phonetics",
+            "Syntax",
+            "Semantics",
+            "Pragmatics"
+          ],
+          "values": [
+            45,
+            70,
+            60,
+            50
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "r1",
+            "label": "Phonetics"
+          },
+          {
+            "id": "r2",
+            "label": "Syntax"
+          },
+          {
+            "id": "r3",
+            "label": "Semantics"
+          },
+          {
+            "id": "r4",
+            "label": "Pragmatics"
+          }
+        ],
+        "correctRegion": "r2",
+        "hint": "Check which bar reaches the highest value on the graph."
+      }
+    ]
+  },
+  "Computer Science": {
+    "aptitude": [
+      {
+        "question_code": "cs-classify-001",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these relations as Ordering Relation, Equivalence Relation, or Function",
+        "tiny_learn": [
+          "Ordering relations are reflexive, antisymmetric, and transitive.",
+          "Equivalence relations are reflexive, symmetric, and transitive.",
+          "Functions assign each input exactly one output."
+        ],
+        "categories": [
+          "Ordering Relation",
+          "Equivalence Relation",
+          "Function"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Relation ≤ on integers (x ≤ y means x less than or equal to y)",
+            "correctCategory": "Ordering Relation"
+          },
+          {
+            "id": "b",
+            "text": "Relation = on strings (x = y means x and y are the same string)",
+            "correctCategory": "Equivalence Relation"
+          },
+          {
+            "id": "c",
+            "text": "Relation f where f(x) = x² for all real numbers x",
+            "correctCategory": "Function"
+          },
+          {
+            "id": "d",
+            "text": "Relation R on people where x R y means x and y have the same birth year",
+            "correctCategory": "Equivalence Relation"
+          },
+          {
+            "id": "e",
+            "text": "Relation R where x R y means x is a parent of y",
+            "correctCategory": "Ordering Relation"
+          },
+          {
+            "id": "f",
+            "text": "Relation g where g(x) = the first letter of the name x",
+            "correctCategory": "Function"
+          }
+        ],
+        "hint": "Check if the relation is reflexive, symmetric, and transitive or if it assigns exactly one output per input."
+      },
+      {
+        "question_code": "cs-logicsets-fillblank-001",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text by filling in the correct words about relations.",
+        "tiny_learn": [
+          "An equivalence relation is reflexive, symmetric, and transitive.",
+          "An ordering relation is reflexive, antisymmetric, and transitive.",
+          "A function maps each element of one set to exactly one element of another set."
+        ],
+        "textWithBlanks": "A relation R on a set is called {{0}} if it is reflexive, symmetric, and transitive. On the other hand, an ordering relation must be reflexive, {{1}}, and transitive. If a relation associates each element of the domain with exactly one element in the codomain, this relation is a {{2}}.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "equivalence"
+          },
+          {
+            "id": 1,
+            "correctWordId": "antisymmetric"
+          },
+          {
+            "id": 2,
+            "correctWordId": "function"
+          }
+        ],
+        "words": [
+          {
+            "id": "equivalence",
+            "text": "equivalence relation"
+          },
+          {
+            "id": "antisymmetric",
+            "text": "antisymmetric"
+          },
+          {
+            "id": "function",
+            "text": "function"
+          },
+          {
+            "id": "reflexive",
+            "text": "reflexive"
+          },
+          {
+            "id": "transitive",
+            "text": "transitive"
+          }
+        ],
+        "hint": "Recall the key properties that define equivalence relations, ordering relations, and functions."
+      },
+      {
+        "question_code": "cs-logic-puzzle-001",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Which of the following relations is an equivalence relation?",
+        "tiny_learn": [
+          "An equivalence relation is reflexive, symmetric, and transitive.",
+          "Reflexive means every element relates to itself.",
+          "Transitive means if a relates to b and b relates to c, then a relates to c."
+        ],
+        "puzzle": {
+          "variant": "logic",
+          "stem": "Consider these relations on the set {1, 2, 3}:\n\nA) R = {(1,1), (2,2), (3,3), (1,2), (2,1)}\nB) S = {(1,1), (2,2), (3,3), (1,3), (3,1), (2,3), (3,2)}\nC) T = {(1,1), (2,2), (3,3), (1,2), (2,3)}\n\nSelect the relation that is an equivalence relation."
+        },
+        "options": [
+          {
+            "id": "A",
+            "value": "Relation R"
+          },
+          {
+            "id": "B",
+            "value": "Relation S"
+          },
+          {
+            "id": "C",
+            "value": "Relation T"
+          }
+        ],
+        "correctAnswer": "B",
+        "hint": "Check which relation is symmetric as well as reflexive and transitive."
+      },
+      {
+        "question_code": "cs-codeorder-001",
+        "type": "codeorder",
+        "signalType": "aptitude",
+        "question": "Arrange the code lines to correctly compute the factorial of a number using a loop",
+        "tiny_learn": [
+          "Loops repeat a block of code multiple times until a condition is met.",
+          "Variables can store and update values during the loop execution.",
+          "The factorial of n (n!) is the product of all positive integers from 1 to n."
+        ],
+        "language": "cpp",
+        "description": "This program calculates the factorial of a given number using a for loop, demonstrating basic control flow and arithmetic in C++.",
+        "lines": [
+          {
+            "id": "1",
+            "code": "int factorial = 1;",
+            "correctPosition": 1
+          },
+          {
+            "id": "2",
+            "code": "for(int i = 1; i <= n; i++) {",
+            "correctPosition": 2
+          },
+          {
+            "id": "3",
+            "code": "    factorial *= i;",
+            "correctPosition": 3
+          },
+          {
+            "id": "4",
+            "code": "}",
+            "correctPosition": 4
+          },
+          {
+            "id": "5",
+            "code": "cout << factorial << endl;",
+            "correctPosition": 5
+          }
+        ],
+        "expectedOutput": "Prints the factorial of the given number n",
+        "hint": "Start by initializing the result, then multiply it by each number from 1 to n inside the loop."
+      },
+      {
+        "question_code": "cs-graph-001",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Which module shows the highest number of programming errors found during testing?",
+        "tiny_learn": [
+          "Testing your program helps find and fix mistakes.",
+          "Different topics can have more or fewer errors depending on difficulty.",
+          "Graphs can show quantities like error counts to compare topics easily."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Programming Errors Found by Module",
+          "labels": [
+            "Basics",
+            "Vectors & Functions",
+            "Error Handling & Files"
+          ],
+          "values": [
+            15,
+            8,
+            22
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "r1",
+            "label": "Basics"
+          },
+          {
+            "id": "r2",
+            "label": "Vectors & Functions"
+          },
+          {
+            "id": "r3",
+            "label": "Error Handling & Files"
+          }
+        ],
+        "correctRegion": "r3",
+        "hint": "Look for the tallest bar in the graph representing the number of errors."
+      }
+    ]
+  },
+  "Econometrics and Operations Research": {
+    "aptitude": [
+      {
+        "question_code": "eor-classify-001",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these topics as either Calculus concepts or Programming concepts.",
+        "tiny_learn": [
+          "Calculus studies how functions change and how to find slopes, areas, and limits.",
+          "Programming involves writing instructions to solve problems using a computer.",
+          "Some concepts, like algorithms, can appear in both math and programming."
+        ],
+        "categories": [
+          "Calculus",
+          "Programming"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Taylor polynomial approximation",
+            "correctCategory": "Calculus"
+          },
+          {
+            "id": "b",
+            "text": "Applying the chain rule to find derivatives",
+            "correctCategory": "Calculus"
+          },
+          {
+            "id": "c",
+            "text": "Writing a Python program to solve a problem",
+            "correctCategory": "Programming"
+          },
+          {
+            "id": "d",
+            "text": "Testing a program to find and fix errors",
+            "correctCategory": "Programming"
+          },
+          {
+            "id": "e",
+            "text": "Calculating limits of real functions",
+            "correctCategory": "Calculus"
+          },
+          {
+            "id": "f",
+            "text": "Using algorithms to implement problem solving",
+            "correctCategory": "Programming"
+          }
+        ],
+        "hint": "Think about whether the item is about mathematical concepts or computer instructions."
+      },
+      {
+        "question_code": "eor-fillblank-001",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Limits help us understand how functions behave near specific points.",
+          "The derivative gives the slope or rate of change of a function.",
+          "Taylor polynomials approximate functions using derivatives at a point."
+        ],
+        "textWithBlanks": "In calculus, the {{0}} of a function at a point describes the behavior of the function values as the input approaches that point. The {{1}} represents the instantaneous rate of change or slope of the function at a given input. To approximate a function near a point, we can use the {{2}}, which is a polynomial built from the function's derivatives at that point.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "limit"
+          },
+          {
+            "id": 1,
+            "correctWordId": "derivative"
+          },
+          {
+            "id": 2,
+            "correctWordId": "taylor"
+          }
+        ],
+        "words": [
+          {
+            "id": "limit",
+            "text": "limit"
+          },
+          {
+            "id": "derivative",
+            "text": "derivative"
+          },
+          {
+            "id": "taylor",
+            "text": "Taylor polynomial"
+          },
+          {
+            "id": "integral",
+            "text": "integral"
+          },
+          {
+            "id": "continuity",
+            "text": "continuity"
+          }
+        ],
+        "hint": "Think about the concepts that describe function behavior near a point, rate of change, and function approximation."
+      },
+      {
+        "question_code": "eor-puzzle-001",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Sort these steps to find the local extreme values of a function using calculus.",
+        "tiny_learn": [
+          "Find critical points by setting the derivative equal to zero.",
+          "Use the second derivative to test if critical points are minima, maxima, or saddle points.",
+          "Check the function values at critical points and boundaries to determine local extremes."
+        ],
+        "puzzle": {
+          "variant": "logic",
+          "stem": "You want to find the local extreme values of a function f(x). Arrange the following steps in the correct order:\n\n1. Evaluate f(x) at critical points and boundary points.\n2. Solve f'(x) = 0 to find critical points.\n3. Use f''(x) to classify each critical point."
+        },
+        "options": [
+          {
+            "id": "A",
+            "value": "2 → 3 → 1"
+          },
+          {
+            "id": "B",
+            "value": "1 → 2 → 3"
+          },
+          {
+            "id": "C",
+            "value": "3 → 2 → 1"
+          },
+          {
+            "id": "D",
+            "value": "2 → 1 → 3"
+          }
+        ],
+        "correctAnswer": "A",
+        "hint": "Start by finding where the derivative equals zero before testing and evaluating."
+      },
+      {
+        "question_code": "econoprog-codeorder-001",
+        "type": "codeorder",
+        "signalType": "aptitude",
+        "question": "Arrange the code lines to correctly compute the derivative of f(x) = x^3 + 2x using the power rule.",
+        "tiny_learn": [
+          "The derivative of x^n is n * x^(n-1).",
+          "You can compute derivatives term-by-term.",
+          "Use Python functions to represent mathematical expressions."
+        ],
+        "language": "python",
+        "description": "This code calculates the derivative of the polynomial function f(x) = x^3 + 2x using basic differentiation rules.",
+        "lines": [
+          {
+            "id": "1",
+            "code": "def derivative(x):",
+            "correctPosition": 1
+          },
+          {
+            "id": "2",
+            "code": "    return 3 * x**2 + 2",
+            "correctPosition": 3
+          },
+          {
+            "id": "3",
+            "code": "print(derivative(5))",
+            "correctPosition": 4
+          },
+          {
+            "id": "4",
+            "code": "    # derivative of x^3 is 3x^2 and derivative of 2x is 2",
+            "correctPosition": 2
+          }
+        ],
+        "expectedOutput": "77",
+        "hint": "Start by defining the function, then write the derivative formula and finally print the result."
+      },
+      {
+        "question_code": "calculus-graph-001",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Which function has the highest derivative value at x = 2 according to the graph?",
+        "tiny_learn": [
+          "The derivative of a function tells you how fast the function is changing at a point.",
+          "Graphs of derivatives can be used to identify where functions increase or decrease fastest.",
+          "Comparing derivative values at the same point helps find which function grows quickest there."
+        ],
+        "graphData": {
+          "type": "line",
+          "title": "Derivative values of functions at x from 0 to 3",
+          "labels": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "series": [
+            {
+              "label": "f(x) = x^2",
+              "values": [
+                0,
+                2,
+                4,
+                6
+              ]
+            },
+            {
+              "label": "g(x) = 3x + 1",
+              "values": [
+                3,
+                3,
+                3,
+                3
+              ]
+            },
+            {
+              "label": "h(x) = ln(x+1)",
+              "values": [
+                1,
+                0.5,
+                0.33,
+                0.25
+              ]
+            }
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "r1",
+            "label": "f(x) = x²"
+          },
+          {
+            "id": "r2",
+            "label": "g(x) = 3x + 1"
+          },
+          {
+            "id": "r3",
+            "label": "h(x) = ln(x+1)"
+          }
+        ],
+        "correctRegion": "r1",
+        "hint": "Look for the function with the largest slope value at x = 2 on the graph."
+      }
+    ]
+  },
+  "Economics and Business Economics": {
+    "aptitude": [
+      {
+        "question_code": "eco-business-classify-001",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these topics as belonging to Economic Challenges or Quantitative Research Methods I.",
+        "tiny_learn": [
+          "Economic Challenges focus on understanding economic theories and their social context.",
+          "Quantitative Research Methods I teaches mathematical tools to solve economic problems.",
+          "Both courses help analyze real-world economic issues but from different perspectives."
+        ],
+        "categories": [
+          "Economic Challenges",
+          "Quantitative Research Methods I"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Study of different economic schools of thought",
+            "correctCategory": "Economic Challenges"
+          },
+          {
+            "id": "b",
+            "text": "Using matrix multiplication to solve systems of equations",
+            "correctCategory": "Quantitative Research Methods I"
+          },
+          {
+            "id": "c",
+            "text": "Analyzing market failures and government policies",
+            "correctCategory": "Economic Challenges"
+          },
+          {
+            "id": "d",
+            "text": "Differentiating and integrating functions to find extreme values",
+            "correctCategory": "Quantitative Research Methods I"
+          },
+          {
+            "id": "e",
+            "text": "Situating economic theories in their social and political context",
+            "correctCategory": "Economic Challenges"
+          },
+          {
+            "id": "f",
+            "text": "Calculating descriptive statistics to interpret data",
+            "correctCategory": "Quantitative Research Methods I"
+          }
+        ],
+        "hint": "Think about whether the topic is about economic ideas or mathematical methods."
+      },
+      {
+        "question_code": "econ-quant-fillblank-001",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Economic theories often respond to social and political contexts of their time.",
+          "Mathematics helps to model economic concepts like market equilibrium and risk.",
+          "Matrix operations and derivatives are useful tools in analyzing economic problems."
+        ],
+        "textWithBlanks": "In Economics and Business Economics, mathematical techniques help us understand economic phenomena. For example, the condition for market equilibrium can be expressed as a system of {{0}} equations, which we can solve using {{1}} operations. Moreover, the concept of elasticity, which measures responsiveness in economics, is derived from the {{2}} of a function.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "linear"
+          },
+          {
+            "id": 1,
+            "correctWordId": "matrix"
+          },
+          {
+            "id": 2,
+            "correctWordId": "derivative"
+          }
+        ],
+        "words": [
+          {
+            "id": "linear",
+            "text": "linear"
+          },
+          {
+            "id": "matrix",
+            "text": "matrix"
+          },
+          {
+            "id": "derivative",
+            "text": "derivative"
+          },
+          {
+            "id": "integral",
+            "text": "integral"
+          },
+          {
+            "id": "scalar",
+            "text": "scalar"
+          }
+        ],
+        "hint": "Think about the type of equations and mathematical tools used to analyze economic models."
+      },
+      {
+        "question_code": "econ-math-puzzle-001",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Arrange these steps in the correct order to find the equilibrium price mathematically.",
+        "tiny_learn": [
+          "Economic equilibrium occurs when supply equals demand.",
+          "You can write supply and demand as functions of price.",
+          "Solving supply = demand equations finds the equilibrium price."
+        ],
+        "puzzle": {
+          "variant": "logic",
+          "stem": "You have these steps to find the equilibrium price:\n1. Solve the equation supply(price) = demand(price).\n2. Write supply and demand functions based on price.\n3. Identify the price where quantity supplied equals quantity demanded.\n\nSort these steps in the correct logical order."
+        },
+        "options": [
+          {
+            "id": "A",
+            "value": "2 → 1 → 3"
+          },
+          {
+            "id": "B",
+            "value": "1 → 2 → 3"
+          },
+          {
+            "id": "C",
+            "value": "3 → 1 → 2"
+          },
+          {
+            "id": "D",
+            "value": "2 → 3 → 1"
+          }
+        ],
+        "correctAnswer": "A",
+        "hint": "First express the functions, then solve the equation, then identify the equilibrium."
+      },
+      {
+        "question_code": "econbiz-codeorder-001",
+        "type": "codeorder",
+        "signalType": "aptitude",
+        "question": "Arrange the code lines to calculate and print the equilibrium price where supply equals demand.",
+        "tiny_learn": [
+          "Equilibrium price is where supply equals demand in a market.",
+          "We can model supply and demand as mathematical functions of price.",
+          "Solving for equilibrium means finding the price where supply(price) = demand(price)."
+        ],
+        "language": "python",
+        "description": "This code calculates the equilibrium price in a simple market by solving for the price where supply equals demand, illustrating how economic concepts are modeled mathematically.",
+        "lines": [
+          {
+            "id": "1",
+            "code": "from sympy import symbols, Eq, solve",
+            "correctPosition": 1
+          },
+          {
+            "id": "2",
+            "code": "p = symbols('p')  # price variable",
+            "correctPosition": 2
+          },
+          {
+            "id": "3",
+            "code": "supply = 2 * p + 10  # supply function",
+            "correctPosition": 3
+          },
+          {
+            "id": "4",
+            "code": "demand = 50 - 3 * p  # demand function",
+            "correctPosition": 4
+          },
+          {
+            "id": "5",
+            "code": "equilibrium_eq = Eq(supply, demand)  # supply = demand",
+            "correctPosition": 5
+          },
+          {
+            "id": "6",
+            "code": "equilibrium_price = solve(equilibrium_eq, p)[0]",
+            "correctPosition": 6
+          },
+          {
+            "id": "7",
+            "code": "print(f'Equilibrium price: {equilibrium_price}')",
+            "correctPosition": 7
+          }
+        ],
+        "expectedOutput": "Equilibrium price: 8",
+        "hint": "Start by defining variables and functions before setting the equality and solving."
+      },
+      {
+        "question_code": "business-graph-001",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Which economic school of thought had the highest number of cited works in the Economic Challenges course?",
+        "tiny_learn": [
+          "Economic theories reflect the social and political context of their time.",
+          "Different economic schools of thought often disagree and compete.",
+          "The number of cited works indicates the influence of an economic school in the course."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Number of Cited Works by Economic School",
+          "labels": [
+            "Classical",
+            "Keynesian",
+            "Neoclassical",
+            "Marxist",
+            "Behavioral"
+          ],
+          "values": [
+            15,
+            25,
+            20,
+            10,
+            18
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "r1",
+            "label": "Classical"
+          },
+          {
+            "id": "r2",
+            "label": "Keynesian"
+          },
+          {
+            "id": "r3",
+            "label": "Neoclassical"
+          },
+          {
+            "id": "r4",
+            "label": "Marxist"
+          },
+          {
+            "id": "r5",
+            "label": "Behavioral"
+          }
+        ],
+        "correctRegion": "r2",
+        "hint": "Look for the tallest bar that shows the most cited works."
+      }
+    ]
+  },
+  "History": {
+    "aptitude": [
+      {
+        "question_code": "academic-skills-classify-001",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these sources as Primary or Secondary",
+        "tiny_learn": [
+          "Primary sources are original materials from the past, like letters or official documents.",
+          "Secondary sources analyze or interpret primary sources, such as academic articles or books.",
+          "Historians use both source types to write well-informed essays and historiographical overviews."
+        ],
+        "categories": [
+          "Primary",
+          "Secondary"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "A diary entry written by a soldier during World War II",
+            "correctCategory": "Primary"
+          },
+          {
+            "id": "b",
+            "text": "A recent scholarly article analyzing economic policies in medieval Europe",
+            "correctCategory": "Secondary"
+          },
+          {
+            "id": "c",
+            "text": "Official census records from the 19th century",
+            "correctCategory": "Primary"
+          },
+          {
+            "id": "d",
+            "text": "A history textbook summarizing the causes of the French Revolution",
+            "correctCategory": "Secondary"
+          }
+        ],
+        "hint": "Think about whether the source was created during the historical event or later by researchers."
+      },
+      {
+        "question_code": "academic-fillblank-001",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text by filling in the missing words",
+        "tiny_learn": [
+          "Primary sources are original materials from the past, while secondary sources analyze those materials.",
+          "A status quaestionis summarizes what scholars have written about a historical topic.",
+          "Citing and paraphrasing correctly is essential for academic writing."
+        ],
+        "textWithBlanks": "In historical research, it is important to distinguish between {{0}} sources and {{1}} sources. Primary sources provide direct evidence from the past, whereas secondary sources {{2}} and interpret those primary materials. Writing a {{3}} quaestionis helps to clearly present what previous researchers have contributed to a topic.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "primary"
+          },
+          {
+            "id": 1,
+            "correctWordId": "secondary"
+          },
+          {
+            "id": 2,
+            "correctWordId": "analyze"
+          },
+          {
+            "id": 3,
+            "correctWordId": "status"
+          }
+        ],
+        "words": [
+          {
+            "id": "primary",
+            "text": "primary"
+          },
+          {
+            "id": "secondary",
+            "text": "secondary"
+          },
+          {
+            "id": "analyze",
+            "text": "analyze"
+          },
+          {
+            "id": "status",
+            "text": "status"
+          },
+          {
+            "id": "hypothesis",
+            "text": "hypothesis"
+          },
+          {
+            "id": "bibliography",
+            "text": "bibliography"
+          }
+        ],
+        "hint": "Think about the definitions of source types and the purpose of a status quaestionis."
+      },
+      {
+        "question_code": "hist-puzzle-001",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Sort these steps in the correct order for writing a historiographical essay.",
+        "tiny_learn": [
+          "First, identify and find relevant scientific literature and primary sources.",
+          "Then, analyze and summarize the different scholarly viewpoints on the topic.",
+          "Finally, write a clear overview explaining what previous researchers have said."
+        ],
+        "puzzle": {
+          "variant": "logic",
+          "stem": "Arrange these four steps in the right sequence for completing a status quaestionis essay:"
+        },
+        "options": [
+          {
+            "id": "A",
+            "value": "1. Write the essay, 2. Find sources, 3. Analyze viewpoints, 4. Summarize literature"
+          },
+          {
+            "id": "B",
+            "value": "1. Find sources, 2. Summarize literature, 3. Analyze viewpoints, 4. Write the essay"
+          },
+          {
+            "id": "C",
+            "value": "1. Analyze viewpoints, 2. Find sources, 3. Write the essay, 4. Summarize literature"
+          },
+          {
+            "id": "D",
+            "value": "1. Summarize literature, 2. Write the essay, 3. Find sources, 4. Analyze viewpoints"
+          }
+        ],
+        "correctAnswer": "B",
+        "hint": "Start by gathering your sources before moving on to analysis and writing."
+      },
+      {
+        "question_code": "history-codeorder-001",
+        "type": "codeorder",
+        "signalType": "aptitude",
+        "question": "Arrange the code lines to produce a summary of key historiographical points from a list of sources.",
+        "tiny_learn": [
+          "Primary sources are original historical documents, while secondary sources analyze those documents.",
+          "Summarizing academic literature involves extracting main arguments without copying exact words.",
+          "Organizing information logically helps clarify different scholarly viewpoints in a historiographical essay."
+        ],
+        "language": "python",
+        "description": "This code processes a list of source summaries and prints a structured summary highlighting key historiographical points to help write a status quaestionis.",
+        "lines": [
+          {
+            "id": "1",
+            "code": "for source in sources:",
+            "correctPosition": 1
+          },
+          {
+            "id": "2",
+            "code": "    print(f\"- {source['author']}: {source['summary']}\")",
+            "correctPosition": 2
+          },
+          {
+            "id": "3",
+            "code": "sources = [",
+            "correctPosition": 0
+          },
+          {
+            "id": "4",
+            "code": "    {'author': 'Smith 2020', 'summary': 'Emphasizes economic factors in the revolution.'},",
+            "correctPosition": 3
+          },
+          {
+            "id": "5",
+            "code": "    {'author': 'Jones 2018', 'summary': 'Focuses on social movements and popular uprisings.'},",
+            "correctPosition": 4
+          },
+          {
+            "id": "6",
+            "code": "]",
+            "correctPosition": 5
+          }
+        ],
+        "expectedOutput": "- Smith 2020: Emphasizes economic factors in the revolution.\n- Jones 2018: Focuses on social movements and popular uprisings.",
+        "hint": "Start by defining the list of sources before looping through them to print summaries."
+      },
+      {
+        "question_code": "history-graph-001",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Which source type had the largest number of references in the historiographical essay?",
+        "tiny_learn": [
+          "Primary sources are original materials from the time studied.",
+          "Secondary sources analyze or interpret primary sources.",
+          "Historiographical essays often cite more secondary sources to discuss scholarly debate."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Number of References by Source Type in a Historiographical Essay",
+          "labels": [
+            "Primary Sources",
+            "Secondary Sources",
+            "Reference Works"
+          ],
+          "values": [
+            12,
+            28,
+            10
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "r1",
+            "label": "Primary Sources"
+          },
+          {
+            "id": "r2",
+            "label": "Secondary Sources"
+          },
+          {
+            "id": "r3",
+            "label": "Reference Works"
+          }
+        ],
+        "correctRegion": "r2",
+        "hint": "Look for the tallest bar representing the most cited source type."
+      }
+    ]
+  },
+  "International Business Administration": {
+    "aptitude": [
+      {
+        "question_code": "iba-classify-001",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these research activities as related to Analysis, Abstraction, or Argumentation.",
+        "tiny_learn": [
+          "Analysis means breaking down information to understand problems better.",
+          "Abstraction involves recognizing key structures and ignoring irrelevant details.",
+          "Argumentation is about presenting clear and supported points of view."
+        ],
+        "categories": [
+          "Analysis",
+          "Abstraction",
+          "Argumentation"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Examining data to identify cultural challenges in international teams",
+            "correctCategory": "Analysis"
+          },
+          {
+            "id": "b",
+            "text": "Summarizing key theories relevant to cross-cultural management",
+            "correctCategory": "Abstraction"
+          },
+          {
+            "id": "c",
+            "text": "Writing a report that supports a solution for improving intercultural collaboration",
+            "correctCategory": "Argumentation"
+          },
+          {
+            "id": "d",
+            "text": "Filtering out less relevant information from a complex organizational case study",
+            "correctCategory": "Abstraction"
+          },
+          {
+            "id": "e",
+            "text": "Interpreting survey results to understand international business issues",
+            "correctCategory": "Analysis"
+          },
+          {
+            "id": "f",
+            "text": "Presenting reasons why a proposed intervention could solve a business problem",
+            "correctCategory": "Argumentation"
+          }
+        ],
+        "hint": "Think about whether the activity is about understanding, simplifying, or persuading."
+      },
+      {
+        "question_code": "iba-fillblank-001",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text by filling in the blanks with the correct words.",
+        "tiny_learn": [
+          "Research questions should focus on relevant international business problems.",
+          "Abstraction helps in identifying key factors and ignoring irrelevant details.",
+          "Argumentation requires supporting your points with evidence from research."
+        ],
+        "textWithBlanks": "In International Business Administration, a strong research project starts by {{0}} a clear and relevant research question. Then, through {{1}}, you focus on the main aspects of the problem, leaving out less important information. Finally, {{2}} your findings with solid arguments helps to communicate your conclusions effectively.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "formulating"
+          },
+          {
+            "id": 1,
+            "correctWordId": "abstraction"
+          },
+          {
+            "id": 2,
+            "correctWordId": "arguing"
+          }
+        ],
+        "words": [
+          {
+            "id": "formulating",
+            "text": "formulating"
+          },
+          {
+            "id": "abstraction",
+            "text": "abstraction"
+          },
+          {
+            "id": "arguing",
+            "text": "arguing"
+          },
+          {
+            "id": "ignoring",
+            "text": "ignoring"
+          },
+          {
+            "id": "collecting",
+            "text": "collecting"
+          }
+        ],
+        "hint": "Think about the research process steps: starting with the question, focusing on key points, and then explaining your conclusions."
+      },
+      {
+        "question_code": "iba-puzzle-001",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Arrange these steps of conducting a basic international research project in the correct order.",
+        "tiny_learn": [
+          "Start by translating a real-world business problem into a clear research question.",
+          "Use both deductive and inductive methods to analyze the problem.",
+          "Present well-founded arguments based on your research findings."
+        ],
+        "puzzle": {
+          "variant": "logic",
+          "stem": "Put the following research steps in the order you would perform them when conducting an international research project."
+        },
+        "options": [
+          {
+            "id": "A",
+            "value": "Analyze problem → Formulate research question → Present arguments"
+          },
+          {
+            "id": "B",
+            "value": "Formulate research question → Analyze problem → Present arguments"
+          },
+          {
+            "id": "C",
+            "value": "Present arguments → Formulate research question → Analyze problem"
+          },
+          {
+            "id": "D",
+            "value": "Formulate research question → Present arguments → Analyze problem"
+          }
+        ],
+        "correctAnswer": "B",
+        "hint": "Think about what you need to clarify before analyzing, and what should come last to share your conclusions."
+      },
+      {
+        "question_code": "iba-codeorder-001",
+        "type": "codeorder",
+        "signalType": "aptitude",
+        "question": "Arrange the code lines to print the correct order of research steps in an international business project",
+        "tiny_learn": [
+          "Research projects follow a logical sequence from defining the question to analysis.",
+          "Clear abstraction helps focus on the most relevant elements of the research.",
+          "Effective communication of results is essential in international business research."
+        ],
+        "language": "python",
+        "description": "Code to print the ordered key steps in conducting a basic international business research project",
+        "lines": [
+          {
+            "id": "1",
+            "code": "print('Analyze and interpret results')",
+            "correctPosition": 4
+          },
+          {
+            "id": "2",
+            "code": "print('Define research question')",
+            "correctPosition": 1
+          },
+          {
+            "id": "3",
+            "code": "print('Collect and organize data')",
+            "correctPosition": 3
+          },
+          {
+            "id": "4",
+            "code": "print('Develop research design and methods')",
+            "correctPosition": 2
+          }
+        ],
+        "expectedOutput": "Define research question\nDevelop research design and methods\nCollect and organize data\nAnalyze and interpret results",
+        "hint": "Think about the logical order of steps from starting a research project to finishing it."
+      },
+      {
+        "question_code": "iba-graph-001",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Which part of the graph shows the highest number of research projects completed by students?",
+        "tiny_learn": [
+          "Research projects reflect practical application of academic theories.",
+          "Comparing quantities helps identify trends and focus areas in studies.",
+          "Graphs visually summarize data to support reasoning and decision-making."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Number of Student Research Projects Completed by Course",
+          "labels": [
+            "Academic Skills",
+            "People in Business and Society",
+            "International Business Foundations"
+          ],
+          "values": [
+            35,
+            50,
+            20
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "r1",
+            "label": "Academic Skills"
+          },
+          {
+            "id": "r2",
+            "label": "People in Business and Society"
+          },
+          {
+            "id": "r3",
+            "label": "International Business Foundations"
+          }
+        ],
+        "correctRegion": "r2",
+        "hint": "Look for the tallest bar representing the largest quantity."
+      }
+    ]
+  },
+  "Literature and Society": {
+    "aptitude": [
+      {
+        "question_code": "lit-soc-classify-001",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these literary techniques as either primarily used for analysis or for creative writing.",
+        "tiny_learn": [
+          "Structuralist analysis focuses on identifying patterns and functions within texts.",
+          "Creative writing uses techniques like narrative perspective and free indirect discourse to shape a story.",
+          "Understanding literary techniques helps both interpreting texts and creating original stories."
+        ],
+        "categories": [
+          "Analysis",
+          "Creative Writing"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Identifying plot structure elements",
+            "correctCategory": "Analysis"
+          },
+          {
+            "id": "b",
+            "text": "Using free indirect discourse",
+            "correctCategory": "Creative Writing"
+          },
+          {
+            "id": "c",
+            "text": "Describing character roles in a story",
+            "correctCategory": "Analysis"
+          },
+          {
+            "id": "d",
+            "text": "Inserting a specific narrative perspective",
+            "correctCategory": "Creative Writing"
+          },
+          {
+            "id": "e",
+            "text": "Evaluating others' interpretations of a poem",
+            "correctCategory": "Analysis"
+          },
+          {
+            "id": "f",
+            "text": "Rewriting a story based on feedback",
+            "correctCategory": "Creative Writing"
+          }
+        ],
+        "hint": "Think about whether the technique helps you understand a text or helps you write one."
+      },
+      {
+        "question_code": "lit-soc-fillblank-001",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text about literary analysis using structuralist methods",
+        "tiny_learn": [
+          "Structuralist analysis looks at how parts of a text relate to each other.",
+          "Understanding narrative techniques helps explain a story's deeper meaning.",
+          "Creative writing uses literary techniques to express personal insights."
+        ],
+        "textWithBlanks": "In structuralist literary analysis, a key focus is the {{0}} of texts, which means looking at how different parts like plot, characters, and themes are connected. By studying these {{1}}, we can better interpret what a story or poem truly {{2}}.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "structure"
+          },
+          {
+            "id": 1,
+            "correctWordId": "elements"
+          },
+          {
+            "id": 2,
+            "correctWordId": "means"
+          }
+        ],
+        "words": [
+          {
+            "id": "structure",
+            "text": "structure"
+          },
+          {
+            "id": "elements",
+            "text": "elements"
+          },
+          {
+            "id": "means",
+            "text": "means"
+          },
+          {
+            "id": "style",
+            "text": "style"
+          },
+          {
+            "id": "characters",
+            "text": "characters"
+          },
+          {
+            "id": "plot",
+            "text": "plot"
+          }
+        ],
+        "hint": "Think about what structuralist analysis studies to understand a text."
+      },
+      {
+        "question_code": "literature-society-puzzle-001",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Sort these literary techniques by their primary focus: style, plot, or character.",
+        "tiny_learn": [
+          "Style shapes how a story is told through language and tone.",
+          "Plot organizes events in a story to create a sequence of actions.",
+          "Character development reveals personalities and motivations."
+        ],
+        "puzzle": {
+          "variant": "logic",
+          "stem": "Below are four techniques often studied in creative writing. Sort them into the categories 'Style', 'Plot', or 'Character' based on what they primarily influence."
+        },
+        "options": [
+          {
+            "id": "A",
+            "value": "Free indirect discourse"
+          },
+          {
+            "id": "B",
+            "value": "Rising action"
+          },
+          {
+            "id": "C",
+            "value": "Narrative voice"
+          },
+          {
+            "id": "D",
+            "value": "Character motivation"
+          }
+        ],
+        "correctAnswer": "Arrange as: Style: A, C; Plot: B; Character: D",
+        "hint": "Think about whether the technique affects how the story is told, what happens, or who the story is about."
+      },
+      {
+        "question_code": "lit-soc-codeorder-001",
+        "type": "codeorder",
+        "signalType": "aptitude",
+        "question": "Arrange the code lines to analyze a literary text using a structuralist approach.",
+        "tiny_learn": [
+          "A structuralist analysis breaks a text into parts like plot, characters, and themes.",
+          "Identify key literary techniques before interpreting the text's meaning.",
+          "Organize your analysis logically: extract features, analyze structure, then interpret."
+        ],
+        "language": "python",
+        "description": "The code illustrates steps to analyze a literary text structurally by extracting features, analyzing the structure, and interpreting the meaning.",
+        "lines": [
+          {
+            "id": "1",
+            "code": "features = extract_features(text)",
+            "correctPosition": 1
+          },
+          {
+            "id": "2",
+            "code": "structure = analyze_structure(features)",
+            "correctPosition": 2
+          },
+          {
+            "id": "3",
+            "code": "interpretation = interpret_text(structure)",
+            "correctPosition": 3
+          },
+          {
+            "id": "4",
+            "code": "print(interpretation)",
+            "correctPosition": 4
+          }
+        ],
+        "expectedOutput": "Prints the interpretation of the literary text based on its structural analysis.",
+        "hint": "Start by extracting details from the text before moving to analysis and interpretation."
+      },
+      {
+        "question_code": "literature-graph-001",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Which literary period has the highest number of analyzed texts in the course?",
+        "tiny_learn": [
+          "Analyzing texts from different periods helps understand their unique techniques.",
+          "Counting analyzed texts shows the focus areas in literary study.",
+          "Comparing quantities on a graph helps identify dominant themes or periods."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Number of Analyzed Literary Texts by Period",
+          "labels": [
+            "Renaissance",
+            "Enlightenment",
+            "Romanticism",
+            "Modernism",
+            "Postmodernism"
+          ],
+          "values": [
+            12,
+            15,
+            18,
+            25,
+            20
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "r1",
+            "label": "Renaissance"
+          },
+          {
+            "id": "r2",
+            "label": "Enlightenment"
+          },
+          {
+            "id": "r3",
+            "label": "Romanticism"
+          },
+          {
+            "id": "r4",
+            "label": "Modernism"
+          },
+          {
+            "id": "r5",
+            "label": "Postmodernism"
+          }
+        ],
+        "correctRegion": "r4",
+        "hint": "Look for the tallest bar representing the most analyzed texts."
+      }
+    ]
+  },
+  "Mathematics": {
+    "aptitude": [
+      {
+        "question_code": "math-concepts-classify-001",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these mathematical techniques as Proof Techniques or Calculus Techniques.",
+        "tiny_learn": [
+          "Proof techniques help show why a statement is true or false.",
+          "Calculus techniques involve limits, derivatives, and integrals.",
+          "Choosing the right method depends on the problem type."
+        ],
+        "categories": [
+          "Proof Techniques",
+          "Calculus Techniques"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Proof by induction",
+            "correctCategory": "Proof Techniques"
+          },
+          {
+            "id": "b",
+            "text": "Calculating derivatives",
+            "correctCategory": "Calculus Techniques"
+          },
+          {
+            "id": "c",
+            "text": "Proof by contradiction",
+            "correctCategory": "Proof Techniques"
+          },
+          {
+            "id": "d",
+            "text": "Using l'Hôpital's rule to find limits",
+            "correctCategory": "Calculus Techniques"
+          },
+          {
+            "id": "e",
+            "text": "Direct proof of a mathematical statement",
+            "correctCategory": "Proof Techniques"
+          },
+          {
+            "id": "f",
+            "text": "Computing Taylor polynomials",
+            "correctCategory": "Calculus Techniques"
+          }
+        ],
+        "hint": "Think about whether the technique is used to prove statements or to solve calculus problems."
+      },
+      {
+        "question_code": "math-fillblank-001",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "A direct proof starts from known facts and uses logical steps to reach the conclusion.",
+          "Proof by contradiction assumes the opposite of what you want to prove and finds a contradiction.",
+          "Induction proves a statement for all natural numbers by proving a base case and an inductive step."
+        ],
+        "textWithBlanks": "In a {{0}} proof, we begin with assumptions that are known to be true and use logical arguments to show the statement holds. In contrast, a {{1}} proof starts by assuming the statement is false and then shows this leads to a contradiction, proving the original statement true. When proving statements about natural numbers, {{2}} is a powerful technique where you prove the base case first, then show that if the statement holds for an arbitrary number n, it holds for n+1 as well.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "direct"
+          },
+          {
+            "id": 1,
+            "correctWordId": "contradiction"
+          },
+          {
+            "id": 2,
+            "correctWordId": "induction"
+          }
+        ],
+        "words": [
+          {
+            "id": "direct",
+            "text": "direct"
+          },
+          {
+            "id": "contradiction",
+            "text": "contradiction"
+          },
+          {
+            "id": "induction",
+            "text": "induction"
+          },
+          {
+            "id": "contrapositive",
+            "text": "contrapositive"
+          }
+        ],
+        "hint": "Think about how each proof method approaches the statement differently."
+      },
+      {
+        "question_code": "math-puzzle-001",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Which proof method is best suited to prove this statement: \"If a number squared is even, then the number is even\"?",
+        "tiny_learn": [
+          "Direct proofs start by assuming the hypothesis and logically reach the conclusion.",
+          "Proof by contrapositive proves \"if not Q, then not P\" instead of \"if P, then Q\".",
+          "Proof by contradiction assumes the opposite of what you want to prove and finds a contradiction."
+        ],
+        "puzzle": {
+          "variant": "logic",
+          "stem": "Consider the statement: \"If a number squared is even, then the number is even.\" Which proof technique below is most appropriate to prove this?"
+        },
+        "options": [
+          {
+            "id": "A",
+            "value": "Use a direct proof by assuming the number squared is even and show the number must be even."
+          },
+          {
+            "id": "B",
+            "value": "Use a proof by contrapositive: prove that if the number is not even, then its square is not even."
+          },
+          {
+            "id": "C",
+            "value": "Use a proof by contradiction: assume the number squared is even but the number is odd and find a contradiction."
+          },
+          {
+            "id": "D",
+            "value": "Use induction on the number to prove the statement."
+          }
+        ],
+        "correctAnswer": "B",
+        "hint": "Try proving the equivalent contrapositive statement instead of the original."
+      },
+      {
+        "question_code": "math-codeorder-001",
+        "type": "codeorder",
+        "signalType": "aptitude",
+        "question": "Arrange the code lines to compute the derivative of f(x) = x^3 + 2x at x = 2",
+        "tiny_learn": [
+          "The derivative of x^n is n*x^(n-1).",
+          "To find the derivative at a point, first compute the general derivative function.",
+          "Then substitute the point into the derivative function to get the slope."
+        ],
+        "language": "python",
+        "description": "This code computes the derivative of the function f(x) = x^3 + 2x and evaluates it at x = 2, illustrating basic derivative calculation from single variable calculus.",
+        "lines": [
+          {
+            "id": "1",
+            "code": "def f_prime(x):",
+            "correctPosition": 1
+          },
+          {
+            "id": "2",
+            "code": "    return 3*x**2 + 2",
+            "correctPosition": 2
+          },
+          {
+            "id": "3",
+            "code": "print(f_prime(2))",
+            "correctPosition": 3
+          }
+        ],
+        "expectedOutput": "16",
+        "hint": "Define the derivative function first, then use it to find the slope at x=2."
+      },
+      {
+        "question_code": "math-graph-001",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Which function has a local maximum at x = 1 based on the graph shown?",
+        "tiny_learn": [
+          "A local maximum is where a function changes from increasing to decreasing.",
+          "Derivatives tell us if a function is increasing or decreasing at a point.",
+          "A tangent line at a local maximum touches the graph and has slope zero."
+        ],
+        "graphData": {
+          "type": "line",
+          "title": "Graphs of three functions near x = 1",
+          "labels": [
+            0.8,
+            0.9,
+            1.0,
+            1.1,
+            1.2
+          ],
+          "series": [
+            {
+              "label": "f(x)",
+              "values": [
+                2.5,
+                3.0,
+                3.2,
+                3.1,
+                2.8
+              ]
+            },
+            {
+              "label": "g(x)",
+              "values": [
+                1.2,
+                1.5,
+                1.7,
+                2.0,
+                2.2
+              ]
+            },
+            {
+              "label": "h(x)",
+              "values": [
+                4.0,
+                3.7,
+                3.5,
+                3.3,
+                3.0
+              ]
+            }
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "r1",
+            "label": "Function f(x)"
+          },
+          {
+            "id": "r2",
+            "label": "Function g(x)"
+          },
+          {
+            "id": "r3",
+            "label": "Function h(x)"
+          }
+        ],
+        "correctRegion": "r1",
+        "hint": "Look for the function that increases before x=1 and decreases after x=1."
+      }
+    ]
+  },
+  "Media, Art, Design and Architecture": {
+    "aptitude": [
+      {
+        "question_code": "mkda-classify-001",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these descriptions as related to Visual and Material Culture or European Cultural History.",
+        "tiny_learn": [
+          "Visual and material culture focuses on how images and objects carry meaning in society.",
+          "European cultural history studies important events and ideas that shaped Europe over time.",
+          "Context and interdisciplinary approaches help understand both visual culture and historical developments."
+        ],
+        "categories": [
+          "Visual and Material Culture",
+          "European Cultural History"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Studying how an image’s meaning changes depending on its cultural background.",
+            "correctCategory": "Visual and Material Culture"
+          },
+          {
+            "id": "b",
+            "text": "Learning about the Renaissance’s impact on art and political power in Europe.",
+            "correctCategory": "European Cultural History"
+          },
+          {
+            "id": "c",
+            "text": "Exploring the differences between original artworks and their reproductions.",
+            "correctCategory": "Visual and Material Culture"
+          },
+          {
+            "id": "d",
+            "text": "Examining how shifts in religious beliefs influenced European societies over centuries.",
+            "correctCategory": "European Cultural History"
+          },
+          {
+            "id": "e",
+            "text": "Understanding how design objects can be studied from multiple academic disciplines.",
+            "correctCategory": "Visual and Material Culture"
+          },
+          {
+            "id": "f",
+            "text": "Discussing the role of historical events in shaping modern European cultural trends.",
+            "correctCategory": "European Cultural History"
+          }
+        ],
+        "hint": "Think about whether the description focuses on images and objects or on historical events and cultural changes."
+      },
+      {
+        "question_code": "mkda-fillblank-001",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Visual literacy means understanding how images communicate ideas.",
+          "Context helps explain why images or objects have certain meanings.",
+          "Interdisciplinary approaches combine methods from different fields to study culture."
+        ],
+        "textWithBlanks": "In the study of visual and material culture, the term {{0}} refers to the physical form through which an image or object is presented, such as painting or sculpture. Understanding the {{1}} of an image means recognizing how its meaning is shaped by historical and social factors. Approaching these topics {{2}} allows researchers to gather richer insights by integrating perspectives from art, history, and design.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "medium"
+          },
+          {
+            "id": 1,
+            "correctWordId": "context"
+          },
+          {
+            "id": 2,
+            "correctWordId": "interdisciplinarily"
+          }
+        ],
+        "words": [
+          {
+            "id": "medium",
+            "text": "medium"
+          },
+          {
+            "id": "context",
+            "text": "context"
+          },
+          {
+            "id": "interdisciplinarily",
+            "text": "interdisciplinarily"
+          },
+          {
+            "id": "original",
+            "text": "original"
+          },
+          {
+            "id": "representation",
+            "text": "representation"
+          }
+        ],
+        "hint": "Think about the ways images are shown, their background meaning, and combining different study methods."
+      },
+      {
+        "question_code": "media-art-aptitude-001",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Sort these key concepts from 'Approaching Visual and Material Culture' in order from most concrete to most abstract.",
+        "tiny_learn": [
+          "Images and objects are tangible parts of visual culture.",
+          "Medium refers to the material or method used to create an image or object.",
+          "Representation is the broader idea of how images and objects convey meaning."
+        ],
+        "puzzle": {
+          "variant": "logic",
+          "stem": "Arrange the following concepts from the most concrete (physical) to the most abstract (conceptual):\n\n1. Medium\n2. Representation\n3. Image"
+        },
+        "options": [
+          {
+            "id": "A",
+            "value": "Image → Medium → Representation"
+          },
+          {
+            "id": "B",
+            "value": "Medium → Image → Representation"
+          },
+          {
+            "id": "C",
+            "value": "Representation → Medium → Image"
+          },
+          {
+            "id": "D",
+            "value": "Image → Representation → Medium"
+          }
+        ],
+        "correctAnswer": "A",
+        "hint": "Think about what you can physically see or touch first, then what creates it, then what it means."
+      },
+      {
+        "question_code": "mediaart-codeorder-001",
+        "type": "codeorder",
+        "signalType": "aptitude",
+        "question": "Arrange the code lines to print key concepts related to visual culture in the correct order.",
+        "tiny_learn": [
+          "Lists can be used to group related concepts for easy processing.",
+          "Printing items in the right sequence helps communicate ideas clearly.",
+          "Using loops can automate the display of multiple concepts efficiently."
+        ],
+        "language": "python",
+        "description": "This code prints important concepts in visual and material culture to help understand their relationships.",
+        "lines": [
+          {
+            "id": "1",
+            "code": "concepts = ['image', 'object', 'medium', 'representation', 'visual culture']",
+            "correctPosition": 1
+          },
+          {
+            "id": "2",
+            "code": "for concept in concepts:",
+            "correctPosition": 2
+          },
+          {
+            "id": "3",
+            "code": "    print(concept)",
+            "correctPosition": 3
+          }
+        ],
+        "expectedOutput": "Prints each concept on a separate line in the given order",
+        "hint": "First, define the list of concepts before looping to print each one."
+      },
+      {
+        "question_code": "mkda-graph-001",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Which period in European cultural history had the highest number of significant cultural events according to the graph?",
+        "tiny_learn": [
+          "Graphs can show how many events happened in different time periods.",
+          "Comparing bar heights helps identify the period with the most events.",
+          "Understanding historical periods helps contextualize cultural changes."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Significant Cultural Events by Period",
+          "labels": [
+            "Medieval",
+            "Renaissance",
+            "Enlightenment",
+            "Industrial Revolution",
+            "Modern Era"
+          ],
+          "values": [
+            15,
+            30,
+            25,
+            20,
+            28
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "r1",
+            "label": "Medieval"
+          },
+          {
+            "id": "r2",
+            "label": "Renaissance"
+          },
+          {
+            "id": "r3",
+            "label": "Enlightenment"
+          },
+          {
+            "id": "r4",
+            "label": "Industrial Revolution"
+          },
+          {
+            "id": "r5",
+            "label": "Modern Era"
+          }
+        ],
+        "correctRegion": "r2",
+        "hint": "Look for the tallest bar representing the greatest number of events."
+      }
+    ]
+  },
+  "Philosophy": {
+    "aptitude": [
+      {
+        "question_code": "philosophy-classify-001",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these philosophical topics as belonging to 'Ancient Philosophy' or 'Epistemology'.",
+        "tiny_learn": [
+          "Ancient Philosophy studies the earliest philosophical traditions and their core questions about reality and knowledge.",
+          "Epistemology focuses specifically on the nature and justification of knowledge and belief.",
+          "Understanding the category helps identify the main focus and methods used in philosophical inquiry."
+        ],
+        "categories": [
+          "Ancient Philosophy",
+          "Epistemology"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "The study of knowledge, belief, and truth",
+            "correctCategory": "Epistemology"
+          },
+          {
+            "id": "b",
+            "text": "Analysis of Greco-Roman and Chinese philosophical traditions from 6th century BCE",
+            "correctCategory": "Ancient Philosophy"
+          },
+          {
+            "id": "c",
+            "text": "Evaluating when a person should believe what someone tells them",
+            "correctCategory": "Epistemology"
+          },
+          {
+            "id": "d",
+            "text": "Describing key schools of philosophy in Sanskrit traditions",
+            "correctCategory": "Ancient Philosophy"
+          },
+          {
+            "id": "e",
+            "text": "Defending one’s own views on how knowledge is justified",
+            "correctCategory": "Epistemology"
+          },
+          {
+            "id": "f",
+            "text": "Exploring questions about the nature of reality in early philosophical texts",
+            "correctCategory": "Ancient Philosophy"
+          }
+        ],
+        "hint": "Think about whether the topic deals with early philosophical traditions or with the theory of knowledge."
+      },
+      {
+        "question_code": "philosophy-fillblank-001",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text by choosing the correct words to describe ancient philosophical traditions.",
+        "tiny_learn": [
+          "Ancient philosophy studies early ideas about reality and knowledge from different cultures.",
+          "Greco-Roman and Sanskrit-Chinese traditions developed philosophical questions separately but have some connections.",
+          "Philosophical concepts like truth and belief are explored through arguments and critical thinking."
+        ],
+        "textWithBlanks": "The {{0}} tradition includes philosophers like Plato and Aristotle, focusing on questions about {{1}} and knowledge. Meanwhile, the {{2}} tradition explores similar questions through texts like the Upanishads and works of Confucius.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "grecoroman"
+          },
+          {
+            "id": 1,
+            "correctWordId": "reality"
+          },
+          {
+            "id": 2,
+            "correctWordId": "sanskritchinese"
+          }
+        ],
+        "words": [
+          {
+            "id": "grecoroman",
+            "text": "Greco-Roman"
+          },
+          {
+            "id": "reality",
+            "text": "reality"
+          },
+          {
+            "id": "sanskritchinese",
+            "text": "Sanskrit-Chinese"
+          },
+          {
+            "id": "modern",
+            "text": "modern"
+          },
+          {
+            "id": "ethics",
+            "text": "ethics"
+          },
+          {
+            "id": "logic",
+            "text": "logic"
+          }
+        ],
+        "hint": "Think about which ancient cultures are linked with Plato and Confucius."
+      },
+      {
+        "question_code": "philosophy-puzzle-001",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Sort these ancient philosophical concepts by their origin tradition: Stoicism, Confucianism, Samkhya, Skepticism.",
+        "tiny_learn": [
+          "Ancient philosophy includes distinct traditions like Greco-Roman and Chinese/Sanskrit.",
+          "Stoicism and Skepticism are part of the Greco-Roman tradition.",
+          "Confucianism and Samkhya are part of the Chinese and Sanskrit traditions respectively."
+        ],
+        "puzzle": {
+          "variant": "logic",
+          "stem": "Identify which of these concepts belong to the Greco-Roman tradition and which to the Chinese or Sanskrit traditions, then sort them accordingly."
+        },
+        "options": [
+          {
+            "id": "A",
+            "value": "Greco-Roman: Stoicism, Skepticism; Chinese/Sanskrit: Confucianism, Samkhya"
+          },
+          {
+            "id": "B",
+            "value": "Greco-Roman: Confucianism, Samkhya; Chinese/Sanskrit: Stoicism, Skepticism"
+          },
+          {
+            "id": "C",
+            "value": "Greco-Roman: Samkhya, Stoicism; Chinese/Sanskrit: Confucianism, Skepticism"
+          },
+          {
+            "id": "D",
+            "value": "Greco-Roman: Confucianism, Skepticism; Chinese/Sanskrit: Samkhya, Stoicism"
+          }
+        ],
+        "correctAnswer": "A",
+        "hint": "Remember which traditions Stoicism and Skepticism belong to and that Confucianism is Chinese."
+      },
+      {
+        "question_code": "philosophy-codeorder-001",
+        "type": "codeorder",
+        "signalType": "aptitude",
+        "question": "Arrange the code lines to correctly represent the chronological order of philosophical traditions covered in the Ancient Philosophy course.",
+        "tiny_learn": [
+          "Philosophy often studies ideas in historical order to understand their development.",
+          "The Ancient Philosophy course covers Greco-Roman, Sanskrit, and Chinese traditions simultaneously.",
+          "Ordering events or ideas chronologically helps clarify their connections and evolution."
+        ],
+        "language": "python",
+        "description": "This code prints the chronological order of the main philosophical traditions studied in the Ancient Philosophy course.",
+        "lines": [
+          {
+            "id": "1",
+            "code": "traditions = ['Greco-Roman', 'Sanskrit', 'Chinese']",
+            "correctPosition": 1
+          },
+          {
+            "id": "2",
+            "code": "chronology = ['6th century BCE onwards']",
+            "correctPosition": 2
+          },
+          {
+            "id": "3",
+            "code": "print('Philosophical traditions starting from', chronology[0], ':', ', '.join(traditions))",
+            "correctPosition": 3
+          }
+        ],
+        "expectedOutput": "Philosophical traditions starting from 6th century BCE onwards : Greco-Roman, Sanskrit, Chinese",
+        "hint": "First define the traditions, then their timeline, and finally print the combined info."
+      },
+      {
+        "question_code": "philosophy-graph-001",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Which tradition shows the highest number of primary texts analyzed in the Ancient Philosophy course?",
+        "tiny_learn": [
+          "Ancient Philosophy covers Greco-Roman, Sanskrit, and Chinese traditions.",
+          "Primary texts are analyzed to understand philosophical development in each tradition.",
+          "Comparing quantities helps identify which tradition is emphasized most in the course."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Primary Texts Analyzed by Tradition",
+          "labels": [
+            "Greco-Roman",
+            "Sanskrit",
+            "Chinese"
+          ],
+          "values": [
+            15,
+            10,
+            12
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "r1",
+            "label": "Greco-Roman"
+          },
+          {
+            "id": "r2",
+            "label": "Sanskrit"
+          },
+          {
+            "id": "r3",
+            "label": "Chinese"
+          }
+        ],
+        "correctRegion": "r1",
+        "hint": "Look for the tradition with the tallest bar in the graph."
+      }
+    ]
+  },
+  "Philosophy, Politics and Economics": {
+    "aptitude": [
+      {
+        "question_code": "ppe-ethics-methods-classify-001",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these concepts as belonging to Ethics or Methods of PPE I",
+        "tiny_learn": [
+          "Ethics studies moral theories and how to apply them to real-world issues.",
+          "Methods of PPE I teaches formal reasoning, logic, and mathematical techniques.",
+          "Some concepts focus on understanding values, others on modeling decisions."
+        ],
+        "categories": [
+          "Ethics",
+          "Methods of PPE I"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Consequentialism",
+            "correctCategory": "Ethics"
+          },
+          {
+            "id": "b",
+            "text": "Utility theory",
+            "correctCategory": "Methods of PPE I"
+          },
+          {
+            "id": "c",
+            "text": "Moral relativism",
+            "correctCategory": "Ethics"
+          },
+          {
+            "id": "d",
+            "text": "Syllogistic logic",
+            "correctCategory": "Methods of PPE I"
+          },
+          {
+            "id": "e",
+            "text": "Virtue ethics",
+            "correctCategory": "Ethics"
+          },
+          {
+            "id": "f",
+            "text": "Solving systems of linear equations",
+            "correctCategory": "Methods of PPE I"
+          }
+        ],
+        "hint": "Think whether the concept deals with moral ideas or with formal reasoning and math."
+      },
+      {
+        "question_code": "ppe-fillblank-001",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Ethical theories help us decide what is right or wrong in difficult situations.",
+          "Logic and decision theory provide tools to analyze choices and their outcomes.",
+          "Well-being theories explain what makes life valuable or good for people."
+        ],
+        "textWithBlanks": "One major ethical approach is {{0}}, which evaluates actions based on their consequences, aiming to maximize overall {{1}}. Another important theory is {{2}}, which focuses on duties and moral rules rather than outcomes.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "consequentialism"
+          },
+          {
+            "id": 1,
+            "correctWordId": "well-being"
+          },
+          {
+            "id": 2,
+            "correctWordId": "kantian"
+          }
+        ],
+        "words": [
+          {
+            "id": "consequentialism",
+            "text": "consequentialism"
+          },
+          {
+            "id": "well-being",
+            "text": "well-being"
+          },
+          {
+            "id": "kantian",
+            "text": "kantian"
+          },
+          {
+            "id": "hedonism",
+            "text": "hedonism"
+          },
+          {
+            "id": "virtue ethics",
+            "text": "virtue ethics"
+          }
+        ],
+        "hint": "Think about which ethical theory focuses on results and which focuses on duties."
+      },
+      {
+        "question_code": "ppe-logic-001",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Which statement logically follows from these ethical theories?",
+        "tiny_learn": [
+          "Consequentialism judges actions by their outcomes.",
+          "Kantian ethics focuses on duties and rules, not outcomes.",
+          "Social contract theory explains morality as agreed rules among people."
+        ],
+        "puzzle": {
+          "variant": "logic",
+          "stem": "Consider these statements:\n\n1) If an action maximizes overall happiness, consequentialism says it is morally right.\n2) Kantian ethics says an action is right only if it can be universalized as a rule.\n3) Social contract theory says moral rules come from agreements between individuals.\n\nWhich statement below logically follows from these theories?"
+        },
+        "options": [
+          {
+            "id": "A",
+            "value": "An action that breaks a universal rule can still be morally right according to Kantian ethics."
+          },
+          {
+            "id": "B",
+            "value": "If everyone agrees on a rule, social contract theory considers that rule morally binding."
+          },
+          {
+            "id": "C",
+            "value": "Consequentialism disregards the happiness caused by actions."
+          },
+          {
+            "id": "D",
+            "value": "Kantian ethics focuses only on the happiness outcomes of actions."
+          }
+        ],
+        "correctAnswer": "B",
+        "hint": "Think about what it means for a rule to be morally binding in social contract theory."
+      },
+      {
+        "question_code": "ppe-codeorder-001",
+        "type": "codeorder",
+        "signalType": "aptitude",
+        "question": "Arrange the code lines to evaluate a simple ethical decision using utilitarian logic.",
+        "tiny_learn": [
+          "Utilitarianism evaluates actions based on the sum of happiness they produce.",
+          "A decision maximizes overall utility by choosing the option with the highest total benefit.",
+          "Programming logic can represent ethical theories by calculating and comparing outcomes."
+        ],
+        "language": "python",
+        "description": "This code calculates and compares utilities of two actions to decide which is ethically preferable from a utilitarian perspective.",
+        "lines": [
+          {
+            "id": "1",
+            "code": "utility_action1 = 10 + 5",
+            "correctPosition": 1
+          },
+          {
+            "id": "2",
+            "code": "utility_action2 = 8 + 9",
+            "correctPosition": 2
+          },
+          {
+            "id": "3",
+            "code": "print('Choose action 1' if utility_action1 > utility_action2 else 'Choose action 2')",
+            "correctPosition": 3
+          }
+        ],
+        "expectedOutput": "Choose action 2",
+        "hint": "Calculate the total utility for each action before comparing."
+      },
+      {
+        "question_code": "ppe-graph-001",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Which ethical theory has the highest number of students favoring it in the survey?",
+        "tiny_learn": [
+          "Ethical theories like consequentialism and Kantian ethics offer different ways to evaluate actions.",
+          "Graphs can show how preferences or opinions are distributed across groups.",
+          "Comparing values in a graph helps identify the most popular or significant category."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Student Preferences for Ethical Theories in PPE",
+          "labels": [
+            "Consequentialism",
+            "Social Contract Theory",
+            "Kantian Ethics",
+            "Virtue Ethics"
+          ],
+          "values": [
+            45,
+            30,
+            50,
+            25
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "r1",
+            "label": "Consequentialism"
+          },
+          {
+            "id": "r2",
+            "label": "Social Contract Theory"
+          },
+          {
+            "id": "r3",
+            "label": "Kantian Ethics"
+          },
+          {
+            "id": "r4",
+            "label": "Virtue Ethics"
+          }
+        ],
+        "correctRegion": "r3",
+        "hint": "Look for the tallest bar to find which theory the most students favor."
+      }
+    ]
+  }
+}
