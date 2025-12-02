@@ -1,0 +1,4643 @@
+{
+  "Ancient Studies": {
+    "aptitude": [
+      {
+        "question_code": "L_AABAOHW115_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these objects as either 'Domestic' or 'Funerary' based on their typical historical context.",
+        "tiny_learn": [
+          "Objects can tell us about the daily life or death rituals of ancient people.",
+          "Context helps us understand why objects were made and used.",
+          "Sorting objects by their use helps historians ask better questions about the past."
+        ],
+        "categories": [
+          "Domestic",
+          "Funerary"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Clay cooking pot",
+            "correctCategory": "Domestic"
+          },
+          {
+            "id": "b",
+            "text": "Funerary urn",
+            "correctCategory": "Funerary"
+          },
+          {
+            "id": "c",
+            "text": "Stone statue of a household deity",
+            "correctCategory": "Domestic"
+          },
+          {
+            "id": "d",
+            "text": "Sarcophagus with carved reliefs",
+            "correctCategory": "Funerary"
+          }
+        ],
+        "hint": "Think about whether the object was used in everyday life or related to burial practices.",
+        "programme_title": "Ancient Studies",
+        "course_name": "Objects in Context. An Interdisciplinary Perspective on the Ancient World"
+      },
+      {
+        "question_code": "L_AABAOHW115_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Objects like statues and coins provide clues about ancient daily life and beliefs.",
+          "Material sources must be studied together with written records to get full historical insight.",
+          "The context where an object was found helps us understand its original use and meaning."
+        ],
+        "textWithBlanks": "In Ancient Studies, a coin found in a {{0}} context can tell us about the economic life, while a statue found in a {{1}} context may reflect religious practices.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "domestic"
+          },
+          {
+            "id": 1,
+            "correctWordId": "sacred"
+          }
+        ],
+        "words": [
+          {
+            "id": "domestic",
+            "text": "domestic"
+          },
+          {
+            "id": "sacred",
+            "text": "sacred"
+          },
+          {
+            "id": "funerary",
+            "text": "funerary"
+          }
+        ],
+        "hint": "Think about where coins and statues might have been used in daily or ritual life.",
+        "programme_title": "Ancient Studies",
+        "course_name": "Objects in Context. An Interdisciplinary Perspective on the Ancient World"
+      },
+      {
+        "question_code": "L_AABAOHW115_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this graph showing the number of different object categories studied each week, which week had the highest focus on statues?",
+        "tiny_learn": [
+          "Objects like statues and coins help us understand ancient societies.",
+          "Counting objects studied over time shows how focus shifts in research.",
+          "Comparing categories reveals which materials offer more historical insights."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Number of Object Categories Studied Weekly",
+          "labels": [
+            "Week 1",
+            "Week 2",
+            "Week 3",
+            "Week 4"
+          ],
+          "values": [
+            5,
+            8,
+            3,
+            7
+          ],
+          "yAxisLabel": "Number of Statues Studied"
+        },
+        "clickableRegions": [
+          {
+            "id": "w1",
+            "label": "Week 1"
+          },
+          {
+            "id": "w2",
+            "label": "Week 2"
+          },
+          {
+            "id": "w3",
+            "label": "Week 3"
+          },
+          {
+            "id": "w4",
+            "label": "Week 4"
+          }
+        ],
+        "correctRegion": "w2",
+        "hint": "Look for the tallest bar to find when the most statues were studied.",
+        "programme_title": "Ancient Studies",
+        "course_name": "Objects in Context. An Interdisciplinary Perspective on the Ancient World"
+      },
+      {
+        "question_code": "L_AABAOHW101_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Sort these items into 'Literary Works' or 'Historical Monuments' from the Classical Canon.",
+        "tiny_learn": [
+          "The Classical Canon includes both texts and physical monuments.",
+          "Literary works are written texts like epics and tragedies.",
+          "Historical monuments are physical places or structures with cultural significance."
+        ],
+        "categories": [
+          "Literary Works",
+          "Historical Monuments"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "The Gilgamesh epos",
+            "correctCategory": "Literary Works"
+          },
+          {
+            "id": "b",
+            "text": "The Athenian Akropolis",
+            "correctCategory": "Historical Monuments"
+          },
+          {
+            "id": "c",
+            "text": "Virgil's Aeneid",
+            "correctCategory": "Literary Works"
+          },
+          {
+            "id": "d",
+            "text": "The Ara Pacis",
+            "correctCategory": "Historical Monuments"
+          },
+          {
+            "id": "e",
+            "text": "Ancient Greek Tragedies by Sophocles",
+            "correctCategory": "Literary Works"
+          },
+          {
+            "id": "f",
+            "text": "The Battle of Thermopylai site",
+            "correctCategory": "Historical Monuments"
+          }
+        ],
+        "hint": "Think about whether the item is a text you read or a place you visit.",
+        "programme_title": "Ancient Studies",
+        "course_name": "The Classical Canon I: The Heritage of Antiquity"
+      },
+      {
+        "question_code": "L_AABAOHW101_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "The classical canon includes famous texts and monuments from ancient times.",
+          "Chronology helps place works like Homer and the Ara Pacis in historical order.",
+          "Canonical items often show connections between literature, history, and art."
+        ],
+        "textWithBlanks": "The Battle of {{0}} is a key event remembered in the classical canon, where a small Greek force held off the Persians. The {{1}} is a monumental altar from ancient Rome symbolizing peace. Homer is famous for epic poems such as the {{2}} and the Odyssey.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "thermopylai"
+          },
+          {
+            "id": 1,
+            "correctWordId": "ara_pacis"
+          },
+          {
+            "id": 2,
+            "correctWordId": "iliad"
+          }
+        ],
+        "words": [
+          {
+            "id": "thermopylai",
+            "text": "Thermopylai"
+          },
+          {
+            "id": "ara_pacis",
+            "text": "Ara Pacis"
+          },
+          {
+            "id": "iliad",
+            "text": "Iliad"
+          },
+          {
+            "id": "akropolis",
+            "text": "Akropolis"
+          },
+          {
+            "id": "gilgamesh",
+            "text": "Gilgamesh"
+          }
+        ],
+        "hint": "Think about famous battles, monuments, and epic poems studied in the classical canon.",
+        "programme_title": "Ancient Studies",
+        "course_name": "The Classical Canon I: The Heritage of Antiquity"
+      },
+      {
+        "question_code": "L_AABAOHW101_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this bar graph of references to canonical works in later periods, which work was referenced the most during the Renaissance?",
+        "tiny_learn": [
+          "Canonical works often influence later periods and cultures.",
+          "The Renaissance revived interest in ancient texts like Homer and Virgil.",
+          "Comparing reference counts helps understand the impact of classical authors over time."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "References to Classical Canonical Works in Later Periods",
+          "labels": [
+            "Bible",
+            "Gilgamesh Epos",
+            "Homer",
+            "Virgil",
+            "Ancient Tragedians"
+          ],
+          "values": [
+            45,
+            12,
+            78,
+            82,
+            30
+          ],
+          "yAxisLabel": "Number of References"
+        },
+        "clickableRegions": [
+          {
+            "id": "bible",
+            "label": "Bible",
+            "dataIndex": 0
+          },
+          {
+            "id": "gilgamesh",
+            "label": "Gilgamesh Epos",
+            "dataIndex": 1
+          },
+          {
+            "id": "homer",
+            "label": "Homer",
+            "dataIndex": 2
+          },
+          {
+            "id": "virgil",
+            "label": "Virgil",
+            "dataIndex": 3
+          },
+          {
+            "id": "tragedians",
+            "label": "Ancient Tragedians",
+            "dataIndex": 4
+          }
+        ],
+        "correctRegion": "virgil",
+        "hint": "Look for the highest bar on the graph to find the most referenced work.",
+        "programme_title": "Ancient Studies",
+        "course_name": "The Classical Canon I: The Heritage of Antiquity"
+      }
+    ]
+  },
+  "Communication and Information Studies": {
+    "aptitude": [
+      {
+        "question_code": "L_AABACIW102_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Sort these communication theories by their main focus: language, psychology, or sociology.",
+        "tiny_learn": [
+          "Communication theories can focus on different aspects like language, psychology, or society.",
+          "Understanding the main focus helps to interpret communication research correctly.",
+          "Interdisciplinary approaches combine these focuses to explain communication better."
+        ],
+        "categories": [
+          "Language",
+          "Psychology",
+          "Sociology"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Speech Act Theory emphasizes the meaning of words and sentences in communication.",
+            "correctCategory": "Language"
+          },
+          {
+            "id": "b",
+            "text": "Social Identity Theory explains how group membership influences communication behavior.",
+            "correctCategory": "Sociology"
+          },
+          {
+            "id": "c",
+            "text": "Cognitive Dissonance Theory studies how people handle conflicting thoughts during communication.",
+            "correctCategory": "Psychology"
+          },
+          {
+            "id": "d",
+            "text": "Conversation Analysis looks at the structure and patterns of spoken interaction.",
+            "correctCategory": "Language"
+          },
+          {
+            "id": "e",
+            "text": "Attachment Theory explores how early relationships affect later communication styles.",
+            "correctCategory": "Psychology"
+          },
+          {
+            "id": "f",
+            "text": "Structuration Theory investigates how social structures shape communication practices.",
+            "correctCategory": "Sociology"
+          }
+        ],
+        "hint": "Think about whether the theory focuses on words, minds, or social groups.",
+        "programme_title": "Communication and Information Studies",
+        "course_name": "Introduction to Communication Studies"
+      },
+      {
+        "question_code": "L_AABACIW102_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Communication Studies combines ideas from psychology, sociology, and language.",
+          "Different theories explain communication by focusing on different aspects like language or psychological factors.",
+          "Understanding research literature helps to analyze and apply communication theories."
+        ],
+        "textWithBlanks": "Communication Studies is an {{0}} field that uses methods from psychology, sociology, and language to study human interaction. Some theories focus on the {{1}} used in messages, while others explore the psychological {{2}} of the communicators.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "interdisciplinary"
+          },
+          {
+            "id": 1,
+            "correctWordId": "language"
+          },
+          {
+            "id": 2,
+            "correctWordId": "preoccupations"
+          }
+        ],
+        "words": [
+          {
+            "id": "interdisciplinary",
+            "text": "interdisciplinary"
+          },
+          {
+            "id": "language",
+            "text": "language"
+          },
+          {
+            "id": "preoccupations",
+            "text": "preoccupations"
+          },
+          {
+            "id": "biological",
+            "text": "biological"
+          },
+          {
+            "id": "economic",
+            "text": "economic"
+          },
+          {
+            "id": "topics",
+            "text": "topics"
+          }
+        ],
+        "hint": "Think about how Communication Studies uses several fields together and what aspects theories focus on.",
+        "programme_title": "Communication and Information Studies",
+        "course_name": "Introduction to Communication Studies"
+      },
+      {
+        "question_code": "L_AABACIW102_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this bar graph of students' understanding scores for three communication theories, which theory had the highest average score?",
+        "tiny_learn": [
+          "Communication theories help explain how messages are created and understood.",
+          "Interdisciplinary approaches mean combining ideas from psychology, sociology, and language studies.",
+          "Graphs can show how well students grasp different communication concepts."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Average Student Scores on Communication Theories",
+          "labels": [
+            "Language Theory",
+            "Psychological Theory",
+            "Sociological Theory"
+          ],
+          "values": [
+            78,
+            85,
+            72
+          ],
+          "yAxisLabel": "Average Score (%)"
+        },
+        "clickableRegions": [
+          {
+            "id": "lang",
+            "label": "Language Theory",
+            "dataIndex": 0
+          },
+          {
+            "id": "psych",
+            "label": "Psychological Theory",
+            "dataIndex": 1
+          },
+          {
+            "id": "soc",
+            "label": "Sociological Theory",
+            "dataIndex": 2
+          }
+        ],
+        "correctRegion": "psych",
+        "hint": "Look for the tallest bar to find the highest score.",
+        "programme_title": "Communication and Information Studies",
+        "course_name": "Introduction to Communication Studies"
+      },
+      {
+        "question_code": "L_AABACIW103_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these linguistic topics as related to either 'Language Acquisition' or 'Language Disorders'.",
+        "tiny_learn": [
+          "Language acquisition studies how children learn sounds, words, and sentences.",
+          "Language disorders affect how people produce or understand language.",
+          "Distinguishing between acquisition and disorders helps in understanding language development."
+        ],
+        "categories": [
+          "Language Acquisition",
+          "Language Disorders"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Developmental process of learning new words",
+            "correctCategory": "Language Acquisition"
+          },
+          {
+            "id": "b",
+            "text": "Aphasia affecting speech production",
+            "correctCategory": "Language Disorders"
+          },
+          {
+            "id": "c",
+            "text": "Child learning to produce sentence structures",
+            "correctCategory": "Language Acquisition"
+          },
+          {
+            "id": "d",
+            "text": "Difficulty understanding language due to brain injury",
+            "correctCategory": "Language Disorders"
+          }
+        ],
+        "hint": "Think about whether the topic describes normal learning or a problem with language.",
+        "programme_title": "Communication and Information Studies",
+        "course_name": "Introduction to Linguistics"
+      },
+      {
+        "question_code": "L_AABACIW103_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Phonetics studies the physical sounds of human speech.",
+          "Morphology looks at how words are formed from smaller units called morphemes.",
+          "Syntax examines how words combine into sentences."
+        ],
+        "textWithBlanks": "In language acquisition, children first learn to produce basic {{0}} before combining them into {{1}} and later full sentences.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "sounds"
+          },
+          {
+            "id": 1,
+            "correctWordId": "words"
+          }
+        ],
+        "words": [
+          {
+            "id": "sounds",
+            "text": "sounds"
+          },
+          {
+            "id": "words",
+            "text": "words"
+          },
+          {
+            "id": "phrases",
+            "text": "phrases"
+          },
+          {
+            "id": "letters",
+            "text": "letters"
+          }
+        ],
+        "hint": "Think about the order children learn language parts: sounds come before words.",
+        "programme_title": "Communication and Information Studies",
+        "course_name": "Introduction to Linguistics"
+      },
+      {
+        "question_code": "L_AABACIW103_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this graph of average age of acquisition for different language skills, which skill do children typically develop first?",
+        "tiny_learn": [
+          "Children acquire sounds (phonetics) before words (morphology) and sentences (syntax).",
+          "Language acquisition follows a developmental order from simpler to more complex units.",
+          "Studying the timing of language skills helps understand normal and disordered development."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Average Age of Acquisition of Language Skills",
+          "labels": [
+            "Phonetics (sounds)",
+            "Morphology (words)",
+            "Syntax (sentences)"
+          ],
+          "values": [
+            6,
+            12,
+            24
+          ],
+          "yAxisLabel": "Age in months"
+        },
+        "clickableRegions": [
+          {
+            "id": "phonetics",
+            "label": "Phonetics",
+            "dataIndex": 0
+          },
+          {
+            "id": "morphology",
+            "label": "Morphology",
+            "dataIndex": 1
+          },
+          {
+            "id": "syntax",
+            "label": "Syntax",
+            "dataIndex": 2
+          }
+        ],
+        "correctRegion": "phonetics",
+        "hint": "Think about which language skill is the foundation for the others.",
+        "programme_title": "Communication and Information Studies",
+        "course_name": "Introduction to Linguistics"
+      }
+    ]
+  },
+  "Econometrics and Operations Research": {
+    "aptitude": [
+      {
+        "question_code": "XB_0160_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify the following mathematical concepts as related to 'Derivatives' or 'Integrals'.",
+        "tiny_learn": [
+          "Derivatives represent rates of change of functions.",
+          "Integrals represent accumulation or area under a curve.",
+          "Both derivatives and integrals rely on limits and continuity."
+        ],
+        "categories": [
+          "Derivatives",
+          "Integrals"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Finding the slope of the tangent line to a curve",
+            "correctCategory": "Derivatives"
+          },
+          {
+            "id": "b",
+            "text": "Computing the area under the graph of a function",
+            "correctCategory": "Integrals"
+          },
+          {
+            "id": "c",
+            "text": "Using the Fundamental Theorem of Calculus",
+            "correctCategory": "Integrals"
+          },
+          {
+            "id": "d",
+            "text": "Applying l'Hôpital's Rule to evaluate a limit",
+            "correctCategory": "Derivatives"
+          },
+          {
+            "id": "e",
+            "text": "Approximating a function locally by its tangent line",
+            "correctCategory": "Derivatives"
+          }
+        ],
+        "hint": "Think about whether the concept involves rates of change or accumulation.",
+        "programme_title": "Econometrics and Operations Research",
+        "course_name": "Calculus and Analysis I"
+      },
+      {
+        "question_code": "XB_0160_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "The derivative of a function at a point gives the slope of the tangent line there.",
+          "The Mean Value Theorem guarantees a point where the instantaneous rate equals the average rate.",
+          "Taylor polynomials approximate functions near a point using derivatives at that point."
+        ],
+        "textWithBlanks": "If a function f is continuous on [a, b] and differentiable on (a, b), the {{0}} Value Theorem states that there exists a point c in (a, b) where f'(c) equals the {{1}} rate of change of the function over [a, b].",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "mean"
+          },
+          {
+            "id": 1,
+            "correctWordId": "average"
+          }
+        ],
+        "words": [
+          {
+            "id": "mean",
+            "text": "Mean"
+          },
+          {
+            "id": "average",
+            "text": "average"
+          },
+          {
+            "id": "extreme",
+            "text": "Extreme"
+          },
+          {
+            "id": "intermediate",
+            "text": "Intermediate"
+          }
+        ],
+        "hint": "Think about the theorem that links derivatives to average rates over intervals.",
+        "programme_title": "Econometrics and Operations Research",
+        "course_name": "Calculus and Analysis I"
+      },
+      {
+        "question_code": "XB_0160_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Look at this graph of a function's values. Select the interval where the function is increasing.",
+        "tiny_learn": [
+          "A function is increasing if its values go up as you move right on the x-axis.",
+          "The derivative tells us if a function is increasing or decreasing at a point.",
+          "Intervals where the derivative is positive correspond to increasing parts of the function."
+        ],
+        "graphData": {
+          "type": "line",
+          "title": "Function Values f(x)",
+          "labels": [
+            "-2",
+            "-1",
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "values": [
+            1,
+            3,
+            4,
+            3,
+            2,
+            2
+          ],
+          "yAxisLabel": "f(x)"
+        },
+        "clickableRegions": [
+          {
+            "id": "int1",
+            "label": "From x = -2 to x = 0",
+            "dataIndex": 2
+          },
+          {
+            "id": "int2",
+            "label": "From x = 0 to x = 3",
+            "dataIndex": 5
+          }
+        ],
+        "correctRegion": "int1",
+        "hint": "Check where the function values get bigger as x increases.",
+        "programme_title": "Econometrics and Operations Research",
+        "course_name": "Calculus and Analysis I"
+      },
+      {
+        "question_code": "XB_0160_puzzle_3",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Sort these steps in the correct order to find the derivative of the function f(x) = (3x^2 + 2)^4 using the chain rule.",
+        "tiny_learn": [
+          "The chain rule helps differentiate composite functions by multiplying derivatives.",
+          "First, identify the outer function and the inner function in the composition.",
+          "Then, differentiate the outer function and multiply by the derivative of the inner function."
+        ],
+        "puzzle": {
+          "variant": "order",
+          "steps": [
+            "Differentiate the outer function (something)^4 to get 4(something)^3",
+            "Identify the inner function as 3x^2 + 2",
+            "Multiply the derivative of the outer function by the derivative of the inner function 6x"
+          ]
+        },
+        "options": [
+          {
+            "id": "a",
+            "value": [
+              "Identify the inner function as 3x^2 + 2",
+              "Differentiate the outer function (something)^4 to get 4(something)^3",
+              "Multiply the derivative of the outer function by the derivative of the inner function 6x"
+            ]
+          },
+          {
+            "id": "b",
+            "value": [
+              "Differentiate the outer function (something)^4 to get 4(something)^3",
+              "Multiply the derivative of the outer function by the derivative of the inner function 6x",
+              "Identify the inner function as 3x^2 + 2"
+            ]
+          },
+          {
+            "id": "c",
+            "value": [
+              "Multiply the derivative of the outer function by the derivative of the inner function 6x",
+              "Identify the inner function as 3x^2 + 2",
+              "Differentiate the outer function (something)^4 to get 4(something)^3"
+            ]
+          },
+          {
+            "id": "d",
+            "value": [
+              "Identify the inner function as 3x^2 + 2",
+              "Multiply the derivative of the outer function by the derivative of the inner function 6x",
+              "Differentiate the outer function (something)^4 to get 4(something)^3"
+            ]
+          }
+        ],
+        "correctAnswer": "a",
+        "hint": "Start by recognizing the inner function, then apply the chain rule step-by-step.",
+        "programme_title": "Econometrics and Operations Research",
+        "course_name": "Calculus and Analysis I"
+      },
+      {
+        "question_code": "XB_0099_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Sort these programming concepts into 'Algorithm Steps' or 'Python Language Elements'.",
+        "tiny_learn": [
+          "Algorithms are step-by-step instructions to solve a problem.",
+          "Python language elements include syntax like variables, loops, and functions.",
+          "Understanding the difference helps you write and debug programs effectively."
+        ],
+        "categories": [
+          "Algorithm Steps",
+          "Python Language Elements"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Repeat a block of code while a condition is true",
+            "correctCategory": "Python Language Elements"
+          },
+          {
+            "id": "b",
+            "text": "Add two numbers and store the result",
+            "correctCategory": "Algorithm Steps"
+          },
+          {
+            "id": "c",
+            "text": "Use a variable to hold a value",
+            "correctCategory": "Python Language Elements"
+          },
+          {
+            "id": "d",
+            "text": "Check if a number is greater than 10",
+            "correctCategory": "Algorithm Steps"
+          }
+        ],
+        "hint": "Think about whether the item describes a general step to solve a problem or a part of Python code.",
+        "programme_title": "Econometrics and Operations Research",
+        "course_name": "Introduction to Programming"
+      },
+      {
+        "question_code": "XB_0099_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Python uses variables to store data values.",
+          "An algorithm is a step-by-step solution to a problem.",
+          "Testing your program helps find and fix mistakes."
+        ],
+        "textWithBlanks": "In Python programming, a {{0}} is used to store information like numbers or text. To solve a problem, you create an {{1}} that tells the computer what steps to follow. After writing your program, you should {{2}} it to make sure it works correctly.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "variable"
+          },
+          {
+            "id": 1,
+            "correctWordId": "algorithm"
+          },
+          {
+            "id": 2,
+            "correctWordId": "test"
+          }
+        ],
+        "words": [
+          {
+            "id": "variable",
+            "text": "variable"
+          },
+          {
+            "id": "algorithm",
+            "text": "algorithm"
+          },
+          {
+            "id": "test",
+            "text": "test"
+          },
+          {
+            "id": "function",
+            "text": "function"
+          },
+          {
+            "id": "loop",
+            "text": "loop"
+          }
+        ],
+        "hint": "Think about the basic building blocks of programming and what you do after writing a program.",
+        "programme_title": "Econometrics and Operations Research",
+        "course_name": "Introduction to Programming"
+      },
+      {
+        "question_code": "XB_0099_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this bar chart of weekly Python programming assignment scores, which week had the lowest score?",
+        "tiny_learn": [
+          "Programming assignments help practice writing and debugging code.",
+          "Scores show how well you understood and applied programming concepts.",
+          "Tracking progress weekly helps identify areas to improve."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Weekly Python Assignment Scores",
+          "labels": [
+            "Week 1",
+            "Week 2",
+            "Week 3",
+            "Week 4",
+            "Week 5"
+          ],
+          "values": [
+            85,
+            78,
+            92,
+            74,
+            88
+          ],
+          "yAxisLabel": "Score (%)"
+        },
+        "clickableRegions": [
+          {
+            "id": "w1",
+            "label": "Week 1",
+            "dataIndex": 0
+          },
+          {
+            "id": "w2",
+            "label": "Week 2",
+            "dataIndex": 1
+          },
+          {
+            "id": "w3",
+            "label": "Week 3",
+            "dataIndex": 2
+          },
+          {
+            "id": "w4",
+            "label": "Week 4",
+            "dataIndex": 3
+          },
+          {
+            "id": "w5",
+            "label": "Week 5",
+            "dataIndex": 4
+          }
+        ],
+        "correctRegion": "w4",
+        "hint": "Look for the shortest bar showing the smallest score.",
+        "programme_title": "Econometrics and Operations Research",
+        "course_name": "Introduction to Programming"
+      },
+      {
+        "question_code": "XB_0099_codeorder_5",
+        "type": "codeorder",
+        "signalType": "aptitude",
+        "question": "Arrange the code lines to calculate the average of three exam scores.",
+        "tiny_learn": [
+          "Store multiple values in variables to use them later.",
+          "Use arithmetic operations to combine values.",
+          "Use print() to display the result to the user."
+        ],
+        "language": "python",
+        "description": "This code calculates the average of three exam scores, a common task in programming for data analysis in Econometrics and Operations Research.",
+        "lines": [
+          {
+            "id": "1",
+            "code": "total = score1 + score2 + score3",
+            "correctPosition": 2
+          },
+          {
+            "id": "2",
+            "code": "score1 = 85",
+            "correctPosition": 1
+          },
+          {
+            "id": "3",
+            "code": "average = total / 3",
+            "correctPosition": 3
+          },
+          {
+            "id": "4",
+            "code": "score2 = 90",
+            "correctPosition": 4
+          },
+          {
+            "id": "5",
+            "code": "score3 = 78",
+            "correctPosition": 5
+          },
+          {
+            "id": "6",
+            "code": "print(average)",
+            "correctPosition": 6
+          }
+        ],
+        "expectedOutput": "The average score: 84.33333333333333",
+        "hint": "Assign all scores before adding them and dividing.",
+        "programme_title": "Econometrics and Operations Research",
+        "course_name": "Introduction to Programming"
+      }
+    ]
+  },
+  "History": {
+    "aptitude": [
+      {
+        "question_code": "L_AABAGESACS_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Sort these sources into Primary or Secondary according to the course Academic Skills for Historians.",
+        "tiny_learn": [
+          "Primary sources come directly from the past, like letters or official documents.",
+          "Secondary sources analyze, interpret, or summarize primary sources.",
+          "Knowing the difference helps you critically assess and use sources in your research."
+        ],
+        "categories": [
+          "Primary",
+          "Secondary"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "A diary written by a soldier during World War II",
+            "correctCategory": "Primary"
+          },
+          {
+            "id": "b",
+            "text": "A recent academic article analyzing causes of World War II",
+            "correctCategory": "Secondary"
+          },
+          {
+            "id": "c",
+            "text": "Minutes from a 19th century city council meeting",
+            "correctCategory": "Primary"
+          },
+          {
+            "id": "d",
+            "text": "A history textbook summarizing the French Revolution",
+            "correctCategory": "Secondary"
+          }
+        ],
+        "hint": "Think about whether the source was created at the time of the event or later by a scholar.",
+        "programme_title": "History",
+        "course_name": "Academic Skills for Historians"
+      },
+      {
+        "question_code": "L_AABAGESACS_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Primary sources are original documents from the past.",
+          "Secondary sources analyze or interpret primary sources.",
+          "A historiographical essay shows different scholars' views on a topic."
+        ],
+        "textWithBlanks": "In historical research, {{0}} sources provide firsthand evidence, while {{1}} sources offer interpretations and analysis of those firsthand accounts.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "primary"
+          },
+          {
+            "id": 1,
+            "correctWordId": "secondary"
+          }
+        ],
+        "words": [
+          {
+            "id": "primary",
+            "text": "primary"
+          },
+          {
+            "id": "secondary",
+            "text": "secondary"
+          },
+          {
+            "id": "tertiary",
+            "text": "tertiary"
+          }
+        ],
+        "hint": "Think about what type of source gives direct evidence from the past.",
+        "programme_title": "History",
+        "course_name": "Academic Skills for Historians"
+      },
+      {
+        "question_code": "L_AABAGESACS_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this graph of student success rates in different academic skills, which skill shows the highest success rate?",
+        "tiny_learn": [
+          "Historians must evaluate their success in skills like research and argumentation.",
+          "Graphs can help compare progress in different academic skills quickly.",
+          "Understanding skill strengths helps focus efforts on improving weaker areas."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Student Success Rates in Academic Skills",
+          "labels": [
+            "Research Skills",
+            "Argumentation",
+            "Abstraction"
+          ],
+          "values": [
+            75,
+            85,
+            70
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "r1",
+            "label": "Research Skills",
+            "dataIndex": 0
+          },
+          {
+            "id": "r2",
+            "label": "Argumentation",
+            "dataIndex": 1
+          },
+          {
+            "id": "r3",
+            "label": "Abstraction",
+            "dataIndex": 2
+          }
+        ],
+        "correctRegion": "r2",
+        "hint": "Look for the tallest bar in the graph to find the highest success rate.",
+        "programme_title": "History",
+        "course_name": "Academic Skills for Historians"
+      },
+      {
+        "question_code": "L_AABAGESACV_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these research activities as either 'Literature Search' or 'Literature Evaluation'.",
+        "tiny_learn": [
+          "Literature search is about finding relevant scientific publications in the library catalog.",
+          "Literature evaluation involves judging the reliability and relevance of those publications.",
+          "Both skills are essential for writing a good historiographical overview (status quaestionis)."
+        ],
+        "categories": [
+          "Literature Search",
+          "Literature Evaluation"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Using keywords to find books and articles on a historiographical topic",
+            "correctCategory": "Literature Search"
+          },
+          {
+            "id": "b",
+            "text": "Checking the author's credentials and publication date to assess trustworthiness",
+            "correctCategory": "Literature Evaluation"
+          },
+          {
+            "id": "c",
+            "text": "Browsing the university library's online catalog for recent publications",
+            "correctCategory": "Literature Search"
+          },
+          {
+            "id": "d",
+            "text": "Comparing different historians' opinions to identify debates",
+            "correctCategory": "Literature Evaluation"
+          }
+        ],
+        "hint": "Think about whether the activity helps you find literature or judge its quality.",
+        "programme_title": "History",
+        "course_name": "Academic Skills for Historians"
+      },
+      {
+        "question_code": "L_AABAGESACV_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "A status quaestionis summarizes what researchers have already written about a topic.",
+          "Evaluating the reliability of sources is key before including them in your research.",
+          "Correct citation and paraphrasing help avoid plagiarism in academic writing."
+        ],
+        "textWithBlanks": "In the course Academic Skills for Historians, you learn to write a {{0}} quaestionis by reviewing existing {{1}} on a historiographical topic. Before including a publication, you must assess its {{2}} to ensure your research is trustworthy.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "status"
+          },
+          {
+            "id": 1,
+            "correctWordId": "literature"
+          },
+          {
+            "id": 2,
+            "correctWordId": "reliability"
+          }
+        ],
+        "words": [
+          {
+            "id": "status",
+            "text": "status"
+          },
+          {
+            "id": "literature",
+            "text": "literature"
+          },
+          {
+            "id": "reliability",
+            "text": "reliability"
+          },
+          {
+            "id": "bibliography",
+            "text": "bibliography"
+          },
+          {
+            "id": "citation",
+            "text": "citation"
+          }
+        ],
+        "hint": "Think about the main task of summarizing existing research and checking source quality.",
+        "programme_title": "History",
+        "course_name": "Academic Skills for Historians"
+      },
+      {
+        "question_code": "L_AABAGESACV_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this bar graph of student scores on different academic skills, which skill did the most students score highest in?",
+        "tiny_learn": [
+          "Identifying the strongest academic skill helps focus your study efforts.",
+          "Graphs can show how well students perform in different research tasks.",
+          "Comparing skill scores helps understand where improvements are needed."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Student Success Rates in Academic Skills for Historians",
+          "labels": [
+            "Research Skills",
+            "Summarizing Literature",
+            "Citing and Paraphrasing"
+          ],
+          "values": [
+            78,
+            85,
+            72
+          ],
+          "yAxisLabel": "Success Rate (%)"
+        },
+        "clickableRegions": [
+          {
+            "id": "r1",
+            "label": "Research Skills",
+            "dataIndex": 0
+          },
+          {
+            "id": "r2",
+            "label": "Summarizing Literature",
+            "dataIndex": 1
+          },
+          {
+            "id": "r3",
+            "label": "Citing and Paraphrasing",
+            "dataIndex": 2
+          }
+        ],
+        "correctRegion": "r2",
+        "hint": "Look for the tallest bar to find the highest success rate.",
+        "programme_title": "History",
+        "course_name": "Academic Skills for Historians"
+      }
+    ]
+  },
+  "Literature and Society": {
+    "aptitude": [
+      {
+        "question_code": "L_NABALES102_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Sort these literary features into 'Structuralist Techniques' or 'Other Elements'.",
+        "tiny_learn": [
+          "Structuralist analysis focuses on how parts of a text relate to each other.",
+          "Key structuralist techniques include motifs, binary oppositions, and narrative functions.",
+          "Not all literary features are structuralist methods; some relate to theme or style."
+        ],
+        "categories": [
+          "Structuralist Techniques",
+          "Other Elements"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Binary oppositions (e.g., good vs. evil)",
+            "correctCategory": "Structuralist Techniques"
+          },
+          {
+            "id": "b",
+            "text": "Theme of love",
+            "correctCategory": "Other Elements"
+          },
+          {
+            "id": "c",
+            "text": "Motifs (repeated symbols or ideas)",
+            "correctCategory": "Structuralist Techniques"
+          },
+          {
+            "id": "d",
+            "text": "Narrative point of view",
+            "correctCategory": "Other Elements"
+          },
+          {
+            "id": "e",
+            "text": "Narrative functions (roles like hero or helper)",
+            "correctCategory": "Structuralist Techniques"
+          }
+        ],
+        "hint": "Structuralist techniques focus on patterns and relationships within the text.",
+        "programme_title": "Literature and Society",
+        "course_name": "Analysis of Literary Texts"
+      },
+      {
+        "question_code": "L_NABALES102_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Structuralist analysis focuses on the relationships between elements within a text.",
+          "Literary techniques help reveal the deeper meaning of poems and stories.",
+          "Understanding the context of a literary work aids in interpreting its themes."
+        ],
+        "textWithBlanks": "In structuralist analysis, a key concept is the {{0}} between characters and events, which helps uncover the underlying {{1}} of the story. By examining these connections, we better understand how literary {{2}} shape meaning.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "relationship"
+          },
+          {
+            "id": 1,
+            "correctWordId": "structure"
+          },
+          {
+            "id": 2,
+            "correctWordId": "techniques"
+          }
+        ],
+        "words": [
+          {
+            "id": "relationship",
+            "text": "relationship"
+          },
+          {
+            "id": "structure",
+            "text": "structure"
+          },
+          {
+            "id": "techniques",
+            "text": "techniques"
+          },
+          {
+            "id": "context",
+            "text": "context"
+          },
+          {
+            "id": "theme",
+            "text": "theme"
+          }
+        ],
+        "hint": "Think about how elements in a text connect and what helps reveal the story’s deeper meaning.",
+        "programme_title": "Literature and Society",
+        "course_name": "Analysis of Literary Texts"
+      },
+      {
+        "question_code": "L_NABALES102_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this bar graph of the number of literary techniques identified in texts from different literary periods, which period shows the highest use of metaphor?",
+        "tiny_learn": [
+          "Literary techniques like metaphor help reveal deeper meanings in texts.",
+          "Different literary periods often emphasize different techniques.",
+          "Counting techniques used in texts helps compare styles across periods."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Number of Metaphors in Texts by Literary Period",
+          "labels": [
+            "Renaissance",
+            "Romanticism",
+            "Modernism",
+            "Postmodernism"
+          ],
+          "values": [
+            12,
+            18,
+            10,
+            14
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "renaissance",
+            "label": "Renaissance",
+            "dataIndex": 0
+          },
+          {
+            "id": "romanticism",
+            "label": "Romanticism",
+            "dataIndex": 1
+          },
+          {
+            "id": "modernism",
+            "label": "Modernism",
+            "dataIndex": 2
+          },
+          {
+            "id": "postmodernism",
+            "label": "Postmodernism",
+            "dataIndex": 3
+          }
+        ],
+        "correctRegion": "romanticism",
+        "hint": "Look for the tallest bar, as it shows the highest count.",
+        "programme_title": "Literature and Society",
+        "course_name": "Analysis of Literary Texts"
+      },
+      {
+        "question_code": "L_NABALES103_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Sort these narrative elements into 'Structural' or 'Stylistic' categories.",
+        "tiny_learn": [
+          "Structural elements shape the backbone of a story, like plot and scenes.",
+          "Stylistic elements influence how the story feels, such as style and perspective.",
+          "Understanding these helps you write clearer and more engaging stories."
+        ],
+        "categories": [
+          "Structural",
+          "Stylistic"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Plot",
+            "correctCategory": "Structural"
+          },
+          {
+            "id": "b",
+            "text": "Narrative perspective",
+            "correctCategory": "Stylistic"
+          },
+          {
+            "id": "c",
+            "text": "Scene",
+            "correctCategory": "Structural"
+          },
+          {
+            "id": "d",
+            "text": "Writing style",
+            "correctCategory": "Stylistic"
+          },
+          {
+            "id": "e",
+            "text": "Character development",
+            "correctCategory": "Structural"
+          }
+        ],
+        "hint": "Think about whether the element builds the story's framework or colors how it is told.",
+        "programme_title": "Literature and Society",
+        "course_name": "Creative Writing I"
+      },
+      {
+        "question_code": "L_NABALES103_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "A verhaal heeft een duidelijke structuur met een begin, midden en eind.",
+          "Vertelperspectief bepaalt vanuit welk standpunt het verhaal wordt verteld.",
+          "Stijl en plot helpen om emoties en thema's in je verhaal over te brengen."
+        ],
+        "textWithBlanks": "In een goed geschreven verhaal begint de {{0}} met het introduceren van personages en setting. Daarna ontwikkelt zich de {{1}}, waarin conflicten ontstaan. Tot slot wordt de {{2}} afgerond, waarbij losse eindjes worden opgelost.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "introductie"
+          },
+          {
+            "id": 1,
+            "correctWordId": "plot"
+          },
+          {
+            "id": 2,
+            "correctWordId": "ontknoping"
+          }
+        ],
+        "words": [
+          {
+            "id": "introductie",
+            "text": "introductie"
+          },
+          {
+            "id": "plot",
+            "text": "plot"
+          },
+          {
+            "id": "ontknoping",
+            "text": "ontknoping"
+          },
+          {
+            "id": "stijl",
+            "text": "stijl"
+          },
+          {
+            "id": "personages",
+            "text": "personages"
+          }
+        ],
+        "hint": "Denk aan de drie klassieke delen van een verhaal: begin, midden en eind.",
+        "programme_title": "Literature and Society",
+        "course_name": "Creative Writing I"
+      },
+      {
+        "question_code": "L_NABALES103_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this bar chart showing the number of literary techniques used in five student stories, which story used the most techniques?",
+        "tiny_learn": [
+          "Stories often use multiple literary techniques like style, plot, and perspective.",
+          "Using more techniques can make a story richer and more engaging.",
+          "Identifying techniques helps you understand how stories convey meaning."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Number of Literary Techniques Used in Student Stories",
+          "labels": [
+            "Story A",
+            "Story B",
+            "Story C",
+            "Story D",
+            "Story E"
+          ],
+          "values": [
+            3,
+            5,
+            4,
+            7,
+            6
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "sa",
+            "label": "Story A",
+            "dataIndex": 0
+          },
+          {
+            "id": "sb",
+            "label": "Story B",
+            "dataIndex": 1
+          },
+          {
+            "id": "sc",
+            "label": "Story C",
+            "dataIndex": 2
+          },
+          {
+            "id": "sd",
+            "label": "Story D",
+            "dataIndex": 3
+          },
+          {
+            "id": "se",
+            "label": "Story E",
+            "dataIndex": 4
+          }
+        ],
+        "correctRegion": "sd",
+        "hint": "Look for the tallest bar to find the story with the most techniques.",
+        "programme_title": "Literature and Society",
+        "course_name": "Creative Writing I"
+      }
+    ]
+  },
+  "Philosophy": {
+    "aptitude": [
+      {
+        "question_code": "W_BA_ANC_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Sort these philosophical ideas by their tradition: Greco-Roman or Sanskrit-Chinese.",
+        "tiny_learn": [
+          "Ancient Philosophy studies early ideas from different global traditions.",
+          "Greco-Roman philosophy often focuses on nature, knowledge, and ethics.",
+          "Sanskrit and Chinese traditions explore reality and human nature in unique ways."
+        ],
+        "categories": [
+          "Greco-Roman",
+          "Sanskrit-Chinese"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "The concept of the Dao as the fundamental principle of the universe.",
+            "correctCategory": "Sanskrit-Chinese"
+          },
+          {
+            "id": "b",
+            "text": "Aristotle’s idea of substance as a combination of matter and form.",
+            "correctCategory": "Greco-Roman"
+          },
+          {
+            "id": "c",
+            "text": "The notion of Dharma as moral law and duty.",
+            "correctCategory": "Sanskrit-Chinese"
+          },
+          {
+            "id": "d",
+            "text": "Plato’s theory of Forms as eternal and perfect realities.",
+            "correctCategory": "Greco-Roman"
+          }
+        ],
+        "hint": "Think about which ancient culture each idea originally comes from.",
+        "programme_title": "Philosophy",
+        "course_name": "Ancient Philosophy"
+      },
+      {
+        "question_code": "W_BA_ANC_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Ancient Philosophy studies early ideas about reality and knowledge.",
+          "Philosophical traditions include Greco-Roman, Chinese, and Sanskrit schools.",
+          "Core concepts include understanding nature, human beings, and existence."
+        ],
+        "textWithBlanks": "In Ancient Philosophy, the {{0}} tradition includes thinkers like Plato and Aristotle, while the {{1}} tradition includes Confucius and Laozi. Both traditions explore questions about {{2}}, which means the nature of being and existence.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "greco_roman"
+          },
+          {
+            "id": 1,
+            "correctWordId": "chinese"
+          },
+          {
+            "id": 2,
+            "correctWordId": "ontology"
+          }
+        ],
+        "words": [
+          {
+            "id": "greco_roman",
+            "text": "Greco-Roman"
+          },
+          {
+            "id": "chinese",
+            "text": "Chinese"
+          },
+          {
+            "id": "ontology",
+            "text": "ontology"
+          },
+          {
+            "id": "sanskrit",
+            "text": "Sanskrit"
+          },
+          {
+            "id": "epistemology",
+            "text": "epistemology"
+          }
+        ],
+        "hint": "Think about which regions correspond to the early philosophers and what 'ontology' studies.",
+        "programme_title": "Philosophy",
+        "course_name": "Ancient Philosophy"
+      },
+      {
+        "question_code": "W_BA_ANC_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this graph of the number of primary texts studied from each ancient tradition, which tradition was covered the most?",
+        "tiny_learn": [
+          "Ancient Philosophy studies key texts from different early traditions to understand their ideas.",
+          "Primary texts are original writings from philosophers that show their thoughts directly.",
+          "Comparing quantities of texts helps us see which traditions were emphasized in the course."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Number of Primary Texts Studied by Tradition",
+          "labels": [
+            "Greco-Roman",
+            "Sanskrit",
+            "Chinese"
+          ],
+          "values": [
+            12,
+            8,
+            5
+          ],
+          "yAxisLabel": "Number of Texts"
+        },
+        "clickableRegions": [
+          {
+            "id": "greco",
+            "label": "Greco-Roman",
+            "dataIndex": 0
+          },
+          {
+            "id": "sanskrit",
+            "label": "Sanskrit",
+            "dataIndex": 1
+          },
+          {
+            "id": "chinese",
+            "label": "Chinese",
+            "dataIndex": 2
+          }
+        ],
+        "correctRegion": "greco",
+        "hint": "Look for the highest bar to find which tradition had the most texts studied.",
+        "programme_title": "Philosophy",
+        "course_name": "Ancient Philosophy"
+      },
+      {
+        "question_code": "W_BA_EPEN_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these statements as describing either 'Knowledge' or 'Belief' according to epistemology.",
+        "tiny_learn": [
+          "Knowledge is typically justified true belief.",
+          "Belief does not require truth to be held.",
+          "Epistemology studies how we justify what we claim to know."
+        ],
+        "categories": [
+          "Knowledge",
+          "Belief"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "A person thinks the Earth is round based on scientific evidence.",
+            "correctCategory": "Knowledge"
+          },
+          {
+            "id": "b",
+            "text": "Someone hopes it will rain tomorrow without checking the forecast.",
+            "correctCategory": "Belief"
+          },
+          {
+            "id": "c",
+            "text": "A student accepts a theory after critically examining arguments supporting it.",
+            "correctCategory": "Knowledge"
+          },
+          {
+            "id": "d",
+            "text": "A person believes a rumor even though they have no proof.",
+            "correctCategory": "Belief"
+          }
+        ],
+        "hint": "Think about whether the statement involves justification and truth or just holding an idea.",
+        "programme_title": "Philosophy",
+        "course_name": "Epistemology"
+      },
+      {
+        "question_code": "W_BA_EPEN_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Epistemology studies what knowledge is and how we can have it.",
+          "Philosophical arguments help us understand and question beliefs.",
+          "Key theories explain when beliefs are justified or reliable."
+        ],
+        "textWithBlanks": "Epistemology asks questions like: 'What is {{0}}?' and 'When is a belief {{1}}?' One main concern is distinguishing {{2}} from mere opinion.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "knowledge"
+          },
+          {
+            "id": 1,
+            "correctWordId": "justified"
+          },
+          {
+            "id": 2,
+            "correctWordId": "knowledge"
+          }
+        ],
+        "words": [
+          {
+            "id": "knowledge",
+            "text": "knowledge"
+          },
+          {
+            "id": "justified",
+            "text": "justified"
+          },
+          {
+            "id": "belief",
+            "text": "belief"
+          },
+          {
+            "id": "true",
+            "text": "true"
+          },
+          {
+            "id": "opinion",
+            "text": "opinion"
+          }
+        ],
+        "hint": "Think about what epistemology studies and what it means for a belief to be supported.",
+        "programme_title": "Philosophy",
+        "course_name": "Epistemology"
+      },
+      {
+        "question_code": "W_BA_EPEN_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at the graph of student confidence in different epistemological concepts, which concept shows the biggest increase in confidence from Week 1 to Week 4?",
+        "tiny_learn": [
+          "Epistemology studies knowledge and belief, focusing on how we justify what we know.",
+          "Philosophical concepts like truth and rationality are central in understanding knowledge.",
+          "Tracking changes in understanding over time helps evaluate learning progress in epistemology."
+        ],
+        "graphData": {
+          "type": "line",
+          "title": "Student Confidence in Epistemological Concepts Over 4 Weeks",
+          "labels": [
+            "Week 1",
+            "Week 2",
+            "Week 3",
+            "Week 4"
+          ],
+          "values": {
+            "Knowledge": [
+              3,
+              5,
+              6,
+              7
+            ],
+            "Belief": [
+              4,
+              4,
+              5,
+              5
+            ],
+            "Truth": [
+              2,
+              3,
+              4,
+              6
+            ],
+            "Rationality": [
+              5,
+              6,
+              6,
+              7
+            ]
+          },
+          "yAxisLabel": "Confidence Level (1-7)"
+        },
+        "clickableRegions": [
+          {
+            "id": "knowledge",
+            "label": "Knowledge",
+            "dataIndex": 3
+          },
+          {
+            "id": "belief",
+            "label": "Belief",
+            "dataIndex": 3
+          },
+          {
+            "id": "truth",
+            "label": "Truth",
+            "dataIndex": 3
+          },
+          {
+            "id": "rationality",
+            "label": "Rationality",
+            "dataIndex": 3
+          }
+        ],
+        "correctRegion": "truth",
+        "hint": "Look for the concept that shows the biggest jump in confidence between Week 1 and Week 4.",
+        "programme_title": "Philosophy",
+        "course_name": "Epistemology"
+      }
+    ]
+  },
+  "Biomedical Sciences": {
+    "aptitude": [
+      {
+        "question_code": "AB_1135_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Sort these genetic elements into 'Prokaryotic Genome' or 'Eukaryotic Genome'.",
+        "tiny_learn": [
+          "Prokaryotic genomes are usually circular and lack a nucleus.",
+          "Eukaryotic genomes are linear and organized into chromosomes within a nucleus.",
+          "Gene expression regulation differs between prokaryotes and eukaryotes."
+        ],
+        "categories": [
+          "Prokaryotic Genome",
+          "Eukaryotic Genome"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Circular DNA molecule without histones",
+            "correctCategory": "Prokaryotic Genome"
+          },
+          {
+            "id": "b",
+            "text": "Linear chromosomes wrapped around histone proteins",
+            "correctCategory": "Eukaryotic Genome"
+          },
+          {
+            "id": "c",
+            "text": "Plasmids carrying extra genetic information",
+            "correctCategory": "Prokaryotic Genome"
+          },
+          {
+            "id": "d",
+            "text": "Mitochondrial DNA present in multiple copies",
+            "correctCategory": "Eukaryotic Genome"
+          }
+        ],
+        "hint": "Think about the presence of a nucleus and chromosome structure when sorting.",
+        "programme_title": "Biomedical Sciences",
+        "course_name": "Genetics"
+      },
+      {
+        "question_code": "AB_1135_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Genes are segments of DNA that code for proteins.",
+          "In eukaryotes, DNA is organized into chromosomes inside the nucleus.",
+          "Mutations in genes can cause changes in protein function and lead to diseases."
+        ],
+        "textWithBlanks": "The human genome is made up of {{0}} that are organized into {{1}} found in the nucleus. When a gene undergoes a {{2}}, it can change the protein made, sometimes causing genetic diseases.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "dna"
+          },
+          {
+            "id": 1,
+            "correctWordId": "chromosomes"
+          },
+          {
+            "id": 2,
+            "correctWordId": "mutation"
+          }
+        ],
+        "words": [
+          {
+            "id": "dna",
+            "text": "DNA"
+          },
+          {
+            "id": "chromosomes",
+            "text": "chromosomes"
+          },
+          {
+            "id": "mutation",
+            "text": "mutation"
+          },
+          {
+            "id": "proteins",
+            "text": "proteins"
+          },
+          {
+            "id": "cytoplasm",
+            "text": "cytoplasm"
+          }
+        ],
+        "hint": "Think about the basic building blocks of the genome and what can change genes.",
+        "programme_title": "Biomedical Sciences",
+        "course_name": "Genetics"
+      },
+      {
+        "question_code": "AB_1135_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at the graph of gene expression levels in different tissues, which tissue shows the highest gene expression?",
+        "tiny_learn": [
+          "Gene expression levels tell us how active a gene is in a specific tissue.",
+          "Different tissues can have very different gene expression patterns.",
+          "High gene expression means more RNA is produced from that gene in the tissue."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Gene Expression Levels in Different Human Tissues",
+          "labels": [
+            "Liver",
+            "Brain",
+            "Muscle",
+            "Skin",
+            "Kidney"
+          ],
+          "values": [
+            120,
+            250,
+            180,
+            90,
+            160
+          ],
+          "yAxisLabel": "Expression Level (arbitrary units)"
+        },
+        "clickableRegions": [
+          {
+            "id": "liver",
+            "label": "Liver",
+            "dataIndex": 0
+          },
+          {
+            "id": "brain",
+            "label": "Brain",
+            "dataIndex": 1
+          },
+          {
+            "id": "muscle",
+            "label": "Muscle",
+            "dataIndex": 2
+          },
+          {
+            "id": "skin",
+            "label": "Skin",
+            "dataIndex": 3
+          },
+          {
+            "id": "kidney",
+            "label": "Kidney",
+            "dataIndex": 4
+          }
+        ],
+        "correctRegion": "brain",
+        "hint": "Look for the tallest bar to find the tissue with the most gene activity.",
+        "programme_title": "Biomedical Sciences",
+        "course_name": "Genetics"
+      },
+      {
+        "question_code": "AB_1136_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these research variables as either qualitative or quantitative.",
+        "tiny_learn": [
+          "Qualitative variables describe categories or qualities, like blood type.",
+          "Quantitative variables represent measurable quantities, like heart rate.",
+          "Correctly identifying variable types helps design and analyze studies."
+        ],
+        "categories": [
+          "Qualitative",
+          "Quantitative"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Patient gender",
+            "correctCategory": "Qualitative"
+          },
+          {
+            "id": "b",
+            "text": "Number of white blood cells per microliter",
+            "correctCategory": "Quantitative"
+          },
+          {
+            "id": "c",
+            "text": "Type of medication administered",
+            "correctCategory": "Qualitative"
+          },
+          {
+            "id": "d",
+            "text": "Body temperature in degrees Celsius",
+            "correctCategory": "Quantitative"
+          }
+        ],
+        "hint": "Think about whether the variable measures a category or a number.",
+        "programme_title": "Biomedical Sciences",
+        "course_name": "Introduction to Biomedical Sciences"
+      },
+      {
+        "question_code": "AB_1136_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "A well-designed study reduces bias and improves reliability.",
+          "Statistical software helps visualize and analyze research data.",
+          "Understanding study design is key to critically reading scientific papers."
+        ],
+        "textWithBlanks": "In biomedical research, a {{0}} study design helps reduce {{1}}, which can affect the validity of results. Researchers use {{2}} software to plot and analyze their data effectively.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "randomized"
+          },
+          {
+            "id": 1,
+            "correctWordId": "bias"
+          },
+          {
+            "id": 2,
+            "correctWordId": "statistical"
+          }
+        ],
+        "words": [
+          {
+            "id": "randomized",
+            "text": "randomized"
+          },
+          {
+            "id": "biased",
+            "text": "biased"
+          },
+          {
+            "id": "statistical",
+            "text": "statistical"
+          },
+          {
+            "id": "graphic",
+            "text": "graphic"
+          }
+        ],
+        "hint": "Think about what kind of study design helps reduce errors and what tools are used to analyze data.",
+        "programme_title": "Biomedical Sciences",
+        "course_name": "Introduction to Biomedical Sciences"
+      },
+      {
+        "question_code": "AB_1136_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this bar graph of different study designs used in biomedical research, which study design was used most frequently?",
+        "tiny_learn": [
+          "Different study designs help answer different scientific questions.",
+          "Counting how many studies use each design can show trends in research.",
+          "Bar graphs are useful to compare frequencies of categories clearly."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Frequency of Study Designs in Biomedical Research",
+          "labels": [
+            "Cross-sectional",
+            "Randomized Controlled Trial",
+            "Cohort Study",
+            "Case-Control Study"
+          ],
+          "values": [
+            12,
+            25,
+            18,
+            10
+          ],
+          "yAxisLabel": "Number of Studies"
+        },
+        "clickableRegions": [
+          {
+            "id": "cs",
+            "label": "Cross-sectional",
+            "dataIndex": 0
+          },
+          {
+            "id": "rct",
+            "label": "Randomized Controlled Trial",
+            "dataIndex": 1
+          },
+          {
+            "id": "coh",
+            "label": "Cohort Study",
+            "dataIndex": 2
+          },
+          {
+            "id": "cc",
+            "label": "Case-Control Study",
+            "dataIndex": 3
+          }
+        ],
+        "correctRegion": "rct",
+        "hint": "Look for the tallest bar in the graph.",
+        "programme_title": "Biomedical Sciences",
+        "course_name": "Introduction to Biomedical Sciences"
+      }
+    ]
+  },
+  "Business Analytics": {
+    "aptitude": [
+      {
+        "question_code": "X_400635_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these calculus concepts as related to Limits, Derivatives, or Integrals.",
+        "tiny_learn": [
+          "Limits help us understand the behavior of functions at specific points.",
+          "Derivatives measure how a function changes and help find extreme values.",
+          "Integrals calculate the area under a curve and accumulate quantities."
+        ],
+        "categories": [
+          "Limits",
+          "Derivatives",
+          "Integrals"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Finding the slope of the tangent line to a curve",
+            "correctCategory": "Derivatives"
+          },
+          {
+            "id": "b",
+            "text": "Calculating the limit of a function as it approaches a point",
+            "correctCategory": "Limits"
+          },
+          {
+            "id": "c",
+            "text": "Using substitution to find the area under a curve",
+            "correctCategory": "Integrals"
+          },
+          {
+            "id": "d",
+            "text": "Applying l'Hôpital's Rule to evaluate an indeterminate form",
+            "correctCategory": "Limits"
+          },
+          {
+            "id": "e",
+            "text": "Finding local maximum or minimum values of a function",
+            "correctCategory": "Derivatives"
+          },
+          {
+            "id": "f",
+            "text": "Using the Fundamental Theorem of Calculus to connect differentiation and integration",
+            "correctCategory": "Integrals"
+          }
+        ],
+        "hint": "Think about whether the concept involves approaching values, measuring rates of change, or calculating accumulated areas.",
+        "programme_title": "Business Analytics",
+        "course_name": "Calculus 1"
+      },
+      {
+        "question_code": "X_400635_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "A derivative shows the instantaneous rate of change of a function.",
+          "The Mean Value Theorem guarantees a point where the derivative equals the average rate of change.",
+          "Continuity of a function is necessary to apply the Intermediate Value Theorem."
+        ],
+        "textWithBlanks": "If a function f(x) is continuous on the interval [a, b] and differentiable on (a, b), then the {{0}} Theorem guarantees there is at least one point c in (a, b) where the derivative f'(c) equals the {{1}} rate of change from a to b.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "mean_value"
+          },
+          {
+            "id": 1,
+            "correctWordId": "average"
+          }
+        ],
+        "words": [
+          {
+            "id": "mean_value",
+            "text": "Mean Value"
+          },
+          {
+            "id": "average",
+            "text": "average"
+          },
+          {
+            "id": "intermediate",
+            "text": "Intermediate"
+          },
+          {
+            "id": "fundamental",
+            "text": "Fundamental"
+          }
+        ],
+        "hint": "Think about which theorem connects derivatives and average rates over intervals.",
+        "programme_title": "Business Analytics",
+        "course_name": "Calculus 1"
+      },
+      {
+        "question_code": "X_400635_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this graph of a function and its derivative, select the interval where the function is increasing.",
+        "tiny_learn": [
+          "A function is increasing where its derivative is positive.",
+          "The derivative graph shows the slope of the function at each point.",
+          "Intervals where the derivative is above zero indicate increasing function values."
+        ],
+        "graphData": {
+          "type": "line",
+          "title": "Function and its Derivative",
+          "labels": [
+            "x=0",
+            "x=1",
+            "x=2",
+            "x=3",
+            "x=4",
+            "x=5"
+          ],
+          "values": {
+            "function": [
+              0,
+              1,
+              4,
+              9,
+              16,
+              25
+            ],
+            "derivative": [
+              -1,
+              0.5,
+              2,
+              3.5,
+              4,
+              5
+            ]
+          },
+          "yAxisLabel": "Value"
+        },
+        "clickableRegions": [
+          {
+            "id": "int1",
+            "label": "From x=0 to x=1",
+            "dataIndex": 1
+          },
+          {
+            "id": "int2",
+            "label": "From x=1 to x=3",
+            "dataIndex": 2
+          },
+          {
+            "id": "int3",
+            "label": "From x=3 to x=5",
+            "dataIndex": 4
+          }
+        ],
+        "correctRegion": "int2",
+        "hint": "Check where the derivative graph is above zero to find where the function increases.",
+        "programme_title": "Business Analytics",
+        "course_name": "Calculus 1"
+      },
+      {
+        "question_code": "X_400635_puzzle_3",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Complete the sequence of limits: \\( \\lim_{x \\to 0} \\frac{\\sin x}{x} = 1 \\), \\( \\lim_{x \\to 0} \\frac{1 - \\cos x}{x^2} = ? \\), \\( \\lim_{x \\to 0} \\frac{e^x - 1}{x} = ? \\)",
+        "tiny_learn": [
+          "Limits describe how a function behaves near a point.",
+          "The limit \\( \\lim_{x \\to 0} \\frac{\\sin x}{x} = 1 \\) is fundamental in calculus.",
+          "Using known limit results helps find new ones by pattern recognition."
+        ],
+        "puzzle": {
+          "variant": "pattern",
+          "sequence": [
+            "1",
+            "?",
+            "?"
+          ]
+        },
+        "options": [
+          {
+            "id": "a",
+            "value": [
+              "0.5",
+              "1"
+            ]
+          },
+          {
+            "id": "b",
+            "value": [
+              "1",
+              "1"
+            ]
+          },
+          {
+            "id": "c",
+            "value": [
+              "0",
+              "0"
+            ]
+          },
+          {
+            "id": "d",
+            "value": [
+              "0",
+              "1"
+            ]
+          }
+        ],
+        "correctAnswer": "a",
+        "hint": "Recall the standard small-angle limits involving sine, cosine, and exponential functions near zero.",
+        "programme_title": "Business Analytics",
+        "course_name": "Calculus 1"
+      },
+      {
+        "question_code": "X_400619_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Sort these Business Analytics methods into descriptive, predictive, or prescriptive categories.",
+        "tiny_learn": [
+          "Descriptive analytics helps understand past data.",
+          "Predictive analytics forecasts future trends based on data.",
+          "Prescriptive analytics suggests actions to achieve goals."
+        ],
+        "categories": [
+          "Descriptive",
+          "Predictive",
+          "Prescriptive"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Analyzing sales data from last year to find seasonal patterns",
+            "correctCategory": "Descriptive"
+          },
+          {
+            "id": "b",
+            "text": "Using a model to estimate next quarter's customer demand",
+            "correctCategory": "Predictive"
+          },
+          {
+            "id": "c",
+            "text": "Recommending the best pricing strategy to maximize profit",
+            "correctCategory": "Prescriptive"
+          },
+          {
+            "id": "d",
+            "text": "Creating charts that show monthly expenses over time",
+            "correctCategory": "Descriptive"
+          },
+          {
+            "id": "e",
+            "text": "Predicting which customers are likely to churn next month",
+            "correctCategory": "Predictive"
+          },
+          {
+            "id": "f",
+            "text": "Suggesting optimal inventory levels to reduce costs",
+            "correctCategory": "Prescriptive"
+          }
+        ],
+        "hint": "Think about whether the method looks at past data, predicts the future, or recommends actions.",
+        "programme_title": "Business Analytics",
+        "course_name": "Introduction to Business Analytics"
+      },
+      {
+        "question_code": "X_400619_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Business Analytics uses data to help make better business decisions.",
+          "Excel is an important tool to analyze and visualize data.",
+          "Business Analytics includes descriptive, predictive, and prescriptive methods."
+        ],
+        "textWithBlanks": "In Business Analytics, descriptive analytics helps us understand what has happened by summarizing data, predictive analytics tries to {{0}} what might happen next, and prescriptive analytics suggests the best {{1}} to take based on the data.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "predict"
+          },
+          {
+            "id": 1,
+            "correctWordId": "actions"
+          }
+        ],
+        "words": [
+          {
+            "id": "predict",
+            "text": "predict"
+          },
+          {
+            "id": "ignore",
+            "text": "ignore"
+          },
+          {
+            "id": "actions",
+            "text": "actions"
+          },
+          {
+            "id": "problems",
+            "text": "problems"
+          }
+        ],
+        "hint": "Think about the goals of predictive and prescriptive analytics in Business Analytics.",
+        "programme_title": "Business Analytics",
+        "course_name": "Introduction to Business Analytics"
+      },
+      {
+        "question_code": "X_400619_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Look at this bar chart of exam scores for three types of analytics in the Introduction to Business Analytics course. Which type had the highest average score?",
+        "tiny_learn": [
+          "Business Analytics includes descriptive, predictive, and prescriptive analytics.",
+          "Exam scores help measure understanding of each analytics type.",
+          "Bar charts visually compare quantities like average scores."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Average Exam Scores by Analytics Type",
+          "labels": [
+            "Descriptive Analytics",
+            "Predictive Analytics",
+            "Prescriptive Analytics"
+          ],
+          "values": [
+            78,
+            85,
+            80
+          ],
+          "yAxisLabel": "Average Score (%)"
+        },
+        "clickableRegions": [
+          {
+            "id": "desc",
+            "label": "Descriptive Analytics",
+            "dataIndex": 0
+          },
+          {
+            "id": "pred",
+            "label": "Predictive Analytics",
+            "dataIndex": 1
+          },
+          {
+            "id": "presc",
+            "label": "Prescriptive Analytics",
+            "dataIndex": 2
+          }
+        ],
+        "correctRegion": "pred",
+        "hint": "Compare the height of each bar to see which score is the highest.",
+        "programme_title": "Business Analytics",
+        "course_name": "Introduction to Business Analytics"
+      },
+      {
+        "question_code": "X_400619_puzzle_3",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Complete the sequence of predicted sales growth percentages for a company using Business Analytics: 2%, 4%, 8%, 16%, ?",
+        "tiny_learn": [
+          "Business Analytics helps predict future trends using data patterns.",
+          "Recognizing numerical patterns is key to understanding predictive analytics.",
+          "Simple doubling patterns often appear in growth predictions."
+        ],
+        "puzzle": {
+          "variant": "pattern",
+          "sequence": [
+            "2%",
+            "4%",
+            "8%",
+            "16%",
+            "?"
+          ]
+        },
+        "options": [
+          {
+            "id": "a",
+            "value": "18%"
+          },
+          {
+            "id": "b",
+            "value": "20%"
+          },
+          {
+            "id": "c",
+            "value": "32%"
+          },
+          {
+            "id": "d",
+            "value": "24%"
+          }
+        ],
+        "correctAnswer": "c",
+        "hint": "Look at how each number changes compared to the previous one.",
+        "programme_title": "Business Analytics",
+        "course_name": "Introduction to Business Analytics"
+      },
+      {
+        "question_code": "X_400619_codeorder_5",
+        "type": "codeorder",
+        "signalType": "aptitude",
+        "question": "Arrange the code lines to calculate and print the average sales from a list of monthly sales data",
+        "tiny_learn": [
+          "Business Analytics often involves summarizing data to find key insights like averages.",
+          "Python can be used to quickly calculate statistics such as sums and averages.",
+          "Ordering code correctly ensures the calculations are done in the right sequence."
+        ],
+        "language": "python",
+        "description": "The code should take a list of monthly sales numbers, calculate the average sales, and print the result.",
+        "lines": [
+          {
+            "id": "1",
+            "code": "sales = [1200, 1500, 1100, 1700, 1600]",
+            "correctPosition": 1
+          },
+          {
+            "id": "2",
+            "code": "total_sales = sum(sales)",
+            "correctPosition": 2
+          },
+          {
+            "id": "3",
+            "code": "average_sales = total_sales / len(sales)",
+            "correctPosition": 3
+          },
+          {
+            "id": "4",
+            "code": "print(\"Average monthly sales:\", average_sales)",
+            "correctPosition": 4
+          }
+        ],
+        "expectedOutput": "Average monthly sales: 1420.0",
+        "hint": "First, define the sales data, then sum it, then divide by the number of months before printing.",
+        "programme_title": "Business Analytics",
+        "course_name": "Introduction to Business Analytics"
+      }
+    ]
+  },
+  "Computer Science": {
+    "aptitude": [
+      {
+        "question_code": "XB_40011_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these programming elements as either 'Control Structures' or 'Data Types'.",
+        "tiny_learn": [
+          "Data types define the kind of data a variable can hold, like int or double.",
+          "Control structures determine the flow of a program, such as loops and if statements.",
+          "Understanding the difference helps write and debug programs more effectively."
+        ],
+        "categories": [
+          "Control Structures",
+          "Data Types"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "int",
+            "correctCategory": "Data Types"
+          },
+          {
+            "id": "b",
+            "text": "for loop",
+            "correctCategory": "Control Structures"
+          },
+          {
+            "id": "c",
+            "text": "double",
+            "correctCategory": "Data Types"
+          },
+          {
+            "id": "d",
+            "text": "if statement",
+            "correctCategory": "Control Structures"
+          },
+          {
+            "id": "e",
+            "text": "char",
+            "correctCategory": "Data Types"
+          }
+        ],
+        "hint": "Think about whether the item defines data or controls the program's actions.",
+        "programme_title": "Computer Science",
+        "course_name": "Computer Programming"
+      },
+      {
+        "question_code": "XB_40011_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "A variable in C++ stores data of a specific type.",
+          "Control flow in programming uses statements like if, switch, and loops.",
+          "Functions help organize code and can take inputs called parameters."
+        ],
+        "textWithBlanks": "In C++, the type of data a variable can hold is defined by its {{0}}. To make decisions in a program, we use the {{1}} statement. When we want to reuse code and pass values, we create a {{2}} with parameters.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "datatype"
+          },
+          {
+            "id": 1,
+            "correctWordId": "if"
+          },
+          {
+            "id": 2,
+            "correctWordId": "function"
+          }
+        ],
+        "words": [
+          {
+            "id": "datatype",
+            "text": "datatype"
+          },
+          {
+            "id": "if",
+            "text": "if"
+          },
+          {
+            "id": "function",
+            "text": "function"
+          },
+          {
+            "id": "loop",
+            "text": "loop"
+          },
+          {
+            "id": "variable",
+            "text": "variable"
+          }
+        ],
+        "hint": "Think about how data types, decisions, and reusable code blocks work in programming.",
+        "programme_title": "Computer Science",
+        "course_name": "Computer Programming"
+      },
+      {
+        "question_code": "XB_40011_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this bar graph of the number of programming errors found in six different modules, which module had the fewest errors?",
+        "tiny_learn": [
+          "Programming errors help identify mistakes in your code.",
+          "Different modules can have different error counts depending on complexity.",
+          "Finding fewer errors usually means the code is simpler or written more carefully."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Programming Errors Found in Course Modules",
+          "labels": [
+            "Basics",
+            "Vectors & Functions",
+            "Error Handling",
+            "Loops & Conditions",
+            "File I/O",
+            "Advanced Topics"
+          ],
+          "values": [
+            15,
+            12,
+            8,
+            20,
+            10,
+            14
+          ],
+          "yAxisLabel": "Number of Errors"
+        },
+        "clickableRegions": [
+          {
+            "id": "m1",
+            "label": "Basics",
+            "dataIndex": 0
+          },
+          {
+            "id": "m2",
+            "label": "Vectors & Functions",
+            "dataIndex": 1
+          },
+          {
+            "id": "m3",
+            "label": "Error Handling",
+            "dataIndex": 2
+          },
+          {
+            "id": "m4",
+            "label": "Loops & Conditions",
+            "dataIndex": 3
+          },
+          {
+            "id": "m5",
+            "label": "File I/O",
+            "dataIndex": 4
+          },
+          {
+            "id": "m6",
+            "label": "Advanced Topics",
+            "dataIndex": 5
+          }
+        ],
+        "correctRegion": "m3",
+        "hint": "Look for the shortest bar to find the module with the fewest errors.",
+        "programme_title": "Computer Science",
+        "course_name": "Computer Programming"
+      },
+      {
+        "question_code": "XB_40011_codeorder_5",
+        "type": "codeorder",
+        "signalType": "aptitude",
+        "question": "Arrange the code lines to print all numbers from 1 to 5 using a loop",
+        "tiny_learn": [
+          "A 'for' loop repeats actions a set number of times.",
+          "Indentation shows which lines belong inside the loop.",
+          "The print() function outputs information to the screen."
+        ],
+        "language": "python",
+        "description": "This code prints numbers 1 to 5 one by one using a for loop, a basic programming concept.",
+        "lines": [
+          {
+            "id": "1",
+            "code": "for i in range(1, 6):",
+            "correctPosition": 1
+          },
+          {
+            "id": "2",
+            "code": "    print(i)",
+            "correctPosition": 2
+          }
+        ],
+        "expectedOutput": "1\n2\n3\n4\n5",
+        "hint": "Start with the loop line that defines how many times to repeat.",
+        "programme_title": "Computer Science",
+        "course_name": "Computer Programming"
+      },
+      {
+        "question_code": "XB_0086_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these relations as Ordering relation, Equivalence relation, or Function",
+        "tiny_learn": [
+          "Ordering relations have properties like reflexivity, antisymmetry, and transitivity.",
+          "Equivalence relations are reflexive, symmetric, and transitive.",
+          "Functions assign each element in the domain to exactly one element in the codomain."
+        ],
+        "categories": [
+          "Ordering relation",
+          "Equivalence relation",
+          "Function"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "A relation where every element is related to itself, and if a is related to b and b to a, then a equals b",
+            "correctCategory": "Ordering relation"
+          },
+          {
+            "id": "b",
+            "text": "A relation where every element is related to itself, and any two elements related to each other are interchangeable",
+            "correctCategory": "Equivalence relation"
+          },
+          {
+            "id": "c",
+            "text": "A relation that pairs each input element with exactly one output element",
+            "correctCategory": "Function"
+          },
+          {
+            "id": "d",
+            "text": "A relation that is reflexive, symmetric, and transitive on a set",
+            "correctCategory": "Equivalence relation"
+          },
+          {
+            "id": "e",
+            "text": "A relation that is antisymmetric and transitive, and relates elements in a way that some are ordered",
+            "correctCategory": "Ordering relation"
+          }
+        ],
+        "hint": "Recall the defining properties of each relation type to decide their category.",
+        "programme_title": "Computer Science",
+        "course_name": "Logic and Sets for CS"
+      },
+      {
+        "question_code": "XB_0086_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "A relation is reflexive if every element relates to itself.",
+          "An equivalence relation is reflexive, symmetric, and transitive.",
+          "Functions assign exactly one output to each input."
+        ],
+        "textWithBlanks": "If a relation R on a set S is {{0}}, it means for every element a in S, the pair (a, a) is in R. If R is also symmetric and transitive, then R is called an {{1}} relation. A function from set A to set B assigns {{2}} output to each input in A.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "reflexive"
+          },
+          {
+            "id": 1,
+            "correctWordId": "equivalence"
+          },
+          {
+            "id": 2,
+            "correctWordId": "exactly_one"
+          }
+        ],
+        "words": [
+          {
+            "id": "reflexive",
+            "text": "reflexive"
+          },
+          {
+            "id": "equivalence",
+            "text": "equivalence"
+          },
+          {
+            "id": "exactly_one",
+            "text": "exactly one"
+          },
+          {
+            "id": "transitive",
+            "text": "transitive"
+          },
+          {
+            "id": "symmetric",
+            "text": "symmetric"
+          }
+        ],
+        "hint": "Think about the defining properties of relations and how functions assign outputs.",
+        "programme_title": "Computer Science",
+        "course_name": "Logic and Sets for CS"
+      },
+      {
+        "question_code": "XB_0086_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Look at the graph showing the number of students who correctly identified properties of relations. Which property was recognized by the fewest students?",
+        "tiny_learn": [
+          "Relations have properties like reflexive, symmetric, and transitive.",
+          "Understanding these properties helps classify relations in sets.",
+          "Graphs can show how many students understand each property."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Students Recognizing Relation Properties",
+          "labels": [
+            "Reflexive",
+            "Symmetric",
+            "Transitive",
+            "Antisymmetric",
+            "Equivalence"
+          ],
+          "values": [
+            18,
+            15,
+            10,
+            12,
+            20
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "ref",
+            "label": "Reflexive",
+            "dataIndex": 0
+          },
+          {
+            "id": "sym",
+            "label": "Symmetric",
+            "dataIndex": 1
+          },
+          {
+            "id": "trans",
+            "label": "Transitive",
+            "dataIndex": 2
+          },
+          {
+            "id": "anti",
+            "label": "Antisymmetric",
+            "dataIndex": 3
+          },
+          {
+            "id": "equiv",
+            "label": "Equivalence",
+            "dataIndex": 4
+          }
+        ],
+        "correctRegion": "trans",
+        "hint": "Check which bar is the shortest in the graph.",
+        "programme_title": "Computer Science",
+        "course_name": "Logic and Sets for CS"
+      },
+      {
+        "question_code": "XB_0086_puzzle_3",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Choose the correct property that the relation R on set A satisfies: R = {(1,1), (2,2), (3,3), (1,2), (2,1)}",
+        "tiny_learn": [
+          "A relation is reflexive if every element relates to itself.",
+          "A relation is symmetric if (a,b) in R implies (b,a) in R.",
+          "An equivalence relation is reflexive, symmetric, and transitive."
+        ],
+        "puzzle": {
+          "variant": "relation-properties",
+          "set": [
+            1,
+            2,
+            3
+          ],
+          "relation": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              1
+            ]
+          ]
+        },
+        "options": [
+          {
+            "id": "a",
+            "value": "Reflexive and symmetric"
+          },
+          {
+            "id": "b",
+            "value": "Reflexive but not symmetric"
+          },
+          {
+            "id": "c",
+            "value": "Symmetric but not reflexive"
+          },
+          {
+            "id": "d",
+            "value": "Neither reflexive nor symmetric"
+          }
+        ],
+        "correctAnswer": "a",
+        "hint": "Check if every element is related to itself and if pairs are mirrored.",
+        "programme_title": "Computer Science",
+        "course_name": "Logic and Sets for CS"
+      }
+    ]
+  },
+  "Economics and Business Economics": {
+    "aptitude": [
+      {
+        "question_code": "E_EBE1_EC_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Sort these economic theories into classical or Keynesian schools of thought.",
+        "tiny_learn": [
+          "Economic theories reflect the social and political context of their time.",
+          "Different schools of thought offer competing views on government intervention.",
+          "Classical economics emphasizes free markets, Keynesian supports active policy."
+        ],
+        "categories": [
+          "Classical",
+          "Keynesian"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Markets tend to self-correct without government interference.",
+            "correctCategory": "Classical"
+          },
+          {
+            "id": "b",
+            "text": "Government spending can help reduce unemployment during recessions.",
+            "correctCategory": "Keynesian"
+          },
+          {
+            "id": "c",
+            "text": "Supply and demand balance out in the long run naturally.",
+            "correctCategory": "Classical"
+          },
+          {
+            "id": "d",
+            "text": "Active fiscal policy is necessary to stabilize economic fluctuations.",
+            "correctCategory": "Keynesian"
+          }
+        ],
+        "hint": "Think about which school supports government intervention and which trusts market forces.",
+        "programme_title": "Economics and Business Economics",
+        "course_name": "Economic Challenges"
+      },
+      {
+        "question_code": "E_EBE1_EC_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Economic theories respond to the social and political context of their time.",
+          "Different economic schools offer competing ideas and solutions.",
+          "Understanding economic challenges requires analyzing theories and policies together."
+        ],
+        "textWithBlanks": "Economic theories are shaped by the {{0}} and {{1}} circumstances of their time. Because economists have different views, various {{2}} and schools of thought arise, offering competing explanations and solutions to economic problems.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "social"
+          },
+          {
+            "id": 1,
+            "correctWordId": "political"
+          },
+          {
+            "id": 2,
+            "correctWordId": "paradigms"
+          }
+        ],
+        "words": [
+          {
+            "id": "social",
+            "text": "social"
+          },
+          {
+            "id": "political",
+            "text": "political"
+          },
+          {
+            "id": "paradigms",
+            "text": "paradigms"
+          },
+          {
+            "id": "economic",
+            "text": "economic"
+          },
+          {
+            "id": "historical",
+            "text": "historical"
+          }
+        ],
+        "hint": "Think about what shapes economic theories beyond just numbers.",
+        "programme_title": "Economics and Business Economics",
+        "course_name": "Economic Challenges"
+      },
+      {
+        "question_code": "E_EBE1_EC_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this graph of economic policy popularity over time, which decade showed the biggest rise in support for government intervention?",
+        "tiny_learn": [
+          "Economic theories often respond to the social and political issues of their time.",
+          "Government intervention is one way to address market failures in the economy.",
+          "Popularity of economic policies can shift depending on historical events and challenges."
+        ],
+        "graphData": {
+          "type": "line",
+          "title": "Support for Government Intervention in Economic Policy",
+          "labels": [
+            "1960s",
+            "1970s",
+            "1980s",
+            "1990s",
+            "2000s"
+          ],
+          "values": [
+            30,
+            45,
+            80,
+            70,
+            75
+          ],
+          "yAxisLabel": "Popularity (%)"
+        },
+        "clickableRegions": [
+          {
+            "id": "d1",
+            "label": "1960s to 1970s",
+            "dataIndex": 1
+          },
+          {
+            "id": "d2",
+            "label": "1970s to 1980s",
+            "dataIndex": 2
+          },
+          {
+            "id": "d3",
+            "label": "1980s to 1990s",
+            "dataIndex": 3
+          },
+          {
+            "id": "d4",
+            "label": "1990s to 2000s",
+            "dataIndex": 4
+          }
+        ],
+        "correctRegion": "d2",
+        "hint": "Look for the largest jump in popularity percentage between two decades.",
+        "programme_title": "Economics and Business Economics",
+        "course_name": "Economic Challenges"
+      },
+      {
+        "question_code": "E_EBE1_QRM1_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these mathematical tools as either related to Calculus or Linear Algebra.",
+        "tiny_learn": [
+          "Calculus helps us understand change and motion through derivatives and integrals.",
+          "Linear Algebra deals with vectors, matrices, and solving systems of linear equations.",
+          "Both Calculus and Linear Algebra are essential for modeling problems in Economics and Business."
+        ],
+        "categories": [
+          "Calculus",
+          "Linear Algebra"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Finding the derivative of a function",
+            "correctCategory": "Calculus"
+          },
+          {
+            "id": "b",
+            "text": "Multiplying two matrices",
+            "correctCategory": "Linear Algebra"
+          },
+          {
+            "id": "c",
+            "text": "Calculating the integral of a curve",
+            "correctCategory": "Calculus"
+          },
+          {
+            "id": "d",
+            "text": "Solving a system of linear equations",
+            "correctCategory": "Linear Algebra"
+          },
+          {
+            "id": "e",
+            "text": "Determining extreme values using derivatives",
+            "correctCategory": "Calculus"
+          }
+        ],
+        "hint": "Think about whether the method involves rates of change or operations on arrays of numbers.",
+        "programme_title": "Economics and Business Economics",
+        "course_name": "Quantitative Research Methods I"
+      },
+      {
+        "question_code": "E_EBE1_QRM1_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Derivatives help find where a function reaches its highest or lowest points.",
+          "Matrix multiplication is used to solve systems of linear equations efficiently.",
+          "Summation notation is a concise way to write sums of many terms."
+        ],
+        "textWithBlanks": "In Quantitative Research Methods I, we learn that the {{0}} of a function gives the slope at any point, which helps identify maxima and minima. To solve multiple linear equations at once, we use {{1}}. When expressing the total of a series of values, we write it compactly using the {{2}} symbol.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "derivative"
+          },
+          {
+            "id": 1,
+            "correctWordId": "matrix_multiplication"
+          },
+          {
+            "id": 2,
+            "correctWordId": "summation"
+          }
+        ],
+        "words": [
+          {
+            "id": "derivative",
+            "text": "derivative"
+          },
+          {
+            "id": "matrix_multiplication",
+            "text": "matrix multiplication"
+          },
+          {
+            "id": "summation",
+            "text": "summation"
+          },
+          {
+            "id": "integration",
+            "text": "integration"
+          },
+          {
+            "id": "transpose",
+            "text": "transpose"
+          }
+        ],
+        "hint": "Think about which mathematical tools help analyze slopes, solve equations together, and write sums.",
+        "programme_title": "Economics and Business Economics",
+        "course_name": "Quantitative Research Methods I"
+      },
+      {
+        "question_code": "E_EBE1_QRM1_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this bar chart of average exam scores for different quantitative methods topics, which topic did students perform the best in?",
+        "tiny_learn": [
+          "Quantitative methods involve analyzing data with mathematical tools like statistics and calculus.",
+          "Comparing scores across topics helps identify strengths and weaknesses in understanding.",
+          "Visualizing data with graphs makes it easier to interpret and communicate results."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Average Exam Scores by Topic in Quantitative Research Methods I",
+          "labels": [
+            "Calculus",
+            "Linear Algebra",
+            "Statistics"
+          ],
+          "values": [
+            78,
+            85,
+            74
+          ],
+          "yAxisLabel": "Average Score (%)"
+        },
+        "clickableRegions": [
+          {
+            "id": "calc",
+            "label": "Calculus",
+            "dataIndex": 0
+          },
+          {
+            "id": "linAlg",
+            "label": "Linear Algebra",
+            "dataIndex": 1
+          },
+          {
+            "id": "stats",
+            "label": "Statistics",
+            "dataIndex": 2
+          }
+        ],
+        "correctRegion": "linAlg",
+        "hint": "Look for the highest bar representing the top score.",
+        "programme_title": "Economics and Business Economics",
+        "course_name": "Quantitative Research Methods I"
+      },
+      {
+        "question_code": "E_EBE1_QRM1_puzzle_3",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Choose the correct value of x that solves the system of equations:\n2x + 3y = 12 and x - y = 3",
+        "tiny_learn": [
+          "Systems of linear equations can be solved using substitution or elimination.",
+          "Finding x and y helps to understand how variables relate in economic models.",
+          "Matrix operations can simplify solving multiple equations at once."
+        ],
+        "puzzle": {
+          "variant": "equation_system",
+          "equations": [
+            "2x + 3y = 12",
+            "x - y = 3"
+          ],
+          "unknown": "x"
+        },
+        "options": [
+          {
+            "id": "a",
+            "value": "3"
+          },
+          {
+            "id": "b",
+            "value": "4"
+          },
+          {
+            "id": "c",
+            "value": "5"
+          },
+          {
+            "id": "d",
+            "value": "6"
+          }
+        ],
+        "correctAnswer": "b",
+        "hint": "Try expressing y in terms of x from the second equation and substitute into the first.",
+        "programme_title": "Economics and Business Economics",
+        "course_name": "Quantitative Research Methods I"
+      }
+    ]
+  },
+  "International Business Administration": {
+    "aptitude": [
+      {
+        "question_code": "E_IBA1_ACSK_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Sort these research activities into Qualitative or Quantitative methods.",
+        "tiny_learn": [
+          "Qualitative research focuses on understanding meanings and experiences.",
+          "Quantitative research involves numerical data and statistical analysis.",
+          "Choosing the right method depends on the research question you want to answer."
+        ],
+        "categories": [
+          "Qualitative",
+          "Quantitative"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Conducting interviews to explore customer opinions about a product.",
+            "correctCategory": "Qualitative"
+          },
+          {
+            "id": "b",
+            "text": "Using surveys with rating scales to measure customer satisfaction levels.",
+            "correctCategory": "Quantitative"
+          },
+          {
+            "id": "c",
+            "text": "Observing and describing cultural behaviors in a business setting.",
+            "correctCategory": "Qualitative"
+          },
+          {
+            "id": "d",
+            "text": "Analyzing sales data to determine trends over the past year.",
+            "correctCategory": "Quantitative"
+          }
+        ],
+        "hint": "Think about whether the activity uses numbers or detailed descriptions.",
+        "programme_title": "International Business Administration",
+        "course_name": "Academic Skills"
+      },
+      {
+        "question_code": "E_IBA1_ACSK_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Research questions should be clear and focused to guide your study.",
+          "Distinguish between relevant and irrelevant information when analyzing data.",
+          "Support arguments with evidence from academic sources."
+        ],
+        "textWithBlanks": "In academic research, a good research question should be {{0}} and {{1}}. This helps to {{2}} the study and produce reliable results.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "clear"
+          },
+          {
+            "id": 1,
+            "correctWordId": "focused"
+          },
+          {
+            "id": 2,
+            "correctWordId": "guide"
+          }
+        ],
+        "words": [
+          {
+            "id": "clear",
+            "text": "clear"
+          },
+          {
+            "id": "focused",
+            "text": "focused"
+          },
+          {
+            "id": "guide",
+            "text": "guide"
+          },
+          {
+            "id": "complex",
+            "text": "complex"
+          },
+          {
+            "id": "broad",
+            "text": "broad"
+          },
+          {
+            "id": "confuse",
+            "text": "confuse"
+          }
+        ],
+        "hint": "Think about qualities that make a research question useful for a study.",
+        "programme_title": "International Business Administration",
+        "course_name": "Academic Skills"
+      },
+      {
+        "question_code": "E_IBA1_ACSK_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this bar graph of success rates in Academic Skills areas, which skill do students perform best in?",
+        "tiny_learn": [
+          "Academic Skills include Analysis, Abstraction, and Argumentation.",
+          "Research skills help you critically evaluate and conduct research.",
+          "Effective communication and ethical reflection are key parts of academic work."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Student Success Rates in Academic Skills",
+          "labels": [
+            "Analysis",
+            "Abstraction",
+            "Argumentation"
+          ],
+          "values": [
+            78,
+            72,
+            85
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "analysis",
+            "label": "Analysis",
+            "dataIndex": 0
+          },
+          {
+            "id": "abstraction",
+            "label": "Abstraction",
+            "dataIndex": 1
+          },
+          {
+            "id": "argumentation",
+            "label": "Argumentation",
+            "dataIndex": 2
+          }
+        ],
+        "correctRegion": "argumentation",
+        "hint": "Look for the highest bar in the graph.",
+        "programme_title": "International Business Administration",
+        "course_name": "Academic Skills"
+      },
+      {
+        "question_code": "E_IBA1_PBS_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Sort these business challenges into cultural or organizational issues.",
+        "tiny_learn": [
+          "Cultural issues often involve differences in values and communication styles.",
+          "Organizational issues relate to structure, roles, and internal processes.",
+          "Understanding the difference helps propose better solutions in international business."
+        ],
+        "categories": [
+          "Cultural",
+          "Organizational"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Misunderstanding due to different communication styles between teams from different countries",
+            "correctCategory": "Cultural"
+          },
+          {
+            "id": "b",
+            "text": "Confusion about reporting lines and responsibilities within a department",
+            "correctCategory": "Organizational"
+          },
+          {
+            "id": "c",
+            "text": "Conflicts arising from different attitudes towards punctuality and deadlines",
+            "correctCategory": "Cultural"
+          },
+          {
+            "id": "d",
+            "text": "Delays caused by unclear decision-making processes in the company",
+            "correctCategory": "Organizational"
+          }
+        ],
+        "hint": "Think about whether the issue comes from cultural differences or how the company is organized.",
+        "programme_title": "International Business Administration",
+        "course_name": "People in Business and Society"
+      },
+      {
+        "question_code": "E_IBA1_PBS_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Different cultures influence how people communicate and work together.",
+          "Understanding incentives helps improve collaboration in international teams.",
+          "Analyzing case studies helps connect theory to real business situations."
+        ],
+        "textWithBlanks": "In international business, {{0}} communication is crucial because it helps avoid misunderstandings between team members from different cultures. One key challenge is to align {{1}} so that everyone is motivated towards common goals. By studying {{2}}, managers can better understand how cultural differences impact teamwork and decision-making.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "intercultural"
+          },
+          {
+            "id": 1,
+            "correctWordId": "incentives"
+          },
+          {
+            "id": 2,
+            "correctWordId": "case_studies"
+          }
+        ],
+        "words": [
+          {
+            "id": "intercultural",
+            "text": "intercultural"
+          },
+          {
+            "id": "incentives",
+            "text": "incentives"
+          },
+          {
+            "id": "case_studies",
+            "text": "case studies"
+          },
+          {
+            "id": "organizational",
+            "text": "organizational"
+          },
+          {
+            "id": "strategic",
+            "text": "strategic"
+          }
+        ],
+        "hint": "Think about what helps teams from different cultures work well and stay motivated.",
+        "programme_title": "International Business Administration",
+        "course_name": "People in Business and Society"
+      },
+      {
+        "question_code": "E_IBA1_PBS_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this bar graph showing the number of cultural misunderstandings reported in different departments, which department experienced the fewest misunderstandings?",
+        "tiny_learn": [
+          "Cultural differences can impact communication and teamwork in organizations.",
+          "Identifying where misunderstandings happen helps improve intercultural collaboration.",
+          "Data from organizations can guide practical solutions to enhance workplace communication."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Reported Cultural Misunderstandings per Department",
+          "labels": [
+            "Marketing",
+            "Sales",
+            "HR",
+            "Finance",
+            "Operations"
+          ],
+          "values": [
+            12,
+            8,
+            5,
+            10,
+            7
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "mkt",
+            "label": "Marketing",
+            "dataIndex": 0
+          },
+          {
+            "id": "sales",
+            "label": "Sales",
+            "dataIndex": 1
+          },
+          {
+            "id": "hr",
+            "label": "HR",
+            "dataIndex": 2
+          },
+          {
+            "id": "fin",
+            "label": "Finance",
+            "dataIndex": 3
+          },
+          {
+            "id": "ops",
+            "label": "Operations",
+            "dataIndex": 4
+          }
+        ],
+        "correctRegion": "hr",
+        "hint": "Look for the bar with the smallest height.",
+        "programme_title": "International Business Administration",
+        "course_name": "People in Business and Society"
+      }
+    ]
+  },
+  "Mathematics": {
+    "aptitude": [
+      {
+        "question_code": "X_401104_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these proof techniques into direct or indirect proofs.",
+        "tiny_learn": [
+          "Direct proofs start from known facts and use logical steps to reach the conclusion.",
+          "Indirect proofs assume the opposite of what you want to prove and find a contradiction.",
+          "Proof by induction is a special kind of direct proof applied to statements about integers."
+        ],
+        "categories": [
+          "Direct proof",
+          "Indirect proof"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Proving a statement by assuming it is false and reaching a contradiction",
+            "correctCategory": "Indirect proof"
+          },
+          {
+            "id": "b",
+            "text": "Starting from definitions and using logical steps to prove a statement",
+            "correctCategory": "Direct proof"
+          },
+          {
+            "id": "c",
+            "text": "Proving a statement for a base case and then for n+1 assuming it holds for n",
+            "correctCategory": "Direct proof"
+          },
+          {
+            "id": "d",
+            "text": "Proving the contrapositive of a statement instead of the statement itself",
+            "correctCategory": "Indirect proof"
+          }
+        ],
+        "hint": "Think about whether the proof assumes the statement or its opposite first.",
+        "programme_title": "Mathematics",
+        "course_name": "Basic Concepts in Mathematics"
+      },
+      {
+        "question_code": "X_401104_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "A direct proof shows a statement is true by straightforward logical steps.",
+          "A proof by contradiction assumes the opposite to find an inconsistency.",
+          "Induction proves statements true for all natural numbers by steps."
+        ],
+        "textWithBlanks": "In a {{0}} proof, we start by assuming the statement is true and logically deduce the conclusion. In a proof by {{1}}, we assume the statement is false and find a contradiction. Proof by {{2}} involves proving a base case and then proving that if the statement holds for one number, it holds for the next.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "direct"
+          },
+          {
+            "id": 1,
+            "correctWordId": "contradiction"
+          },
+          {
+            "id": 2,
+            "correctWordId": "induction"
+          }
+        ],
+        "words": [
+          {
+            "id": "direct",
+            "text": "direct"
+          },
+          {
+            "id": "contradiction",
+            "text": "contradiction"
+          },
+          {
+            "id": "induction",
+            "text": "induction"
+          },
+          {
+            "id": "contrapositive",
+            "text": "contrapositive"
+          }
+        ],
+        "hint": "Think about the main steps used in each common proof technique.",
+        "programme_title": "Mathematics",
+        "course_name": "Basic Concepts in Mathematics"
+      },
+      {
+        "question_code": "X_401104_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this bar graph of proof techniques used in student assignments, which technique was used most often?",
+        "tiny_learn": [
+          "Proof techniques include direct proof, contrapositive, contradiction, and induction.",
+          "Counting how often each technique is used can help understand which methods students prefer.",
+          "A bar graph shows quantities for different categories clearly and helps compare them."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Proof Techniques Used in Assignments",
+          "labels": [
+            "Direct Proof",
+            "Contrapositive Proof",
+            "Proof by Contradiction",
+            "Induction"
+          ],
+          "values": [
+            12,
+            8,
+            5,
+            10
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "direct",
+            "label": "Direct Proof",
+            "dataIndex": 0
+          },
+          {
+            "id": "contrapositive",
+            "label": "Contrapositive Proof",
+            "dataIndex": 1
+          },
+          {
+            "id": "contradiction",
+            "label": "Proof by Contradiction",
+            "dataIndex": 2
+          },
+          {
+            "id": "induction",
+            "label": "Induction",
+            "dataIndex": 3
+          }
+        ],
+        "correctRegion": "direct",
+        "hint": "Look for the tallest bar in the graph to find the most used technique.",
+        "programme_title": "Mathematics",
+        "course_name": "Basic Concepts in Mathematics"
+      },
+      {
+        "question_code": "X_401104_puzzle_3",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Choose the correct next step in this proof by contradiction: Assume that a set has both finite and infinite cardinality.",
+        "tiny_learn": [
+          "A proof by contradiction assumes the opposite of what you want to prove.",
+          "If this assumption leads to a logical contradiction, the original statement is true.",
+          "Clear definitions of concepts like finite and infinite sets help in constructing proofs."
+        ],
+        "puzzle": {
+          "variant": "logic_sequence",
+          "steps": [
+            "Assume a set is both finite and infinite.",
+            "By definition, finite sets have a limited number of elements.",
+            "Infinite sets have unlimited elements.",
+            "__________?"
+          ]
+        },
+        "options": [
+          {
+            "id": "a",
+            "value": "A set can be both finite and infinite at the same time."
+          },
+          {
+            "id": "b",
+            "value": "This assumption leads to a contradiction, so it must be false."
+          },
+          {
+            "id": "c",
+            "value": "Therefore, the set must be empty."
+          },
+          {
+            "id": "d",
+            "value": "Finite and infinite sets are the same."
+          }
+        ],
+        "correctAnswer": "b",
+        "hint": "Think about what happens when the assumption contradicts definitions.",
+        "programme_title": "Mathematics",
+        "course_name": "Basic Concepts in Mathematics"
+      },
+      {
+        "question_code": "XB_41007_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these calculus methods as used primarily for limits, derivatives, or integrals.",
+        "tiny_learn": [
+          "Limits describe the behavior of a function near a point or at infinity.",
+          "Derivatives measure how a function changes at a specific point.",
+          "Integrals find the accumulation or area under a curve."
+        ],
+        "categories": [
+          "Limits",
+          "Derivatives",
+          "Integrals"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "l'Hôpital's rule",
+            "correctCategory": "Limits"
+          },
+          {
+            "id": "b",
+            "text": "chain rule",
+            "correctCategory": "Derivatives"
+          },
+          {
+            "id": "c",
+            "text": "integration by substitution",
+            "correctCategory": "Integrals"
+          },
+          {
+            "id": "d",
+            "text": "finding local extrema",
+            "correctCategory": "Derivatives"
+          },
+          {
+            "id": "e",
+            "text": "partial fraction expansion",
+            "correctCategory": "Integrals"
+          },
+          {
+            "id": "f",
+            "text": "identifying dominant terms",
+            "correctCategory": "Limits"
+          }
+        ],
+        "hint": "Think about whether the method helps you find a value near a point, a rate of change, or an accumulated area.",
+        "programme_title": "Mathematics",
+        "course_name": "Single Variable Calculus"
+      },
+      {
+        "question_code": "XB_41007_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "The derivative measures the rate at which a function changes.",
+          "Limits help us understand the behavior of functions near specific points.",
+          "Taylor polynomials approximate functions near a point using derivatives."
+        ],
+        "textWithBlanks": "To find the slope of the tangent line to the curve y = f(x) at x = a, we first calculate the {{0}} of the function at that point. This is done by taking the limit of the difference quotient as x approaches {{1}}. The formula is f'(a) = lim (x → a) [f(x) - f(a)] / (x - a).",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "derivative"
+          },
+          {
+            "id": 1,
+            "correctWordId": "a"
+          }
+        ],
+        "words": [
+          {
+            "id": "derivative",
+            "text": "derivative"
+          },
+          {
+            "id": "integral",
+            "text": "integral"
+          },
+          {
+            "id": "a",
+            "text": "a"
+          },
+          {
+            "id": "x",
+            "text": "x"
+          }
+        ],
+        "hint": "Think about what measures the instantaneous rate of change at a point.",
+        "programme_title": "Mathematics",
+        "course_name": "Single Variable Calculus"
+      },
+      {
+        "question_code": "XB_41007_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Select the interval on the graph where the function's derivative is positive, indicating it is increasing.",
+        "tiny_learn": [
+          "The derivative of a function shows its rate of change.",
+          "If the derivative is positive, the function is increasing.",
+          "Intervals where the graph slopes upwards correspond to positive derivatives."
+        ],
+        "graphData": {
+          "type": "line",
+          "title": "Graph of f(x) and its derivative f'(x)",
+          "labels": [
+            "x = 0",
+            "x = 1",
+            "x = 2",
+            "x = 3",
+            "x = 4"
+          ],
+          "values": [
+            2,
+            3,
+            5,
+            4,
+            2
+          ],
+          "yAxisLabel": "f(x)"
+        },
+        "clickableRegions": [
+          {
+            "id": "int1",
+            "label": "Interval [0,1]",
+            "dataIndex": 0
+          },
+          {
+            "id": "int2",
+            "label": "Interval [1,2]",
+            "dataIndex": 1
+          },
+          {
+            "id": "int3",
+            "label": "Interval [2,3]",
+            "dataIndex": 2
+          },
+          {
+            "id": "int4",
+            "label": "Interval [3,4]",
+            "dataIndex": 3
+          }
+        ],
+        "correctRegion": "int2",
+        "hint": "Look for where the function values are going up as x increases.",
+        "programme_title": "Mathematics",
+        "course_name": "Single Variable Calculus"
+      },
+      {
+        "question_code": "XB_41007_puzzle_3",
+        "type": "puzzle",
+        "signalType": "aptitude",
+        "question": "Sort these functions by the value of their derivative at x = 0, from smallest to largest:",
+        "tiny_learn": [
+          "The derivative of a function at a point gives the slope of the tangent line there.",
+          "Different functions have different rates of change at the same x-value.",
+          "You can find derivatives using rules for powers, exponentials, and trigonometric functions."
+        ],
+        "puzzle": {
+          "variant": "order_values",
+          "values": [
+            {
+              "function": "f(x) = x^2",
+              "derivative_at_0": 0
+            },
+            {
+              "function": "g(x) = e^x",
+              "derivative_at_0": 1
+            },
+            {
+              "function": "h(x) = sin(x)",
+              "derivative_at_0": 1
+            },
+            {
+              "function": "k(x) = ln(x+1)",
+              "derivative_at_0": 1
+            }
+          ],
+          "task": "Sort these functions by their derivative value at x = 0."
+        },
+        "options": [
+          {
+            "id": "a",
+            "value": "f(x) < g(x) = h(x) = k(x)"
+          },
+          {
+            "id": "b",
+            "value": "g(x) = h(x) = k(x) < f(x)"
+          },
+          {
+            "id": "c",
+            "value": "f(x) = g(x) < h(x) = k(x)"
+          },
+          {
+            "id": "d",
+            "value": "f(x) = h(x) < g(x) = k(x)"
+          }
+        ],
+        "correctAnswer": "a",
+        "hint": "Calculate each derivative at zero using basic rules and compare their values.",
+        "programme_title": "Mathematics",
+        "course_name": "Single Variable Calculus"
+      }
+    ]
+  },
+  "Media, Art, Design and Architecture": {
+    "aptitude": [
+      {
+        "question_code": "L_AABAMKD111_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Sort these terms into 'Concepts related to Visual Culture' or 'Concepts related to Material Culture'.",
+        "tiny_learn": [
+          "Visual culture focuses on images and how they communicate meaning.",
+          "Material culture studies physical objects and their cultural significance.",
+          "Understanding both helps analyze how society uses images and objects."
+        ],
+        "categories": [
+          "Concepts related to Visual Culture",
+          "Concepts related to Material Culture"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Medium",
+            "correctCategory": "Concepts related to Visual Culture"
+          },
+          {
+            "id": "b",
+            "text": "Object",
+            "correctCategory": "Concepts related to Material Culture"
+          },
+          {
+            "id": "c",
+            "text": "Representation",
+            "correctCategory": "Concepts related to Visual Culture"
+          },
+          {
+            "id": "d",
+            "text": "Original",
+            "correctCategory": "Concepts related to Visual Culture"
+          },
+          {
+            "id": "e",
+            "text": "Reproduction",
+            "correctCategory": "Concepts related to Visual Culture"
+          },
+          {
+            "id": "f",
+            "text": "Artifact",
+            "correctCategory": "Concepts related to Material Culture"
+          }
+        ],
+        "hint": "Think about whether the term relates more to images or to physical things.",
+        "programme_title": "Media, Art, Design and Architecture",
+        "course_name": "Approaching Visual and Material Culture"
+      },
+      {
+        "question_code": "L_AABAMKD111_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Visual culture studies how images and objects communicate meaning.",
+          "Context helps us understand why an image or object looks the way it does.",
+          "Medium refers to the material or method used to create a visual work."
+        ],
+        "textWithBlanks": "In visual and material culture, the term {{0}} means the physical or digital way a work is produced, while {{1}} refers to the broader environment that gives an image or object its meaning.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "medium"
+          },
+          {
+            "id": 1,
+            "correctWordId": "context"
+          }
+        ],
+        "words": [
+          {
+            "id": "medium",
+            "text": "medium"
+          },
+          {
+            "id": "context",
+            "text": "context"
+          },
+          {
+            "id": "image",
+            "text": "image"
+          },
+          {
+            "id": "representation",
+            "text": "representation"
+          }
+        ],
+        "hint": "Think about what influences how a work is made and how we understand it.",
+        "programme_title": "Media, Art, Design and Architecture",
+        "course_name": "Approaching Visual and Material Culture"
+      },
+      {
+        "question_code": "L_AABAMKD111_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this bar graph of types of visual media studied in the course, which type was studied the least?",
+        "tiny_learn": [
+          "Visual culture includes many types of images and objects.",
+          "Counting and comparing quantities helps understand focus areas in a study.",
+          "Graphs can show which topics or media get more or less attention."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Types of Visual Media Studied",
+          "labels": [
+            "Photography",
+            "Painting",
+            "Architecture",
+            "Graphic Design",
+            "Sculpture"
+          ],
+          "values": [
+            12,
+            15,
+            8,
+            10,
+            5
+          ]
+        },
+        "clickableRegions": [
+          {
+            "id": "photography",
+            "label": "Photography",
+            "dataIndex": 0
+          },
+          {
+            "id": "painting",
+            "label": "Painting",
+            "dataIndex": 1
+          },
+          {
+            "id": "architecture",
+            "label": "Architecture",
+            "dataIndex": 2
+          },
+          {
+            "id": "graphic_design",
+            "label": "Graphic Design",
+            "dataIndex": 3
+          },
+          {
+            "id": "sculpture",
+            "label": "Sculpture",
+            "dataIndex": 4
+          }
+        ],
+        "correctRegion": "sculpture",
+        "hint": "Look for the bar with the smallest value.",
+        "programme_title": "Media, Art, Design and Architecture",
+        "course_name": "Approaching Visual and Material Culture"
+      },
+      {
+        "question_code": "L_GABAMKD103_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Classify these European cultural developments as belonging to the Medieval period or the Renaissance.",
+        "tiny_learn": [
+          "The Medieval period in Europe is marked by strong religious influence and feudal systems.",
+          "The Renaissance period saw a revival of classical learning and artistic innovation.",
+          "Cultural shifts often reflect changes in political power and scientific ideas."
+        ],
+        "categories": [
+          "Medieval",
+          "Renaissance"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "The construction of Gothic cathedrals as religious centers",
+            "correctCategory": "Medieval"
+          },
+          {
+            "id": "b",
+            "text": "The rediscovery and study of ancient Greek and Roman texts",
+            "correctCategory": "Renaissance"
+          },
+          {
+            "id": "c",
+            "text": "Feudal lords controlling large estates with serfs working the land",
+            "correctCategory": "Medieval"
+          },
+          {
+            "id": "d",
+            "text": "Artists like Leonardo da Vinci creating humanist-inspired works",
+            "correctCategory": "Renaissance"
+          }
+        ],
+        "hint": "Think about whether the cultural development emphasizes religious authority or classical revival.",
+        "programme_title": "Media, Art, Design and Architecture",
+        "course_name": "European Cultural History"
+      },
+      {
+        "question_code": "L_GABAMKD103_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "European cultural history studies changes in art, religion, and politics.",
+          "The Renaissance was a key period of cultural and scientific transformation.",
+          "Historical events influence modern European society and cultural trends."
+        ],
+        "textWithBlanks": "The {{0}} period marked a major shift in European cultural history, characterized by renewed interest in classical art and knowledge. This era followed the {{1}} period and preceded the modern age.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "renaissance"
+          },
+          {
+            "id": 1,
+            "correctWordId": "mediaeval"
+          }
+        ],
+        "words": [
+          {
+            "id": "renaissance",
+            "text": "Renaissance"
+          },
+          {
+            "id": "mediaeval",
+            "text": "mediaeval"
+          },
+          {
+            "id": "enlightenment",
+            "text": "Enlightenment"
+          },
+          {
+            "id": "industrial",
+            "text": "Industrial"
+          }
+        ],
+        "hint": "Think about the time between the Middle Ages and the modern era.",
+        "programme_title": "Media, Art, Design and Architecture",
+        "course_name": "European Cultural History"
+      },
+      {
+        "question_code": "L_GABAMKD103_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this graph of the number of significant European cultural events per century, which century had the highest number?",
+        "tiny_learn": [
+          "Cultural events can reflect major shifts in European history.",
+          "The Renaissance century often shows a peak in artistic and scientific activity.",
+          "Counting events per century helps understand historical transformation over time."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Significant European Cultural Events by Century",
+          "labels": [
+            "14th Century",
+            "15th Century",
+            "16th Century",
+            "17th Century",
+            "18th Century"
+          ],
+          "values": [
+            8,
+            12,
+            20,
+            15,
+            10
+          ],
+          "yAxisLabel": "Number of Events"
+        },
+        "clickableRegions": [
+          {
+            "id": "c14",
+            "label": "14th Century",
+            "dataIndex": 0
+          },
+          {
+            "id": "c15",
+            "label": "15th Century",
+            "dataIndex": 1
+          },
+          {
+            "id": "c16",
+            "label": "16th Century",
+            "dataIndex": 2
+          },
+          {
+            "id": "c17",
+            "label": "17th Century",
+            "dataIndex": 3
+          },
+          {
+            "id": "c18",
+            "label": "18th Century",
+            "dataIndex": 4
+          }
+        ],
+        "correctRegion": "c16",
+        "hint": "Remember when the Renaissance flourished and brought many cultural changes.",
+        "programme_title": "Media, Art, Design and Architecture",
+        "course_name": "European Cultural History"
+      }
+    ]
+  },
+  "Philosophy, Politics and Economics": {
+    "aptitude": [
+      {
+        "question_code": "W_JSM_101_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Sort these ethical theories into consequentialist or non-consequentialist",
+        "tiny_learn": [
+          "Consequentialism judges actions by their outcomes.",
+          "Non-consequentialist theories focus on duties or virtues, not just outcomes.",
+          "Understanding theory types helps analyze moral arguments clearly."
+        ],
+        "categories": [
+          "Consequentialist",
+          "Non-Consequentialist"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Utilitarianism",
+            "correctCategory": "Consequentialist"
+          },
+          {
+            "id": "b",
+            "text": "Kantian ethics",
+            "correctCategory": "Non-Consequentialist"
+          },
+          {
+            "id": "c",
+            "text": "Virtue ethics",
+            "correctCategory": "Non-Consequentialist"
+          },
+          {
+            "id": "d",
+            "text": "Social contract theory",
+            "correctCategory": "Non-Consequentialist"
+          }
+        ],
+        "hint": "Think about whether the theory focuses mainly on results or on rules and character.",
+        "programme_title": "Philosophy, Politics and Economics",
+        "course_name": "Ethics (PPE)"
+      },
+      {
+        "question_code": "W_JSM_101_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Consequentialism judges actions by their outcomes.",
+          "Kantian ethics emphasizes duty and universal moral laws.",
+          "Virtue ethics focuses on character traits and moral virtues."
+        ],
+        "textWithBlanks": "In ethics, {{0}} evaluates whether an action is right based on its consequences, while {{1}} argues that actions must follow universal moral rules regardless of outcomes. Meanwhile, {{2}} stresses the importance of developing good character traits to live a moral life.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "consequentialism"
+          },
+          {
+            "id": 1,
+            "correctWordId": "kantian"
+          },
+          {
+            "id": 2,
+            "correctWordId": "virtue_ethics"
+          }
+        ],
+        "words": [
+          {
+            "id": "consequentialism",
+            "text": "consequentialism"
+          },
+          {
+            "id": "kantian",
+            "text": "Kantian ethics"
+          },
+          {
+            "id": "virtue_ethics",
+            "text": "virtue ethics"
+          },
+          {
+            "id": "hedonism",
+            "text": "hedonism"
+          },
+          {
+            "id": "desire_satisfaction",
+            "text": "desire-satisfaction theory"
+          }
+        ],
+        "hint": "Think about which theory focuses on results, which on rules, and which on character.",
+        "programme_title": "Philosophy, Politics and Economics",
+        "course_name": "Ethics (PPE)"
+      },
+      {
+        "question_code": "W_JSM_101_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this bar chart of students' understanding scores on four ethical theories, which theory shows the highest average score?",
+        "tiny_learn": [
+          "Ethical theories provide frameworks to evaluate what is right or wrong.",
+          "Consequentialism focuses on outcomes to judge actions.",
+          "Kantian ethics emphasizes duties and moral rules."
+        ],
+        "graphData": {
+          "type": "bar",
+          "title": "Average Student Scores on Ethical Theories",
+          "labels": [
+            "Consequentialism",
+            "Social Contract Theory",
+            "Kantian Ethics",
+            "Virtue Ethics"
+          ],
+          "values": [
+            78,
+            65,
+            82,
+            70
+          ],
+          "yAxisLabel": "Average Score (%)"
+        },
+        "clickableRegions": [
+          {
+            "id": "c1",
+            "label": "Consequentialism",
+            "dataIndex": 0
+          },
+          {
+            "id": "s2",
+            "label": "Social Contract Theory",
+            "dataIndex": 1
+          },
+          {
+            "id": "k3",
+            "label": "Kantian Ethics",
+            "dataIndex": 2
+          },
+          {
+            "id": "v4",
+            "label": "Virtue Ethics",
+            "dataIndex": 3
+          }
+        ],
+        "correctRegion": "k3",
+        "hint": "Check which bar reaches the highest point on the y-axis.",
+        "programme_title": "Philosophy, Politics and Economics",
+        "course_name": "Ethics (PPE)"
+      },
+      {
+        "question_code": "W_JSM_102_classify_1",
+        "type": "classify",
+        "signalType": "aptitude",
+        "question": "Sort these reasoning methods into logic-based or optimization-based",
+        "tiny_learn": [
+          "Logic helps us test if arguments are valid using rules and symbols.",
+          "Optimization finds the best solution by maximizing or minimizing functions.",
+          "Decision theory uses both logic and optimization to model choices."
+        ],
+        "categories": [
+          "Logic-based",
+          "Optimization-based"
+        ],
+        "items": [
+          {
+            "id": "a",
+            "text": "Using syllogisms to check argument validity",
+            "correctCategory": "Logic-based"
+          },
+          {
+            "id": "b",
+            "text": "Finding the maximum utility in a preference model",
+            "correctCategory": "Optimization-based"
+          },
+          {
+            "id": "c",
+            "text": "Applying propositional logic to analyze statements",
+            "correctCategory": "Logic-based"
+          },
+          {
+            "id": "d",
+            "text": "Determining extreme values of a function with constraints",
+            "correctCategory": "Optimization-based"
+          }
+        ],
+        "hint": "Think about whether the method tests truth or finds best values.",
+        "programme_title": "Philosophy, Politics and Economics",
+        "course_name": "Methods of PPE I"
+      },
+      {
+        "question_code": "W_JSM_102_fillblank_2",
+        "type": "fillblank",
+        "signalType": "aptitude",
+        "question": "Complete the text",
+        "tiny_learn": [
+          "Optimization helps find the best solution under given constraints.",
+          "Logical reasoning uses formal rules to deduce valid conclusions.",
+          "Decision theory studies how people make choices considering preferences."
+        ],
+        "textWithBlanks": "In decision theory, the goal is often to maximize {{0}} which represents the satisfaction or benefit of an option. To find this maximum, we use {{1}}, a mathematical tool that shows how a function changes. When comparing choices, formal {{2}} helps to ensure our conclusions are logically valid.",
+        "blanks": [
+          {
+            "id": 0,
+            "correctWordId": "utility"
+          },
+          {
+            "id": 1,
+            "correctWordId": "differentiation"
+          },
+          {
+            "id": 2,
+            "correctWordId": "logic"
+          }
+        ],
+        "words": [
+          {
+            "id": "utility",
+            "text": "utility"
+          },
+          {
+            "id": "differentiation",
+            "text": "differentiation"
+          },
+          {
+            "id": "logic",
+            "text": "logic"
+          },
+          {
+            "id": "optimization",
+            "text": "optimization"
+          },
+          {
+            "id": "game_theory",
+            "text": "game theory"
+          }
+        ],
+        "hint": "Think about key concepts used to measure preferences, analyze change, and reason correctly.",
+        "programme_title": "Philosophy, Politics and Economics",
+        "course_name": "Methods of PPE I"
+      },
+      {
+        "question_code": "W_JSM_102_graph_4",
+        "type": "graph",
+        "signalType": "aptitude",
+        "question": "Looking at this graph of exam scores in Methods of PPE I, which topic showed the greatest improvement from Test 1 to Test 3?",
+        "tiny_learn": [
+          "Optimization helps find the best solution among many possibilities.",
+          "Logical reasoning is key to understanding formal arguments and proofs.",
+          "Decision theory studies how individuals make choices and how groups reach decisions."
+        ],
+        "graphData": {
+          "type": "line",
+          "title": "Exam Scores in Methods of PPE I",
+          "labels": [
+            "Test 1",
+            "Test 2",
+            "Test 3"
+          ],
+          "values": [
+            [
+              65,
+              70,
+              80
+            ],
+            [
+              60,
+              68,
+              72
+            ],
+            [
+              75,
+              78,
+              85
+            ]
+          ],
+          "seriesLabels": [
+            "Optimization",
+            "Logic",
+            "Decision Theory"
+          ],
+          "yAxisLabel": "Score (%)"
+        },
+        "clickableRegions": [
+          {
+            "id": "opt",
+            "label": "Optimization",
+            "dataIndex": 2
+          },
+          {
+            "id": "logic",
+            "label": "Logic",
+            "dataIndex": 2
+          },
+          {
+            "id": "decision",
+            "label": "Decision Theory",
+            "dataIndex": 2
+          }
+        ],
+        "correctRegion": "opt",
+        "hint": "Look for the topic with the biggest jump in score from the first to the last test.",
+        "programme_title": "Philosophy, Politics and Economics",
+        "course_name": "Methods of PPE I"
+      }
+    ]
+  }
+}
