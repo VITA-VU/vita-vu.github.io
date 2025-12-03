@@ -34,6 +34,7 @@ interface MicrotaskRendererProps {
 
 export function MicrotaskRenderer({ task, onComplete, onSkip }: MicrotaskRendererProps) {
   const TaskComponent = TASK_COMPONENTS[task.type];
+  localStorage.setItem('taskCode', task.question_code);
 
   if (!TaskComponent) {
     console.error(`Unknown task type: ${task.type}, falling back to MCQ`);
