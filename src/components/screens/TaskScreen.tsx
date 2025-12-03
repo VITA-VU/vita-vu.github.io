@@ -22,6 +22,8 @@ interface TaskScreenProps {
 }
 
 localStorage.setItem('learnOpened', "false");
+localStorage.setItem('isCorrect', "");
+localStorage.setItem('answer', "");
 const start = new Date().getTime();
 
 const tasks = {
