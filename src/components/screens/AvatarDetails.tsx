@@ -345,7 +345,7 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
                       onClick={() => setShowProgrammeDropdown(!showProgrammeDropdown)}
                       className="w-full border rounded px-3 py-2 text-sm text-left bg-white hover:bg-gray-50"
                     >
-                      {programme || 'Select a profiles...'}
+                      {programme || 'Select a profile...'}
                       <span className="float-right">▼</span>
                     </button>
                     {showProgrammeDropdown && (

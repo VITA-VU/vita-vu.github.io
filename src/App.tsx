@@ -22,6 +22,7 @@ import { returnTask } from './components/api/requests';
 // import { MicrotaskDemo } from './components/microtasks/MicrotaskDemo';
 // import { MicrotaskDemoAptitude } from './components/microtasks/MicrotaskDemoAptitude';
 import { MicrotaskDemoAPI } from './components/microtasks/MicrotaskDemoAPI';
+import { createUser, incrementTasks, logQuestionInteraction } from './components/database/dbCalls';
 
 // Global state context (or use localStorage/Redux)
 import { createContext, useState, ReactNode } from 'react';
@@ -141,6 +142,7 @@ function AvatarDetailsRoute() {
         if (data.hasProgramInMind === 'yes') {
           navigate('/programme-search');
         } else {
+          createUser();
           navigate('/micro-riasec');
         }
       }}
@@ -180,6 +182,7 @@ function ProgrammeSearchRoute() {
   return (
     <ProgrammeSearch
       onContinue={async (prog) => {
+        createUser();
         await returnTask('programme', setTask); 
         navigate('/task-intro');
       }}
@@ -235,7 +238,9 @@ function TaskFeedbackRoute() {
   const ctx = useAppContext();
   return (
     <TaskFeedback
-      onContinue={(stop) => {
+      onContinue={async (stop) => {
+        await incrementTasks();
+        await logQuestionInteraction();
         if (stop) {
           navigate('/result');
         } else
