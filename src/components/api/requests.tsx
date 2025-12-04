@@ -86,6 +86,15 @@ export async function updateStudent()
         if (parsedValue.next_task) {
           localStorage.setItem('signalType', parsedValue.next_task.signalType ?? 'personality');
           localStorage.setItem('taskType', parsedValue.next_task.type ?? 'mcq');
+          // Track used task IDs to prevent duplicates
+          const taskId = parsedValue.next_task.question_code;
+          if (taskId) {
+            const used = JSON.parse(localStorage.getItem('usedTaskIds') || '[]');
+            if (!used.includes(taskId)) {
+              used.push(taskId);
+              localStorage.setItem('usedTaskIds', JSON.stringify(used));
+            }
+          }
         }
         return parsedValue;
       })
