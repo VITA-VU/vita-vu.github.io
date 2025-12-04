@@ -17,6 +17,8 @@ interface TaskFeedbackProps {
 
 type FeedbackStep = 'enjoyment' | 'preference';
 
+console.log(((1.2/parseFloat(localStorage.getItem("entropy") || '3.5')))* 100);
+
 // map avatar id -> src (used to show selected avatar speaking)
 const avatarMap: Record<string, string> = (() => {
   try {
@@ -70,7 +72,7 @@ export function TaskFeedback({ onContinue, currentLang, onLangChange, goHome, se
             <img src={logo} alt="VU Logo" width="150" height="100" className="cursor-pointer" />
           </button>
         </div>
-        <ProgressBar bgColor={"#D4a017"} progress={((1.2/parseFloat(localStorage.getItem("entropy") || '.33')))* 100}/>
+        <ProgressBar bgColor={"#D4a017"} progress={((1.2/parseFloat(localStorage.getItem("entropy") || '3')))* 100}/>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
 

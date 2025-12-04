@@ -93,8 +93,6 @@ export function TaskScreen({
   const [selectedRiasec, setSelectedRiasec] = useState<string | null>(null);
   const { task } = useAppContext();
 
-  console.log(((1.2/parseFloat(localStorage.getItem("entropy") || '.33')))* 100);
-
   function handleSelectOption(index: number, riasec: string) {
     setSelectedOption(index);
     setSelectedRiasec(riasec);
@@ -134,7 +132,7 @@ export function TaskScreen({
 </button>
 
        </div>
-        <ProgressBar bgColor={"#D4a017"} progress={((1.2/parseFloat(localStorage.getItem("entropy") || '.33')))* 100}/>
+        <ProgressBar bgColor={"#D4a017"} progress={((1.2/parseFloat(localStorage.getItem("entropy") || '3')))* 100}/>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       
@@ -201,6 +199,7 @@ export function TaskScreen({
             task={task} 
             onComplete={(result: any) => {
               // Store the answer - for personality tasks it's selectedRiasec, for aptitude it varies
+              //TODO: doesn't actually store answer to question
               const answer = result.selectedRiasec ?? result.taskId ?? '';
               localStorage.setItem('answer', String(answer));
               localStorage.setItem('isCorrect', String(result.isCorrect ?? ''));
