@@ -4,6 +4,7 @@ import { VitaCard } from '../vita-ui/VitaCard';
 import { LanguageToggle } from '../LanguageToggle';
 import { Search } from 'lucide-react';
 import logo from '../imgs/VU-logo-RGB.png';
+import ProgressBar from '../vita-ui/ProgressBar';
 
 interface ProgrammeSearchProps {
   onContinue: (programme: string) => void;
@@ -77,6 +78,7 @@ export function ProgrammeSearch({ onContinue, currentLang, onLangChange, goBack,
 </button>
 
        </div>
+        <ProgressBar bgColor={"#D4a017"} progress={25} />
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       
@@ -97,8 +99,8 @@ export function ProgrammeSearch({ onContinue, currentLang, onLangChange, goBack,
 
           <div className="relative max-w-prose flex-1">
             <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
-              <h2 className="text-[1.375rem]">Which programme do you want to explore?</h2>
-              <p className="text-[1rem] text-gray-600">Search or pick a programme below to explore options that match your interests.</p>
+              <h2 className="text-[1.375rem]">Which study programme do you have in mind?</h2>
+              <p className="text-[1rem] text-gray-600">Search or pick a programme below.</p>
               <div
                 style={{
                   position: 'absolute',

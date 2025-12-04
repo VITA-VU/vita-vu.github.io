@@ -155,7 +155,7 @@ export function TaskCard({
           Next
         </VitaButton>
         <VitaButton variant="ghost" onClick={onNotSure}>
-          I am not sure
+          I'm not sure
         </VitaButton>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { LanguageToggle } from '../LanguageToggle';
 import { GripVertical, ChevronUp, ChevronDown } from 'lucide-react';
 // import { griffonAvatars } from '../griffons/GriffonAvatars';
 import logo from '../imgs/VU-logo-RGB.png';
+import ProgressBar from '../vita-ui/ProgressBar';
 
 // map avatar id -> src (used to show selected avatar speaking)
 const avatarMap: Record<string, string> = (() => {
@@ -228,6 +229,7 @@ export function MicroRIASEC({ onComplete, onBack, currentLang, onLangChange, sel
 </button>
 
        </div>
+        <ProgressBar bgColor={"#D4a017"} progress={25} />
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       

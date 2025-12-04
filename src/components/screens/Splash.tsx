@@ -47,10 +47,10 @@ export function Splash({ onStart, currentLang, onLangChange, tutorialEnabled = f
         <div className="max-w-md w-full text-center space-y-6">
 
           <h1 className="text-[2rem] md:text-[2.5rem]">
-            Find your fit, the fun way
+            VU Study Quest
           </h1>
           <p className="text-[1rem] text-gray-600">
-            Tiny tasks, clear previews, your choice
+            Find your fit, the fun way
           </p>
           <div className="pt-4" data-tutorial="start-button">
             <VitaButton 

@@ -3,6 +3,7 @@ import { VitaButton } from '../vita-ui/VitaButton';
 import { VitaCard } from '../vita-ui/VitaCard';
 import { LanguageToggle } from '../LanguageToggle';
 import logo from '../imgs/VU-logo-RGB.png';
+import ProgressBar from '../vita-ui/ProgressBar';
 
 interface TaskIntroProps {
   selectedProgram: string;
@@ -42,6 +43,7 @@ export function TaskIntro({selectedProgram, onContinue, currentLang, onLangChang
             <img src={logo} alt="VU Logo" width="150" height="100" className="cursor-pointer" />
           </button>
         </div>
+        <ProgressBar bgColor={"#D4a017"} progress={40} />
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       

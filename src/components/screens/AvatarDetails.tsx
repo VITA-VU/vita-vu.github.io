@@ -4,7 +4,7 @@ import { VitaInput } from '../vita-ui/VitaInput';
 import { LanguageToggle } from '../LanguageToggle';
 import logo from '../imgs/VU-logo-RGB.png';
 import { initializeStudent } from '../api/requests';
-
+import ProgressBar from '../vita-ui/ProgressBar';
 interface AvatarAndDetailsProps {
   onContinue: (data: { avatar?: string; pronouns?: string; firstName?: string; age?: string; profile?: string; hasProgramInMind?: 'yes' | 'no' }) => void;
   onSkip?: () => void;
@@ -151,7 +151,7 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
     setProfile(selectedLabel);
     localStorage.setItem('profile', selectedValue);
     // ask follow-up question instead of finishing immediately
-    addAvatarMessage('Quick question: do you already have a programme in mind?', 800);
+    addAvatarMessage('Quick question: do you already have a study programme in mind?', 800);
     setChatStep('programInMind');
     setTimeout(() => {
       setShowProgrammeDropdown(false);
@@ -179,6 +179,7 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
             <img src={logo} alt="VU Logo" width="150" height="100" className="cursor-pointer" />
           </button>
         </div>
+        <ProgressBar bgColor={"#D4a017"} progress={0} />
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
 
@@ -189,9 +190,9 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
         {step === 'avatar' && (
           <div className="space-y-6">
             <div>
-              <h2 className="text-[1.375rem] mb-2">Pick your griffon</h2>
+              <h2 className="text-[1.375rem] mb-2">Pick your Griffon</h2>
               <p className="text-[1rem] text-gray-600">
-                Choose an avatar that best represents you. You can change it later if you want.
+                Choose one that best represents you!
               </p>
             </div>
 
@@ -235,7 +236,7 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
             <div>
               <h2 className="text-[1.375rem] mb-2">Tell us about yourself</h2>
               <p className="text-[1rem] text-gray-600">
-                Chat with your griffon to share more details.
+                Chat with your Griffon to share some more details.
               </p>
             </div>
 
@@ -367,7 +368,7 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
                   {!hasProgramInMind && (
                     <>
                       <label className="block text-sm text-gray-700 mb-1">
-                        Do you already have a programme in mind?
+                        Do you already have a study programme in mind?
                       </label>
 
                       <button
@@ -422,7 +423,7 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
                         className="w-full"
                       >
                         {hasProgramInMind === 'yes'
-                          ? "Let's go look at some programs!"
+                          ? "Let's go look at some programmes!"
                           : "Let's go learn some more about you!"}
                       </VitaButton>
                     </div>

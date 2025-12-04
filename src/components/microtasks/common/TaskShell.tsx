@@ -30,6 +30,11 @@ export function TaskShell({
 }: TaskShellProps) {
   const [hintOpen, setHintOpen] = useState(false);
 
+  function setOpened(boolean: boolean) {
+    setHintOpen(boolean);
+    localStorage.setItem('learnOpened', "true");
+  }
+
   return (
     <motion.div
       variants={slideUp}
@@ -46,7 +51,7 @@ export function TaskShell({
         <div className="bg-amber-50 border border-amber-200 rounded-lg mb-6">
           <button
             type="button"
-            onClick={() => setHintOpen(!hintOpen)}
+            onClick={() => setOpened(!hintOpen)}
             aria-expanded={hintOpen}
             className="w-full flex items-center justify-between gap-2 p-4 hover:bg-amber-100 transition-colors focus:outline-none focus:ring-2 focus:ring-amber-400"
           >
