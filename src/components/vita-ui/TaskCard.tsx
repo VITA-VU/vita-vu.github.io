@@ -8,7 +8,7 @@ export interface TaskCardProps {
   //stimulusTitle: string;
   //stimulusBody: string | React.ReactNode;
   question_code: string;
-  learnBullets: string[];
+  learnBullets?: string[];  // Optional - generated tasks may not have this
   question: string;
   options: {
     text: string;
@@ -74,7 +74,8 @@ export function TaskCard({
       <div className="mb-4">
         <p className="text-[1rem] mb-3">{question}</p>
 
-                   {/* Quick Lesson */}
+                   {/* Quick Lesson - only show if learnBullets exist */}
+        {learnBullets && learnBullets.length > 0 && (
         <div className="bg-amber-50 border border-amber-200 rounded-lg mb-6">
         <button
           type="button"
@@ -129,7 +130,8 @@ export function TaskCard({
             </motion.div>
           )}
         </AnimatePresence>
-      </div>  
+      </div>
+        )}  
 
 
         <div className="space-y-2">
