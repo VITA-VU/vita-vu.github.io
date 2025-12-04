@@ -40,6 +40,7 @@ export function ScenarioTask({ task, onComplete, onSkip }: TaskComponentProps<Sc
       onNext={handleNext}
       onSkip={onSkip}
       canSubmit={selectedId !== null}
+      isGenerated={task.meta?.generated}
     >
       {/* Scenario Card */}
       <motion.div

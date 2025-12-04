@@ -140,6 +140,7 @@ export function FillBlankTask({ task, onComplete, onSkip }: TaskComponentProps<F
       onSkip={onSkip}
       canSubmit={allBlanksFilled && !feedback}
       showFeedback={feedback}
+      isGenerated={task.meta?.generated}
     >
       {/* Sentence with blanks */}
       <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6 text-lg leading-relaxed">

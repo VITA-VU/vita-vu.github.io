@@ -50,6 +50,7 @@ export function RankingTask({ task, onComplete, onSkip }: TaskComponentProps<Ran
       onNext={handleNext}
       onSkip={onSkip}
       canSubmit={true}
+      isGenerated={task.meta?.generated}
     >
       <div className="mb-4">
         <p className="text-[0.875rem] text-gray-600">

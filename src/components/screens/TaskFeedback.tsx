@@ -44,11 +44,14 @@ export function TaskFeedback({ onContinue, currentLang, onLangChange, goHome, se
     setEnjoyment(value);
     localStorage.setItem('taskEnjoyment', value);
     await returnTask('default', setTask);
-    if (localStorage.getItem('stop')==='true'){
+    const stopValue = localStorage.getItem('stop');
+    console.log('[TaskFeedback] stop value from localStorage:', stopValue, 'type:', typeof stopValue);
+    if (stopValue === 'true'){
+      console.log('[TaskFeedback] Navigating to results');
       onContinue(true);
     }
     else {
-      //setStep('preference');
+      // Bypass preference step - go directly to next task
       onContinue(false);
     }
   };

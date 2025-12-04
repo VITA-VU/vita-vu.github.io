@@ -134,6 +134,7 @@ export function ClassifyTask({ task, onComplete, onSkip }: TaskComponentProps<Cl
       onSkip={onSkip}
       canSubmit={allPlaced && !feedback}
       showFeedback={feedback}
+      isGenerated={task.meta?.generated}
     >
       {/* Category Buckets */}
       <div className="grid grid-cols-2 gap-4 mb-6">

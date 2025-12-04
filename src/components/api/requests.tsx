@@ -81,6 +81,7 @@ export async function updateStudent()
           localStorage.setItem('entropy', String(parsedValue.next_task.meta.entropy ?? ''));
           localStorage.setItem('aptProb', String(parsedValue.next_task.meta.apt_prob ?? ''));
           localStorage.setItem('policy', parsedValue.next_task.meta.policy ?? '');
+          localStorage.setItem('taskGenerated', String(parsedValue.next_task.meta.generated === true));
         }
         if (parsedValue.next_task) {
           localStorage.setItem('signalType', parsedValue.next_task.signalType ?? 'personality');

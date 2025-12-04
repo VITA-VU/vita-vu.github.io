@@ -13,6 +13,17 @@ export function GraphTask({ task, onComplete, onSkip }: TaskComponentProps<Graph
   const [startTime] = useState(Date.now());
 
   const { graphData, clickableRegions, correctRegion } = task;
+  
+  // Guard against missing or malformed graphData
+  if (!graphData?.values || !Array.isArray(graphData.values) || graphData.values.length === 0) {
+    console.error('GraphTask: Invalid graphData.values', { graphData, task });
+    return (
+      <TaskShell question="Error: Invalid graph data" onNext={() => onSkip()} onSkip={onSkip} canSubmit={true}>
+        <div className="text-red-500 p-4">This task has invalid data. Please skip.</div>
+      </TaskShell>
+    );
+  }
+  
   const maxValue = Math.max(...graphData.values);
 
   const handleBarClick = (regionId: string) => {
@@ -50,6 +61,7 @@ export function GraphTask({ task, onComplete, onSkip }: TaskComponentProps<Graph
       onSkip={onSkip}
       canSubmit={selectedRegion !== null && !feedback}
       showFeedback={feedback}
+      isGenerated={task.meta?.generated}
     >
       {/* Chart Container */}
       <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-4">

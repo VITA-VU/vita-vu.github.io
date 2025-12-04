@@ -50,6 +50,7 @@ export function PuzzleTask({ task, onComplete, onSkip }: TaskComponentProps<Puzz
       onSkip={onSkip}
       canSubmit={selectedId !== null && !feedback}
       showFeedback={feedback}
+      isGenerated={task.meta?.generated}
     >
       {/* Balance Puzzle */}
       {isBalancePuzzle && <BalancePuzzleVisual puzzle={task.puzzle as BalancePuzzle} />}
@@ -96,18 +97,31 @@ export function PuzzleTask({ task, onComplete, onSkip }: TaskComponentProps<Puzz
 
 // Balance Puzzle Visual Component
 function BalancePuzzleVisual({ puzzle }: { puzzle: BalancePuzzle }) {
+  // Check if shapes are emojis (1-2 chars) or text
+  const isEmoji = (s: string) => s.length <= 2 || /\p{Emoji}/u.test(s);
+  const allEmojis = [...puzzle.left, ...puzzle.right].every(item => isEmoji(item.shape));
+  
+  // Render shapes - either as repeated emojis or as "count × shape"
+  const renderShapes = (items: typeof puzzle.left) => {
+    return items.map((item, i) => (
+      <span key={i} className={allEmojis ? "text-3xl" : "text-lg font-medium"}>
+        {allEmojis 
+          ? Array(item.count).fill(item.shape).join('')
+          : `${item.count}×${item.shape}`
+        }
+        {i < items.length - 1 && !allEmojis && ' + '}
+      </span>
+    ));
+  };
+  
   return (
     <div className="bg-gradient-to-b from-amber-50 to-white border border-amber-200 rounded-xl p-6">
       {/* Simple visual equation */}
       <div className="flex items-center justify-center gap-4 py-4">
         {/* Left side */}
-        <div className="bg-white border-2 border-amber-300 rounded-xl p-4 shadow-sm min-w-[80px]">
+        <div className="bg-white border-2 border-amber-300 rounded-xl p-4 shadow-sm min-w-[80px] max-w-[200px]">
           <div className="flex flex-wrap gap-1 justify-center">
-            {puzzle.left.map((item, i) => (
-              <span key={i} className="text-3xl">
-                {Array(item.count).fill(item.shape).join('')}
-              </span>
-            ))}
+            {renderShapes(puzzle.left)}
           </div>
         </div>
 
@@ -115,13 +129,9 @@ function BalancePuzzleVisual({ puzzle }: { puzzle: BalancePuzzle }) {
         <div className="text-2xl font-bold text-amber-600">=</div>
 
         {/* Right side */}
-        <div className="bg-white border-2 border-amber-300 rounded-xl p-4 shadow-sm min-w-[80px]">
+        <div className="bg-white border-2 border-amber-300 rounded-xl p-4 shadow-sm min-w-[80px] max-w-[200px]">
           <div className="flex flex-wrap gap-1 justify-center">
-            {puzzle.right.map((item, i) => (
-              <span key={i} className="text-3xl">
-                {Array(item.count).fill(item.shape).join('')}
-              </span>
-            ))}
+            {renderShapes(puzzle.right)}
           </div>
         </div>
       </div>
@@ -138,6 +148,9 @@ function BalancePuzzleVisual({ puzzle }: { puzzle: BalancePuzzle }) {
 
 // Pattern Puzzle Visual Component
 function PatternPuzzleVisual({ puzzle }: { puzzle: PatternPuzzle }) {
+  // Check if items are emojis (short) or text (long)
+  const hasLongItems = puzzle.sequence.some(item => item.length > 2 && item !== '?');
+  
   return (
     <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-xl p-6">
       <div className="flex items-center justify-center gap-2 flex-wrap">
@@ -147,7 +160,11 @@ function PatternPuzzleVisual({ puzzle }: { puzzle: PatternPuzzle }) {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: index * 0.1 }}
-            className={`w-12 h-12 flex items-center justify-center text-2xl rounded-lg ${
+            className={`flex items-center justify-center rounded-lg ${
+              hasLongItems 
+                ? 'px-4 py-3 text-sm font-medium min-w-[80px]'
+                : 'w-12 h-12 text-2xl'
+            } ${
               item === '?'
                 ? 'bg-white border-2 border-dashed border-purple-400 text-purple-400'
                 : 'bg-white border border-gray-200 shadow-sm'

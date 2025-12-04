@@ -23,6 +23,7 @@ import { returnTask } from './components/api/requests';
 // import { MicrotaskDemoAptitude } from './components/microtasks/MicrotaskDemoAptitude';
 import { MicrotaskDemoAPI } from './components/microtasks/MicrotaskDemoAPI';
 import { createUser, incrementTasks, logQuestionInteraction } from './components/database/dbCalls';
+import { AgentDemo } from './components/screens/AgentDemo';
 
 // Global state context (or use localStorage/Redux)
 import { createContext, useState, ReactNode } from 'react';
@@ -363,6 +364,7 @@ function AppRoutes() {
         {/* <Route path="/demo" element={<MicrotaskDemo />} /> */}
         {/* <Route path="/demo-aptitude" element={<MicrotaskDemoAptitude />} /> */}
         <Route path="/demo-api" element={<MicrotaskDemoAPI />} />
+        <Route path="/agent-demo" element={<AgentDemo />} />
       </Routes>
 
       <TutorialWelcome

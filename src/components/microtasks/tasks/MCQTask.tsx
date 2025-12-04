@@ -68,6 +68,7 @@ export function MCQTask({ task, onComplete, onSkip }: TaskComponentProps<MCQTask
       onSkip={onSkip}
       canSubmit={selectedId !== null && !feedback}
       showFeedback={feedback}
+      isGenerated={task.meta?.generated}
     >
       {/* Stimulus */}
       {task.stimulus && (

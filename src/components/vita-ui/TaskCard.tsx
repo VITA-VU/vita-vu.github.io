@@ -19,6 +19,7 @@ export interface TaskCardProps {
   onNext: () => void;
   onNotSure: () => void;
   showTimer?: boolean;
+  isGenerated?: boolean;  // Show AI Generated pill
 }
 
 export function TaskCard({
@@ -32,7 +33,8 @@ export function TaskCard({
   onSelectOption,
   onNext,
   onNotSure,
-  showTimer = false
+  showTimer = false,
+  isGenerated = false
 }: TaskCardProps) {
   const [learnOpen, setLearnOpen] = useState(false);
   
@@ -42,6 +44,16 @@ export function TaskCard({
   }
   return (
     <div className="bg-white border border-gray-200 rounded-lg p-4 md:p-6">
+      {/* AI Generated indicator */}
+      {isGenerated && (
+        <div className="mb-3">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white rounded-full text-sm font-medium shadow-sm">
+            <span>🤖</span>
+            <span>AI Generated</span>
+          </span>
+        </div>
+      )}
+
       {/* Timer */}
       {showTimer && (
         <div className="flex justify-end mb-4">

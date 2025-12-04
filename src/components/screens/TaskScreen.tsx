@@ -165,10 +165,19 @@ export function TaskScreen({
           const policy = localStorage.getItem('policy') || '-';
           const shouldStop = localStorage.getItem('stop');
           const signalType = localStorage.getItem('signalType') || 'personality';
+          const isGenerated = task?.meta?.generated === true || localStorage.getItem('taskGenerated') === 'true';
           
           return (
             <div className="mb-6 p-4 bg-white rounded-xl shadow-sm border-2 border-green-400">
-              <div className="text-green-600 font-bold mb-2">🔍 DEBUG INFO</div>
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-green-600 font-bold">🔍 DEBUG INFO</span>
+                {isGenerated && (
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white rounded-full text-sm font-medium shadow-sm">
+                    <span>🤖</span>
+                    <span>AI Generated</span>
+                  </span>
+                )}
+              </div>
               <div className="flex flex-wrap gap-4 justify-between items-center text-sm">
                 <div><span className="text-slate-500">Top:</span> <span className="font-bold text-blue-600">{topAxis}</span></div>
                 <div><span className="text-slate-500">Program:</span> <span className="font-medium text-green-700">{program}</span></div>
@@ -223,6 +232,7 @@ export function TaskScreen({
             onSelectOption={handleSelectOption}
             onNext={handleNext}
             onNotSure={handleNotSure}
+            isGenerated={task.meta?.generated === true}
           />
         )}
       </div>

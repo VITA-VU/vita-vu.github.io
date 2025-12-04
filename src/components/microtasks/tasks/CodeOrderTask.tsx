@@ -68,6 +68,7 @@ export function CodeOrderTask({ task, onComplete, onSkip }: TaskComponentProps<C
       onSkip={onSkip}
       canSubmit={!feedback || feedback === 'correct'}
       showFeedback={feedback}
+      isGenerated={task.meta?.generated}
     >
       {/* Language badge and description */}
       <div className="flex items-center gap-2 mb-4">

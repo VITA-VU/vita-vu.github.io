@@ -7,6 +7,16 @@ export type RIASECAxis = 'R' | 'I' | 'A' | 'S' | 'E' | 'C';
 // aptitude = tests ability/knowledge (no RIASEC mapping)
 export type SignalType = 'personality' | 'aptitude';
 
+// Task metadata from backend (analytics/debugging info)
+export interface TaskMeta {
+  generated?: boolean;      // true if AI-generated, false/undefined if from bank
+  policy?: string;          // "broad_exploration" | "disambiguate_top2" | "aptitude_generated" | etc.
+  entropy?: number;         // Current profile uncertainty
+  top2_gap?: number;        // Gap between top-1 and top-2 axes
+  apt_prob?: number;        // Probability of serving aptitude task
+  target_axes?: string[];   // Which RIASEC axes this task targets
+}
+
 // Base interface for all tasks
 // Note: `program` is NOT stored inside each task - it comes from the parent context
 // (the API passes program separately, we use it from there)
@@ -17,6 +27,7 @@ export interface MicrotaskBase {
   hint?: string;
   riasec?: RIASECAxis[]; // Optional - only required for personality tasks
   signalType: SignalType;
+  meta?: TaskMeta;        // Backend metadata (includes generated flag)
 }
 
 // Helper to get task ID (uses question_code)
