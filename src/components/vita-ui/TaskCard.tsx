@@ -121,6 +121,8 @@ export function TaskCard({
 
 
         <div className="space-y-2">
+                <p className="text-[0.8125rem] text-gray-500 mt-2">Note: There is no one correct answer! This is to help us discover how you like to work. </p>
+                <br />
           {options.map((option, index) => (
             <label key={option.key} 
               className={`flex items-start gap-3 p-3 border-2 rounded-lg cursor-pointer transition-all min-h-[44px] ${

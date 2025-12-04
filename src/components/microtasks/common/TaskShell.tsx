@@ -103,6 +103,8 @@ export function TaskShell({
       )}
 
       {/* Task Content */}
+      <p className="text-[0.8125rem] text-gray-500 mt-2">Note: These questions have a correct answer! This is to help us discover your interests. </p>
+      <br />
       <div className="my-6">{children}</div>
 
       {/* Feedback overlay */}
