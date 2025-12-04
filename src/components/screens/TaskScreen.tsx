@@ -205,6 +205,7 @@ export function TaskScreen({
             onSkip={() => {
               localStorage.setItem('taskAnswered', 'false');
               localStorage.setItem('answer', '');
+              localStorage.setItem('isCorrect', '');
               onComplete();
             }}
           />

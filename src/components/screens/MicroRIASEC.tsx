@@ -210,7 +210,7 @@ export function MicroRIASEC({ onComplete, onBack, currentLang, onLangChange, sel
       .sort(([, a], [, b]) => b - a)
       .map(([letter]) => letter)
       //.slice(0, 2);
-    localStorage.setItem('microRIASEC', JSON.stringify(sorted));
+    localStorage.setItem('microRIASEC', sorted.join(','));
     onComplete(sorted);
   };
   
