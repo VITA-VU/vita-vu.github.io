@@ -6,6 +6,8 @@ import { LanguageToggle } from '../LanguageToggle';
 import { Smile, Meh, Frown } from 'lucide-react';
 import logo from '../imgs/VU-logo-RGB.png';
 import { returnRecommendations } from '../api/requests';
+import ProgressBar from '../vita-ui/ProgressBar';
+
 
 interface ResultAndNextStepProps {
   //onSeeWeek: (programme: string) => void;
@@ -121,6 +123,7 @@ if (!programs) {
             <img src={logo} alt="VU Logo" width="150" height="100" className="cursor-pointer" />
           </button>
         </div>
+        <ProgressBar bgColor={"#D4a017"} progress={100}/>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       

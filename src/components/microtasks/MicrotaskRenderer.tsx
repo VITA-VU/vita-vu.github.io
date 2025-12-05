@@ -36,6 +36,10 @@ export function MicrotaskRenderer({ task, onComplete, onSkip }: MicrotaskRendere
   const TaskComponent = TASK_COMPONENTS[task.type];
   localStorage.setItem('taskCode', task.question_code);
 
+  localStorage.setItem('learnOpened', "false");
+  localStorage.setItem('isCorrect', "");
+  localStorage.setItem('answer', "");
+
   if (!TaskComponent) {
     console.error(`Unknown task type: ${task.type}, falling back to MCQ`);
     return <MCQTask task={task as any} onComplete={onComplete} onSkip={onSkip} />;

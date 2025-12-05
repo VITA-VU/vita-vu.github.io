@@ -4,6 +4,8 @@ import { LanguageToggle } from '../LanguageToggle';
 import logo from '../imgs/VU-logo-RGB.png';
 import { returnTask } from '../api/requests';
 import { useAppContext } from '../../App';
+import ProgressBar from '../vita-ui/ProgressBar';
+
 
 interface TaskFeedbackProps {
   onContinue: (stop: boolean) => void;
@@ -14,6 +16,8 @@ interface TaskFeedbackProps {
 }
 
 type FeedbackStep = 'enjoyment' | 'preference';
+
+console.log(((1.2/parseFloat(localStorage.getItem("entropy") || '3.5')))* 100);
 
 // map avatar id -> src (used to show selected avatar speaking)
 const avatarMap: Record<string, string> = (() => {
@@ -68,6 +72,7 @@ export function TaskFeedback({ onContinue, currentLang, onLangChange, goHome, se
             <img src={logo} alt="VU Logo" width="150" height="100" className="cursor-pointer" />
           </button>
         </div>
+        <ProgressBar bgColor={"#D4a017"} progress={((1.2/parseFloat(localStorage.getItem("entropy") || '3')))* 100}/>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
 

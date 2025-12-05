@@ -8,6 +8,8 @@ import { HelpCircle } from 'lucide-react';
 // import logo from '../imgs/VU-logo-RGB.png';
 import { fetchMicrotask } from '../api/requests';
 import { useAppContext } from '../../App'; 
+import logo from '../imgs/VU-logo-RGB.png';
+import ProgressBar from '../vita-ui/ProgressBar';
 
 interface TaskScreenProps {
 
@@ -117,7 +119,7 @@ export function TaskScreen({
   };
   
   return (
-    <div className="min-h-screen bg-white pb-20">
+    <div className="min-h-screen bg-white">
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-100">
         <div className="flex items-center gap-2">
@@ -126,10 +128,11 @@ export function TaskScreen({
   aria-label="Go Home"
   className="flex items-center"
 >
-  <span className="text-xl font-bold text-blue-900">VU</span>
+  <img  src={logo}  alt="VU Logo" width='150' height='100' />
 </button>
 
        </div>
+        <ProgressBar bgColor={"#D4a017"} progress={((1.2/parseFloat(localStorage.getItem("entropy") || '3')))* 100}/>
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
       
@@ -150,7 +153,7 @@ export function TaskScreen({
         </div>
         
         {/* DEBUG PANEL - comment out when not needed */}
-        {(() => {
+{/*         {(() => {
           const AXES = ['R', 'I', 'A', 'S', 'E', 'C'];
           const studentVectorRaw = localStorage.getItem('studentVector') || '[0.167,0.167,0.167,0.167,0.167,0.167]';
           const studentVector = JSON.parse(studentVectorRaw);
@@ -187,7 +190,7 @@ export function TaskScreen({
               </div>
             </div>
           );
-        })()}
+        })()} */}
         {/* END DEBUG PANEL */}
 
         {/* Task Renderer - handles all task types */}
@@ -196,6 +199,7 @@ export function TaskScreen({
             task={task} 
             onComplete={(result: any) => {
               // Store the answer - for personality tasks it's selectedRiasec, for aptitude it varies
+              //TODO: doesn't actually store answer to question
               const answer = result.selectedRiasec ?? result.taskId ?? '';
               localStorage.setItem('answer', String(answer));
               localStorage.setItem('isCorrect', String(result.isCorrect ?? ''));
