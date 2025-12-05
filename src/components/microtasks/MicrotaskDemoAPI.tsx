@@ -60,7 +60,7 @@ export function MicrotaskDemoAPI() {
   const [pendingResult, setPendingResult] = useState<TaskResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [debugInfo, setDebugInfo] = useState<{ entropy: number; policy: string; apt_prob: number; program: string } | null>(null);
+  const [debugInfo, setDebugInfo] = useState<{ entropy: number; policy: string; apt_prob: number; program: string; generated: boolean } | null>(null);
 
   const initSession = async () => {
     setLoading(true);
@@ -116,6 +116,7 @@ export function MicrotaskDemoAPI() {
         policy: data.task.meta?.policy ?? 'unknown',
         apt_prob: data.task.meta?.apt_prob ?? 0,
         program: data.task.program ?? DEMO_PROGRAM,
+        generated: data.task.meta?.generated === true,
       });
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Fetch failed');
@@ -164,6 +165,7 @@ export function MicrotaskDemoAPI() {
           policy: data.next_task.meta?.policy ?? 'unknown',
           apt_prob: data.next_task.meta?.apt_prob ?? 0,
           program: data.next_task.program ?? DEMO_PROGRAM,
+          generated: data.next_task.meta?.generated === true,
         });
       }
     } catch (e) {
@@ -190,8 +192,9 @@ export function MicrotaskDemoAPI() {
       program: debugInfo?.program ?? currentProgram,
       entropy: debugInfo?.entropy,
       apt_prob: debugInfo?.apt_prob,
+      generated: debugInfo?.generated ?? false,
     };
-    setResults(prev => [...prev, resultWithMeta as TaskResult & { program: string; entropy?: number; apt_prob?: number }]);
+    setResults(prev => [...prev, resultWithMeta as TaskResult & { program: string; entropy?: number; apt_prob?: number; generated?: boolean }]);
     await updateVector(session, pendingResult, liked);
     setPendingResult(null);
   };
@@ -255,12 +258,17 @@ export function MicrotaskDemoAPI() {
               </div>
             </div>
             <div className="space-y-2 mb-6 text-left">
-              {results.map((r: TaskResult & { program?: string; entropy?: number; apt_prob?: number }, idx) => (
+              {results.map((r: TaskResult & { program?: string; entropy?: number; apt_prob?: number; generated?: boolean }, idx) => (
                 <div key={idx} className="flex items-center justify-between p-3 bg-slate-50 rounded-lg text-sm">
                   <div className="flex items-center gap-2">
                     <span className={`px-2 py-0.5 rounded text-xs ${r.signalType === 'aptitude' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'}`}>
                       {r.signalType}
                     </span>
+                    {r.generated && (
+                      <span className="px-2 py-0.5 rounded text-xs bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white">
+                        🤖 AI
+                      </span>
+                    )}
                     <span className="text-green-700 font-medium">{r.program ?? '-'}</span>
                     <span className="text-slate-400 text-xs">ent:{r.entropy?.toFixed(2)} apt:{((r.apt_prob ?? 0) * 100).toFixed(0)}%</span>
                   </div>
@@ -313,6 +321,12 @@ export function MicrotaskDemoAPI() {
               {currentTask.signalType}
             </span>
             <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-full text-sm">{currentTask.type}</span>
+            {debugInfo?.generated && (
+              <span className="px-3 py-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white rounded-full text-sm font-medium flex items-center gap-1">
+                <span>🤖</span>
+                <span>AI Generated</span>
+              </span>
+            )}
           </div>
         )}
 
@@ -354,10 +368,11 @@ export function MicrotaskDemoAPI() {
             </div>
             {results.length > 0 && (
               <div className="space-y-1 max-h-32 overflow-y-auto">
-                {results.map((r: TaskResult & { program?: string; entropy?: number; apt_prob?: number }, idx) => (
+                {results.map((r: TaskResult & { program?: string; entropy?: number; apt_prob?: number; generated?: boolean }, idx) => (
                   <div key={idx} className="flex justify-between text-[10px]">
                     <span className={r.signalType === 'aptitude' ? 'text-purple-400' : 'text-blue-400'}>
                       {idx + 1}. {r.signalType} | {r.program ?? '-'}
+                      {r.generated && <span className="ml-1 text-fuchsia-400">🤖</span>}
                     </span>
                     <span className="text-slate-500">
                       ent:{r.entropy?.toFixed(2) ?? '-'} apt:{((r.apt_prob ?? 0) * 100).toFixed(0)}%

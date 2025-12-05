@@ -16,6 +16,7 @@ interface TaskShellProps {
   canSubmit: boolean;
   children: React.ReactNode;
   showFeedback?: 'correct' | 'incorrect' | null;
+  isGenerated?: boolean;  // Show AI Generated pill
 }
 
 export function TaskShell({
@@ -27,6 +28,7 @@ export function TaskShell({
   canSubmit,
   children,
   showFeedback,
+  isGenerated,
 }: TaskShellProps) {
   const [hintOpen, setHintOpen] = useState(false);
 
@@ -43,6 +45,16 @@ export function TaskShell({
       exit="exit"
       className="bg-white border border-gray-200 rounded-lg p-4 md:p-6"
     >
+      {/* AI Generated indicator */}
+      {isGenerated && (
+        <div className="mb-3">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white rounded-full text-sm font-medium shadow-sm">
+            <span>🤖</span>
+            <span>AI Generated</span>
+          </span>
+        </div>
+      )}
+
       {/* Question */}
       <h3 className="text-[1.375rem] mb-4">{question}</h3>
 

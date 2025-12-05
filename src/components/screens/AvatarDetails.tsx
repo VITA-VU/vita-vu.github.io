@@ -54,10 +54,7 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
   const [isTyping, setIsTyping] = useState(false);
   const [programme, setProgramme] = useState('');
   const [chatStep, setChatStep] = useState<ChatStep>('greeting');
-  const [showPronounsDropdown, setShowPronounsDropdown] = useState(false);
-  const [showProgrammeDropdown, setShowProgrammeDropdown] = useState(false);
   const [hasProgramInMind, setHasProgramInMind] = useState<'yes' | 'no' | ''>('');
-  const [showProgramInMindDropdown, setShowProgramInMindDropdown] = useState(false);
 
   // Dynamically import all images from avatar_griffon folder
   const avatarImages = useMemo(() => {
@@ -140,7 +137,6 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
     setPronouns(selectedValue);
     localStorage.setItem('pronouns', selectedValue);
     //addUserMessage(selectedLabel);
-    setShowPronounsDropdown(false);
     handleUserResponse(selectedValue);
   };
 
@@ -153,9 +149,6 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
     // ask follow-up question instead of finishing immediately
     addAvatarMessage('Quick question: do you already have a study programme in mind?', 800);
     setChatStep('programInMind');
-    setTimeout(() => {
-      setShowProgrammeDropdown(false);
-    }, 500);
   };
 
   // Handle program-in-mind selection (yes/no)
@@ -312,154 +305,117 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
                   </div>
                 </div>
               )}
-            </div>
 
-            {/* Input */}
-            {!isTyping && (
-              <div className="flex gap-2">
-                {chatStep === 'pronouns' ? (
-                  <div className="flex-1 relative">
-                    <button
-                      onClick={() => setShowPronounsDropdown(!showPronounsDropdown)}
-                      className="w-full border rounded px-3 py-2 text-sm text-left bg-white hover:bg-gray-50"
-                    >
-                      {pronouns ? pronounOptions.find(p => p.value === pronouns)?.label : 'Select pronouns...'}
-                      <span className="float-right">▼</span>
-                    </button>
-                    {showPronounsDropdown && (
-                      <div className="absolute top-full left-0 right-0 border rounded mt-1 bg-white shadow-lg z-10">
-                        {pronounOptions.map((opt) => (
-                          <button
-                            key={opt.value}
-                            onClick={() => handlePronounsSelect(opt.value)}
-                            className="w-full text-left px-3 py-2 hover:bg-vita-gold/10 text-sm"
-                          >
-                            {opt.label}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : chatStep === 'profile' ? (
-                  <div className="flex-1 relative">
-                    <button
-                      onClick={() => setShowProgrammeDropdown(!showProgrammeDropdown)}
-                      className="w-full border rounded px-3 py-2 text-sm text-left bg-white hover:bg-gray-50"
-                    >
-                      {programme || 'Select a profile...'}
-                      <span className="float-right">▼</span>
-                    </button>
-                    {showProgrammeDropdown && (
-                      <div className="absolute top-full left-0 right-0 border rounded mt-1 bg-white shadow-lg z-10">
-                        {programmeOptions.map((opt) => (
-                          <button
-                            key={opt.value}
-                            onClick={() => handleProgrammeSelect(opt.value)}
-                            className="w-full text-left px-3 py-2 hover:bg-vita-gold/10 text-sm"
-                          >
-                            {opt.label}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : chatStep === 'programInMind' ? (
-                <div className="flex-1 relative">
-                  {!hasProgramInMind && (
+              {/* Input - inside chat container */}
+              {!isTyping && (
+                <div className="pt-4 border-t border-gray-200 flex justify-end">
+                  {chatStep === 'pronouns' ? (
+                    <div className="flex flex-wrap gap-2">
+                      {pronounOptions.map((opt) => (
+                        <button
+                          key={opt.value}
+                          onClick={() => handlePronounsSelect(opt.value)}
+                          className={`min-h-[44px] px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                            pronouns === opt.value
+                              ? 'bg-vita-gold text-vita-near-black border-2 border-vita-gold'
+                              : 'bg-amber-100 text-amber-900 border-2 border-amber-300 hover:bg-amber-200 hover:shadow-sm'
+                          }`}
+                        >
+                          {opt.label}
+                        </button>
+                      ))}
+                    </div>
+                  ) : chatStep === 'profile' ? (
+                    <div className="flex flex-wrap gap-2">
+                      {programmeOptions.map((opt) => (
+                        <button
+                          key={opt.value}
+                          onClick={() => handleProgrammeSelect(opt.value)}
+                          className={`min-h-[44px] px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                            programme === opt.value
+                              ? 'bg-vita-gold text-vita-near-black border-2 border-vita-gold'
+                              : 'bg-amber-100 text-amber-900 border-2 border-amber-300 hover:bg-amber-200 hover:shadow-sm'
+                          }`}
+                        >
+                          {opt.label}
+                        </button>
+                      ))}
+                    </div>
+                  ) : chatStep === 'programInMind' ? (
                     <>
-                      <label className="block text-sm text-gray-700 mb-1">
-                        Do you already have a study programme in mind?
-                      </label>
-
-                      <button
-                        onClick={() => setShowProgramInMindDropdown(!showProgramInMindDropdown)}
-                        className="w-full border rounded px-3 py-2 text-sm text-left bg-white hover:bg-gray-50"
-                      >
-                        {hasProgramInMind ? (hasProgramInMind === 'yes' ? 'Yes' : 'No') : 'Select...'}
-                        <span className="float-right">▼</span>
-                      </button>
-
-                      {showProgramInMindDropdown && (
-                        <div className="absolute top-full left-0 right-0 border rounded mt-1 bg-white shadow-lg z-10">
+                      {!hasProgramInMind && (
+                        <div className="flex flex-wrap gap-2">
                           <button
-                            className="w-full text-left px-3 py-2 hover:bg-vita-gold/10 text-sm"
-                            onClick={() => {
-                              setShowProgramInMindDropdown(false);
-                              handleProgramInMindSelect('yes');
-                            }}
+                            onClick={() => handleProgramInMindSelect('yes')}
+                            className="min-h-[44px] px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-amber-100 text-amber-900 border-2 border-amber-300 hover:bg-amber-200 hover:shadow-sm"
                           >
                             Yes
                           </button>
-
                           <button
-                            className="w-full text-left px-3 py-2 hover:bg-vita-gold/10 text-sm"
-                            onClick={() => {
-                              setShowProgramInMindDropdown(false);
-                              handleProgramInMindSelect('no');
-                            }}
+                            onClick={() => handleProgramInMindSelect('no')}
+                            className="min-h-[44px] px-6 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-amber-100 text-amber-900 border-2 border-amber-300 hover:bg-amber-200 hover:shadow-sm"
                           >
                             No
                           </button>
                         </div>
                       )}
-                    </>
-                  )}
 
-                  {/* CTA shown AFTER user selects Yes/No */}
-                  {hasProgramInMind && (
-                    <div className="mt-4">
+                      {/* CTA shown AFTER user selects Yes/No */}
+                      {hasProgramInMind && (
+                        <div className="mt-4">
+                          <VitaButton
+                            variant="primary"
+                            onClick={() =>
+                              onContinue({
+                                avatar: selectedAvatar,
+                                pronouns,
+                                firstName,
+                                age,
+                                profile,
+                                hasProgramInMind: hasProgramInMind as 'yes' | 'no',
+                              })
+                            }
+                            className="w-full"
+                          >
+                            {hasProgramInMind === 'yes'
+                              ? "Let's go look at some programs!"
+                              : "Let's go learn some more about you!"}
+                          </VitaButton>
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        id="chat-input"
+                        className="flex-1 border rounded px-3 py-2 text-sm"
+                        placeholder="Type your response..."
+                        onKeyPress={(e) => {
+                          if (e.key === 'Enter') {
+                            const target = e.currentTarget;
+                            handleUserResponse(target.value);
+                            target.value = '';
+                          }
+                        }}
+                      />
                       <VitaButton
                         variant="primary"
-                        onClick={() =>
-                          onContinue({
-                            avatar: selectedAvatar,
-                            pronouns,
-                            firstName,
-                            age,
-                            profile,
-                            hasProgramInMind: hasProgramInMind as 'yes' | 'no',
-                          })
-                        }
-                        className="w-full"
+                        onClick={() => {
+                          const input = document.getElementById('chat-input') as HTMLInputElement;
+                          if (input) {
+                            handleUserResponse(input.value);
+                            input.value = '';
+                          }
+                        }}
                       >
-                        {hasProgramInMind === 'yes'
-                          ? "Let's go look at some programmes!"
-                          : "Let's go learn some more about you!"}
+                        Send
                       </VitaButton>
                     </div>
                   )}
                 </div>
-              ): (
-                  <>
-                    <input
-                      type="text"
-                      id="chat-input"
-                      className="flex-1 border rounded px-3 py-2 text-sm"
-                      placeholder="Type your response..."
-                      onKeyPress={(e) => {
-                        if (e.key === 'Enter') {
-                          const target = e.currentTarget;
-                          handleUserResponse(target.value);
-                          target.value = '';
-                        }
-                      }}
-                    />
-                    <VitaButton
-                      variant="primary"
-                      onClick={() => {
-                        const input = document.getElementById('chat-input') as HTMLInputElement;
-                        if (input) {
-                          handleUserResponse(input.value);
-                          input.value = '';
-                        }
-                      }}
-                    >
-                      Send
-                    </VitaButton>
-                  </>
-                )}
-              </div>
-            )}
+              )}
+            </div>
           </div>
         )}
       </div>
