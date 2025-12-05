@@ -47,7 +47,7 @@ export function TaskCard({
       {/* AI Generated indicator */}
       {isGenerated && (
         <div className="mb-3">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white rounded-full text-sm font-medium shadow-sm">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-100 text-black rounded-full text-sm font-medium border border-amber-300">
             <span>🤖</span>
             <span>AI Generated</span>
           </span>

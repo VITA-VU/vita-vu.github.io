@@ -5,10 +5,10 @@ import { useAppContext } from '../../App';
 
 //NOTE: had to shut off CORS in browser to make this work
 
-const hostname = 'localhost:8000'; // 'unrazored-jacqueline-cleanlier.ngrok-free.dev';
+const hostname = 'vitavu-api.ngrok-free.app'; // 'localhost:3001';
 
 export function resetStudent() {
-  return fetch('http://' + hostname + '/student/reset/', {
+  return fetch('https://' + hostname + '/student/reset/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json'}})
     .then(response => response.json())
@@ -29,7 +29,7 @@ export function initializeStudent() {
         hs_profile: localStorage.getItem('profile') || '' }
        })
   };
-  return fetch('http://' + hostname + '/student/init/', requestOptions)
+  return fetch('https://' + hostname + '/student/init/', requestOptions)
     .then(response => response.json())
     .then(parsedValue =>{localStorage.setItem('studentVector', JSON.stringify(parsedValue.student_vector))
       return parsedValue; })
@@ -64,7 +64,7 @@ export async function updateStudent()
         hs_profile: localStorage.getItem('profile') || '' }
        })
   };
-   return fetch('http://' + hostname + '/student/update/', requestOptions)
+   return fetch('https://' + hostname + '/student/update/', requestOptions)
       .then(response => response.json())
       .then(parsedValue => {localStorage.setItem('studentVector', JSON.stringify(parsedValue.student_vector))
       return parsedValue; })
@@ -122,7 +122,7 @@ export async function updateStudentRIASEC()
         micro_riasec: riasec_vector.split(',').map(String),
        })
   };
-   return fetch('http://' + hostname + '/student/update/', requestOptions)
+   return fetch('https://' + hostname + '/student/update/', requestOptions)
       .then(response => response.json())
       .then(parsedValue => {localStorage.setItem('studentVector', JSON.stringify(parsedValue.student_vector))
       return parsedValue; })
@@ -189,7 +189,7 @@ export async function fetchMicrotask() {
         hs_profile: localStorage.getItem('profile') || '' }
        })
   };
-  return fetch('http://' + hostname + '/student/fetch-task/', requestOptions)
+  return fetch('https://' + hostname + '/student/fetch-task/', requestOptions)
     .then(response => response.json())
     .then(parsedValue => {return parsedValue.task; });    
   }
@@ -222,7 +222,7 @@ export async function getRecommendations() {
       hs_profile: localStorage.getItem('profile') || '' }
      })
   };
-  return fetch('http://' + hostname + '/student/recommend/', requestOptions)
+  return fetch('https://' + hostname + '/student/recommend/', requestOptions)
     .then(response => response.json())
     .then(parsedValue => {return parsedValue.recommendations; });    
 }

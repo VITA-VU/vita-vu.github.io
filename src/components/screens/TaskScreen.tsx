@@ -153,7 +153,7 @@ export function TaskScreen({
         </div>
         
         {/* DEBUG PANEL - comment out when not needed */}
-{/*         {(() => {
+        {(() => {
           const AXES = ['R', 'I', 'A', 'S', 'E', 'C'];
           const studentVectorRaw = localStorage.getItem('studentVector') || '[0.167,0.167,0.167,0.167,0.167,0.167]';
           const studentVector = JSON.parse(studentVectorRaw);
@@ -199,7 +199,7 @@ export function TaskScreen({
               </div>
             </div>
           );
-        })()} */}
+        })()}
         {/* END DEBUG PANEL */}
 
         {/* Task Renderer - handles all task types */}
