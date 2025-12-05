@@ -95,7 +95,7 @@ export async function updateStudentRIASEC()
   {
   var student_vector = localStorage.getItem('studentVector') || '[0,0,0,0,0,0]';
   student_vector = student_vector.replace(/[\[\]\s]/g, ''); //remove brackets and spaces
-  var riasec_vector = localStorage.getItem('microRIASEC') || '[R,I,A,S,C,E]'
+  var riasec_vector = localStorage.getItem('microRIASEC') || '[R,I,A,S,E,C]'
   riasec_vector =  riasec_vector.replace(/[\[\]\s]/g, '');
 
   const requestOptions = {
