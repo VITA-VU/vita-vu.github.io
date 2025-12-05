@@ -119,6 +119,7 @@ export function AvatarAndDetails({ onContinue, onSkip, currentLang, onLangChange
       addAvatarMessage(`Nice to meet you, ${text}! What pronouns do you use?`, 400);
       setChatStep('pronouns');
     } else if (chatStep === 'pronouns') {
+      setIsTyping(true);
       setChatStep('age');
       setTimeout(() => {
         addAvatarMessage(`Got it! How old are you?`, 800);

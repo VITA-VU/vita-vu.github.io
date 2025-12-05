@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { VitaButton } from '../vita-ui/VitaButton';
 import { LanguageToggle } from '../LanguageToggle';
 import logo from '../imgs/VU-logo-RGB.png';
 import { returnTask } from '../api/requests';
 import { useAppContext } from '../../App';
 import ProgressBar from '../vita-ui/ProgressBar';
+
+// Loading messages that rotate while waiting for API
+const loadingMessages = [
+  "Finding the perfect next question for you...",
+  "Checking which programs match your interests...",
+  "Crafting a personalized challenge...",
+  "Almost there, just a moment...",
+  "Preparing something interesting...",
+];
 
 
 interface TaskFeedbackProps {
@@ -37,22 +46,39 @@ export function TaskFeedback({ onContinue, currentLang, onLangChange, goHome, se
   const [step, setStep] = useState<FeedbackStep>('enjoyment');
   const [enjoyment, setEnjoyment] = useState<string>('');
   const [preference, setPreference] = useState<string>('');
-  const avatarTopic = selectedAvatar || 'Griffon';
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadingMessageIndex, setLoadingMessageIndex] = useState(0);
+  const avatarTopic = selectedAvatar || localStorage.getItem('avatar') || 'Griffon';
   const { setTask } = useAppContext(); 
+
+  // Rotate loading messages every 2.5 seconds
+  useEffect(() => {
+    if (!isLoading) return;
+    const interval = setInterval(() => {
+      setLoadingMessageIndex((prev) => (prev + 1) % loadingMessages.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, [isLoading]);
 
   const handleEnjoymentSelect = async (value: string) => {
     setEnjoyment(value);
     localStorage.setItem('taskEnjoyment', value);
-    await returnTask('default', setTask);
-    const stopValue = localStorage.getItem('stop');
-    console.log('[TaskFeedback] stop value from localStorage:', stopValue, 'type:', typeof stopValue);
-    if (stopValue === 'true'){
-      console.log('[TaskFeedback] Navigating to results');
-      onContinue(true);
-    }
-    else {
-      // Bypass preference step - go directly to next task
-      onContinue(false);
+    setIsLoading(true);
+    setLoadingMessageIndex(0);
+    try {
+      await returnTask('default', setTask);
+      const stopValue = localStorage.getItem('stop');
+      console.log('[TaskFeedback] stop value from localStorage:', stopValue, 'type:', typeof stopValue);
+      if (stopValue === 'true'){
+        console.log('[TaskFeedback] Navigating to results');
+        onContinue(true);
+      }
+      else {
+        // Bypass preference step - go directly to next task
+        onContinue(false);
+      }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -79,7 +105,40 @@ export function TaskFeedback({ onContinue, currentLang, onLangChange, goHome, se
         <LanguageToggle currentLang={currentLang} onToggle={onLangChange} />
       </div>
 
+      {/* Loading Screen */}
+      {isLoading && (
+        <div className="flex flex-col items-center justify-center min-h-[60vh] p-6">
+          <div className="flex-shrink-0 mb-6">
+            <img
+              src={avatarMap[avatarTopic || '']}
+              alt="Griffon thinking"
+              className="w-32 h-32 object-cover animate-pulse"
+            />
+          </div>
+          <div className="text-center max-w-md">
+            <p 
+              key={loadingMessageIndex}
+              className="text-lg text-gray-700 animate-fade-in"
+              style={{
+                animation: 'fadeInOut 2.5s ease-in-out',
+              }}
+            >
+              {loadingMessages[loadingMessageIndex]}
+            </p>
+          </div>
+          <style>{`
+            @keyframes fadeInOut {
+              0% { opacity: 0; transform: translateY(10px); }
+              15% { opacity: 1; transform: translateY(0); }
+              85% { opacity: 1; transform: translateY(0); }
+              100% { opacity: 0; transform: translateY(-10px); }
+            }
+          `}</style>
+        </div>
+      )}
+
       {/* Content */}
+      {!isLoading && (
       <div className="max-w-2xl mx-auto p-6 space-y-6">
 
         {/* Step 1: Enjoyment */}
@@ -217,6 +276,7 @@ export function TaskFeedback({ onContinue, currentLang, onLangChange, goHome, se
           </div>
         )}
       </div>
+      )}
     </div>
   );
 }
